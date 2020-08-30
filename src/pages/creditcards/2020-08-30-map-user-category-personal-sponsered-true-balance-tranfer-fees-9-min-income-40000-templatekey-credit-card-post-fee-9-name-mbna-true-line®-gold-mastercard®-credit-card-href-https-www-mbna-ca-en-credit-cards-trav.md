@@ -2,7 +2,7 @@
 templateKey: credit-card-post
 name: "MBNA True Line® Gold Mastercard® credit card "
 card-image: /img/true-line-gold-mastercardcard.png
-credit_score: 2-Very Good
+credit_score: 3-Good
 fee: 9
 first-year-fee: 9
 bank-name: mbna
