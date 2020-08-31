@@ -12,6 +12,37 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+
+
+  - name: "creditCards"
+    label: "Credit Card"
+    folder: "src/pages/creditcards"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "credit-card-post"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Card Image", name: "cardImage", widget: image}
+      - {label: "Credit Score", name: "creditScore", widget: "select", options: ["1-Excellent", "2-Very Good", "3-Good", "4-Poor", "5-Very Poor"]}
+      - {label: "Fee", name: "fee", widget: "number"}
+      - {label: "First Year Fee", name: "firstYearFee", widget: "number"}
+      - {label: "Bank Name", name: "bankName", widget: "string"}
+      - {label: "Network", name: "network", widget: "select", options: ["mastercard","visa"]}
+      - {label: "Purchase Interest", name: "purchaseInterest", widget: "number"}
+      - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "number"}
+      - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "number"}
+      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number"}
+      - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}]}
+      - {label: "Card Category", name: "cardCategory", widget: "select", options: [{value: "low-interest", label: "Low Interest"}, {value: "low-balance-transfer", label: "Low Balance Transfer"}, {value: "build-credit-score", label: "Build Credit Score"}, {value: "prepaid", label: "Prepaid"}, {value: "rewards", label: "Rewards"}]}
+      - {label: "External Site Link", name: "href", widget: "string"}
+      - {label: "Is it sponsered?", name: "sponsered", widget: "boolean"}
+      - {label: "Rating", name: "rating", widget: "select", options: ["0","1", "2", "3", "4", "5"]}
+      - {label: "Minimum Required Income", name: "minIncome", widget: "number"}
+      - {label: "Summary Description", name: "summaryDescription", widget: "markdown"}
+      - {label: "Is Featured?", name: "featured", widget: "boolean"}
+
+
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -26,6 +57,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+
 
   - name: "pages"
     label: "Pages"
