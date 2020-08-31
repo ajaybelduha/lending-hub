@@ -21,7 +21,7 @@ collections:
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "credit-card-post"}
-      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Card Image", name: "cardImage", widget: image}
       - {label: "Credit Score", name: "creditScore", widget: "select", options: ["1-Excellent", "2-Very Good", "3-Good", "4-Poor", "5-Very Poor"]}
       - {label: "Fee", name: "fee", widget: "number"}
