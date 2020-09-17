@@ -1,11 +1,11 @@
 ---
 templateKey: credit-card-post
-title: CIBC Dividend® Visa Infinite* Card
-cardImage: /img/card6.png
-creditScore: 2-Very Good
+title: Home Trust Preferred Visa
+cardImage: /img/home-trust-preferred-visacard.png
+creditScore: 5-Very Poor
 fee: 120
 firstYearFee: 120
-bankName: american-express
+bankName: home-trust
 network: mastercard
 purchaseInterest: 20
 balanceTransferInterest: 20
