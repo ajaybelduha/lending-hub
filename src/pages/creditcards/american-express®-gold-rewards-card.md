@@ -1,8 +1,8 @@
 ---
 templateKey: credit-card-post
-title: TD Cash Back Visa Infinite* Card
-cardImage: /img/td-cash-back-visa-infinitecard.png
-creditScore: 4-Poor
+title: CIBC Dividend® Visa Infinite* Card
+cardImage: /img/card6.png
+creditScore: 2-Very Good
 fee: 120
 firstYearFee: 120
 bankName: american-express
@@ -27,5 +27,5 @@ summaryDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
   ultrices posuere cubilia curae; Praesent sed euismod tellus, et rhoncus mi. In
   et lacus a massa tempus tincidunt. Duis vitae dolor in elit dignissim aliquet
   at et odio. Fusce elit orci, posuere eget nisl in, egestas convallis mi.
-featured: true
+featured: false
 ---
