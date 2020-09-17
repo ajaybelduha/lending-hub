@@ -1,8 +1,8 @@
 ---
 templateKey: credit-card-post
-title: American Express® Gold Rewards Card
-cardImage: /img/card3.png
-creditScore: 1-Excellent
+title: Platinum Mastercard® Business Card
+cardImage: /img/card4.png
+creditScore: 2-Very Good
 fee: 120
 firstYearFee: 120
 bankName: american-express
