@@ -1,8 +1,8 @@
 ---
 templateKey: credit-card-post
-title: Platinum Mastercard® Business Card
-cardImage: /img/card4.png
-creditScore: 2-Very Good
+title: American Express® AIR MILES®* for Business Card
+cardImage: /img/card5.png
+creditScore: 1-Excellent
 fee: 120
 firstYearFee: 120
 bankName: american-express
