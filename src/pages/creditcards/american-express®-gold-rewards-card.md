@@ -1,8 +1,8 @@
 ---
 templateKey: credit-card-post
-title: American Express® AIR MILES®* for Business Card
-cardImage: /img/card5.png
-creditScore: 1-Excellent
+title: TD Cash Back Visa Infinite* Card
+cardImage: /img/td-cash-back-visa-infinitecard.png
+creditScore: 4-Poor
 fee: 120
 firstYearFee: 120
 bankName: american-express
