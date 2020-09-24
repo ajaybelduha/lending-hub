@@ -73,7 +73,7 @@ collections:
     slug: "{{slug}}"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mortgages-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "loans-post"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Logo", name: "logo", widget: image, required: true}
       - {label: "Type", name: "type", widget: select, options: [{value: "debtConsolidation", label: "Debt Consolidation"}, {value: "creditCardPayoff", label: "Payoff Credit Cards"}, {value: "homeImprovement", label: "Home Improvement"}, {value: "payForWedding", label: "Pay for a Wedding"}, {value: "buyCar", label: "Buy a Car"}, {value: "takeVacation", label: "Take a Vacation"}, {value: "others", label: "Others"}], required: true}
