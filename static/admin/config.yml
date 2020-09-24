@@ -21,25 +21,74 @@ collections:
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "credit-card-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Card Image", name: "cardImage", widget: image}
-      - {label: "Credit Score", name: "creditScore", widget: "select", options: ["1-Excellent", "2-Very Good", "3-Good", "4-Poor", "5-Very Poor"]}
-      - {label: "Fee", name: "fee", widget: "number"}
-      - {label: "First Year Fee", name: "firstYearFee", widget: "number"}
-      - {label: "Bank Name", name: "bankName", widget: "string"}
-      - {label: "Network", name: "network", widget: "select", options: ["mastercard","visa"]}
-      - {label: "Purchase Interest", name: "purchaseInterest", widget: "number"}
-      - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "number"}
-      - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "number"}
-      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number"}
-      - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}]}
-      - {label: "Card Category", name: "cardCategory", widget: "select", options: [{value: "low-interest", label: "Low Interest"}, {value: "low-balance-transfer", label: "Low Balance Transfer"}, {value: "build-credit-score", label: "Build Credit Score"}, {value: "prepaid", label: "Prepaid"}, {value: "rewards", label: "Rewards"}]}
-      - {label: "External Site Link", name: "href", widget: "string"}
-      - {label: "Is it sponsered?", name: "sponsered", widget: "boolean"}
-      - {label: "Rating", name: "rating", widget: "select", options: ["0","1", "2", "3", "4", "5"]}
-      - {label: "Minimum Required Income", name: "minIncome", widget: "number"}
-      - {label: "Summary Description", name: "summaryDescription", widget: "markdown"}
-      - {label: "Is Featured?", name: "featured", widget: "boolean"}
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Card Image", name: "cardImage", widget: image, required: true}
+      - {label: "Credit Score", name: "creditScore", widget: "select", options: ["1-Excellent", "2-Very Good", "3-Good", "4-Poor", "5-Very Poor"], required: true}
+      - {label: "Fee", name: "fee", widget: "number", required: true}
+      - {label: "First Year Fee", name: "firstYearFee", widget: "number", required: false}
+      - {label: "Bank Name", name: "bankName", widget: "string", required: false}
+      - {label: "Network", name: "network", widget: "select", options: ["mastercard","visa"], required: false}
+      - {label: "Purchase Interest", name: "purchaseInterest", widget: "number", required: false}
+      - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "number", required: false}
+      - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "number", required: false}
+      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false}
+      - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}], required: true}
+      - {label: "Card Category", required: true, name: "cardCategory", widget: "select", options: [{value: "low-interest", label: "Low Interest"}, {value: "low-balance-transfer", label: "Low Balance Transfer"}, {value: "build-credit-score", label: "Build Credit Score"}, {value: "prepaid", label: "Prepaid"}, {value: "rewards", label: "Rewards"}]}
+      - {label: "External Site Link", name: "href", widget: "string", required: true}
+      - {label: "Is it sponsered?", name: "sponsered", widget: "boolean", required: false}
+      - {label: "Rating", name: "rating", widget: "select", options: ["0","1", "2", "3", "4", "5"], required: false}
+      - {label: "Minimum Required Income", name: "minIncome", widget: "number", required: true}
+      - {label: "Summary Description", name: "summaryDescription", widget: "markdown", required: false}
+      - {label: "Is Featured?", name: "featured", widget: "boolean", required: false}
+
+  
+  - name: "mortgages"
+    label: "Mortgages"
+    folder: "src/pages/mortgages"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mortgages-post"}
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Logo", name: "logo", widget: image, required: true}
+      - {label: "Type", name: "type", widget: select, options: [{value: "fixed", label: "Fixed"}, {value: "variable", label: "Variable"}], required: true}
+      - {label: "Rate", name: "rate", widget: "string", required: true}
+      - {label: "Term", name: "term", widget: "select", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
+      - {label: "Amortization", name: "amortization", widget: "select", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
+      - {label: "Monthly prepayment", name: "regularPayment", widget: "string", required: true}
+      - {label: "Lumpsum prepayment", name: "lumpSum", widget: "string", required: true}
+      - {label: "Rate hold until", name: "rateHold", widget: "date", required: true}
+      - {label: "Is Rental?", name: "isRental", widget: "boolean", required: true}
+      - {label: "Is PreApproval Required?", name: "isPreApproval", widget: "boolean", required: true}
+      - {label: "Is Open?", name: "isOpen", widget: "boolean", required: true}
+      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: true}
+      - {label: "Is Cashback?", name: "isCashback", widget: "boolean", required: false}
+      - {label: "Description", name: "description", widget: "string", required: true}
+      - {label: "Cashback", name: "cashback", widget: "string", required: false}
+
+  
+  - name: "loans"
+    label: "Loans"
+    folder: "src/pages/loans"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mortgages-post"}
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Logo", name: "logo", widget: image, required: true}
+      - {label: "Type", name: "type", widget: select, options: [{value: "debtConsolidation", label: "Debt Consolidation"}, {value: "creditCardPayoff", label: "Payoff Credit Cards"}, {value: "homeImprovement", label: "Home Improvement"}, {value: "payForWedding", label: "Pay for a Wedding"}, {value: "buyCar", label: "Buy a Car"}, {value: "takeVacation", label: "Take a Vacation"}, {value: "others", label: "Others"}], required: true}
+      - {label: "Minimum Credit Score", name: "minCreditScore", widget: "select", options: [{value: "5-excellent", label: "Excellent(724 +)"}, {value: "4-good", label: "Good(660-724)"}, {value: "Fair", label: "Fair(560-659)"}, {value: "poor", label: "Poor(300-559)"}], required: true}
+      - {label: "Suitable for Fulltime Job?", name: "forFulltime", widget: "boolean", required: true}
+      - {label: "Suitable for Parttime Job?", name: "forPartTime", widget: "boolean", required: true}
+      - {label: "Suitable for Self Employed?", name: "forSelfEmployed", widget: "boolean", required: true}
+      - {label: "Suitable for Unemployed?", name: "forUnemployed", widget: "boolean", required: true}
+      - {label: "Suitable for Retired?", name: "forRetired", widget: "boolean", required: true}
+      - {label: "Suitable for Others?", name: "forOthers", widget: "boolean", required: true}
+      - {label: "Minimum annual income before tax", name: "minIncome", widget: "number", required: true}
+      - {label: "Minimum monthly Debt payments", name: "monthlyDebtPaymentsRequired", widget: "number", required: true}
+      - {label: "Customer owns house?", name: "isHouseTaken", widget: "select", options: [{value: "own", label: "Own"}, {value: "rent", label: "Rent"}, {value: "neither", label: "Neither"}], required: true}
+      - {label: "Minimum monthly Rent/Mortgage payments", name: "monthlyRentPaymentsRequired", widget: "number", required: true}
+      - {label: "Bankruptcy/Consumer proposal?", name: "bcValue", widget: "select", options: [{value: "bankruptcy", label: "Bankruptcy"}, {value: "consumerProposal", label: "Consumer Proposal"}, {value: "neither", label: "Neither"}], required: true}
 
 
 
