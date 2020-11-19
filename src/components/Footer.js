@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../img/logo.svg'
+import logo from '../img/logo.png'
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
@@ -10,38 +10,45 @@ import vimeo from '../img/social/vimeo.svg'
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
+      <footer className="footer">
+        <div className="content">
+          <div className="container">
+            <div>
+              <img
+                src={logo}
+                alt="lending hub logo"
+                className="logo"
+                style={{ width: '168px' }}
+              />
+            </div>
             <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
+              <div className="column is-3">
                 <section className="menu">
                   <ul className="menu-list">
+                    <li className="heading-container">
+                      <Link to="/" className="navbar-item">
+                        About us
+                      </Link>
+                      <hr />
+                    </li>
                     <li>
                       <Link to="/" className="navbar-item">
-                        Home
+                        About us
                       </Link>
                     </li>
                     <li>
                       <Link className="navbar-item" to="/about">
-                        About
+                        Press room
                       </Link>
                     </li>
                     <li>
                       <Link className="navbar-item" to="/products">
-                        Products
+                        Sitemap
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
+                      <Link className="navbar-item" to="/products">
+                        Careers
                       </Link>
                     </li>
                     <li>
@@ -57,24 +64,79 @@ const Footer = class extends React.Component {
                   </ul>
                 </section>
               </div>
-              <div className="column is-4">
+              <div className="column is-3">
                 <section>
                   <ul className="menu-list">
+                    <li className="heading-container">
+                      <Link to="/" className="navbar-item">
+                        Help
+                      </Link>
+                      <hr />
+                    </li>
                     <li>
                       <Link className="navbar-item" to="/blog">
-                        Latest Stories
+                        FAQs
                       </Link>
                     </li>
                     <li>
                       <Link className="navbar-item" to="/contact">
-                        Contact
+                        Latest News
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/contact">
+                        Popular Topics
                       </Link>
                     </li>
                   </ul>
                 </section>
               </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
+              <div className="column is-3">
+                <section>
+                  <ul className="menu-list">
+                    <li className="heading-container">
+                      <Link to="/" className="navbar-item">
+                        Legal
+                      </Link>
+                      <hr />
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/blog">
+                        Terms of use
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/contact">
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/contact">
+                        Disclaimer
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/contact">
+                        Logo Usage
+                      </Link>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+              <div className="column is-3">
+              <ul className="menu-list">
+                    <li className="heading-container">
+                      <Link to="/" className="navbar-item">
+                        Contact Us
+                      </Link>
+                      <hr />
+                    </li>
+                    <li>
+                      <p>LendingHub.ca Main Office<br/>81 Zenway Blvd #25<br/>Woodbridge, ON, L4H 0S5</p>
+                    </li>
+                  </ul>
+                  <div className="social">
+                  <a title="facebook" href="https://facebook.com">
                   <img
                     src={facebook}
                     alt="Facebook"
@@ -103,6 +165,8 @@ const Footer = class extends React.Component {
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
+                  </div>
+
               </div>
             </div>
           </div>
