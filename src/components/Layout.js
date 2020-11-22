@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import Subscribe from '../components/Subscribe'
 import 'bulma/css/bulma.css'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
@@ -50,7 +51,8 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+        <div>{children}</div>
+      <Subscribe />
       <Footer />
     </div>
   )
