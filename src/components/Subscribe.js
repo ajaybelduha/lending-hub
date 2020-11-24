@@ -29,6 +29,7 @@ const Subscribe = () => {
 
 const SubscribeContainer = styled.section`
     .subscribe-container {
+        margin-top: 2rem;
         border: 1px solid #707070;
         border-radius: .5rem;
         padding: 1.5rem;
