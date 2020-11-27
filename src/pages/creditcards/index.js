@@ -4,7 +4,7 @@ import Hero from '../../components/Hero'
 import FeaturedCards from '../../components/creditcards/FeaturedCards';
 import FeaturedKnowledgeHub from '../../components/creditcards/FeaturedKnowledgeHub';
 import EditorsPick from '../../components/creditcards/EditorsPick';
-import QuestionnaireModal from '../../components/creditcards/QuestionnaireModal';
+import QuestionnaireModal from '../../components/creditcards/Questionnaires/QuestionnaireModal';
 
 const CreditCardHome = () => {
     const items = [
