@@ -4,7 +4,7 @@ import styled from 'styled-components'
 // import HeroImage from '../../static/img/home-hero-image.png'
 
 const Hero = (props) => {
-    const { title, subtitle, imageSrc, blockItems } = props;
+    const { title, subtitle, imageSrc, blockItems, onSelect } = props;
     return(
         <HeroContainer>
             <div className="hero">
@@ -14,7 +14,7 @@ const Hero = (props) => {
                         <div class="column is-half">
                             <h1 class="section-title">{title}</h1>
                             <h4 class="section-subtitle">{subtitle}</h4>
-                            <div class="blocks mt-5">
+                            <div class="blocks mt-5" onClick={onSelect}>
                                 {blockItems.map(item => (
                                     <div class="block">
                                         <figure class="image">

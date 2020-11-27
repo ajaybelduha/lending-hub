@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 import { ButtonNoStyle } from '../../common/common'
+import Fade from 'react-reveal/Fade';
 
-const Expenditure = () => {
+const Expenditure = (props) => {
     return(
         <ExpenditureContainer>
+            <Fade bottom>
             <div className="section-title">Find your perfect card in 60 seconds</div>
             <div className="heading-29 mb-6">On average, about how much do you spend on your credit card in a typical month?</div>
             <div className="slider-container">
@@ -21,14 +23,16 @@ const Expenditure = () => {
                 <hr />
                 <div className="buttons-container">
                     <ButtonNoStyle>Clear</ButtonNoStyle>
-                    <ButtonNoStyle>Apply</ButtonNoStyle>
+                    <ButtonNoStyle onClick={props.onNext}>Apply</ButtonNoStyle>
                 </div>
             </div>
+            </Fade>
         </ExpenditureContainer>
     )
 }
 
 const ExpenditureContainer = styled.div`
+    margin-top: 10%;
     text-align: center;
     .slider-container {
         width: 70%;

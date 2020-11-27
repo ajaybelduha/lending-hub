@@ -1,27 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
-const CardTypes = () => {
+const CardTypes = (props) => {
     return (
         <CardTypesContainer>
-            <div className="card-purpose has-text-centered">
-                <div className="section-title">My Card is for</div>
-                <div className="columns is-multiline">
-                    <div className="column">
+            <Fade bottom>
+                <div className="card-purpose has-text-centered">
+                    <div className="section-title">My Card is for</div>
+                    <div onClick={props.onNext} className="blocks">            
                         <div className="p-block bold">Build Credit Score</div>
+                        <div className="p-block bold">Low Balance Transfer</div>
+                        <div className="p-block bold">Low Interest</div>
+                        <div className="p-block bold">Prepaid Cards</div>
+                        <div className="p-block bold">Rewards</div>
+                        <div className="p-block bold">Any</div>
                     </div>
-                    <div className="column"><div className="p-block bold">Low Balance Transfer</div></div>
-                    <div className="column"><div className="p-block bold">Low Interest</div></div>
-                    <div className="column"><div className="p-block bold">Prepaid Cards</div></div>
-                    <div className="column"><div className="p-block bold">Rewards</div></div>
-                    <div className="column"><div className="p-block bold">Any</div></div>
                 </div>
-            </div>
+            </Fade>
         </CardTypesContainer>
     )
 }
 
 const CardTypesContainer = styled.div`
+    margin-top: 10%;
+    .blocks {
+        display: flex;
+        min-height: 300px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
     .p-block {
             background: #fff;
             cursor: pointer;

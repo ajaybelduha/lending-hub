@@ -3,32 +3,36 @@ import styled from 'styled-components';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 import { ButtonNoStyle } from '../../common/common'
+import Fade from 'react-reveal/Fade';
 
-const AnnualIncome = () => {
+const AnnualIncome = (props) => {
     return(
         <AnnualIncomeContainer>
-            <div className="section-title">Find your perfect card in 60 seconds</div>
-            <div className="heading-29 mb-6">What is your annual income?</div>
-            <div className="slider-container">
-            <div className='value'>40</div>
-                <Slider
-                    min={0}
-                    max={100}
-                    value={40}
-                    orientation='horizontal'
-                    //   onChange={this.handleChange}
-                />
-                <hr />
-                <div className="buttons-container">
-                    <ButtonNoStyle>Clear</ButtonNoStyle>
-                    <ButtonNoStyle>Apply</ButtonNoStyle>
+            <Fade bottom>
+                <div className="section-title">Find your perfect card in 60 seconds</div>
+                <div className="heading-29 mb-6">What is your annual income?</div>
+                <div className="slider-container">
+                <div className='value'>40</div>
+                    <Slider
+                        min={0}
+                        max={100}
+                        value={40}
+                        orientation='horizontal'
+                        //   onChange={this.handleChange}
+                    />
+                    <hr />
+                    <div className="buttons-container">
+                        <ButtonNoStyle>Clear</ButtonNoStyle>
+                        <ButtonNoStyle onClick={props.onNext}>Apply</ButtonNoStyle>
+                    </div>
                 </div>
-            </div>
+            </Fade>
         </AnnualIncomeContainer>
     )
 }
 
 const AnnualIncomeContainer = styled.div`
+    margin-top: 10%;
     text-align: center;
     .slider-container {
         width: 70%;

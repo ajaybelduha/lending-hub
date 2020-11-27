@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Layout from '../../components/Layout'
 import Hero from '../../components/Hero'
 import FeaturedCards from '../../components/creditcards/FeaturedCards';
@@ -7,6 +7,7 @@ import EditorsPick from '../../components/creditcards/EditorsPick';
 import QuestionnaireModal from '../../components/creditcards/Questionnaires/QuestionnaireModal';
 
 const CreditCardHome = () => {
+    const [showModal, setShowModal] = useState(false);
     const items = [
         {
             image: '/img/icons/employees.svg',
@@ -28,11 +29,12 @@ const CreditCardHome = () => {
                 subtitle="Here are the most popular credit card categories"
                 imageSrc='/img/creditcard-hero.png'
                 blockItems={items}
+                onSelect={() => setShowModal(true)}
             />
             <FeaturedCards />
             <FeaturedKnowledgeHub />
             <EditorsPick />
-            <QuestionnaireModal />
+            {showModal && <QuestionnaireModal />}
         </Layout>
     )
 }

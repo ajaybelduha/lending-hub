@@ -3,33 +3,38 @@ import styled from 'styled-components';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 import { ButtonNoStyle } from '../../common/common'
+import Fade from 'react-reveal/Fade';
 
-const CreditScore = () => {
+const CreditScore = (props) => {
     return(
         <CreditScoreContainer>
-            <div className="section-title">Find your perfect card in 60 seconds</div>
-            <div className="heading-29 mb-6">Do you know your credit score?</div>
-            <div className="slider-container">
-            <div className='value'>40</div>
-                <Slider
-                    min={0}
-                    max={100}
-                    value={40}
-                    orientation='horizontal'
-                    //   onChange={this.handleChange}
-                />
-                <hr />
-                <div className="buttons-container">
-                    <ButtonNoStyle>Clear</ButtonNoStyle>
-                    <ButtonNoStyle>Apply</ButtonNoStyle>
+            <Fade bottom>
+                <div className="section-title">Find your perfect card in 60 seconds</div>
+                <div className="heading-29 mb-6">Do you know your credit score?</div>
+                <div className="slider-container">
+                <div className='value'>40</div>
+                    <Slider
+                        min={0}
+                        max={100}
+                        value={40}
+                        orientation='horizontal'
+                        //   onChange={this.handleChange}
+                    />
+                    <div className='credit-text'>Good</div>
+                    <hr />
+                    <div className="buttons-container">
+                        <ButtonNoStyle>Clear</ButtonNoStyle>
+                        <ButtonNoStyle onClick={props.onNext}>Apply</ButtonNoStyle>
+                    </div>
                 </div>
-            </div>
+            </Fade>
         </CreditScoreContainer>
     )
 }
 
 const CreditScoreContainer = styled.div`
     text-align: center;
+    margin-top: 10%;
     .slider-container {
         width: 70%;
         margin: auto;

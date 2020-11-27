@@ -1,28 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
-const CardSubCategory = () => {
+const CardSubCategory = (props) => {
     return(
         <CardSubCategoryContainer>
-            <div className="section-title">Find your perfect card in 60 seconds</div>
-            <div className="heading-29">Please select your preferred reward type</div>
-            <div className="columns">
-                    <div className="column">
-                        <div className="p-block bold">Cashback</div>
-                    </div>
-                    <div className="column"><div className="p-block bold">Gas</div></div>
-                    <div className="column"><div className="p-block bold">Speciality</div></div>
-                    <div className="column"><div className="p-block bold">Travel</div></div>
-                    <div className="column"><div className="p-block bold">All of them</div></div>
+             <Fade bottom>
+                <div className="section-title">Find your perfect card in 60 seconds</div>
+                <div className="heading-29">Please select your preferred reward type</div>
+                <div className="blocks" onClick={props.onNext}>            
+                    <div className="p-block bold">Cashback</div>
+                    <div className="p-block bold">Gas</div>
+                    <div className="p-block bold">Speciality</div>
+                    <div className="p-block bold">Travel</div>
+                    <div className="p-block bold">All of them</div>
                 </div>
+             </Fade>
         </CardSubCategoryContainer>
     )
 }
 
 const CardSubCategoryContainer = styled.div`
     text-align: center;
+    margin-top: 10%;
     .heading-29 {
         font-size: 29px;
+    }
+    .blocks {
+        display: flex;
+        min-height: 300px;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
     .p-block {
             background: #fff;
