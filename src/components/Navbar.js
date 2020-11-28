@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+// import AniLink from "gatsby-plugin-transition-link/AniLink"
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.png'
 import search from '../img/search.svg'
@@ -62,30 +63,33 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start">
-              <Link className="navbar-item" to="/about">
+              <Link className="navbar-item" to="/mortgages">
                 Mortgages
               </Link>
-              <Link className="navbar-item" to="/products">
+              <Link className="navbar-item" to="/loans">
                 Loans
               </Link>
-              <Link className="navbar-item" to="/blog">
+              <Link className="navbar-item" to="/creditcards">
                 Credit Cards
               </Link>
-              <Link className="navbar-item" to="/contact">
+              <Link className="navbar-item" to="/insurance">
                 Insurance
               </Link>
-              <Link className="navbar-item" to="/contact/examples">
+              <Link className="navbar-item" to="/banking">
                 Banking
               </Link>
-              <Link className="navbar-item" to="/contact/examples">
+              <Link className="navbar-item" to="/blog">
                 Blog
               </Link>
-              <Link className="navbar-item" to="/contact/examples">
+              <Link className="navbar-item" to="/aboutus">
                 About Us
               </Link>
-              <Link className="navbar-item" to="/contact/examples">
+              <Link className="navbar-item" to="/contactus">
                 Contact Us
               </Link>
+              {/* <AniLink paintDrip to="/creditcards">
+  Go to Page 4
+</AniLink> */}
               <img src={search} alt="Kaldi" style={{ width: '16px' }} />
             </div>
           </div>
