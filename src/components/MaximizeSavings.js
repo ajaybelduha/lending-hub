@@ -7,11 +7,11 @@ const MaximizeSavings = () => {
             <div className="hero">
             <div class="hero-body">
                 <div class="container">
-                    <div class="columns">
+                    <div class="columns is-multiline">
                         <div class="column is-two-third">
                             <h1 class="section-title">Maximize Your Savings</h1>
                             <h4 class="section-subtitle">Wondering how long it’ll take to pay off a balance? Want to see how much you can save with a balance transfer card? Find out with our calculators.</h4>
-                            <div class="columns mt-5">
+                            <div class="columns is-multiline mt-5">
                                 <div class="column is-half">
                                     <div className="block">
                                         <figure class="icon">
@@ -93,9 +93,6 @@ const MaximizeSavings = () => {
 }
 
 const MaximizeSavingsContainer = styled.section`
-    .columns {
-        flex-wrap: wrap;
-    }
     .block {
         /* margin-right: 10px; */
         height: 100px;
