@@ -1,59 +1,40 @@
-// import React from 'react'
-
-// import Layout from '../../components/Layout'
-// import BlogRoll from '../../components/BlogRoll'
-
-// export default class CreditCardsIndexPage extends React.Component {
-//   render() {
-//     return (
-//       <Layout>
-//         <div
-//           className="full-width-image-container margin-top-0"
-//           style={{
-//             backgroundImage: `url('/img/blog-index.jpg')`,
-//           }}
-//         >
-//           <h1
-//             className="has-text-weight-bold is-size-1"
-//             style={{
-//               boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-//               backgroundColor: '#f40',
-//               color: 'white',
-//               padding: '1rem',
-//             }}
-//           >
-//             Latest Stories on Credit Cards
-//           </h1>
-//         </div>
-//         <section className="section">
-//           <div className="container">
-//             <div className="content">
-//               <BlogRoll />
-//             </div>
-//           </div>
-//         </section>
-//       </Layout>
-//     )
-//   }
-// }
-
-
-
-import React from 'react';
+import React, {useState} from 'react';
 import Layout from '../../components/Layout'
 import Hero from '../../components/Hero'
-import HowItWorks from '../../components/home/HowItWorks';
-import MaximizeSavings from '../../components/home/MaximizeSavings';
-import FeaturedBlogs from '../../components/home/FeaturedBlogs';
+import FeaturedCards from '../../components/creditcards/FeaturedCards';
+import FeaturedKnowledgeHub from '../../components/creditcards/FeaturedKnowledgeHub';
+import EditorsPick from '../../components/creditcards/EditorsPick';
+import QuestionnaireModal from '../../components/creditcards/Questionnaires/QuestionnaireModal';
 
 const CreditCardHome = () => {
-
+    const [showModal, setShowModal] = useState(false);
+    const items = [
+        {
+            image: '/img/icons/employees.svg',
+            title: 'Personal'
+        },
+        {
+            image: '/img/icons/graduated.svg',
+            title: 'Students'
+        },
+        {
+            image: '/img/icons/briefcase.svg',
+            title: 'Business'
+        }
+    ]
     return(
         <Layout>
-            <Hero/>
-            <HowItWorks/>
-            <MaximizeSavings />
-            <FeaturedBlogs />
+            <Hero 
+                title="Find the perfect credit card for you" 
+                subtitle="Here are the most popular credit card categories"
+                imageSrc='/img/creditcard-hero.png'
+                blockItems={items}
+                onSelect={() => setShowModal(true)}
+            />
+            <FeaturedCards />
+            <FeaturedKnowledgeHub />
+            <EditorsPick />
+            {showModal && <QuestionnaireModal />}
         </Layout>
     )
 }

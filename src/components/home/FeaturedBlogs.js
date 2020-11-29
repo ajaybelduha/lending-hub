@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import { UnderlinedLink } from '../../components/common/common';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -13,7 +14,10 @@ const FeaturedBlogs = () => {
     return(
         <FeaturedBlogsContainer>
             <div className="container">
-                <h1 class="section-title">Trusted news and reviews, published daily</h1>
+                <div className="header-with-link">
+                    <h1 class="section-title">Trusted news and reviews, published daily</h1>
+                    <UnderlinedLink>See all news</UnderlinedLink>
+                </div>
                 <div className="columns">
                     <div className="column is-two-third">
                     <Carousel 

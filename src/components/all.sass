@@ -3,7 +3,7 @@
   
 // Config vars
 // Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
+$kaldi-red: #D6400
 $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
@@ -18,6 +18,11 @@ body
 
 .container 
   padding: 1rem
+
+.header-with-link 
+  display: flex
+  justify-content: space-between
+  align-items: center
 
 a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active 
   background-color: white
@@ -162,6 +167,12 @@ $menu-label-color: $white-ter
 
 // TYPOGRAPHY
 
+.bold 
+  font-family: 'Poppins Bold'
+
+.grey-text 
+  color: #707070
+
 .section-title 
   font-size: 2.6rem
   font-family: 'Poppins Bold'
@@ -170,7 +181,11 @@ $menu-label-color: $white-ter
 .section-subtitle
   font-size: 1.1rem
 
-.title-small 
+.title-24 
+  font-size: 1.5rem
+  font-family: 'Poppins Bold'
+
+.title-small
   font-size: 1.8rem
   font-family: 'Poppins Bold'
 

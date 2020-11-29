@@ -21,4 +21,9 @@
 @font-face {
     font-family: "Poppins Semibold";
     src: url("POPPINS-SEMIBOLD.TTF") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins Medium";
+    src: url("POPPINS-MEDIUM.TTF") format("truetype");
 } 

@@ -35,6 +35,9 @@ const HowItWorksContainer = styled.section`
     h3 {
         margin-bottom: 1rem;
     }
+    h4 {
+        color: #636366;
+    }
 `
 
 export default HowItWorks;

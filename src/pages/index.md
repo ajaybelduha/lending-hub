@@ -1,5 +1,5 @@
 ---
-templateKey: index-page
+templateKey: home-page
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great Pravesh with a conscience
