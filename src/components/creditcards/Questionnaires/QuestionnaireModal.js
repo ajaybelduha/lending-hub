@@ -37,7 +37,7 @@ const QuestionnaireModalContainer = styled.div`
         .modal-content, .modal-card {
             margin: 0 auto;
             max-height: inherit;
-            width: 80%;
+            width: 1100px;
         }
         .modal-close {
             background-color: rgba(10, 10, 10, 0.3);

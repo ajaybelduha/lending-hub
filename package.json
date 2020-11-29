@@ -33,6 +33,7 @@
     "react-rangeslider": "^2.2.0",
     "react-responsive-carousel": "^3.2.10",
     "react-reveal": "^1.2.2",
+    "reactrangeslider": "^3.0.6",
     "styled-components": "^5.2.1",
     "uuid": "^7.0.0"
   },

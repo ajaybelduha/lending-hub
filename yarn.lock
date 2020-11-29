@@ -13291,6 +13291,11 @@ react@^16.8.0, react@^16.8.4:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
+reactrangeslider@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/reactrangeslider/-/reactrangeslider-3.0.6.tgz#5f3e1cef24fd3065322d4c01a0010199910f3737"
+  integrity sha1-Xz4c7yT9MGUyLUwBoAEBmZEPNzc=
+
 read-chunk@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/read-chunk/-/read-chunk-3.2.0.tgz#2984afe78ca9bfbbdb74b19387bf9e86289c16ca"

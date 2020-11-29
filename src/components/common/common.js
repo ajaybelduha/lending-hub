@@ -73,3 +73,30 @@ export const Checkbox = styled.div`
     height: 10px;
   }
 `
+
+
+export const BlockStack = styled.div`
+    display: flex;
+    min-height: 300px;
+    justify-content: center;
+    flex-wrap: wrap;
+    .p-block {
+            background: #fff;
+            cursor: pointer;
+            border-radius: 2px;
+            display: inline-block;
+            height: 136px;
+            margin: 1rem;
+            position: relative;
+            width: 136px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            border-radius: 8px;
+            :hover {
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            }
+        }
+`

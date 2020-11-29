@@ -10,7 +10,7 @@ const Expenditure = (props) => {
         <ExpenditureContainer>
             <Fade bottom>
             <div className="section-title">Find your perfect card in 60 seconds</div>
-            <div className="heading-29 mb-6">On average, about how much do you spend on your credit card in a typical month?</div>
+            <div className="title-24 mb-6">On average, about how much do you spend on your<br /> credit card in a typical month?</div>
             <div className="slider-container">
             <div className='value'>40</div>
                 <Slider
@@ -35,7 +35,7 @@ const ExpenditureContainer = styled.div`
     margin-top: 10%;
     text-align: center;
     .slider-container {
-        width: 70%;
+        width: 435px;
         margin: auto;
     }
     .heading-29 {

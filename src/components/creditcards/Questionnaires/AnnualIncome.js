@@ -10,7 +10,7 @@ const AnnualIncome = (props) => {
         <AnnualIncomeContainer>
             <Fade bottom>
                 <div className="section-title">Find your perfect card in 60 seconds</div>
-                <div className="heading-29 mb-6">What is your annual income?</div>
+                <div className="title-24 mb-6">What is your annual income?</div>
                 <div className="slider-container">
                 <div className='value'>40</div>
                     <Slider
@@ -35,7 +35,7 @@ const AnnualIncomeContainer = styled.div`
     margin-top: 10%;
     text-align: center;
     .slider-container {
-        width: 70%;
+        width: 435px;
         margin: auto;
     }
     .heading-29 {
