@@ -1,9 +1,59 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import { navigate } from 'gatsby';
 import Fade from 'react-reveal/Fade';
-import { InputField, Checkbox, BlackButtonLink } from '../components/common/common';
+import classNames from 'classnames';
+import { InputField, Checkbox, BlackButtonLink, BlackButton } from '../components/common/common';
 
-const RegisterForm = () => {
+const RegisterForm = (props) => {
+    const [emailError, setEmailError] = useState(false);
+    const [phoneError, setPhoneError] = useState(false);
+    const [nameError, setNameError] = useState(false);
+
+    const [state, setState] = React.useState({
+        name: "",
+        email: "",
+        phone: ""
+      })
+
+    const handleChange = (e) => {
+        isNonEmptyFields();
+        const value = e.target.value;
+        setState({
+            ...state,
+            [e.target.name]: value
+        });
+    }
+
+    const isNonEmptyFields = () => {
+        if(state.name.length === 0) {
+            setNameError(true);
+        } else {
+            setNameError(false);
+        }
+        if(state.email.length === 0) {
+            setEmailError(true);
+        } else {
+            setEmailError(false);
+        }
+        if(state.phone.length === 0) {
+            setPhoneError(true);
+        } else {
+            setPhoneError(false);
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("handleSubmit ", state);
+        isNonEmptyFields();
+       
+            if (!nameError && !emailError && !phoneError) {
+                navigate('/creditcards/listing');
+            }
+        
+        
+    }
     return (
         <RegisterFormContainer>
             <Fade bottom>
@@ -11,34 +61,52 @@ const RegisterForm = () => {
                 <div className="mb-6 has-text-centered">Get Instant Access</div>
                 <div className="form-container">
                     <form>
-                        <div class="field">
-                            <div class="control">
-                                {/* <input class="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
-                                <InputField type="text" className="input" placeholder="Full Name" />
+                        <div className="field">
+                            <div className="control">
+                                {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                                <InputField 
+                                    type="text" 
+                                    name="name"
+                                    value={state.name} 
+                                    onChange={handleChange}
+                                    className={classNames('input', {'is-danger': nameError })}
+                                    placeholder="Full Name" />
                             </div>
-                            <p class="help is-danger">This email is invalid</p>
+                            {nameError && <p className="help is-danger">Please provide a valid name</p>}
                         </div>
                         <div className="columns">
                             <div className="column">
-                                <div class="field">
-                                    <div class="control">
-                                        {/* <input class="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
-                                        <InputField type="text" className="input" placeholder="Full Name" />
+                                <div className="field">
+                                    <div className="control">
+                                        {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                                        <InputField 
+                                            type="email" 
+                                            name={'email'}
+                                            value={state.email} 
+                                            onChange={handleChange}
+                                            className={classNames('input', {'is-danger': emailError })}
+                                            placeholder="Email ID" />
                                     </div>
-                                    <p class="help is-danger">This email is invalid</p>
+                                    {emailError && <p className="help is-danger">Please provide a valid email</p>}
                                 </div>
                             </div>
                             <div className="column">
-                                <div class="field">
-                                    <div class="control">
-                                        {/* <input class="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
-                                        <InputField type="text" className="input" placeholder="Full Name" />
+                                <div className="field">
+                                    <div className="control">
+                                        {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                                        <InputField 
+                                            type="text" 
+                                            name={'phone'}
+                                            value={state.phone} 
+                                            onChange={handleChange}
+                                            className={classNames('input', {'is-danger': phoneError })}
+                                            placeholder="Phone Number" />
                                     </div>
-                                    <p class="help is-danger">This email is invalid</p>
+                                    {phoneError && <p className="help is-danger">Please provide a valid phone number</p>}
                                 </div>
                             </div>
                         </div>
-                        <div className="checkboxes">
+                        <div className="checkboxes mb-4">
                             <Checkbox>
                                 <input type="checkbox" id="html" />
                                 <label for="html">Do you want to receive credit card news, advice and exclusive offers?</label>
@@ -48,7 +116,8 @@ const RegisterForm = () => {
                                 <label for="html2">I accept Terms of Use & Privacy Policy. By creating an account I understand and consent to communication via email and text message (std. messaging rates apply) by Lendinghub Inc. and its agents/affiliates.</label>
                             </Checkbox>
                         </div>
-                        <BlackButtonLink to="/creditcards/listing">Let's see Cards</BlackButtonLink>
+                        {/* <BlackButtonLink to="/creditcards/listing">Let's see Cards</BlackButtonLink> */}
+                        <BlackButton onClick={handleSubmit}>Let's see Cards</BlackButton>
                     </form>
                 </div>
             </Fade>

@@ -9,7 +9,7 @@ const Dropdown = (props) => {
                     <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
                         <span>{props.default}</span>
                         <span className="icon is-small">
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <i className="fa fa-angle-down" aria-hidden="true"></i>
                         </span>
                     </button>
                 </div>

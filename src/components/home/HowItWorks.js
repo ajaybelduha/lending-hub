@@ -5,7 +5,7 @@ const HowItWorks = () => {
     return(
         <HowItWorksContainer>
             <div className="container has-text-centered">
-                <h1 class="section-title">How it works</h1>
+                <h1 className="section-title">How it works</h1>
                 <div className="columns">
                     <div className="column mx-4">
                         <img src="/img/icons/conversation.svg" />

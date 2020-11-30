@@ -25,28 +25,28 @@ const EditorsPick = () => {
                 <div className="ep-other-blocks mt-4">
                     <div className="columns">
                         <div className="column">
-                            <div class="block">
+                            <div className="block">
                                 <img src="/img/sample-image.jpg" />
                                 <h4 className="title-2 my-3">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
                                 <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
                             </div>
                         </div>
                         <div className="column">
-                            <div class="block">
+                            <div className="block">
                                 <img src="/img/sample-image.jpg" />
                                 <h4 className="title-2 my-3">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
                                 <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
                             </div>
                         </div>
                         <div className="column">
-                            <div class="block">
+                            <div className="block">
                                 <img src="/img/sample-image.jpg" />
                                 <h4 className="title-2 my-3">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
                                 <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
                             </div>
                         </div>
                         <div className="column">
-                            <div class="block">
+                            <div className="block">
                                 <img src="/img/sample-image.jpg" />
                                 <h4 className="title-2 my-3">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
                                 <h4 className="meta">7 Min Read | OCT 8th 2020</h4>

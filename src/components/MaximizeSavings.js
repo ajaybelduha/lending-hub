@@ -5,82 +5,82 @@ const MaximizeSavings = () => {
     return(
         <MaximizeSavingsContainer>
             <div className="hero">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns is-multiline">
-                        <div class="column is-two-third">
-                            <h1 class="section-title">Maximize Your Savings</h1>
-                            <h4 class="section-subtitle">Wondering how long it’ll take to pay off a balance? Want to see how much you can save with a balance transfer card? Find out with our calculators.</h4>
-                            <div class="columns is-multiline mt-5">
-                                <div class="column is-half">
+            <div className="hero-body">
+                <div className="container">
+                    <div className="columns is-multiline">
+                        <div className="column is-two-third">
+                            <h1 className="section-title">Maximize Your Savings</h1>
+                            <h4 className="section-subtitle">Wondering how long it’ll take to pay off a balance? Want to see how much you can save with a balance transfer card? Find out with our calculators.</h4>
+                            <div className="columns is-multiline mt-5">
+                                <div className="column is-half">
                                     <div className="block">
-                                        <figure class="icon">
+                                        <figure className="icon">
                                             <img src="/img/mortgage.svg" />
                                         </figure>
                                         <div className="title-3">
                                             Mortgage Payment Calculator 
-                                            <img class="arrow" src="/img/left-arrow.svg" />
+                                            <img className="arrow" src="/img/left-arrow.svg" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="column is-half">
+                                <div className="column is-half">
                                 <div className="block">
-                                        <figure class="icon">
+                                        <figure className="icon">
                                             <img src="/img/mortgage.svg" />
                                         </figure>
                                         <div className="title-3">
                                             Affordability Calculator 
-                                            <img class="arrow" src="/img/left-arrow.svg" />
+                                            <img className="arrow" src="/img/left-arrow.svg" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="column is-half">
+                                <div className="column is-half">
                                 <div className="block">
-                                        <figure class="icon">
+                                        <figure className="icon">
                                             <img src="/img/mortgage.svg" />
                                         </figure>
                                         <div className="title-3">
                                             Land Transfer Tax Calculator 
-                                            <img class="arrow" src="/img/left-arrow.svg" />
+                                            <img className="arrow" src="/img/left-arrow.svg" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="column is-half">
+                                <div className="column is-half">
                                 <div className="block">
-                                        <figure class="icon">
+                                        <figure className="icon">
                                             <img src="/img/mortgage.svg" />
                                         </figure>
                                         <div className="title-3">
                                             CMHC Insurance Calculator 
-                                            <img class="arrow" src="/img/left-arrow.svg" />
+                                            <img className="arrow" src="/img/left-arrow.svg" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="column is-half">
+                                <div className="column is-half">
                                 <div className="block">
-                                        <figure class="icon">
+                                        <figure className="icon">
                                             <img src="/img/mortgage.svg" />
                                         </figure>
                                         <div className="title-3">
                                            Home Value Calculator 
-                                            <img class="arrow" src="/img/left-arrow.svg" />
+                                            <img className="arrow" src="/img/left-arrow.svg" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="column is-half">
+                                <div className="column is-half">
                                 <div className="block">
-                                        <figure class="icon">
+                                        <figure className="icon">
                                             <img src="/img/mortgage.svg" />
                                         </figure>
                                         <div className="title-3">
                                            See all calculators
-                                            <img class="arrow" src="/img/left-arrow.svg" />
+                                            <img className="arrow" src="/img/left-arrow.svg" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="column is-one-third has-text-right">
+                        <div className="column is-one-third has-text-right">
                             <img height="25em" src="/img/maximize-savings.png" alt="maximize savings image" />
                             {/* <Image fixed={HeroImage} /> */}
                         </div>

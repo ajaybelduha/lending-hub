@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import { Link } from 'gatsby';
 // import Image from 'gatsby-image'
 // import HeroImage from '../../static/img/home-hero-image.png'
 
@@ -8,27 +9,29 @@ const Hero = (props) => {
     return(
         <HeroContainer>
             <div className="hero">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column is-half">
-                            <h1 class="section-title">{title}</h1>
-                            <h4 class="section-subtitle">{subtitle}</h4>
-                            <div class="blocks mt-5" onClick={onSelect}>
+            <div className="hero-body">
+                <div className="container">
+                    <div className="columns">
+                        <div className="column is-half">
+                            <h1 className="section-title">{title}</h1>
+                            <h4 className="section-subtitle">{subtitle}</h4>
+                            <div className="blocks mt-5" onClick={onSelect}>
                                 {blockItems.map(item => (
-                                    <div class="block">
-                                        <figure class="image">
-                                            <img src={item.image} />
-                                        </figure>
-                                        <h3 class="title-2">{item.title}</h3>
-                                        <div class="icon">
-                                            <img src="/img/left-arrow.svg" />
-                                        </div>    
-                                    </div>
+                                    <Link to={item.link} state={{ id: item.key }}>
+                                        <div className="block">
+                                            <figure className="image">
+                                                <img src={item.image} />
+                                            </figure>
+                                            <h3 className="title-2">{item.title}</h3>
+                                            <div className="icon">
+                                                <img src="/img/left-arrow.svg" />
+                                            </div>    
+                                        </div>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
-                        <div class="column is-half has-text-right">
+                        <div className="column is-half has-text-right">
                             <img height="25em" src={imageSrc} alt="home hero image" />
                             {/* <Image fixed={HeroImage} /> */}
                         </div>

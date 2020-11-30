@@ -12,12 +12,12 @@ const Subscribe = () => {
                     </div>
                     <div className="column">
                         <div className="is-flex-desktop">
-                        <div class="field">
-                            <div class="control">
-                                <input class="input" type="text" placeholder="Email" />
+                        <div className="field">
+                            <div className="control">
+                                <input className="input" type="text" placeholder="Email" />
                             </div>
                         </div>
-                        <button class="button is-black">Subscribe</button>
+                        <button className="button is-black">Subscribe</button>
                         </div>
                         
                     </div>
