@@ -15,7 +15,7 @@ const FeaturedBlogs = () => {
         <FeaturedBlogsContainer>
             <div className="container">
                 <div className="header-with-link">
-                    <h1 class="section-title">Trusted news and reviews, published daily</h1>
+                    <h1 className="section-title">Trusted news and reviews, published daily</h1>
                     <UnderlinedLink>See all news</UnderlinedLink>
                 </div>
                 <div className="columns">

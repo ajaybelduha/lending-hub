@@ -1,32 +1,55 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import Slider from 'react-rangeslider';
-import 'react-rangeslider/lib/index.css'
-import { ButtonNoStyle } from '../../common/common'
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import { ButtonNoStyle, SliderContainer } from '../../common/common'
 import Fade from 'react-reveal/Fade';
 
 const CreditScore = (props) => {
+    const [score, setScore] = useState(300);
+    const [rating, setRating] = useState('Good');
+
+    useEffect(() => {
+        if (score <= 629) {
+            setRating('Bad');
+        } else if (score > 629 && score <= 689) {
+            setRating('Fair');
+        } else if (score > 690 && score <= 719) {
+            setRating('Good');
+        } else if (score > 720 && score <= 850) {
+            setRating('Excellent');
+        }
+    }, score)
+
+    const setScoreValue = (val) => {
+        setScore(val);
+    }
     return(
         <CreditScoreContainer>
             <Fade bottom>
                 <div className="section-title">Find your perfect card in 60 seconds</div>
                 <div className="title-24 mb-6">Do you know your credit score?</div>
-                <div className="slider-container">
-                <div className='value'>40</div>
+                <SliderContainer>
+                <div className='value title-24'>{score}</div>
                     <Slider
-                        min={0}
-                        max={100}
-                        value={40}
+                        min={300}
+                        max={850}
+                        value={score}
                         orientation='horizontal'
-                        //   onChange={this.handleChange}
+                        onChange={(val) => setScoreValue(val)}
                     />
-                    <div className='credit-text'>Good</div>
+                    {/* <Range
+                        min={300}
+                        max={850}
+                        step={1}
+                    /> */}
+                    <div className='credit-text mt-6'>{rating}</div>
                     <hr />
                     <div className="buttons-container">
                         <ButtonNoStyle>Clear</ButtonNoStyle>
-                        <ButtonNoStyle onClick={props.onNext}>Apply</ButtonNoStyle>
+                        <ButtonNoStyle onClick={() => props.setValue('creditScore', score)}>Apply</ButtonNoStyle>
                     </div>
-                </div>
+                </SliderContainer>
             </Fade>
         </CreditScoreContainer>
     )
@@ -35,46 +58,13 @@ const CreditScore = (props) => {
 const CreditScoreContainer = styled.div`
     text-align: center;
     margin-top: 10%;
-    .slider-container {
-        width: 435px;
-        margin: auto;
-    }
     .heading-29 {
         font-size: 29px;
     }
-    .rangeslider .rangeslider__handle {
-        box-shadow: none;
-        background-color: #1C1C1E;
+    .buttons-container {
+        display: flex;
+        justify-content: space-between;
     }
-    .rangeslider-horizontal .rangeslider__fill {
-        background-color: #707070;
-    }
-    .rangeslider-horizontal .rangeslider__handle:after {
-        display: none;
-    }
-    .p-block {
-            background: #fff;
-            cursor: pointer;
-            border-radius: 2px;
-            display: inline-block;
-            height: 136px;
-            margin: 1rem;
-            position: relative;
-            width: 136px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            border-radius: 8px;
-            :hover {
-                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-            }
-        }
-        .buttons-container {
-            display: flex;
-            justify-content: space-between;
-        }
 `
 
 export default CreditScore;

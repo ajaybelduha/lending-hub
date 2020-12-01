@@ -12,6 +12,22 @@ export const BlackButtonLink = styled(props => <Link {...props} />)`
     text-align: center;
 `;
 
+export const BlackButton = styled.button`
+    background-color: #1C1C1E;
+    color: #FFFFFF;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    border: 0;
+    font-family: "Poppins Regular";
+    cursor: pointer;
+    :hover {
+      background-color: #FFFFFF;
+      color: #1C1C1E;
+      border: 1px solid #1C1C1E;
+    }
+`
+
 export const UnderlinedLink = styled(props => <Link {...props} />)`
   text-decoration: underline;
   color: #323131;
@@ -21,6 +37,7 @@ export const ButtonNoStyle = styled.button`
   background-color: transparent;
   color: #1C1C1E;
   border: 0;
+  cursor: pointer;
 `
 
 export const InputField = styled.input`
@@ -99,4 +116,27 @@ export const BlockStack = styled.div`
                 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
             }
         }
+`
+
+export const SliderContainer = styled.div`
+  width: 435px;
+  margin: auto;
+  .rc-slider-rail {
+    background-color: #707070;
+    height: 10px;
+    border-radius: 6px;
+  }
+  .rc-slider-handle {
+    width: 26px;
+    height: 26px;
+    margin-top: -8px;
+    background-color: #1C1C1E;
+    outline: 0;
+    border: solid 2px #1C1C1E;
+}
+.rc-slider-track {
+    height: 10px;
+    background-color: #1C1C1E;
+}
+
 `

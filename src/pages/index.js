@@ -9,23 +9,28 @@ const HomePage = () => {
     const items = [
         {
             image: '/img/icons/mortgage-copy.svg',
-            title: 'Mortgages'
+            title: 'Mortgages',
+            link: "/mortgages"
         },
         {
             image: '/img/icons/loan.svg',
-            title: 'Loans'
+            title: 'Loans',
+            link: "/loans"
         },
         {
             image: '/img/icons/surface1.svg',
-            title: 'Credit Cards'
+            title: 'Credit Cards',
+            link: '/creditcards'
         },
         {
             image: '/img/icons/insurance.svg',
-            title: 'Insurance'
+            title: 'Insurance',
+            link: "/insurance"
         },
         {
             image: '/img/icons/wallet.svg',
-            title: 'Banking'
+            title: 'Banking',
+            link: "/banking"
         },
     ]
     return(
