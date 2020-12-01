@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
+import { navigate } from 'gatsby';
 import Layout from '../../components/Layout';
 import CardTypes from '../../components/creditcards/Questionnaires/CardTypes';
 import CardSubCategory from '../../components/creditcards/Questionnaires/CardSubCategory';
@@ -28,6 +29,11 @@ const QuestionnaireModal = (props) => {
         await setSelections(data);
         setStep(step + 1);
     }
+    const submitAnswers = (key, value) => {
+        console.log(selections);
+        console.log(key, value);
+        navigate('/creditcards/listing');
+    }
     return(
         <Layout>
         <QuestionnaireModalContainer>
@@ -39,7 +45,7 @@ const QuestionnaireModal = (props) => {
                     {step === 3 && <CreditScore setValue={setValue} />}
                     {step === 4 && <AnnualIncome setValue={setValue} />}
                     {step === 5 && <Expenditure setValue={setValue} />}
-                    {step === 6 && <RegisterForm setValue={setValue} />}
+                    {step === 6 && <RegisterForm setValue={submitAnswers} />}
                 </div>
                 <button className="modal-close is-large" aria-label="close"></button>
             </div>
