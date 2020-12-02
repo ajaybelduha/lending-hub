@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components'
 import { Link } from 'gatsby';
 // import Image from 'gatsby-image'
@@ -18,15 +18,7 @@ const Hero = (props) => {
                             <div className="blocks mt-5" onClick={onSelect}>
                                 {blockItems.map(item => (
                                     <Link to={item.link} state={{ id: item.key }}>
-                                        <div className="block">
-                                            <figure className="image">
-                                                <img src={item.image} />
-                                            </figure>
-                                            <h3 className="title-2">{item.title}</h3>
-                                            <div className="icon">
-                                                <img src="/img/left-arrow.svg" />
-                                            </div>    
-                                        </div>
+                                        <Block data={item} />
                                     </Link>
                                 ))}
                             </div>
@@ -42,6 +34,29 @@ const Hero = (props) => {
         </HeroContainer>
     )
 }
+
+const Block = ({data}) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const toggleHover = () => {
+        setIsHovered(() => !isHovered);
+    }
+    return(
+        <div
+            onMouseEnter={toggleHover}
+            onMouseLeave={toggleHover}
+            className="block">
+            <figure className="image">
+                {isHovered ? <img src={data.imageHover} /> : <img src={data.image} />}
+            </figure>
+            <h3 className="title-2">{data.title}</h3>
+            <div className="icon">
+                {/* <img src="/img/left-arrow.svg" /> */}
+                {isHovered ? <img width={'36px'} src="/img/icons/left-arrow-hover.svg" /> : <img src="/img/left-arrow.svg" />}
+            </div>
+        </div>
+    )
+}
+
 
 const HeroContainer = styled.section`
     .blocks {
@@ -69,16 +84,16 @@ const HeroContainer = styled.section`
         }
         .image {
             margin-bottom: 10px;
-        }
-        img {
-            width: 50px;
-             height: 50px;
+            img {
+                width: 50px;
+                height: 50px;
+            }
         }
         h3 {
             margin-bottom: 10px;
         }
         .icon {
-            width: 19px;
+            width: 36px;
         }
     }
     @media screen and (max-width: 786px) {

@@ -10,18 +10,21 @@ const CreditCardHome = () => {
         {
             key: 1,
             image: '/img/icons/employees.svg',
+            imageHover: '/img/icons/employees_hover.svg',
             title: 'Personal',
             link: '/creditcards/questions'
         },
         {
             key: 2,
             image: '/img/icons/graduated.svg',
+            imageHover: '/img/icons/graduated_hover.svg',
             title: 'Students',
             link: '/creditcards/questions'
         },
         {
             key: 3,
             image: '/img/icons/briefcase.svg',
+            imageHover: '/img/icons/briefcase_hover.svg',
             title: 'Business',
             link: '/creditcards/questions'
         }

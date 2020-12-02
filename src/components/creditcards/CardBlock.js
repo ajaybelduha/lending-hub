@@ -2,32 +2,39 @@ import React from 'react';
 import styled from 'styled-components';
 import { BlackButtonLink } from '../../components/common/common'
 import Accordion from '../../components/Accordion'
+import Image from 'gatsby-image';
 
-const paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet natus sint provident vel ab reprehenderit cum soluta, suscipit facere nisi sed earum repellendus fuga debitis, nam molestiae minima voluptates possimus.'
-
-const data = [
-    {
-        title: 'Read More',
-        paragraph
-    }
-]
-
-const CardBlock = () => {
+const CardBlock = ({cardData}) => {
+    const { title, 
+        cardImage, 
+        fee, 
+        purchaseInterest, 
+        cashAdvanceInterest, 
+        href, 
+        summaryDescription
+    } = cardData.node.frontmatter;
+    const data = [
+        {
+            title: 'Read More',
+            paragraph: summaryDescription
+        }
+    ]
     return(
         <CardBlockContainer>
            <hr />
-           <h2 className="title-24">MBNA True Line® Mastercard®</h2>
+           <h2 className="title-24">{title}</h2>
            <p>This offer not available for resident of quebec</p>
            <div className="card-details">
                 <div className="image">
-                    <img src="/img/true-line-gold-mastercardcard.png" />
+                    {/* <img src="/img/true-line-gold-mastercardcard.png" /> */}
+                    <Image fixed={cardImage.childImageSharp.fixed} />
                 </div>
                 <div className="details">
                     <div className="columns is-multiline">
                         <div className="column">
                             <div className="item">
                                 <div className="key">Annual Fee</div>
-                                <div className="value bold">$0</div>
+    <div className="value bold">${fee}</div>
                             </div>
                         </div>
                         <div className="column">
@@ -45,19 +52,19 @@ const CardBlock = () => {
                         <div className="column">
                         <div className="item">
                                 <div className="key">Cash Advance</div>
-                                <div className="value bold">22.99%</div>
+    <div className="value bold">{cashAdvanceInterest}%</div>
                             </div>
                         </div>
                         <div className="column">
                         <div className="item">
                                 <div className="key">Interest rate</div>
-                                <div className="value bold">12.9%</div>
+    <div className="value bold">{purchaseInterest}%</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="action">
-                    <BlackButtonLink>Apply Now</BlackButtonLink>
+                    <BlackButtonLink to={href}>Apply Now</BlackButtonLink>
                 </div>
            </div>
             <div className="more-details">

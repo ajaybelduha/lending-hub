@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import Layout from '../../components/Layout';
 import Dropdown from '../../components/Dropdown';
 import CardBlock from '../../components/creditcards/CardBlock';
+import { graphql } from 'gatsby';
 
-const CCListing = () => {
+const CCListing = (response) => {
+    console.log("Credit Cards Listings")
+    console.log(response);
+    const {creditCards} = response.data;
     return (
         <CCListingContainer>
             <Layout>
@@ -18,8 +22,9 @@ const CCListing = () => {
                         <Dropdown default="Low to High" />
                     </div>
                     <div className="cards-container">
-                        <CardBlock />
-                        <CardBlock />
+                        {creditCards.edges.map(item => (
+                            <CardBlock cardData={item}  />
+                        ))}
                     </div>
                 </div>
             </Layout>
@@ -35,6 +40,32 @@ const CCListingContainer = styled.div`
     .cards-container {
         margin-top: 2rem;
     }
+`
+
+export const pageQuery = graphql`
+query CreditCardListing {
+    creditCards:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "credit-card-post" } }}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            cardImage {
+              childImageSharp {
+                fixed(width: 299, height: 189) {
+                    ...GatsbyImageSharpFixed
+                }
+              }
+            }
+            fee
+            purchaseInterest
+            cashAdvanceInterest
+            href
+            summaryDescription
+          }
+        }
+      }
+    }
+  }
 `
 
 export default CCListing;
