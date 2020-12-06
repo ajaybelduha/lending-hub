@@ -51,13 +51,15 @@ query CreditCardListing {
             title
             cardImage {
               childImageSharp {
-                fixed(width: 299, height: 189) {
-                    ...GatsbyImageSharpFixed
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
+            creditScore
             fee
             purchaseInterest
+            balanceTranferFees
             cashAdvanceInterest
             href
             summaryDescription

@@ -10,6 +10,12 @@ export const BlackButtonLink = styled(props => <Link {...props} />)`
     padding: 0.75rem;
     margin: 1rem 0;
     text-align: center;
+    border: 1px solid #1C1C1E;
+    :hover {
+      background-color: #FFFFFF;
+      color: #1C1C1E;
+      border: 1px solid #1C1C1E;
+    }
 `;
 
 export const BlackButton = styled.button`

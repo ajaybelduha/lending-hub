@@ -9,6 +9,8 @@ const CardBlock = ({cardData}) => {
         cardImage, 
         fee, 
         purchaseInterest, 
+        creditScore,
+        balanceTranferFees,
         cashAdvanceInterest, 
         href, 
         summaryDescription
@@ -27,7 +29,7 @@ const CardBlock = ({cardData}) => {
            <div className="card-details">
                 <div className="image">
                     {/* <img src="/img/true-line-gold-mastercardcard.png" /> */}
-                    <Image fixed={cardImage.childImageSharp.fixed} />
+                    <Image fluid={cardImage.childImageSharp.fluid} />
                 </div>
                 <div className="details">
                     <div className="columns is-multiline">
@@ -39,14 +41,14 @@ const CardBlock = ({cardData}) => {
                         </div>
                         <div className="column">
                         <div className="item">
-                                <div className="key">Rewards rate</div>
-                                <div className="value bold">N/A</div>
+                                <div className="key">Interest Rate</div>
+    <div className="value bold">{purchaseInterest}%</div>
                             </div>
                         </div>
                         <div className="column">
                         <div className="item">
-                                <div className="key">Welcome bonus</div>
-                                <div className="value bold">+$100</div>
+                                <div className="key">Balance Transfer</div>
+    <div className="value bold">{balanceTranferFees}%</div>
                             </div>
                         </div>
                         <div className="column">
@@ -57,8 +59,8 @@ const CardBlock = ({cardData}) => {
                         </div>
                         <div className="column">
                         <div className="item">
-                                <div className="key">Interest rate</div>
-    <div className="value bold">{purchaseInterest}%</div>
+                                <div className="key">Credit Score Type</div>
+    <div className="value bold">{creditScore}</div>
                             </div>
                         </div>
                     </div>
