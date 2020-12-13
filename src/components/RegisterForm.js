@@ -52,7 +52,7 @@ const RegisterForm = (props) => {
     return (
         <RegisterFormContainer>
             <Fade bottom>
-                <div className="section-title has-text-centered">Find your perfect card in 60 seconds</div>
+                <div className="section-title has-text-centered">Tell a little bit about yourself</div>
                 <div className="mb-6 has-text-centered">Get Instant Access</div>
                 <div className="form-container">
                     <form onSubmit={formik.handleSubmit}>
@@ -128,7 +128,7 @@ const RegisterForm = (props) => {
                             {formik.touched.terms && formik.errors.terms ? <p className="help is-danger">{formik.errors.terms}</p> : null}
                         </div>
                         {/* <BlackButtonLink to="/creditcards/listing">Let's see Cards</BlackButtonLink> */}
-                        <BlackButton type="submit">Let's see Cards</BlackButton>
+                        <BlackButton type="submit">{props.submitText}</BlackButton>
                     </form>
                 </div>
             </Fade>

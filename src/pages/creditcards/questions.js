@@ -51,7 +51,7 @@ const QuestionnaireModal = (props) => {
                     {step === 3 && <CreditScore setValue={setValue} />}
                     {step === 4 && <AnnualIncome setValue={setValue} />}
                     {step === 5 && <Expenditure setValue={setValue} />}
-                    {step === 6 && <RegisterForm setValue={submitAnswers} />}
+                    {step === 6 && <RegisterForm submitText="Let's see Cards" setValue={submitAnswers} />}
                 </div>
                 <button className="modal-close is-large" aria-label="close"></button>
             </div>

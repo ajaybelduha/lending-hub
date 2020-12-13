@@ -13,21 +13,21 @@ const MortgagesHome = () => {
             image: '/img/icons/home.svg',
             imageHover: '/img/icons/home_hover.svg',
             title: 'Home Buying',
-            link: '/creditcards/questions'
+            link: '/mortgages/questions'
         },
         {
             key: 2,
             image: '/img/icons/mortgage.svg',
             imageHover: '/img/icons/mortgage_hover.svg',
             title: 'Refinancing Mortgage',
-            link: '/creditcards/questions'
+            link: '/mortgages/questions'
         },
         {
             key: 3,
             image: '/img/icons/renewable.svg',
             imageHover: '/img/icons/renewable_hover.svg',
             title: 'Renewal Mortgage',
-            link: '/creditcards/questions'
+            link: '/mortgages/questions'
         }
     ]
     return(
