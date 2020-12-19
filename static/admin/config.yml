@@ -97,7 +97,7 @@ collections:
 
   - name: "refinancingMortgages"
     label: "Refinancing Mortgages"
-    folder: "src/pages/mortgages/refinance"
+    folder: "src/markdown/mortgages/refinance"
     slug: "{{slug}}"
     create: true
     fields:
@@ -110,7 +110,7 @@ collections:
       - {label: "Amortization", name: "amortization", widget: "select", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
       - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: true}
 
-      
+
   
   - name: "loans"
     label: "Loans"
