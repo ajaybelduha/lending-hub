@@ -1,8 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Layout from '../../components/Layout';
+import Dropdown from '../../components/Dropdown';
+import { graphql } from 'gatsby';
+import MortgageBlock from '../../components/mortgages/MortgageBlock'
 
-const MortgageListings = (props) => {
+const MortgageListings = (response) => {
+    const {mortgages} = response.data;
+    const mortgagesData = mortgages.edges
 
     const [mortgageListingHtml, setMortgageListingHtml] = useState('');
 
@@ -28,7 +33,22 @@ const MortgageListings = (props) => {
                 <MortgageStyledContainer>
                     <h1 className="section-title">Recommended mortgages for you</h1>
                     <h4 className="section-subtitle">Based on your answers, we’ve provided the top matches for you to compare below. Review and select the one that best matches your needs.</h4>
-                    <div className="content" dangerouslySetInnerHTML={{__html: mortgageListingHtml}}></div>
+                    <h4 className="title-24 mt-6">Your mortgage search</h4>
+                    <div className="filters-container">
+                        <Dropdown default="Travel" />
+                        <Dropdown default="No Annul Fee" />
+                        <Dropdown default="Welcome Bonus" />
+                        <Dropdown default="Low to High" />
+                    </div>
+                    <hr/>
+
+                    <div className="mortgages-container">
+                        {mortgagesData.map(item => (
+                            <MortgageBlock mortgages={item} />
+                        ))}
+                    </div>
+                    
+                    {/* <div className="content" dangerouslySetInnerHTML={{__html: mortgageListingHtml}}></div> */}
                 </MortgageStyledContainer>
             </div>
         </Layout>
@@ -36,6 +56,13 @@ const MortgageListings = (props) => {
 }
 
 const MortgageStyledContainer = styled.div`
+    .filters-container {
+        margin-top: 20px;
+        display: flex;
+    }
+
+
+
     .rh-all-rates-table {
         max-width: 100%;
         .rh-sortable-table .banner {
@@ -135,6 +162,40 @@ const MortgageStyledContainer = styled.div`
         }
         }
     }
+`
+
+export const mortgageQuery = graphql`
+query MortgageTemplate {
+    mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "home-mortgages" } }}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            templateKey
+            logo {
+              childImageSharp {
+                fixed(width: 52, height: 52) {
+                    ...GatsbyImageSharpFixed
+                }
+              }
+            }
+            amortization
+            isFeatured
+            fixed {
+              _1
+              _2
+              _3
+              _5
+            }
+            variable {
+              _3
+              _5
+            }
+          }
+        }
+      }
+    }
+  }
 `
 
 export default MortgageListings;
