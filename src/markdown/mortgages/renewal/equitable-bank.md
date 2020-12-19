@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: renewal-mortgages
 title: Equitable Bank
 logo: /img/equitable-bank.png
 amortization: "25"

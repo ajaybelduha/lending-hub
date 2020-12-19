@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: refinance-mortgages
 title: motusbank
 logo: /img/motusbank.png
 amortization: "25"

@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: renewal-mortgages
 title: Scotiabank
 logo: /img/scotiabank-mortgage.png
 amortization: "25"

@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: refinance-mortgages
 title: Alterna Savings
 logo: /img/alterna-savings-credit-union.png
 amortization: "25"

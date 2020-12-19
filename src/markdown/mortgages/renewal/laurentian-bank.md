@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: renewal-mortgages
 title: Laurentian Bank
 logo: /img/laurentian.png
 amortization: "25"

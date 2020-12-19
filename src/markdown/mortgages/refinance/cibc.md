@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: refinance-mortgages
 title: CIBC
 logo: /img/cibc.png
 amortization: "25"
