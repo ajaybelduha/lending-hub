@@ -95,5 +95,5 @@ export const can_mortgage_payment = (principal, annual_rate, num_years, periods_
 
 	var payment = annuity_payment(principal, nominal_rate, periods_per_year, num_years) / divisor;
 
-	return payment;
+	return Math.ceil(payment);
 }

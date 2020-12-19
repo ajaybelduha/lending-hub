@@ -1,12 +1,38 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BlackButtonLink } from '../../components/common/common'
+import { can_mortgage_payment } from '../../components/common/utils'
 import Image from 'gatsby-image';
 
-const MortgageBlock = ({mortgages}) => {
+const MortgageBlock = ({mortgages, filterData}) => {
     console.log("Mortgage Listings")
     const item = mortgages.node.frontmatter;
     console.log(item)
+
+    const getRate = () => {
+        const { totalMortgage, rateType, mortgageTerm } = filterData;
+        const item = mortgages.node.frontmatter;
+        let rate;
+        if (rateType === 'fixed') {
+            rate = item[`fixed`][`_${mortgageTerm}`]
+        } else {
+            rate = item[`variable`][`_${mortgageTerm}`]
+        }
+        console.log("rate: "+rate)
+        return rate;
+    }
+
+    const getMonthlyAmount = () => {
+        const { totalMortgage, rateType, mortgageTerm } = filterData;
+        const rate = getRate() / 100;
+        const monthly = can_mortgage_payment(totalMortgage, rate, 25, 12, 1);
+        console.log("monthly: "+monthly)
+        return monthly;
+    }
+
+    getMonthlyAmount();
+
+
     return(
         <MortgageBlockContainer>
            <div className="mortgage-details">
@@ -16,9 +42,9 @@ const MortgageBlock = ({mortgages}) => {
                        <h3 className="name title-24-nb">{item.title}</h3>
                    </div>
                </div>
-               <div className="rate">{item.fixed._1}%</div>
+               <div className="rate">{getRate()}%</div>
 
-               <div className="monthly-payment">$1,783/mo</div>
+               <div className="monthly-payment">${getMonthlyAmount()}/mo</div>
                <div className="action">
                     <BlackButtonLink to="/">Apply Now</BlackButtonLink>
                 </div>

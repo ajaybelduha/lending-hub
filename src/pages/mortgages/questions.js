@@ -11,23 +11,18 @@ const QuestionnaireModal = (props) => {
     const [selections, setSelections] = useState({});
 
     const setValue = async (key, value) => {
-        // console.log(key, value);
-        // let data = selections;
-        // data[key]= value;
-        // await setSelections(data);
-        // if (key === 'cardFor' && value === 'rewards') {
-        //     setStep(step + 1);
-        // } else if (key === 'cardFor' && value !== 'rewards') {
-        //     setStep(step + 2);
-        // } else {
-        //     setStep(step + 1);
-        // }
+        console.log(key, value);
+        let data = selections;
+        data[key]= value;
+        await setSelections(data);
         setStep(step + 1);
     }
     const submitAnswers = (key, value) => {
         console.log(selections);
         console.log(key, value);
-        navigate('/mortgages/listing');
+        navigate('/mortgages/listing', {
+            state: { selections },
+          });
     }
     return(
         <Layout>

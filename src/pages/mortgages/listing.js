@@ -7,6 +7,8 @@ import MortgageBlock from '../../components/mortgages/MortgageBlock'
 
 const MortgageListings = (response) => {
     const {mortgages} = response.data;
+    const { state } = response.location;
+    const questionFilters = state.selections.formValues;
     const mortgagesData = mortgages.edges
 
     const [mortgageListingHtml, setMortgageListingHtml] = useState('');
@@ -44,7 +46,7 @@ const MortgageListings = (response) => {
 
                     <div className="mortgages-container">
                         {mortgagesData.map(item => (
-                            <MortgageBlock mortgages={item} />
+                            <MortgageBlock mortgages={item} filterData={questionFilters} />
                         ))}
                     </div>
                     
