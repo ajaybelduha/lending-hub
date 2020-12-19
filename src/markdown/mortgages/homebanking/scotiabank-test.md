@@ -1,6 +1,6 @@
 ---
 templateKey: home-mortgages
-title: Scotiabank test
+title: Scotiabank
 logo: /img/scotiabank-mortgage.png
 amortization: "25"
 isFeatured: true
