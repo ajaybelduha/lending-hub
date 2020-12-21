@@ -1,6 +1,7 @@
 ---
 templateKey: home-mortgages
 title: Laurentian Bank
+mortgage: mortgage
 logo: /img/laurentian.png
 amortization: "25"
 isFeatured: true

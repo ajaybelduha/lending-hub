@@ -1,5 +1,6 @@
 ---
 templateKey: home-mortgages
+mortgage: mortgage
 title: CIBC
 logo: /img/cibc.png
 amortization: "25"

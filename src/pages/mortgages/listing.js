@@ -2,13 +2,61 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Layout from '../../components/Layout';
 import Dropdown from '../../components/Dropdown';
-import { graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import MortgageBlock from '../../components/mortgages/MortgageBlock'
 
-const MortgageListings = (response) => {
-    const {mortgages} = response.data;
-    const { state } = response.location;
+const homeMortgageQuery = graphql`
+query homeQuery {
+    mortgages:allMarkdownRemark(filter: {frontmatter:{ mortgage: { eq: "mortgage" } }}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            templateKey
+            logo {
+              childImageSharp {
+                fixed(width: 52, height: 52) {
+                    ...GatsbyImageSharpFixed
+                }
+              }
+            }
+            amortization
+            isFeatured
+            fixed {
+              _1
+              _2
+              _3
+              _5
+            }
+            variable {
+              _3
+              _5
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+const MortgageListings = (props) => {
+    let queryToUse = homeMortgageQuery
+    const { state } = props.location;
     const questionFilters = state.selections.formValues;
+
+    // if(questionFilters.mortgageType === 'Home Buying') {
+    //     queryToUse = homeMortgageQuery
+    // } 
+    // else if(questionFilters.mortgageType === 'Renewal') {
+    //     queryToUse = renewalMortgageQuery
+    // } else {
+    //     queryToUse = refinanceMortgageQuery
+    // }
+    
+    
+    const response = useStaticQuery(homeMortgageQuery)
+    console.log(response)
+    const {mortgages} = response;
     const mortgagesData = mortgages.edges
 
     const [mortgageListingHtml, setMortgageListingHtml] = useState('');
@@ -56,6 +104,81 @@ const MortgageListings = (response) => {
         </Layout>
     )
 }
+
+// const renewalMortgageQuery = graphql`
+// query renewalQuery {
+//     mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "renewal-mortgages" } }}) {
+//       edges {
+//         node {
+//           frontmatter {
+//             title
+//             templateKey
+//             logo {
+//               childImageSharp {
+//                 fixed(width: 52, height: 52) {
+//                     ...GatsbyImageSharpFixed
+//                 }
+//               }
+//             }
+//             amortization
+//             isFeatured
+//             fixed {
+//               _1
+//               _2
+//               _3
+//               _5
+//             }
+//             variable {
+//               _3
+//               _5
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+// const refinanceMortgageQuery = graphql`
+// query refinanceQuery {
+//     mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "refinance-mortgages" } }}) {
+//       edges {
+//         node {
+//           frontmatter {
+//             title
+//             templateKey
+//             logo {
+//               childImageSharp {
+//                 fixed(width: 52, height: 52) {
+//                     ...GatsbyImageSharpFixed
+//                 }
+//               }
+//             }
+//             amortization
+//             isFeatured
+//             fixed {
+//               _1
+//               _2
+//               _3
+//               _5
+//             }
+//             variable {
+//               _3
+//               _5
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+
+
+
+
+
+
 
 const MortgageStyledContainer = styled.div`
     .filters-container {
@@ -166,39 +289,39 @@ const MortgageStyledContainer = styled.div`
     }
 `
 
-export const mortgageQuery = graphql`
-query MortgageTemplate {
-    mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "home-mortgages" } }}) {
-      edges {
-        node {
-          frontmatter {
-            title
-            templateKey
-            logo {
-              childImageSharp {
-                fixed(width: 52, height: 52) {
-                    ...GatsbyImageSharpFixed
-                }
-              }
-            }
-            amortization
-            isFeatured
-            fixed {
-              _1
-              _2
-              _3
-              _5
-            }
-            variable {
-              _3
-              _5
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const mortgageQuery = graphql`
+// query MortgageTemplate {
+//     mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "home-mortgages" } }}) {
+//       edges {
+//         node {
+//           frontmatter {
+//             title
+//             templateKey
+//             logo {
+//               childImageSharp {
+//                 fixed(width: 52, height: 52) {
+//                     ...GatsbyImageSharpFixed
+//                 }
+//               }
+//             }
+//             amortization
+//             isFeatured
+//             fixed {
+//               _1
+//               _2
+//               _3
+//               _5
+//             }
+//             variable {
+//               _3
+//               _5
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//`
 
 export default MortgageListings;
 

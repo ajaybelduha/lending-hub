@@ -8,6 +8,26 @@ import { getTotalMortgageAndCmhc } from '../../components/common/utils'
 import Dropdown from '../../components/Dropdown';
 import { useStaticQuery } from 'gatsby';
 
+const validate = values => {
+    const errors = {};
+    if (!values.purchasePrice) {
+      errors.purchasePrice = 'Please provide a valid price';
+    } else if (values.purchasePrice.length < 3) {
+      errors.purchasePrice = 'Please provide a valid price';
+    }
+  
+    if (!values.downPaymentNumeric) {
+      errors.downPaymentNumeric = 'Please provide a valid downpayment';
+    } 
+  
+    if (!values.closingDate) {
+      errors.closingDate = 'Please provide a valid closing date'; 
+    }
+
+  
+    return errors;
+  };
+
 const MortgageFields = (props) => {
     const [cmhcValue, setCmhcValue] = useState(0);
     const [totalMortgageValue, setTotalMortgageValue] = useState(0);
@@ -22,7 +42,7 @@ const MortgageFields = (props) => {
             rateType: 'fixed',
             mortgageTerm: 2
         },
-        // validate,
+        validate,
         onSubmit: values => {
           values.cmhc = cmhcValue;
           values.totalMortgage = totalMortgageValue;
@@ -40,6 +60,11 @@ const MortgageFields = (props) => {
             formik.setFieldValue(name, value);   
         }
     }
+
+    // const isValidNumber = (val) => {
+    //     const regex = /^(0*[0-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/;
+    //     const isValidNumber = !val || regex.test(val.toString());
+    // }
 
     const setPrincipalAndCmhc = (principal, dp) => {
         const response = getTotalMortgageAndCmhc(principal, dp);

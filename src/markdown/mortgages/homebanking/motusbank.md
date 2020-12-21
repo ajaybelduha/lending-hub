@@ -1,5 +1,6 @@
 ---
 templateKey: home-mortgages
+mortgage: mortgage
 title: motusbank
 logo: /img/motusbank.png
 amortization: "25"
