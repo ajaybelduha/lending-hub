@@ -27,5 +27,5 @@ summaryDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
   ultrices posuere cubilia curae; Praesent sed euismod tellus, et rhoncus mi. In
   et lacus a massa tempus tincidunt. Duis vitae dolor in elit dignissim aliquet
   at et odio. Fusce elit orci, posuere eget nisl in, egestas convallis mi.
-featured: true
+featured: false
 ---
