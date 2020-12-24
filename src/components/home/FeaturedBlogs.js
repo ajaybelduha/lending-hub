@@ -40,7 +40,7 @@ const FeaturedBlogs = () => {
                         }
                     >
                         <div className="carousel-main-image">
-                            <img src="/img/sample-image.jpg" />
+                            <img src="/img/coffee-gear.png" />
                             <div className="text-over-image">
                                 <h4 className="type mb-2">Banking</h4>
                                 <h4 className="heading mb-2">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
@@ -48,7 +48,7 @@ const FeaturedBlogs = () => {
                             </div>
                         </div>
                         <div className="carousel-main-image">
-                            <img src="/img/sample-image.jpg" />
+                            <img src="/img/coffee-gear.png" />
                             <div className="text-over-image">
                                 <h4 className="type mb-2 title-1">Banking</h4>
                                 <h4 className="heading mb-2">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
@@ -56,7 +56,7 @@ const FeaturedBlogs = () => {
                             </div>
                         </div>
                         <div className="carousel-main-image">
-                            <img src="/img/sample-image.jpg" />
+                            <img src="/img/coffee-gear.png" />
                             <div className="text-over-image">
                                 <h4 className="type mb-2 title-1">Banking</h4>
                                 <h4 className="heading mb-2">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>

@@ -26,28 +26,28 @@ const EditorsPick = () => {
                     <div className="columns">
                         <div className="column">
                             <div className="block">
-                                <img src="/img/sample-image.jpg" />
+                                <img src="/img/coffee-gear.png" />
                                 <h4 className="title-2 my-3">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
                                 <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
                             </div>
                         </div>
                         <div className="column">
                             <div className="block">
-                                <img src="/img/sample-image.jpg" />
+                                <img src="/img/coffee-gear.png" />
                                 <h4 className="title-2 my-3">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
                                 <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
                             </div>
                         </div>
                         <div className="column">
                             <div className="block">
-                                <img src="/img/sample-image.jpg" />
+                                <img src="/img/coffee-gear.png" />
                                 <h4 className="title-2 my-3">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
                                 <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
                             </div>
                         </div>
                         <div className="column">
                             <div className="block">
-                                <img src="/img/sample-image.jpg" />
+                                <img src="/img/coffee-gear.png" />
                                 <h4 className="title-2 my-3">Lorem Ipsum is simply dummy of the printing and typesetting industry. Lorem Ipsum</h4>
                                 <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
                             </div>
@@ -72,7 +72,7 @@ const EditorsPickContainer = styled.section`
         }
     }
     .image {
-        background-image: url('/img/sample-image.jpg');
+        background-image: url('/img/coffee-gear.png');
         width: 65%;
         background-size: cover;
         background-repeat: no-repeat;
