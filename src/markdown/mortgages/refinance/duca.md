@@ -1,5 +1,6 @@
 ---
 templateKey: refinance-mortgages
+mortgage: mortgage
 title: Duca
 logo: /img/duca.png
 amortization: "25"

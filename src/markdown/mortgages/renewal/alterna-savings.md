@@ -1,5 +1,6 @@
 ---
 templateKey: renewal-mortgages
+mortgage: mortgage
 title: Alterna Savings
 logo: /img/alterna-savings-credit-union.png
 amortization: "25"

@@ -10,6 +10,7 @@ const MortgageBlock = ({mortgages, filterData}) => {
     console.log(item)
 
     const getRate = () => {
+        console.log("GET RATE CALLED")
         const { totalMortgage, rateType, mortgageTerm } = filterData;
         const item = mortgages.node.frontmatter;
         let rate;
@@ -29,8 +30,6 @@ const MortgageBlock = ({mortgages, filterData}) => {
         console.log("monthly: "+monthly)
         return monthly;
     }
-
-    getMonthlyAmount();
 
 
     return(

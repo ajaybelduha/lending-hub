@@ -33,7 +33,7 @@ const MortgageFields = (props) => {
     const [totalMortgageValue, setTotalMortgageValue] = useState(0);
     const formik = useFormik({
         initialValues: {
-            mortgageType: 'Home Buying',
+            mortgageType: props?.type,
             purchasePrice: '',
             downPaymentNumeric: '',
             downPaymentPercent: '',
@@ -46,7 +46,7 @@ const MortgageFields = (props) => {
         onSubmit: values => {
           values.cmhc = cmhcValue;
           values.totalMortgage = totalMortgageValue;
-          alert(JSON.stringify(values, null, 2));
+          // alert(JSON.stringify(values, null, 2));
           props.setValue('formValues', values);
         },
       });
@@ -57,6 +57,7 @@ const MortgageFields = (props) => {
         const regex = /^(0*[0-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/;
         const isValidNumber = !value || regex.test(value.toString());
         if(isValidNumber) {
+            console.log("setValue of "+name+" to "+value)
             formik.setFieldValue(name, value);   
         }
     }
@@ -82,9 +83,16 @@ const MortgageFields = (props) => {
         const { purchasePrice, downPaymentNumeric } = formik.values;
         if(purchasePrice) {
             const percentValue = (100*downPaymentNumeric)/purchasePrice;
+            console.log("Percent Value: "+percentValue.toFixed(2))
+            if (percentValue > 0 && percentValue < 100) {
+                setPrincipalAndCmhc(purchasePrice, downPaymentNumeric);
+            } else {
+                setPrincipalAndCmhc(0, 0);
+            }
+
+
             percentValue > 0.09 ? formik.setFieldValue('downPaymentPercent', percentValue)
-             : formik.setFieldValue('downPaymentPercent', 0.0)
-            setPrincipalAndCmhc(purchasePrice, downPaymentNumeric);
+             : formik.setFieldValue('downPaymentPercent', '')
         }
     }, [formik.values.downPaymentNumeric])
 
@@ -92,6 +100,7 @@ const MortgageFields = (props) => {
         const { purchasePrice, downPaymentPercent } = formik.values;
         if(purchasePrice) {
             const numericValue = (downPaymentPercent*purchasePrice)/100;
+            console.log("Numeric Value: "+Math.ceil(numericValue))
             formik.setFieldValue('downPaymentNumeric', numericValue);
         }
     }, [formik.values.downPaymentPercent])
@@ -126,10 +135,6 @@ const MortgageFields = (props) => {
                                     </div>
                                     {formik.touched.mortgageType && formik.errors.mortgageType ? <p className="help is-danger">{formik.errors.mortgageType}</p> : null}
                                 </div>
-
-
-
-
 
 
 

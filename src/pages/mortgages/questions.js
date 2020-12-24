@@ -17,6 +17,7 @@ const QuestionnaireModal = (props) => {
         await setSelections(data);
         setStep(step + 1);
     }
+
     const submitAnswers = (key, value) => {
         console.log(selections);
         console.log(key, value);
@@ -24,13 +25,27 @@ const QuestionnaireModal = (props) => {
             state: { selections },
           });
     }
+
+    const getSelectedMortgageType = () => {
+        const id = props?.location?.state?.id
+        let mortgageType = 'Home Buying';
+        if (id === 2) {
+            mortgageType = 'Refinance'
+        } else if (id === 3) {
+            mortgageType = 'Renewal'
+        } else {
+            mortgageType = 'Home Buying'
+        }
+        return mortgageType
+    }
+
     return(
         <Layout>
         <QuestionnaireModalContainer>
             <div className="container">
             {/* <div className="modal-background"></div> */}
                 <div className="">
-                    {step === 1 && <MortgageFields setValue={setValue} />}
+                    {step === 1 && <MortgageFields type={getSelectedMortgageType()} setValue={setValue} />}
                     {step === 2 && <RegisterForm submitText="Get Rates" setValue={submitAnswers} />}
                 </div>
                 <button className="modal-close is-large" aria-label="close"></button>

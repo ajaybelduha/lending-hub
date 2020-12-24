@@ -1,5 +1,6 @@
 ---
 templateKey: renewal-mortgages
+mortgage: mortgage
 title: CIBC
 logo: /img/cibc.png
 amortization: "25"

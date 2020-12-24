@@ -1,5 +1,6 @@
 ---
 templateKey: refinance-mortgages
+mortgage: mortgage
 title: Scotiabank
 logo: /img/scotiabank-mortgage.png
 amortization: "25"

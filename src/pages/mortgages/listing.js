@@ -2,80 +2,39 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Layout from '../../components/Layout';
 import Dropdown from '../../components/Dropdown';
+import ListingFilter from '../../components/mortgages/ListingFilter'
 import { graphql, useStaticQuery } from 'gatsby';
 import MortgageBlock from '../../components/mortgages/MortgageBlock'
 
-const homeMortgageQuery = graphql`
-query homeQuery {
-    mortgages:allMarkdownRemark(filter: {frontmatter:{ mortgage: { eq: "mortgage" } }}) {
-      edges {
-        node {
-          frontmatter {
-            title
-            templateKey
-            logo {
-              childImageSharp {
-                fixed(width: 52, height: 52) {
-                    ...GatsbyImageSharpFixed
-                }
-              }
-            }
-            amortization
-            isFeatured
-            fixed {
-              _1
-              _2
-              _3
-              _5
-            }
-            variable {
-              _3
-              _5
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
-const MortgageListings = (props) => {
-    let queryToUse = homeMortgageQuery
-    const { state } = props.location;
-    const questionFilters = state.selections.formValues;
-
-    // if(questionFilters.mortgageType === 'Home Buying') {
-    //     queryToUse = homeMortgageQuery
-    // } 
-    // else if(questionFilters.mortgageType === 'Renewal') {
-    //     queryToUse = renewalMortgageQuery
-    // } else {
-    //     queryToUse = refinanceMortgageQuery
-    // }
-    
-    
-    const response = useStaticQuery(homeMortgageQuery)
-    console.log(response)
-    const {mortgages} = response;
-    const mortgagesData = mortgages.edges
-
-    const [mortgageListingHtml, setMortgageListingHtml] = useState('');
-
-    const appendScript = () => {
-        const script = document.createElement("script");
-        script.src = "https://www.ratehub.ca/assets/js/widget-loader.js";
-        script.async = true;
-        document.body.appendChild(script);
-    }
+const MortgageListings = (response) => {
+    const { state } = response.location;
+    const questionFilters = state?.selections?.formValues;
+    const [mortgageListing, setMortgageListing] = useState();
+    const [mortgageFiltered, setMortgageFiltered] = useState();
+    const [filters, setFilters] = useState(questionFilters)
 
     useEffect(() => {
-        // console.log(props);
-        // const { id } = props.location.state;
-        appendScript();
-        setMortgageListingHtml(`<div>
-        <div class="widget" data-widget="mtg-table" data-purchase="true" data-lang="en"></div>
-     </div>`)
-    }, []);
+        const {mortgages} = response.data;
+        const mortgagesData = mortgages.edges;
+        if (questionFilters.mortgageType = "Home Buying") {
+            const filteredData = mortgagesData.filter(item => item?.node?.frontmatter?.templateKey === 'home-mortgages')
+            setMortgageFiltered(filteredData)
+        } else if(questionFilters.mortgageType = "Renewal") {
+            const filteredData = mortgagesData.filter(item => item?.node?.frontmatter?.templateKey === 'renewal-mortgages')
+            setMortgageFiltered(filteredData)
+        } else {
+            const filteredData = mortgagesData.filter(item => item?.node?.frontmatter?.templateKey === 'refinance-mortgages')
+            setMortgageFiltered(filteredData)
+        }
+        setMortgageListing(mortgagesData)
+    }, [])
+
+    const setFilteredData = (items) => {
+        console.log("setting filtered data")
+        console.log(items)
+        setFilters(items)
+    }
 
     return(
         <Layout>
@@ -84,17 +43,18 @@ const MortgageListings = (props) => {
                     <h1 className="section-title">Recommended mortgages for you</h1>
                     <h4 className="section-subtitle">Based on your answers, we’ve provided the top matches for you to compare below. Review and select the one that best matches your needs.</h4>
                     <h4 className="title-24 mt-6">Your mortgage search</h4>
-                    <div className="filters-container">
-                        <Dropdown default="Travel" />
-                        <Dropdown default="No Annul Fee" />
-                        <Dropdown default="Welcome Bonus" />
-                        <Dropdown default="Low to High" />
-                    </div>
+                    <ListingFilter 
+                        data={mortgageListing} 
+                        filtersFromQuestions={questionFilters}
+                        setFiltered={setFilteredData}
+                    />
                     <hr/>
-
                     <div className="mortgages-container">
-                        {mortgagesData.map(item => (
-                            <MortgageBlock mortgages={item} filterData={questionFilters} />
+                        {mortgageFiltered && mortgageFiltered.map(item => (
+                            <MortgageBlock 
+                                mortgages={item} 
+                                filterData={filters} 
+                            />
                         ))}
                     </div>
                     
@@ -104,80 +64,6 @@ const MortgageListings = (props) => {
         </Layout>
     )
 }
-
-// const renewalMortgageQuery = graphql`
-// query renewalQuery {
-//     mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "renewal-mortgages" } }}) {
-//       edges {
-//         node {
-//           frontmatter {
-//             title
-//             templateKey
-//             logo {
-//               childImageSharp {
-//                 fixed(width: 52, height: 52) {
-//                     ...GatsbyImageSharpFixed
-//                 }
-//               }
-//             }
-//             amortization
-//             isFeatured
-//             fixed {
-//               _1
-//               _2
-//               _3
-//               _5
-//             }
-//             variable {
-//               _3
-//               _5
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-
-// const refinanceMortgageQuery = graphql`
-// query refinanceQuery {
-//     mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "refinance-mortgages" } }}) {
-//       edges {
-//         node {
-//           frontmatter {
-//             title
-//             templateKey
-//             logo {
-//               childImageSharp {
-//                 fixed(width: 52, height: 52) {
-//                     ...GatsbyImageSharpFixed
-//                 }
-//               }
-//             }
-//             amortization
-//             isFeatured
-//             fixed {
-//               _1
-//               _2
-//               _3
-//               _5
-//             }
-//             variable {
-//               _3
-//               _5
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-
-
-
-
-
-
 
 
 const MortgageStyledContainer = styled.div`
@@ -289,39 +175,39 @@ const MortgageStyledContainer = styled.div`
     }
 `
 
-// export const mortgageQuery = graphql`
-// query MortgageTemplate {
-//     mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "home-mortgages" } }}) {
-//       edges {
-//         node {
-//           frontmatter {
-//             title
-//             templateKey
-//             logo {
-//               childImageSharp {
-//                 fixed(width: 52, height: 52) {
-//                     ...GatsbyImageSharpFixed
-//                 }
-//               }
-//             }
-//             amortization
-//             isFeatured
-//             fixed {
-//               _1
-//               _2
-//               _3
-//               _5
-//             }
-//             variable {
-//               _3
-//               _5
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-//`
+export const mortgageQuery = graphql`
+query MortgageTemplate {
+    mortgages:allMarkdownRemark(filter: {frontmatter:{ mortgage: { eq: "mortgage" } }}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            templateKey
+            logo {
+              childImageSharp {
+                fixed(width: 52, height: 52) {
+                    ...GatsbyImageSharpFixed
+                }
+              }
+            }
+            amortization
+            isFeatured
+            fixed {
+              _1
+              _2
+              _3
+              _5
+            }
+            variable {
+              _3
+              _5
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default MortgageListings;
 

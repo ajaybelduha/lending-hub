@@ -6,21 +6,31 @@ import { BlackButtonLink, UnderlinedLink } from '../common/common'
 
 const featuredMortgages = graphql`
 query FeaturedMortgageItems {
-    mortgages:allMarkdownRemark(filter: {frontmatter:{ templateKey: { eq: "credit-card-post" } featured: {eq: true} }}, limit: 3) {
+    mortgages:allMarkdownRemark(filter: {frontmatter:{ mortgage: { eq: "mortgage" } }}, limit: 3) {
       edges {
         node {
           frontmatter {
             title
-            cardImage {
+            templateKey
+            logo {
               childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                fixed(width: 52, height: 52) {
+                    ...GatsbyImageSharpFixed
                 }
               }
             }
-            href
-            featured
-            summaryDescription
+            amortization
+            isFeatured
+            fixed {
+              _1
+              _2
+              _3
+              _5
+            }
+            variable {
+              _3
+              _5
+            }
           }
         }
       }
@@ -31,6 +41,8 @@ query FeaturedMortgageItems {
 const FeaturedMortgages = () => {
     const data = useStaticQuery(featuredMortgages)
     const mortgageItems = data.mortgages.edges;
+    console.log("featured")
+    console.log(mortgageItems)
     // temp1[0].node.frontmatter.title
     return(
         <FeaturedContainer>
@@ -43,12 +55,11 @@ const FeaturedMortgages = () => {
                             <div className="column">
                                 <div className="card-block has-text-centered">
                                     {/* <img src="/img/true-line-gold-mastercardcard.png" /> */}
-                                    {/* <Image fluid={card.cardImage.childImageSharp.fluid} /> */}
                                     <div className="card-head">
-                                      <img width={20} src="/img/true-line-gold-mastercardcard.png" />
-                                      <h2 className="title-24">CanWise Financial</h2>
+                                      <Image fixed={card.logo.childImageSharp.fixed} />
+                                      <h2 className="title-24-nb">{card.title}</h2>
                                     </div>
-                                    <p className="has-text-left mt-4">{card.summaryDescription}</p>
+                                    <p className="has-text-left title-small mt-4">Get an amazing rate of {card.fixed._5}% for 5 year fixed with this mortgage</p>
                                     <BlackButtonLink>More Details</BlackButtonLink>
                                     <p>Featured</p>
                                 </div>
@@ -57,7 +68,7 @@ const FeaturedMortgages = () => {
                     })}
                 </div>
                 <div className="view-all has-text-centered">
-                    <UnderlinedLink to="/creditcards/listing">View all</UnderlinedLink>
+                    <UnderlinedLink to="/mortgages/listing">View all</UnderlinedLink>
                 </div>
             </div>
         </FeaturedContainer>
@@ -68,15 +79,16 @@ const FeaturedContainer = styled.section`
     .card-block {
         border: 1px solid #000000;
         padding: 1rem 2rem;
-        height: 270px;
+        height: 400px;
         p {
-          height: 73px;
+          height: 150px;
           overflow: hidden;
         }
         .card-head {
           display: flex;
-          img {
-            margin-right: 20px
+          align-items: center;
+          h2 {
+            margin-left: 20px
           }
         }
     }
