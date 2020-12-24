@@ -9,12 +9,12 @@ const TotalMortgageInputs = (props) => {
     const [cmhcValue, setCmhcValue] = useState(0);
     const [totalMortgageValue, setTotalMortgageValue] = useState(0);
     const {filtersFromQuestions, setFilteredFromInput } = props;
-    const { purchasePrice, downPaymentNumeric, downPaymentPercent } = filtersFromQuestions
+    // const { purchasePrice, downPaymentNumeric, downPaymentPercent } = filtersFromQuestions
     const formik = useFormik({
         initialValues: {
-            purchasePrice,
-            downPaymentNumeric,
-            downPaymentPercent,
+            purchasePrice: filtersFromQuestions?.purchasePrice,
+            downPaymentNumeric: filtersFromQuestions?.downPaymentNumeric,
+            downPaymentPercent: filtersFromQuestions?.downPaymentPercent,
         },
         onSubmit: values => {
           values.cmhc = cmhcValue;
