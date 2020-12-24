@@ -10,6 +10,12 @@ export const BlackButtonLink = styled(props => <Link {...props} />)`
     padding: 0.75rem;
     margin: 1rem 0;
     text-align: center;
+    border: 1px solid #1C1C1E;
+    :hover {
+      background-color: #FFFFFF;
+      color: #1C1C1E;
+      border: 1px solid #1C1C1E;
+    }
 `;
 
 export const BlackButton = styled.button`
@@ -44,6 +50,68 @@ export const InputField = styled.input`
     height: 53px;
     border-radius: 0;
     border: ${props => props.isDanger ? `1px solid #f14668` : `1px solid #707070`};
+`
+
+export const RadioButton = styled.label`
+  /* The container */
+  display: block;
+  position: relative;
+  margin-right: 20px;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  float: left;
+
+
+/* Hide the browser's default radio button */
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 19px;
+  width: 19px;
+  border: 1px solid #1C1C1E;
+  border-radius: 50%;
+}
+
+/* When the radio button is checked, add a blue background */
+input:checked ~ .checkmark {
+  background-color: #FFFFFF;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1C1C1E;
+}
 `
 
 export const Checkbox = styled.div`

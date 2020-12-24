@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout'
 import Hero from '../../components/Hero'
-import FeaturedCards from '../../components/creditcards/FeaturedCards';
+import FeaturedMortgages from '../../components/mortgages/FeaturedMortgages';
 import MaximizeSavings from '../../components/MaximizeSavings';
 import FeaturedKnowledgeHub from '../../components/creditcards/FeaturedKnowledgeHub';
 import EditorsPick from '../../components/creditcards/EditorsPick';
@@ -9,16 +9,25 @@ import EditorsPick from '../../components/creditcards/EditorsPick';
 const MortgagesHome = () => {
     const items = [
         {
+            key: 1,
             image: '/img/icons/home.svg',
-            title: 'Home Buying'
+            imageHover: '/img/icons/home_hover.svg',
+            title: 'Home Buying',
+            link: '/mortgages/questions'
         },
         {
+            key: 2,
             image: '/img/icons/mortgage.svg',
-            title: 'Refinancing Mortgage'
+            imageHover: '/img/icons/mortgage_hover.svg',
+            title: 'Refinancing Mortgage',
+            link: '/mortgages/questions'
         },
         {
+            key: 3,
             image: '/img/icons/renewable.svg',
-            title: 'Renewal Mortgage'
+            imageHover: '/img/icons/renewable_hover.svg',
+            title: 'Renewal Mortgage',
+            link: '/mortgages/questions'
         }
     ]
     return(
@@ -29,7 +38,7 @@ const MortgagesHome = () => {
                 imageSrc='/img/mortgages-hero.png'
                 blockItems={items}
             />
-            <FeaturedCards />
+            <FeaturedMortgages />
             <MaximizeSavings />
             <FeaturedKnowledgeHub />
             <EditorsPick />

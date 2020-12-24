@@ -27,7 +27,13 @@ const QuestionnaireModal = (props) => {
         let data = selections;
         data[key]= value;
         await setSelections(data);
-        setStep(step + 1);
+        if (key === 'cardFor' && value === 'rewards') {
+            setStep(step + 1);
+        } else if (key === 'cardFor' && value !== 'rewards') {
+            setStep(step + 2);
+        } else {
+            setStep(step + 1);
+        }
     }
     const submitAnswers = (key, value) => {
         console.log(selections);
@@ -45,7 +51,7 @@ const QuestionnaireModal = (props) => {
                     {step === 3 && <CreditScore setValue={setValue} />}
                     {step === 4 && <AnnualIncome setValue={setValue} />}
                     {step === 5 && <Expenditure setValue={setValue} />}
-                    {step === 6 && <RegisterForm setValue={submitAnswers} />}
+                    {step === 6 && <RegisterForm submitText="Let's see Cards" setValue={submitAnswers} />}
                 </div>
                 <button className="modal-close is-large" aria-label="close"></button>
             </div>
