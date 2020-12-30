@@ -135,8 +135,7 @@ const MaximizeSavingsContainer = styled.section`
     }
     @media screen and (max-width: 786px) {
         .block {
-            /* width: 150px;
-            height: 150px; */
+            padding: 0
         }
     }
 `

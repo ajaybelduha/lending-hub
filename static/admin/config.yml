@@ -81,18 +81,18 @@ collections:
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Logo", name: "logo", widget: image, required: true}
       - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
-      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: true}
+      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: false}
       - {label: Fixed (Rates by term), name: fixed, widget: object, 
         fields: [
         {label: "1 year", name: "1", widget: string, required: false}, 
         {label: 2 years, name: "2", widget: string, required: false}, 
         {label: 3 years, name: "3", widget: string, required: false}, 
+        {label: 4 years, name: "4", widget: string, required: false}, 
         {label: 5 years, name: "5", widget: string, required: false}, 
         ]
       }
       - {label: Variable (Rates by term), name: variable, widget: object, 
         fields: [
-        {label: 3 years, name: "3", widget: string, required: false}, 
         {label: 5 years, name: "5", widget: string, required: false}, 
         ]
       }
@@ -107,11 +107,22 @@ collections:
       - {label: "mortgage", name: "mortgage", widget: "hidden", default: "mortgage"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Logo", name: "logo", widget: image, required: true}
-      - {label: "Type", name: "type", widget: select, options: [{value: "fixed", label: "Fixed"}, {value: "variable", label: "Variable"}], required: true}
-      - {label: "Rate", name: "rate", widget: "string", required: true}
-      - {label: "Term", name: "term", widget: "select", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
-      - {label: "Amortization", name: "amortization", widget: "select", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
-      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: true}
+      - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
+      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: false}
+      - {label: Fixed (Rates by term), name: fixed, widget: object, 
+        fields: [
+        {label: 1 year, name: "1", widget: string, required: false}, 
+        {label: 2 years, name: "2", widget: string, required: false}, 
+        {label: 3 years, name: "3", widget: string, required: false}, 
+        {label: 4 years, name: "4", widget: string, required: false}, 
+        {label: 5 years, name: "5", widget: string, required: false}, 
+        ]
+      }
+      - {label: Variable (Rates by term), name: variable, widget: object, 
+        fields: [
+          {label: 5 years, name: "5", widget: string, required: false}, 
+        ]
+      }
 
 
   

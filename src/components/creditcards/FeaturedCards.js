@@ -35,7 +35,7 @@ const Featured = () => {
     return(
         <FeaturedContainer>
             <div className="container">
-                <h2 className="section-title">Featured Credit Cards for October 2020</h2>
+                <h2 className="section-title mb-4">Featured Credit Cards for October 2020</h2>
                 <div className="columns">
                     {cards.map(item => {
                         const card = item.node.frontmatter;
@@ -48,7 +48,7 @@ const Featured = () => {
                                     <Image fluid={card.cardImage.childImageSharp.fluid} />
                                     <p className="has-text-left mt-4">{card.summaryDescription}</p>
                                     <BlackButtonLink>More Details</BlackButtonLink>
-                                    <p>Featured</p>
+                                    {/* <h4>Featured</h4> */}
                                 </div>
                             </div>
                         )
@@ -66,11 +66,16 @@ const FeaturedContainer = styled.section`
     .card-block {
         border: 1px solid #000000;
         padding: 1rem 2rem;
-        height: 453px;
+        height: 400px;
         p {
           height: 73px;
           overflow: hidden;
         }
+    }
+    @media screen and (max-width: 786px) {
+      .card-block {
+        height: fit-content
+      }
     }
 `
 

@@ -92,6 +92,11 @@ const EditorsPickContainer = styled.section`
             font-size: 0.8rem;
         }
     }
+    @media screen and (max-width: 786px) {
+        .ep-block {
+            display: none;
+        }
+    }
 `
 
 export default EditorsPick;

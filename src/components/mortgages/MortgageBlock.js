@@ -1,16 +1,14 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { BlackButtonLink } from '../../components/common/common'
 import { can_mortgage_payment } from '../../components/common/utils'
 import Image from 'gatsby-image';
 
-const MortgageBlock = ({mortgages, filterData}) => {
-    console.log("Mortgage Listings")
+const MortgageBlock = ({currentRate, mortgageType, mortgages, filterData}) => {
     const item = mortgages.node.frontmatter;
-    console.log(item)
+    const [showBlock, setShowBlock] = useState(true)
 
     const getRate = () => {
-        console.log("GET RATE CALLED")
         const { totalMortgage, rateType, mortgageTerm } = filterData;
         const item = mortgages.node.frontmatter;
         let rate;
@@ -19,7 +17,6 @@ const MortgageBlock = ({mortgages, filterData}) => {
         } else {
             rate = item[`variable`][`_${mortgageTerm}`]
         }
-        console.log("rate: "+rate)
         return rate;
     }
 
@@ -27,13 +24,22 @@ const MortgageBlock = ({mortgages, filterData}) => {
         const { totalMortgage, rateType, mortgageTerm } = filterData;
         const rate = getRate() / 100;
         const monthly = can_mortgage_payment(totalMortgage, rate, 25, 12, 1);
-        console.log("monthly: "+monthly)
         return monthly;
     }
 
 
+    useEffect(() => {
+        const existingRate = Number(currentRate)
+        const chosenRate = getRate()
+        console.log('existing Rate: '+existingRate+' chosenRate: '+chosenRate)
+        console.log(mortgageType)
+        if(mortgageType === 'Renewal' && chosenRate > existingRate) {
+            setShowBlock(false)
+        }
+    }, [filterData])
+
     return(
-        <MortgageBlockContainer>
+        <MortgageBlockContainer displayBlock={showBlock}>
            <div className="mortgage-details">
                <div className="provider">
                    <div className="icon-text">
@@ -55,6 +61,7 @@ const MortgageBlock = ({mortgages, filterData}) => {
 
 
 const MortgageBlockContainer = styled.div`
+    display: ${props => props.displayBlock ? "block" : "none"};
     hr {
         background-color: #1C1C1E;
         height: 1px;
@@ -91,6 +98,30 @@ const MortgageBlockContainer = styled.div`
         .action {
             width: 20%;
         }
+    }
+    @media screen and (max-width: 786px) {
+        .mortgage-details {
+        flex-wrap: wrap;
+        .provider {
+            width: 100%;
+        }
+        .rate {
+            width: 100%;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        .monthly-payment {
+            width: 100%;
+            margin-top: 1rem;
+            text-align: center;
+            .item {
+                width: 200%;
+            }
+        }
+        .action {
+            width: 100%;
+        }
+    }
     }
 `
 

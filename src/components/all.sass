@@ -27,6 +27,8 @@ a
   display: flex
   justify-content: space-between
   align-items: center
+  flex-wrap: wrap
+  margin-bottom: 1rem
 
 a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active 
   background-color: white
@@ -173,8 +175,9 @@ $menu-label-color: $white-ter
 .input[disabled] 
   border: 1px solid #1C1C1E
 
-.control.has-icons-left .icon 
+.control.has-icons-left .icon, .control.has-icons-right .icon
   height: 3.5em
+
 
 .control.has-icons-left .input
   padding-left: 2em
@@ -193,7 +196,6 @@ $menu-label-color: $white-ter
 .section-title 
   font-size: 2.6rem
   font-family: 'Poppins Bold'
-  margin-bottom: 2rem
 
 .section-subtitle
   font-size: 1.1rem
@@ -220,3 +222,15 @@ $menu-label-color: $white-ter
 .title-3
   font-size: 1.1rem
   font-family: 'Poppins Semibold'
+
+@media screen and ( max-width: 786px )
+  .section-title 
+    font-size: 2rem
+  .section-subtitle
+    margin-top: 10px
+  .title-small 
+    font-size: 1.4rem
+  .title-24 
+    font-size: 1.1rem
+  .title-24-nb
+    font-size: 1.1rem

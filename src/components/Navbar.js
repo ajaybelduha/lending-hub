@@ -90,7 +90,7 @@ const Navbar = class extends React.Component {
               {/* <AniLink paintDrip to="/creditcards">
   Go to Page 4
 </AniLink> */}
-              <img src={search} alt="Kaldi" style={{ width: '16px' }} />
+              <img src={search} alt="Kaldi" style={{ width: '16px', display: 'none' }} />
             </div>
           </div>
         </div>

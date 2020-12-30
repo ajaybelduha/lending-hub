@@ -133,8 +133,11 @@ const TotalMortgageInputs = (props) => {
 
                                     <div className="field percent">
                                     <label class="label">(in %)</label>
-                                        <div className="control has-icons-left">
+                                        <div className="control has-icons-right">
                                             {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                                            <span className="icon is-small is-right">
+                                                %
+                                            </span>
                                             <InputField
                                                 id="downpayment-percent"
                                                 name="downPaymentPercent"
@@ -145,9 +148,6 @@ const TotalMortgageInputs = (props) => {
                                                 onBlur={formik.handleBlur}
                                                 value={formik.values.downPaymentPercent}
                                             />
-                                            <span className="icon is-small is-left">
-                                                %
-                                            </span>
                                         </div>
 
                                     </div>
