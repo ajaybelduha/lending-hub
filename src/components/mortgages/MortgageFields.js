@@ -10,6 +10,9 @@ import { useStaticQuery } from 'gatsby';
 
 const validate = values => {
     const errors = {};
+    const percent = Number(values?.downPaymentPercent);
+    const dpNumeric = Number(values?.downPaymentNumeric)
+    const purchaseAmount = Number(values?.purchasePrice)
     if (!values.purchasePrice) {
       errors.purchasePrice = 'Please provide a valid price';
     } else if (values.purchasePrice.length < 3) {
@@ -19,6 +22,19 @@ const validate = values => {
     if (!values.downPaymentNumeric) {
       errors.downPaymentNumeric = 'Please provide a valid downpayment';
     } 
+
+    if (purchaseAmount <= 500000 && percent < 5) {
+        errors.downPaymentPercent = 'A minimum down payment of 5% is required';
+    } else if (purchaseAmount > 500000) {
+        const val1 = 25000;
+        const remainder = purchaseAmount - 500000;
+        const val2 = remainder/10;
+        const val3 = (percent*purchaseAmount)/100;
+        console.log(val3, val1+val2)
+        if (val3 < val1+val2) {
+            errors.downPaymentPercent = 'Must be 5% of first $500,000 plus 10% of remainder'
+        }
+    }
   
     if (!values.closingDate) {
       errors.closingDate = 'Please provide a valid closing date'; 
@@ -27,6 +43,7 @@ const validate = values => {
   
     return errors;
   };
+
 
 const MortgageFields = (props) => {
     const [cmhcValue, setCmhcValue] = useState(0);
@@ -109,7 +126,7 @@ const MortgageFields = (props) => {
         <MortgageFieldsContainer>
         <Fade bottom>
             {/* <h1 onClick={() => props.setValue('cardFor', 'yoyo')}>hello from Mortgage Field</h1> */}
-            <div className="container">
+            <div className="">
                 <div className="section-title mb-6 has-text-centered">Tell us about your property</div>
                 <div className="questions-container">
                    
@@ -161,7 +178,16 @@ const MortgageFields = (props) => {
 
 
 
-                                <div className="downpayment-fields">
+                                
+
+
+
+
+
+
+                            </div>
+
+                            <div className="downpayment-fields">
                                     <div className="field numeric">
                                         <label class="label">Downpayment</label>
                                         <div className="control has-icons-left">
@@ -189,8 +215,11 @@ const MortgageFields = (props) => {
 
                                     <div className="field percent">
                                     <label class="label">(in %)</label>
-                                        <div className="control has-icons-left">
-                                            {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                                        <div className="control has-icons-right">
+                                           
+                                            <span className="icon is-small is-right">
+                                                %
+                                            </span>
                                             <InputField
                                                 id="downpayment-percent"
                                                 name="downPaymentPercent"
@@ -201,23 +230,10 @@ const MortgageFields = (props) => {
                                                 onBlur={formik.handleBlur}
                                                 value={formik.values.downPaymentPercent}
                                             />
-                                            <span className="icon is-small is-left">
-                                                %
-                                            </span>
                                         </div>
                                         {formik.touched.downPaymentPercent && formik.errors.downPaymentPercent ? <p className="help is-danger">{formik.errors.downPaymentPercent}</p> : null}
                                     </div>
                                 </div>
-
-
-
-
-
-
-                            </div>
-
-
-
 
 
 
@@ -417,22 +433,22 @@ const MortgageFieldsContainer = styled.div`
     .inline-input-fields {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         .amount-table {
             border: 1px solid #1C1C1E;
             padding: 2rem;
         }
-        #purchase-price {
-            width: 151px;
+        input {
+            width: 300px;
         }
     }
     .downpayment-fields {
+        margin-top: 20px;
         display: flex;
-        width: 230px;
-        .numeric {
-            width: 60%;
-        }
-        .percent {
-            width: 40%
+        flex-wrap: wrap;
+        justify-content: space-between;
+        input {
+            width: 300px;
         }
     }
     .amount-table {
@@ -454,6 +470,29 @@ const MortgageFieldsContainer = styled.div`
             }
         }
     }
+    }
+    @media screen and (max-width: 786px) {
+        .questions-container {
+            width: 100%;
+        }
+        .field {
+            width:100%;
+            input {
+                width: 100%
+            }
+        }
+        .amount-table {
+            padding: 1rem;
+            .table-data {
+                .item {
+                    &.total {
+                        width: 111%;
+                        right: 1rem;
+                        top: 1rem;
+                    }
+                }
+            }
+        }
     }
 `
 

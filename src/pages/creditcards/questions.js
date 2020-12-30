@@ -62,7 +62,8 @@ const QuestionnaireModal = (props) => {
 
 const QuestionnaireModalContainer = styled.div`
     background-color: #FFFFFF;
-    height: 100vh;
+    min-height: 1000px;
+    height: fit-content;
 `
 
 export default QuestionnaireModal;

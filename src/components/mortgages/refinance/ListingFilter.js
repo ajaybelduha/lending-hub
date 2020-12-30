@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components'
-import Dropdown from '../Dropdown'
-import TotalMortgageInputs from './TotalMortgageInputs'
+import Dropdown from '../../Dropdown'
+import RefinanceFilterFields from '../refinance/RefinancFilterFields';
 
 
 const ListingFilter = (props) => {
@@ -21,6 +21,7 @@ const ListingFilter = (props) => {
     ]
     const [selectedMortgageTerm, setSelectedMortgageTerm] = useState(mortgageTerms[0])
     const [isMortgageTermOpen, setIsMortgageTermOpen] = useState(false);
+    const [totalMortgage, setTotalMortgage] = useState('');
 
 
 
@@ -30,19 +31,20 @@ const ListingFilter = (props) => {
 
     useEffect(() => {
         const { filtersFromQuestions, setFiltered } = props;
-        console.log("filtersFromQuestions")
-        console.log(filtersFromQuestions)
         const initialSelectedRateType = rateTypes.find(item => item.value === filtersFromQuestions.rateType)
         const initialSelectedMortgageTerm = mortgageTerms.find(item => item.value === filtersFromQuestions.mortgageTerm)
-        setSelectedRateType(initialSelectedRateType)
-        setSelectedMortgageTerm(initialSelectedMortgageTerm)
+        const initialSelectedTotalMortgage = filtersFromQuestions.totalMortgage
 
         const obj = {
             rateType: initialSelectedRateType.value,
-            totalMortgage: 484640,
+            totalMortgage: filtersFromQuestions?.totalMortgage,
             mortgageTerm: initialSelectedMortgageTerm.value
         }
         setFiltered(obj)
+
+        setSelectedRateType(initialSelectedRateType)
+        setSelectedMortgageTerm(initialSelectedMortgageTerm)
+        setTotalMortgage(initialSelectedTotalMortgage)
     }, [])
 
     const setRateTypeValue = (e, item) => {
@@ -52,7 +54,7 @@ const ListingFilter = (props) => {
 
         const obj = {
             rateType: item.value,
-            totalMortgage: 484640,
+            totalMortgage: totalMortgage,
             mortgageTerm: selectedMortgageTerm.value
         }
         setFiltered(obj)
@@ -69,7 +71,7 @@ const ListingFilter = (props) => {
 
         const obj = {
             rateType: selectedRateType?.value,
-            totalMortgage: 484640,
+            totalMortgage: totalMortgage,
             mortgageTerm: item.value
         }
         setFiltered(obj)
@@ -82,7 +84,7 @@ const ListingFilter = (props) => {
     const setFilteredFromInput = (res) => {
         const obj = {
             rateType: selectedRateType?.value,
-            totalMortgage: res?.principal,
+            totalMortgage: res,
             mortgageTerm: selectedMortgageTerm?.value
         }
         setFiltered(obj)
@@ -106,7 +108,7 @@ const ListingFilter = (props) => {
                 items={mortgageTerms}
                 setValue={setMortgageTermValue}
             />
-            <TotalMortgageInputs 
+            <RefinanceFilterFields 
                 setFilteredFromInput={setFilteredFromInput} 
                 filtersFromQuestions={filtersFromQuestions} 
             />
@@ -118,7 +120,7 @@ const ListingFilterContainer = styled.div`
     margin-top: 20px;
     display: flex;
     @media screen and (max-width: 786px) {
-      display: none;
+        display: none
     }
 `
 

@@ -49,7 +49,9 @@ const SubscribeContainer = styled.section`
         }
     }
     @media screen and (max-width: 786px) {
+        padding: 1rem;
         .subscribe-container {
+            padding: 10px;
             button {
                 width: 100%;
                 margin-left: 0

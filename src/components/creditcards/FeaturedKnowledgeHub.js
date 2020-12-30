@@ -5,7 +5,7 @@
         return(
             <FeaturedKnowledgeHubContainer>
                 <div className="container">
-                    <h2 className="section-title">Knowledge hub</h2>
+                    <h2 className="section-title mb-4">Knowledge hub</h2>
                     <div className="columns is-multiline">
                         <div className="column">
                             <div className="kh-block">
@@ -65,6 +65,12 @@
             min-width: 360px;
             border-left: 4px solid #151515;
             box-shadow: 0px 4px 12px #00000029;
+        }
+        @media screen and (max-width: 786px) {
+            .kh-block {
+                min-width: 100%;
+                width: 100%;
+            }
         }
     `
 

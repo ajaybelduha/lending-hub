@@ -20,14 +20,14 @@ const MortgagesHome = () => {
             image: '/img/icons/mortgage.svg',
             imageHover: '/img/icons/mortgage_hover.svg',
             title: 'Refinancing Mortgage',
-            link: '/mortgages/questions'
+            link: '/mortgages/refinance/questions'
         },
         {
             key: 3,
             image: '/img/icons/renewable.svg',
             imageHover: '/img/icons/renewable_hover.svg',
             title: 'Renewal Mortgage',
-            link: '/mortgages/questions'
+            link: '/mortgages/refinance/questions'
         }
     ]
     return(

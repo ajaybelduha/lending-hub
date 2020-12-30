@@ -16,7 +16,7 @@ const validate = values => {
   
     if (!values.phone) {
       errors.phone = 'Please provide a valid 10 digit number';
-    } else if (values.phone.length !== 10) {
+    } else if (!/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(values.phone)) {
       errors.phone = 'Please provide a valid 10 digit number';
     }
   
@@ -149,6 +149,11 @@ const RegisterFormContainer = styled.div`
         }
         a {
             text-align: center;
+        }
+    }
+    @media screen and (max-width: 786px) {
+        .form-container {
+            width: 100%
         }
     }
 `

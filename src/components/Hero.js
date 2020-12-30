@@ -69,6 +69,7 @@ const HeroContainer = styled.section`
         width: 174px;
         height: 174px;
         margin-right: 10px;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -97,9 +98,19 @@ const HeroContainer = styled.section`
         }
     }
     @media screen and (max-width: 786px) {
+        .blocks {
+            justify-content: space-between;
+        }
         .block {
             width: 150px;
             height: 150px;
+            .image {
+                margin-bottom: 5px;
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
         }
     }
 `
