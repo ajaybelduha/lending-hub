@@ -56,22 +56,27 @@ const RegisterForm = (props) => {
                 <div className="mb-6 has-text-centered">Get Instant Access</div>
                 <div className="form-container">
                     <form onSubmit={formik.handleSubmit}>
-                        <div className="field">
-                            <div className="control">
-                                {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
-                                    <InputField
-                                            id="name"
-                                            name="name"
-                                            type="text"
-                                            placeholder="Name"
-                                            className={classNames('input', {'is-danger': formik.errors.name })}
-                                            onChange={formik.handleChange}
-                                            onBlur={formik.handleBlur}
-                                            value={formik.values.name}
-                                        />
+                        <div className="columns">
+                            <div className="column">
+                                <div className="field">
+                                    <div className="control">
+                                        {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                                            <InputField
+                                                    id="name"
+                                                    name="name"
+                                                    type="text"
+                                                    placeholder="Name"
+                                                    className={classNames('input', {'is-danger': formik.errors.name })}
+                                                    onChange={formik.handleChange}
+                                                    onBlur={formik.handleBlur}
+                                                    value={formik.values.name}
+                                                />
+                                    </div>
+                                    {formik.touched.name && formik.errors.name ? <p className="help is-danger">{formik.errors.name}</p> : null}
+                                </div>
                             </div>
-                            {formik.touched.name && formik.errors.name ? <p className="help is-danger">{formik.errors.name}</p> : null}
                         </div>
+                        
                         <div className="columns">
                             <div className="column">
                                 <div className="field">
