@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import { useFormik } from 'formik';
@@ -14,35 +14,35 @@ const validate = values => {
     const dpNumeric = Number(values?.downPaymentNumeric)
     const purchaseAmount = Number(values?.purchasePrice)
     if (!values.purchasePrice) {
-      errors.purchasePrice = 'Please provide a valid price';
+        errors.purchasePrice = 'Please provide a valid price';
     } else if (values.purchasePrice.length < 3) {
-      errors.purchasePrice = 'Please provide a valid price';
+        errors.purchasePrice = 'Please provide a valid price';
     }
-  
+
     if (!values.downPaymentNumeric) {
-      errors.downPaymentNumeric = 'Please provide a valid downpayment';
-    } 
+        errors.downPaymentNumeric = 'Please provide a valid downpayment';
+    }
 
     if (purchaseAmount <= 500000 && percent < 5) {
         errors.downPaymentPercent = 'A minimum down payment of 5% is required';
     } else if (purchaseAmount > 500000) {
         const val1 = 25000;
         const remainder = purchaseAmount - 500000;
-        const val2 = remainder/10;
-        const val3 = (percent*purchaseAmount)/100;
-        console.log(val3, val1+val2)
-        if (val3 < val1+val2) {
+        const val2 = remainder / 10;
+        const val3 = (percent * purchaseAmount) / 100;
+        console.log(val3, val1 + val2)
+        if (val3 < val1 + val2) {
             errors.downPaymentPercent = 'Must be 5% of first $500,000 plus 10% of remainder'
         }
     }
-  
+
     if (!values.closingDate) {
-      errors.closingDate = 'Please provide a valid closing date'; 
+        errors.closingDate = 'Please provide a valid closing date';
     }
 
-  
+
     return errors;
-  };
+};
 
 
 const MortgageFields = (props) => {
@@ -61,33 +61,28 @@ const MortgageFields = (props) => {
         },
         validate,
         onSubmit: values => {
-          values.cmhc = cmhcValue;
-          values.totalMortgage = totalMortgageValue;
-          // alert(JSON.stringify(values, null, 2));
-          props.setValue('formValues', values);
+            values.cmhc = cmhcValue;
+            values.totalMortgage = totalMortgageValue;
+            // alert(JSON.stringify(values, null, 2));
+            props.setValue('formValues', values);
         },
-      });
+    });
 
     const validateAndSetNumber = async (e) => {
         e.preventDefault();
         const { value, name } = e.target;
         const regex = /^(0*[0-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/;
         const isValidNumber = !value || regex.test(value.toString());
-        if(isValidNumber) {
-            console.log("setValue of "+name+" to "+value)
-            formik.setFieldValue(name, value);   
+        if (isValidNumber) {
+            console.log("setValue of " + name + " to " + value)
+            formik.setFieldValue(name, value);
         }
     }
-
-    // const isValidNumber = (val) => {
-    //     const regex = /^(0*[0-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/;
-    //     const isValidNumber = !val || regex.test(val.toString());
-    // }
 
     const setPrincipalAndCmhc = (principal, dp) => {
         const response = getTotalMortgageAndCmhc(principal, dp);
         console.log(response)
-        if(response) {
+        if (response) {
             setCmhcValue(response.cmhc);
             setTotalMortgageValue(response.principal)
         } else {
@@ -98,9 +93,9 @@ const MortgageFields = (props) => {
 
     useEffect(() => {
         const { purchasePrice, downPaymentNumeric } = formik.values;
-        if(purchasePrice) {
-            const percentValue = (100*downPaymentNumeric)/purchasePrice;
-            console.log("Percent Value: "+percentValue.toFixed(2))
+        if (purchasePrice) {
+            const percentValue = (100 * downPaymentNumeric) / purchasePrice;
+            console.log("Percent Value: " + percentValue.toFixed(2))
             if (percentValue > 0 && percentValue < 100) {
                 setPrincipalAndCmhc(purchasePrice, downPaymentNumeric);
             } else {
@@ -109,27 +104,27 @@ const MortgageFields = (props) => {
 
 
             percentValue > 0.09 ? formik.setFieldValue('downPaymentPercent', percentValue)
-             : formik.setFieldValue('downPaymentPercent', '')
+                : formik.setFieldValue('downPaymentPercent', '')
         }
     }, [formik.values.downPaymentNumeric])
 
     useEffect(() => {
         const { purchasePrice, downPaymentPercent } = formik.values;
-        if(purchasePrice) {
-            const numericValue = (downPaymentPercent*purchasePrice)/100;
-            console.log("Numeric Value: "+Math.ceil(numericValue))
+        if (purchasePrice) {
+            const numericValue = (downPaymentPercent * purchasePrice) / 100;
+            console.log("Numeric Value: " + Math.ceil(numericValue))
             formik.setFieldValue('downPaymentNumeric', numericValue);
         }
     }, [formik.values.downPaymentPercent])
 
-    return(
+    return (
         <MortgageFieldsContainer>
-        <Fade bottom>
-            {/* <h1 onClick={() => props.setValue('cardFor', 'yoyo')}>hello from Mortgage Field</h1> */}
-            <div className="">
-                <div className="section-title mb-6 has-text-centered">Tell us about your property</div>
-                <div className="questions-container">
-                   
+            <Fade bottom>
+                {/* <h1 onClick={() => props.setValue('cardFor', 'yoyo')}>hello from Mortgage Field</h1> */}
+                <div className="">
+                    <div className="section-title mb-6 has-text-centered">Tell us about your property</div>
+                    <div className="questions-container">
+
                         <form onSubmit={formik.handleSubmit}>
 
                             <div className="inline-input-fields">
@@ -178,62 +173,56 @@ const MortgageFields = (props) => {
 
 
 
-                                
-
-
-
-
-
 
                             </div>
 
                             <div className="downpayment-fields">
-                                    <div className="field numeric">
-                                        <label class="label">Downpayment</label>
-                                        <div className="control has-icons-left">
-                                            {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
-                                            <InputField
-                                                id="downpayment"
-                                                name="downPaymentNumeric"
-                                                type="text"
-                                                placeholder="Amount"
-                                                className={classNames('input', { 'is-danger': formik.errors.downPaymentNumeric })}
-                                                onChange={validateAndSetNumber}
-                                                onBlur={formik.handleBlur}
-                                                value={formik.values.downPaymentNumeric}
-                                            />
-                                            <span className="icon is-small is-left">
-                                                $
+                                <div className="field numeric">
+                                    <label class="label">Downpayment</label>
+                                    <div className="control has-icons-left">
+                                        {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                                        <InputField
+                                            id="downpayment"
+                                            name="downPaymentNumeric"
+                                            type="text"
+                                            placeholder="Amount"
+                                            className={classNames('input', { 'is-danger': formik.errors.downPaymentNumeric })}
+                                            onChange={validateAndSetNumber}
+                                            onBlur={formik.handleBlur}
+                                            value={formik.values.downPaymentNumeric}
+                                        />
+                                        <span className="icon is-small is-left">
+                                            $
                                             </span>
-                                        </div>
-                                        {formik.touched.downPaymentNumeric && formik.errors.downPaymentNumeric ? <p className="help is-danger">{formik.errors.downPaymentNumeric}</p> : null}
                                     </div>
-
-
-
-
-
-                                    <div className="field percent">
-                                    <label class="label">(in %)</label>
-                                        <div className="control has-icons-right">
-                                           
-                                            <span className="icon is-small is-right">
-                                                %
-                                            </span>
-                                            <InputField
-                                                id="downpayment-percent"
-                                                name="downPaymentPercent"
-                                                type="text"
-                                                placeholder=""
-                                                className={classNames('input', { 'is-danger': formik.errors.downPaymentPercent })}
-                                                onChange={validateAndSetNumber}
-                                                onBlur={formik.handleBlur}
-                                                value={formik.values.downPaymentPercent}
-                                            />
-                                        </div>
-                                        {formik.touched.downPaymentPercent && formik.errors.downPaymentPercent ? <p className="help is-danger">{formik.errors.downPaymentPercent}</p> : null}
-                                    </div>
+                                    {formik.touched.downPaymentNumeric && formik.errors.downPaymentNumeric ? <p className="help is-danger">{formik.errors.downPaymentNumeric}</p> : null}
                                 </div>
+
+
+
+
+
+                                <div className="field percent">
+                                    <label class="label">(in %)</label>
+                                    <div className="control has-icons-right">
+
+                                        <span className="icon is-small is-right">
+                                            %
+                                            </span>
+                                        <InputField
+                                            id="downpayment-percent"
+                                            name="downPaymentPercent"
+                                            type="text"
+                                            placeholder=""
+                                            className={classNames('input', { 'is-danger': formik.errors.downPaymentPercent })}
+                                            onChange={validateAndSetNumber}
+                                            onBlur={formik.handleBlur}
+                                            value={formik.values.downPaymentPercent}
+                                        />
+                                    </div>
+                                    {formik.touched.downPaymentPercent && formik.errors.downPaymentPercent ? <p className="help is-danger">{formik.errors.downPaymentPercent}</p> : null}
+                                </div>
+                            </div>
 
 
 
@@ -263,73 +252,74 @@ const MortgageFields = (props) => {
 
 
 
-                            <div className="inline-input-fields">
-                            
-                                <div className="field">
-                                <label class="label">Tentative closing date</label>
-                                    <div className="control">
-                                        {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                            {totalMortgageValue > 0 && <Fade bottom>
+                                <div className="inline-input-fields">
+
+                                    <div className="field">
+                                        <label class="label">Tentative closing date</label>
+                                        <div className="control">
+                                            {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
                                             <InputField
-                                                    id="closing-date"
-                                                    name="closingDate"
-                                                    type="date"
-                                                    placeholder=""
-                                                    className={classNames('input', {'is-danger': formik.errors.closingDate })}
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    value={formik.values.closingDate}
+                                                id="closing-date"
+                                                name="closingDate"
+                                                type="date"
+                                                placeholder=""
+                                                className={classNames('input', { 'is-danger': formik.errors.closingDate })}
+                                                onChange={formik.handleChange}
+                                                onBlur={formik.handleBlur}
+                                                value={formik.values.closingDate}
+                                            />
+                                        </div>
+                                        {formik.touched.closingDate && formik.errors.closingDate ? <p className="help is-danger">{formik.errors.closingDate}</p> : null}
+                                    </div>
+
+
+                                    <div className="field">
+                                        <label class="label">Are you a first time home buyer?</label>
+                                        <div class="control mt-4">
+                                            <RadioButton className="radio">Yes
+                                                <input
+                                                    type="radio"
+                                                    id="firsttime-buyer-yes"
+                                                    name="isFirstTimeBuyer"
+                                                    className={classNames({ 'is-danger': formik.errors.isFirstTimeBuyer })}
+                                                    value="yes"
+                                                    checked={formik.values.isFirstTimeBuyer === "yes"}
+                                                    onChange={() => formik.setFieldValue("isFirstTimeBuyer", "yes")}
                                                 />
+                                                <span class="checkmark"></span>
+                                            </RadioButton>
+                                            <RadioButton className="radio">No
+                                                <input
+                                                    type="radio"
+                                                    id="firsttime-buyer-no"
+                                                    name="isFirstTimeBuyer"
+                                                    className={classNames({ 'is-danger': formik.errors.isFirstTimeBuyer })}
+                                                    value="no"
+                                                    checked={formik.values.isFirstTimeBuyer === "no"}
+                                                    onChange={() => formik.setFieldValue("isFirstTimeBuyer", "no")}
+                                                />
+                                                <span class="checkmark"></span>
+                                            </RadioButton>
+                                        </div>
+                                        {formik.touched.isFirstTimeBuyer && formik.errors.isFirstTimeBuyer ? <p className="help is-danger">{formik.errors.isFirstTimeBuyer}</p> : null}
                                     </div>
-                                    {formik.touched.closingDate && formik.errors.closingDate ? <p className="help is-danger">{formik.errors.closingDate}</p> : null}
                                 </div>
 
-                                
+
+
+
+
+
                                 <div className="field">
-                                <label class="label">Are you a first time home buyer?</label>
+                                    <label class="label">What rate type would you like?</label>
                                     <div class="control mt-4">
-                                        <RadioButton className="radio">Yes
-                                            <input 
-                                                type="radio" 
-                                                id="firsttime-buyer-yes"
-                                                name="isFirstTimeBuyer"
-                                                className={classNames({'is-danger': formik.errors.isFirstTimeBuyer })}
-                                                value="yes"
-                                                checked={formik.values.isFirstTimeBuyer === "yes"}
-                                                onChange={() => formik.setFieldValue("isFirstTimeBuyer", "yes")}
-                                            />
-                                            <span class="checkmark"></span>
-                                        </RadioButton>
-                                        <RadioButton className="radio">No
-                                            <input 
-                                                type="radio" 
-                                                id="firsttime-buyer-no"
-                                                name="isFirstTimeBuyer"
-                                                className={classNames({'is-danger': formik.errors.isFirstTimeBuyer })}
-                                                value="no"
-                                                checked={formik.values.isFirstTimeBuyer === "no"}
-                                                onChange={() => formik.setFieldValue("isFirstTimeBuyer", "no")}
-                                            />
-                                            <span class="checkmark"></span>
-                                        </RadioButton>
-                                    </div>
-                                    {formik.touched.isFirstTimeBuyer && formik.errors.isFirstTimeBuyer ? <p className="help is-danger">{formik.errors.isFirstTimeBuyer}</p> : null}
-                                </div>
-                            </div>
-
-
-
-                            
-
-
-                            <div className="field mt-6">
-                                <label class="label">What rate type would you like?</label>
-                                <div class="control mt-4">
                                         <RadioButton className="radio">Fixed
-                                            <input 
-                                                type="radio" 
+                                            <input
+                                                type="radio"
                                                 id="rate-type-fixed"
                                                 name="rateType"
-                                                className={classNames({'is-danger': formik.errors.rateType })}
+                                                className={classNames({ 'is-danger': formik.errors.rateType })}
                                                 value='fixed'
                                                 checked={formik.values.rateType === "fixed"}
                                                 onChange={() => formik.setFieldValue("rateType", "fixed")}
@@ -337,11 +327,11 @@ const MortgageFields = (props) => {
                                             <span class="checkmark"></span>
                                         </RadioButton>
                                         <RadioButton className="radio">Variable
-                                            <input 
-                                                type="radio" 
+                                            <input
+                                                type="radio"
                                                 id="rate-type-variable"
                                                 name="rateType"
-                                                className={classNames({'is-danger': formik.errors.rateType })}
+                                                className={classNames({ 'is-danger': formik.errors.rateType })}
                                                 value='variable'
                                                 checked={formik.values.rateType === "variable"}
                                                 onChange={() => formik.setFieldValue("rateType", "variable")}
@@ -349,25 +339,33 @@ const MortgageFields = (props) => {
                                             <span class="checkmark"></span>
                                         </RadioButton>
                                     </div>
-                                {formik.touched.rateType && formik.errors.rateType ? <p className="help is-danger">{formik.errors.rateType}</p> : null}
-                            </div>
-                            
+                                    {formik.touched.rateType && formik.errors.rateType ? <p className="help is-danger">{formik.errors.rateType}</p> : null}
+                                </div>
 
 
 
 
-
-
-<br/>
-                            <div style={{clear: 'both'}} className="field mt-6">
-                                <label class="label">What mortgage term are you looking for?</label>
-                                <div class="control mt-4">
+                                <div style={{ clear: 'both' }} className="field">
+                                    <label class="label">What mortgage term are you looking for?</label>
+                                    <div class="control mt-4">
+                                        <RadioButton className="radio">1 yr
+                                            <input
+                                                type="radio"
+                                                id="mortgage-term-1"
+                                                name="mortgageTerm"
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
+                                                checked={formik.values.mortgageTerm === 1}
+                                                onChange={() => formik.setFieldValue("mortgageTerm", 1)}
+                                                value={1}
+                                            />
+                                            <span class="checkmark"></span>
+                                        </RadioButton>
                                         <RadioButton className="radio">2 yrs
-                                            <input 
-                                                type="radio" 
+                                            <input
+                                                type="radio"
                                                 id="mortgage-term-2"
                                                 name="mortgageTerm"
-                                                className={classNames({'is-danger': formik.errors.mortgageTerm })}
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
                                                 checked={formik.values.mortgageTerm === 2}
                                                 onChange={() => formik.setFieldValue("mortgageTerm", 2)}
                                                 value={2}
@@ -375,52 +373,54 @@ const MortgageFields = (props) => {
                                             <span class="checkmark"></span>
                                         </RadioButton>
                                         <RadioButton className="radio">3 yrs
-                                            <input 
-                                                type="radio" 
+                                            <input
+                                                type="radio"
                                                 id="mortgage-term-3"
                                                 name="mortgageTerm"
-                                                className={classNames({'is-danger': formik.errors.mortgageTerm })}
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
                                                 checked={formik.values.mortgageTerm === 3}
                                                 onChange={() => formik.setFieldValue("mortgageTerm", 3)}
                                                 value={3}
                                             />
                                             <span class="checkmark"></span>
                                         </RadioButton>
+                                        <RadioButton className="radio">4 yrs
+                                            <input
+                                                type="radio"
+                                                id="mortgage-term-4"
+                                                name="mortgageTerm"
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
+                                                checked={formik.values.mortgageTerm === 4}
+                                                onChange={() => formik.setFieldValue("mortgageTerm", 4)}
+                                                value={4}
+                                            />
+                                            <span class="checkmark"></span>
+                                        </RadioButton>
                                         <RadioButton className="radio">5 yrs
-                                            <input 
-                                                type="radio" 
+                                            <input
+                                                type="radio"
                                                 id="mortgage-term-5"
                                                 name="mortgageTerm"
-                                                className={classNames({'is-danger': formik.errors.mortgageTerm })}
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
                                                 checked={formik.values.mortgageTerm === 5}
                                                 onChange={() => formik.setFieldValue("mortgageTerm", 5)}
                                                 value={5}
                                             />
                                             <span class="checkmark"></span>
                                         </RadioButton>
-                                        <RadioButton className="radio">10 yrs
-                                            <input 
-                                                type="radio" 
-                                                id="mortgage-term-10"
-                                                name="mortgageTerm"
-                                                className={classNames({'is-danger': formik.errors.mortgageTerm })}
-                                                checked={formik.values.mortgageTerm === 10}
-                                                onChange={() => formik.setFieldValue("mortgageTerm", 10)}
-                                                value={10}
-                                            />
-                                            <span class="checkmark"></span>
-                                        </RadioButton>
                                     </div>
-                                {formik.touched.mortgageTerm && formik.errors.mortgageTerm ? <p className="help is-danger">{formik.errors.mortgageTerm}</p> : null}
-                            </div>
+                                    {formik.touched.mortgageTerm && formik.errors.mortgageTerm ? <p className="help is-danger">{formik.errors.mortgageTerm}</p> : null}
+                                </div>
+                            </Fade>}
 
-                            <BlackButton type="submit" className="mt-6">Continue</BlackButton>
+                            <BlackButton type="submit" className="mt-3">Continue</BlackButton>
+                            {!formik.isValid ? <p className="help is-danger">*Please fill all the important fields to proceed</p> : null}
 
                         </form>
-                    
+
+                    </div>
                 </div>
-            </div>
-        </Fade>
+            </Fade>
         </MortgageFieldsContainer>
     )
 }
@@ -434,12 +434,19 @@ const MortgageFieldsContainer = styled.div`
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin-bottom: 1rem;
         .amount-table {
             border: 1px solid #1C1C1E;
             padding: 2rem;
         }
         input {
             width: 300px;
+        }
+    }
+    .field {
+        /* margin-bottom: 2rem; */
+        .control {
+            height: 53px;
         }
     }
     .downpayment-fields {

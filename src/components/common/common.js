@@ -11,6 +11,7 @@ export const BlackButtonLink = styled(props => <Link {...props} />)`
     margin: 1rem 0;
     text-align: center;
     border: 1px solid #1C1C1E;
+    transition: 0.3s;
     :hover {
       background-color: #FFFFFF;
       color: #1C1C1E;
@@ -18,7 +19,7 @@ export const BlackButtonLink = styled(props => <Link {...props} />)`
     }
 `;
 
-export const BlackButton = styled.button`
+export const BlackButton = styled(props => <button {...props} />)`
     background-color: #1C1C1E;
     color: #FFFFFF;
     width: 100%;
@@ -26,11 +27,11 @@ export const BlackButton = styled.button`
     font-size: 1rem;
     border: 0;
     font-family: "Poppins Regular";
+    transition: 0.3s;
+    border: 1px solid #1C1C1E;
     cursor: pointer;
     :hover {
-      background-color: #FFFFFF;
-      color: #1C1C1E;
-      border: 1px solid #1C1C1E;
+      opacity: 0.8
     }
 `
 
@@ -54,7 +55,7 @@ export const InputField = styled.input`
 
 export const RadioButton = styled.label`
   /* The container */
-  display: block;
+  &+ .radio { margin-left: 0 }
   position: relative;
   margin-right: 20px;
   padding-left: 26px;
@@ -167,6 +168,7 @@ export const BlockStack = styled.div`
     flex-wrap: wrap;
     .p-block {
             background: #fff;
+            padding: 5px;
             cursor: pointer;
             border-radius: 2px;
             display: inline-block;
@@ -205,6 +207,9 @@ export const SliderContainer = styled.div`
 .rc-slider-track {
     height: 10px;
     background-color: #1C1C1E;
+}
+@media screen and (max-width: 786px) {
+  width: 90%;
 }
 
 `

@@ -32,37 +32,37 @@ const CardBlock = ({cardData}) => {
                     <Image fluid={cardImage.childImageSharp.fluid} />
                 </div>
                 <div className="details">
-                    <div className="columns is-multiline">
-                        <div className="column">
+                    <div className="features">
+                        {/* <div className="column"> */}
                             <div className="item">
                                 <div className="key">Annual Fee</div>
     <div className="value bold">${fee}</div>
                             </div>
-                        </div>
-                        <div className="column">
+                        {/* </div> */}
+                        {/* <div className="column"> */}
                         <div className="item">
                                 <div className="key">Interest Rate</div>
     <div className="value bold">{purchaseInterest}%</div>
                             </div>
-                        </div>
-                        <div className="column">
+                        {/* </div> */}
+                        {/* <div className="column"> */}
                         <div className="item">
                                 <div className="key">Balance Transfer</div>
     <div className="value bold">{balanceTranferFees}%</div>
                             </div>
-                        </div>
-                        <div className="column">
+                        {/* </div>
+                        <div className="column"> */}
                         <div className="item">
                                 <div className="key">Cash Advance</div>
     <div className="value bold">{cashAdvanceInterest}%</div>
                             </div>
-                        </div>
-                        <div className="column">
+                        {/* </div> */}
+                        {/* <div className="column"> */}
                         <div className="item">
                                 <div className="key">Credit Score Type</div>
     <div className="value bold">{creditScore}</div>
                             </div>
-                        </div>
+                        {/* </div> */}
                     </div>
                 </div>
                 <div className="action">
@@ -84,6 +84,7 @@ const CardBlockContainer = styled.div`
     .card-details {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         margin: 2rem 0;
         .image {
             width: 23%;
@@ -91,8 +92,13 @@ const CardBlockContainer = styled.div`
         .details {
             width: 60%;
             padding: 0px 3%;
+            .features {
+                display: flex;
+                flex-wrap: wrap;
+            }
             .item {
                 width: 150px;
+                margin: 0 10px 10px 0;
                 .value {
 
                 }
@@ -101,6 +107,25 @@ const CardBlockContainer = styled.div`
         .action {
             width: 17%;
         }
+    }
+    @media screen and (max-width: 786px) {
+        .card-details {
+        .image {
+            width: 100%;
+        }
+        .details {
+            width: 100%;
+            .features {
+                margin: 1rem 0;
+            }
+            .item {
+                width: 150px;
+            }
+        }
+        .action {
+            width: 100%;
+        }
+    }
     }
 `
 

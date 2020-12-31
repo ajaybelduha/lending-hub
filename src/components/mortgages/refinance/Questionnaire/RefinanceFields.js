@@ -195,7 +195,10 @@ const RefinanceFields = (props) => {
                                 </div>
                             </div>
 
-                            <div className="equity-choose">
+                            
+                            
+                            {equityAvailable > 0 && <Fade bottom>
+                                <div className="equity-choose">
                                 <h2 className="mb-4 bold">How much equity would you like to take out ?</h2>
                                 
                                     <Slider
@@ -210,7 +213,6 @@ const RefinanceFields = (props) => {
                                         onChange={(val) => setEquityValue(val)}
                                     />
                                     <div className='value mt-4 title-24 has-text-centered'>${equityNeeded}</div>
-                                
                             </div>
 
 
@@ -286,15 +288,27 @@ const RefinanceFields = (props) => {
 
 
                             <br/>
-                            <div style={{clear: 'both'}} className="field mt-6">
-                                <label class="label">What mortgage term are you looking for?</label>
-                                <div class="control mt-4">
+                            <div style={{ clear: 'both' }} className="field mt-6">
+                                    <label class="label">What mortgage term are you looking for?</label>
+                                    <div class="control mt-4">
+                                        <RadioButton className="radio">1 yr
+                                            <input
+                                                type="radio"
+                                                id="mortgage-term-1"
+                                                name="mortgageTerm"
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
+                                                checked={formik.values.mortgageTerm === 1}
+                                                onChange={() => formik.setFieldValue("mortgageTerm", 1)}
+                                                value={1}
+                                            />
+                                            <span class="checkmark"></span>
+                                        </RadioButton>
                                         <RadioButton className="radio">2 yrs
-                                            <input 
-                                                type="radio" 
+                                            <input
+                                                type="radio"
                                                 id="mortgage-term-2"
                                                 name="mortgageTerm"
-                                                className={classNames({'is-danger': formik.errors.mortgageTerm })}
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
                                                 checked={formik.values.mortgageTerm === 2}
                                                 onChange={() => formik.setFieldValue("mortgageTerm", 2)}
                                                 value={2}
@@ -302,44 +316,45 @@ const RefinanceFields = (props) => {
                                             <span class="checkmark"></span>
                                         </RadioButton>
                                         <RadioButton className="radio">3 yrs
-                                            <input 
-                                                type="radio" 
+                                            <input
+                                                type="radio"
                                                 id="mortgage-term-3"
                                                 name="mortgageTerm"
-                                                className={classNames({'is-danger': formik.errors.mortgageTerm })}
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
                                                 checked={formik.values.mortgageTerm === 3}
                                                 onChange={() => formik.setFieldValue("mortgageTerm", 3)}
                                                 value={3}
                                             />
                                             <span class="checkmark"></span>
                                         </RadioButton>
+                                        <RadioButton className="radio">4 yrs
+                                            <input
+                                                type="radio"
+                                                id="mortgage-term-4"
+                                                name="mortgageTerm"
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
+                                                checked={formik.values.mortgageTerm === 4}
+                                                onChange={() => formik.setFieldValue("mortgageTerm", 4)}
+                                                value={4}
+                                            />
+                                            <span class="checkmark"></span>
+                                        </RadioButton>
                                         <RadioButton className="radio">5 yrs
-                                            <input 
-                                                type="radio" 
+                                            <input
+                                                type="radio"
                                                 id="mortgage-term-5"
                                                 name="mortgageTerm"
-                                                className={classNames({'is-danger': formik.errors.mortgageTerm })}
+                                                className={classNames({ 'is-danger': formik.errors.mortgageTerm })}
                                                 checked={formik.values.mortgageTerm === 5}
                                                 onChange={() => formik.setFieldValue("mortgageTerm", 5)}
                                                 value={5}
                                             />
                                             <span class="checkmark"></span>
                                         </RadioButton>
-                                        <RadioButton className="radio">10 yrs
-                                            <input 
-                                                type="radio" 
-                                                id="mortgage-term-10"
-                                                name="mortgageTerm"
-                                                className={classNames({'is-danger': formik.errors.mortgageTerm })}
-                                                checked={formik.values.mortgageTerm === 10}
-                                                onChange={() => formik.setFieldValue("mortgageTerm", 10)}
-                                                value={10}
-                                            />
-                                            <span class="checkmark"></span>
-                                        </RadioButton>
                                     </div>
-                                {formik.touched.mortgageTerm && formik.errors.mortgageTerm ? <p className="help is-danger">{formik.errors.mortgageTerm}</p> : null}
-                            </div>
+                                    {formik.touched.mortgageTerm && formik.errors.mortgageTerm ? <p className="help is-danger">{formik.errors.mortgageTerm}</p> : null}
+                                </div>
+                            </Fade>}
                             
 
                             <BlackButton type="submit" className="mt-6">Continue</BlackButton>
@@ -433,12 +448,15 @@ const RefinanceFieldsContainer = styled.div`
                 width: 100%
             }
         }
+        .equity-choose {
+            width: 100%; 
+        }
         .amount-table {
             padding: 1rem;
             .table-data {
                 .item {
                     div:first-child {
-                        width: 70%;
+                        width: 60%;
                     }
                     &.total {
                         width: 111%;

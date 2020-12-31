@@ -99,7 +99,7 @@ const HeroContainer = styled.section`
     }
     @media screen and (max-width: 786px) {
         .blocks {
-            justify-content: space-between;
+            justify-content: flex-start;
         }
         .block {
             width: 150px;
