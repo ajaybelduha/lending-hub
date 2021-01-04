@@ -4,10 +4,12 @@ import { Link, graphql } from "gatsby"
 import Bio from "../../components/bio"
 import Layout from "../../components/layoutBlog"
 import SEO from "../../components/seo"
+import SearchPosts from "../../components/searchPosts"
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, navigate, location, n }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const localSearchBlog = data.localSearchBlog
 
   if (posts.length === 0) {
     return (
@@ -27,6 +29,12 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      <SearchPosts
+          posts={posts}
+          localSearchBlog={localSearchBlog}
+          navigate={navigate}
+          location={location}
+      />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -72,7 +80,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    localSearchBlog {
+      index
+      store
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: {frontmatter: {templateKey: {eq: "blogs"}}}) {
       nodes {
         excerpt
         fields {

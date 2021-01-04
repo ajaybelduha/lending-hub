@@ -5,8 +5,11 @@ module.exports = {
       'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
   },
   plugins: [
+    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-sass',
     {
       resolve: "gatsby-plugin-web-font-loader",
@@ -15,6 +18,46 @@ module.exports = {
           families: ['Poppins'],
           urls: ["/fonts/fonts.css"],
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-local-search",
+      options: {
+        name: "blog",
+        engine: "flexsearch",
+        engineOptions: {
+          encode: "icase",
+          tokenize: "forward",
+          async: false,
+        },
+        query: `
+          {
+            allMarkdownRemark {
+              nodes {
+                id
+                fields { slug }
+                excerpt
+                frontmatter {
+                  title
+                  description
+                  date(formatString: "MMMM DD, YYYY")
+                }
+              }
+            }
+          }
+        `,
+        ref: "id",
+        index: ["title", "rawBody"],
+        store: ["id", "slug", "date", "title", "excerpt", "description"],
+        normalizer: ({ data }) =>
+          data.allMarkdownRemark.nodes.map(node => ({
+            id: node.id,
+            slug: node.fields.slug,
+            excerpt: node.excerpt,
+            title: node.frontmatter.title,
+            description: node.frontmatter.description,
+            date: node.frontmatter.date,
+          })),
       },
     },
     {
@@ -39,8 +82,6 @@ module.exports = {
         name: 'images',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -67,12 +108,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
     {
