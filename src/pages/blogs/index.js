@@ -1,40 +1,35 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../../components/bio"
-import Layout from "../../components/layoutBlog"
-import SEO from "../../components/seo"
+import Layout from "../../components/Layout"
 import SearchPosts from "../../components/searchPosts"
 
 const BlogIndex = ({ data, navigate, location, n }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const localSearchBlog = data.localSearchBlog
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+      <Layout>
+        <div className="container">
+          <p>
+            No blog posts found. Add markdown posts to "content/blog" (or the
+            directory you specified for the "gatsby-source-filesystem" plugin in
+            gatsby-config.js).
+          </p>
+        </div>
       </Layout>
     )
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      <SearchPosts
+    <Layout>
+      <div className="container">
+        {/* <SearchPosts
           posts={posts}
           localSearchBlog={localSearchBlog}
           navigate={navigate}
           location={location}
-      />
+      /> */}
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -67,6 +62,7 @@ const BlogIndex = ({ data, navigate, location, n }) => {
           )
         })}
       </ol>
+      </div>
     </Layout>
   )
 }
@@ -75,11 +71,6 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     localSearchBlog {
       index
       store
