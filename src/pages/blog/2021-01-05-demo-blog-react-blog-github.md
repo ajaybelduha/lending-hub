@@ -1,14 +1,14 @@
 ---
 templateKey: blog-post
-title: Demo Blog (React Blog Github)
+title: Demo Blog 3
 date: 2021-01-05T17:12:52.133Z
 description: This is the description
 featuredpost: true
-featuredimage: /img/chemex.jpg
+featuredimage: /img/flavor_wheel.jpg
 tags:
   - loan
 ---
-## Live demo 2
+## Live demo 3
 
 Changes are automatically rendered as you type.
 
