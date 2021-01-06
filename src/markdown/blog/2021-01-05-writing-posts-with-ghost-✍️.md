@@ -2,7 +2,10 @@
 templateKey: blog-post
 title: Writing posts with Ghost ✍️
 date: 2021-01-05T17:17:00.750Z
-description: Just start writing
+description: >-
+  Welcome, it's great to have you here.
+
+  We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time.
 featuredpost: true
 featuredimage: /img/products-grid1.jpg
 tags:
