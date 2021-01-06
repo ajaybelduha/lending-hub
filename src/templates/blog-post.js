@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+import Img from 'gatsby-image'
+import styled from 'styled-components'
 import Layout from "../components/Layout"
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -10,19 +11,22 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout >
+      <BlogPostContainer>
       <div className="container">
         <article
           className="blog-post"
           itemScope
           itemType="http://schema.org/Article"
         >
-          <header>
-            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <header className="headings">
+            <h1 className="section-title" itemProp="headline">{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
           </header>
+          <Img fluid={post.frontmatter.featuredimage.childImageSharp.fluid} />
           <section
             dangerouslySetInnerHTML={{ __html: post.html }}
             itemProp="articleBody"
+            className="body"
           />
           <hr />
           <footer>
@@ -56,9 +60,20 @@ const BlogPostTemplate = ({ data, location }) => {
           </ul>
         </nav>
       </div>
+      </BlogPostContainer>
     </Layout>
   )
 }
+
+const BlogPostContainer = styled.div`
+  margin-top: 50px;
+  .headings {
+    margin-bottom: 50px;
+  }
+  .body {
+    margin-top: 50px;
+  }
+`
 
 export default BlogPostTemplate
 
@@ -78,9 +93,19 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
+        templateKey
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredpost
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 310, maxHeight: 200, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
