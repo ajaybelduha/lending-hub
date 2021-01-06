@@ -2,7 +2,10 @@
 templateKey: blog-post
 title: Demo Blog 3
 date: 2021-01-05T17:12:52.133Z
-description: This is the description
+description: >-
+  Welcome, it's great to have you here.
+
+  We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time.
 featuredpost: true
 featuredimage: /img/flavor_wheel.jpg
 tags:
