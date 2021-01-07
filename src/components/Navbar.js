@@ -5,7 +5,6 @@ import github from '../img/github-icon.svg'
 import logo from '../img/logo.png'
 import search from '../img/search.svg'
 
-
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props)
@@ -44,7 +43,7 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-          <div
+            <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
@@ -91,7 +90,11 @@ const Navbar = class extends React.Component {
               {/* <AniLink paintDrip to="/creditcards">
   Go to Page 4
 </AniLink> */}
-              <img src={search} alt="Kaldi" style={{ width: '16px', display: 'none' }} />
+              <img
+                src={search}
+                alt="Kaldi"
+                style={{ width: '16px', display: 'none' }}
+              />
             </div>
           </div>
         </div>

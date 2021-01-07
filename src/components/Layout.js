@@ -13,7 +13,10 @@ const TemplateWrapper = ({ children }) => {
       <Helmet>
         <html className="has-navbar-fixed-top" lang="en" />
         <title>Lending Hub</title>
-        <meta name="description" content="Credit Cards | Loans | Mortgages | Insurance" />
+        <meta
+          name="description"
+          content="Credit Cards | Loans | Mortgages | Insurance"
+        />
 
         <link
           rel="apple-touch-icon"
@@ -47,11 +50,14 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script
+          defer
+          src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+        ></script>
         {/* <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js"></script> */}
       </Helmet>
       <Navbar />
-        <div>{children}</div>
+      <div>{children}</div>
       <Subscribe />
       <Footer />
     </div>
