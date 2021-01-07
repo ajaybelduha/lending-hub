@@ -7,7 +7,6 @@ import SearchPosts from "../../components/searchPosts"
 
 const BlogIndex = ({ data, navigate, location, n }) => {
   const posts = data.allMarkdownRemark.edges
-  console.log(data)
   const localSearchBlog = data.localSearchBlog
 
   if (posts.length === 0) {

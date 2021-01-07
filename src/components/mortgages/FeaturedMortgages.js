@@ -41,9 +41,6 @@ query FeaturedMortgageItems {
 const FeaturedMortgages = () => {
     const data = useStaticQuery(featuredMortgages)
     const mortgageItems = data.mortgages.edges;
-    console.log("featured")
-    console.log(mortgageItems)
-    // temp1[0].node.frontmatter.title
     return(
         <FeaturedContainer>
             <div className="container">

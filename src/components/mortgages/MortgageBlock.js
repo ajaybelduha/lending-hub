@@ -31,8 +31,6 @@ const MortgageBlock = ({currentRate, mortgageType, mortgages, filterData}) => {
     useEffect(() => {
         const existingRate = Number(currentRate)
         const chosenRate = getRate()
-        console.log('existing Rate: '+existingRate+' chosenRate: '+chosenRate)
-        console.log(mortgageType)
         if(mortgageType === 'Renewal' && chosenRate > existingRate) {
             setShowBlock(false)
         }

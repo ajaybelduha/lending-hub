@@ -30,7 +30,6 @@ const validate = values => {
         const remainder = purchaseAmount - 500000;
         const val2 = remainder / 10;
         const val3 = (percent * purchaseAmount) / 100;
-        console.log(val3, val1 + val2)
         if (val3 < val1 + val2) {
             errors.downPaymentPercent = 'Must be 5% of first $500,000 plus 10% of remainder'
         }
@@ -74,14 +73,12 @@ const MortgageFields = (props) => {
         const regex = /^(0*[0-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/;
         const isValidNumber = !value || regex.test(value.toString());
         if (isValidNumber) {
-            console.log("setValue of " + name + " to " + value)
             formik.setFieldValue(name, value);
         }
     }
 
     const setPrincipalAndCmhc = (principal, dp) => {
         const response = getTotalMortgageAndCmhc(principal, dp);
-        console.log(response)
         if (response) {
             setCmhcValue(response.cmhc);
             setTotalMortgageValue(response.principal)
@@ -95,7 +92,6 @@ const MortgageFields = (props) => {
         const { purchasePrice, downPaymentNumeric } = formik.values;
         if (purchasePrice) {
             const percentValue = (100 * downPaymentNumeric) / purchasePrice;
-            console.log("Percent Value: " + percentValue.toFixed(2))
             if (percentValue > 0 && percentValue < 100) {
                 setPrincipalAndCmhc(purchasePrice, downPaymentNumeric);
             } else {
@@ -112,7 +108,6 @@ const MortgageFields = (props) => {
         const { purchasePrice, downPaymentPercent } = formik.values;
         if (purchasePrice) {
             const numericValue = (downPaymentPercent * purchasePrice) / 100;
-            console.log("Numeric Value: " + Math.ceil(numericValue))
             formik.setFieldValue('downPaymentNumeric', numericValue);
         }
     }, [formik.values.downPaymentPercent])

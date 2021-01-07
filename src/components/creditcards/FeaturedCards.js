@@ -39,8 +39,6 @@ const Featured = () => {
                 <div className="columns">
                     {cards.map(item => {
                         const card = item.node.frontmatter;
-                        console.log("inside card")
-                        console.log(card)
                         return(
                             <div className="column">
                                 <div className="card-block has-text-centered">

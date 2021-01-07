@@ -30,8 +30,6 @@ const ListingFilter = (props) => {
 
     useEffect(() => {
         const { filtersFromQuestions, setFiltered } = props;
-        console.log("filtersFromQuestions")
-        console.log(filtersFromQuestions)
         const initialSelectedRateType = rateTypes.find(item => item.value === filtersFromQuestions.rateType)
         const initialSelectedMortgageTerm = mortgageTerms.find(item => item.value === filtersFromQuestions.mortgageTerm)
         setSelectedRateType(initialSelectedRateType)

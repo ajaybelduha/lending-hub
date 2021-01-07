@@ -30,14 +30,12 @@ const TotalMortgageInputs = (props) => {
         const regex = /^(0*[0-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/;
         const isValidNumber = !value || regex.test(value.toString());
         if(isValidNumber) {
-            console.log("setValue of "+name+" to "+value)
             formik.setFieldValue(name, value);   
         }
     }
 
     const setPrincipalAndCmhc = (principal, dp) => {
         const response = getTotalMortgageAndCmhc(principal, dp);
-        console.log(response)
         if(response) {
             setCmhcValue(response.cmhc);
             setTotalMortgageValue(response.principal)
@@ -52,7 +50,6 @@ const TotalMortgageInputs = (props) => {
         const { purchasePrice, downPaymentNumeric } = formik.values;
         if(purchasePrice) {
             const percentValue = (100*downPaymentNumeric)/purchasePrice;
-            console.log("Percent Value: "+percentValue.toFixed(2))
             if (percentValue > 0 && percentValue < 100) {
                 setPrincipalAndCmhc(purchasePrice, downPaymentNumeric);
             } else {
@@ -69,7 +66,6 @@ const TotalMortgageInputs = (props) => {
         const { purchasePrice, downPaymentPercent } = formik.values;
         if(purchasePrice) {
             const numericValue = (downPaymentPercent*purchasePrice)/100;
-            console.log("Numeric Value: "+Math.ceil(numericValue))
             formik.setFieldValue('downPaymentNumeric', numericValue);
         }
     }, [formik.values.downPaymentPercent])

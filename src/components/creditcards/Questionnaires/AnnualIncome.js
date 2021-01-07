@@ -13,7 +13,6 @@ const Range = createSliderWithTooltip(Slider.Range);
 const AnnualIncome = (props) => {
     const [annualIncome, setAnnualIncome] = useState([0, 80000]);
     const handleChange = (values) => {
-        console.log(values);
         setAnnualIncome(values);
     }
     return(

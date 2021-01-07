@@ -6,8 +6,6 @@ import CardBlock from '../../components/creditcards/CardBlock';
 import { graphql } from 'gatsby';
 
 const CCListing = (response) => {
-    console.log("Credit Cards Listings")
-    console.log(response);
     const {creditCards} = response.data;
     return (
         <CCListingContainer>

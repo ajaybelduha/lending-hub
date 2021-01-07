@@ -48,8 +48,6 @@ const RefinanceFields = (props) => {
         onSubmit: values => {
             values.maxLoanAmount = maxLoanAmount;
             values.totalMortgage = equityNeeded;
-            // alert(JSON.stringify(values, null, 2));
-            console.log(values)
             props.setValue('formValues', values);
         },
     });

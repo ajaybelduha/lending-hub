@@ -15,8 +15,6 @@ const FeaturedBlogs = () => {
     };
     const response = useStaticQuery(blogs);
     const blogData = response.allMarkdownRemark.edges;
-    console.log("blogData")
-    console.log(blogData)
     return(
         <FeaturedBlogsContainer>
             <div className="container">

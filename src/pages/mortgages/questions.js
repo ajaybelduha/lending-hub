@@ -11,7 +11,6 @@ const QuestionnaireModal = (props) => {
     const [selections, setSelections] = useState({});
 
     const setValue = async (key, value) => {
-        console.log(key, value);
         let data = selections;
         data[key]= value;
         await setSelections(data);
@@ -19,8 +18,6 @@ const QuestionnaireModal = (props) => {
     }
 
     const submitAnswers = (key, value) => {
-        console.log(selections);
-        console.log(key, value);
         navigate('/mortgages/listing', {
             state: { selections },
           });

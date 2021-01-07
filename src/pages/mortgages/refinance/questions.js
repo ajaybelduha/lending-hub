@@ -22,7 +22,6 @@ const QuestionnaireModal = (props) => {
     }, [])
 
     const setValue = async (key, value) => {
-        console.log(key, value);
         let data = selections;
         data[key]= value;
         await setSelections(data);
@@ -30,8 +29,6 @@ const QuestionnaireModal = (props) => {
     }
 
     const submitAnswers = (key, value) => {
-        console.log(selections);
-        console.log(key, value);
         navigate('/mortgages/refinance/listing', {
             state: { selections },
           });

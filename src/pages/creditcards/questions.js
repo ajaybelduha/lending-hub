@@ -16,14 +16,12 @@ const QuestionnaireModal = (props) => {
 
     useEffect(() => {
         const {location} = props;
-        console.log(location);
         if(location?.state?.id !== 1) {
             setStep(3);
         }
     }, [])
 
     const setValue = async (key, value) => {
-        console.log(key, value);
         let data = selections;
         data[key]= value;
         await setSelections(data);
@@ -36,8 +34,6 @@ const QuestionnaireModal = (props) => {
         }
     }
     const submitAnswers = (key, value) => {
-        console.log(selections);
-        console.log(key, value);
         navigate('/creditcards/listing');
     }
     return(

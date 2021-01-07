@@ -31,8 +31,6 @@ const MortgageListings = (response) => {
     }, [])
 
     const setFilteredData = (items) => {
-        console.log("setting filtered data")
-        console.log(items)
         setFilters(items)
     }
 

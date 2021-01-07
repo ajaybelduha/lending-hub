@@ -14,9 +14,6 @@ const Calculator = (props) => {
     }
 
     const setCalculatorType = (id) => {
-        // console.log(props);
-        // const { id } = props.location.state;
-        console.log(id);
         switch(id) {
             case 'mortgage-payment':
                 setCalculatorHtml(`<div>
@@ -49,7 +46,6 @@ const Calculator = (props) => {
     }
 
     useEffect(() => {
-        console.log(props);
         const { id } = props.location.state;
         appendScript();
         setCalculatorType(id);
