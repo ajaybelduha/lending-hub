@@ -35,7 +35,7 @@ const TotalMortgageInputs = (props) => {
                         <form onSubmit={formik.handleSubmit}>
                             <div className="inline-input-fields">
                                 <div className="field">
-                                    <label className="label">Equity Amount</label>
+                                    <label className="label">Equity Takeout</label>
                                     <div className="control has-icons-left">
                                         <InputField
                                             id="estimated-value"

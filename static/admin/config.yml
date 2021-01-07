@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: credit-card-flow
+  branch: blog
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
@@ -153,7 +153,7 @@ collections:
 
   - name: "blog"
     label: "Blog"
-    folder: "src/pages/blog"
+    folder: "src/markdown/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
