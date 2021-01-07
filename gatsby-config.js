@@ -12,22 +12,22 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sass',
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
           families: ['Poppins'],
-          urls: ["/fonts/fonts.css"],
+          urls: ['/fonts/fonts.css'],
         },
       },
     },
     {
-      resolve: "gatsby-plugin-local-search",
+      resolve: 'gatsby-plugin-local-search',
       options: {
-        name: "blog",
-        engine: "flexsearch",
+        name: 'blog',
+        engine: 'flexsearch',
         engineOptions: {
-          encode: "icase",
-          tokenize: "forward",
+          encode: 'icase',
+          tokenize: 'forward',
           async: false,
         },
         query: `
@@ -46,11 +46,11 @@ module.exports = {
             }
           }
         `,
-        ref: "id",
-        index: ["title", "rawBody"],
-        store: ["id", "slug", "date", "title", "excerpt", "description"],
+        ref: 'id',
+        index: ['title', 'rawBody'],
+        store: ['id', 'slug', 'date', 'title', 'excerpt', 'description'],
         normalizer: ({ data }) =>
-          data.allMarkdownRemark.nodes.map(node => ({
+          data.allMarkdownRemark.nodes.map((node) => ({
             id: node.id,
             slug: node.fields.slug,
             excerpt: node.excerpt,

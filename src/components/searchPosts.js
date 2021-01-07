@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
-import { useFlexSearch } from "react-use-flexsearch"
-import * as queryString from "query-string"
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
+import { useFlexSearch } from 'react-use-flexsearch'
+import * as queryString from 'query-string'
 
 // import { rhythm } from "../utils/typography"
 
@@ -27,8 +27,8 @@ const SearchBar = styled.div`
     display: flex;
     flex: 100%;
     height: 100%;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     background-color: transparent;
     border: none;
@@ -43,7 +43,7 @@ const SearchBar = styled.div`
 
 const SearchedPosts = ({ results }) =>
   results.length > 0 ? (
-    results.map(node => {
+    results.map((node) => {
       const date = node.date
       const title = node.title || node.slug
       const description = node.description
@@ -71,41 +71,49 @@ const SearchedPosts = ({ results }) =>
       )
     })
   ) : (
-    <p style={{ textAlign: "center" }}>
+    <p style={{ textAlign: 'center' }}>
       Sorry, couldn't find any posts matching this search.
     </p>
   )
 
 const AllPosts = ({ posts }) => {
-  return (<div style={{ margin: "20px 0 40px" }}>
-    {posts.map(node => {
-      const title = node.frontmatter.title || node.fields.slug
-      return (
-        <div key={node.fields.slug}>
-          <h3
-            style={{
-              marginBottom: 20,
-            }}
-          >
-            <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
-              {title}
-            </Link>
-          </h3>
-          <small>{node.frontmatter.date}</small>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: node.frontmatter.description || node.excerpt,
-            }}
-          />
-        </div>
-      )
-    })}
-  </div>
-)}
+  return (
+    <div style={{ margin: '20px 0 40px' }}>
+      {posts.map((node) => {
+        const title = node.frontmatter.title || node.fields.slug
+        return (
+          <div key={node.fields.slug}>
+            <h3
+              style={{
+                marginBottom: 20,
+              }}
+            >
+              <Link
+                style={{ boxShadow: `none` }}
+                to={`/blog${node.fields.slug}`}
+              >
+                {title}
+              </Link>
+            </h3>
+            <small>{node.frontmatter.date}</small>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: node.frontmatter.description || node.excerpt,
+              }}
+            />
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
   const { search } = queryString.parse(location.search)
-  const [query, setQuery] = useState(search || "")
+  const [query, setQuery] = useState(search || '')
+
+  console.log('SEARCH')
+  console.log(query, search, localSearchBlog, posts)
 
   const results = useFlexSearch(
     query,
@@ -128,9 +136,9 @@ const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
           type="search"
           placeholder="Search all posts"
           value={query}
-          onChange={e => {
+          onChange={(e) => {
             navigate(
-              e.target.value ? `/blogs/?search=${e.target.value}` : "/blogs/"
+              e.target.value ? `/blogs/?search=${e.target.value}` : '/blogs/'
             )
             setQuery(e.target.value)
           }}

@@ -72,7 +72,6 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 //   })
 // }
 
-
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
@@ -130,7 +129,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 }
 
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   fmImagesToRelative(node) // convert image paths for gatsby images
@@ -144,7 +142,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
-
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions

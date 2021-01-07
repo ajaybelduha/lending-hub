@@ -1,8 +1,8 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import Layout from "../components/Layout"
+import Layout from '../components/Layout'
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -10,56 +10,58 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
 
   return (
-    <Layout >
+    <Layout>
       <BlogPostContainer>
-      <div className="container">
-        <article
-          className="blog-post"
-          itemScope
-          itemType="http://schema.org/Article"
-        >
-          <header className="headings">
-            <h1 className="section-title" itemProp="headline">{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
-          </header>
-          <Img fluid={post.frontmatter?.featuredimage?.childImageSharp?.fluid} />
-          <section
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            itemProp="articleBody"
-            className="body"
-          />
-          <hr />
-          <footer>
-
-          </footer>
-        </article>
-        <nav className="blog-post-nav">
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
+        <div className="container">
+          <article
+            className="blog-post"
+            itemScope
+            itemType="http://schema.org/Article"
           >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
-      </div>
+            <header className="headings">
+              <h1 className="section-title" itemProp="headline">
+                {post.frontmatter.title}
+              </h1>
+              <p>{post.frontmatter.date}</p>
+            </header>
+            <Img
+              fluid={post.frontmatter?.featuredimage?.childImageSharp?.fluid}
+            />
+            <section
+              dangerouslySetInnerHTML={{ __html: post.html }}
+              itemProp="articleBody"
+              className="body"
+            />
+            <hr />
+            <footer></footer>
+          </article>
+          <nav className="blog-post-nav">
+            <ul
+              style={{
+                display: `flex`,
+                flexWrap: `wrap`,
+                justifyContent: `space-between`,
+                listStyle: `none`,
+                padding: 0,
+              }}
+            >
+              <li>
+                {previous && (
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
+                )}
+              </li>
+              <li>
+                {next && (
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </nav>
+        </div>
       </BlogPostContainer>
     </Layout>
   )

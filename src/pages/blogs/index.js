@@ -1,9 +1,8 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import Layout from "../../components/Layout"
-import SearchPosts from "../../components/searchPosts"
+import Layout from '../../components/Layout'
 
 const BlogIndex = ({ data, navigate, location, n }) => {
   const posts = data.allMarkdownRemark.edges
@@ -26,57 +25,62 @@ const BlogIndex = ({ data, navigate, location, n }) => {
   return (
     <Layout>
       <BlogIndexContainer>
-      <div className="cover-container">
-        <div>
-          <h1 className="section-title">The bottom line.</h1>
-          <h2 className="title-24-nb">Stay on top of all the latest news</h2>
+        <div className="cover-container">
+          <div>
+            <h1 className="section-title">The bottom line.</h1>
+            <h2 className="title-24-nb">Stay on top of all the latest news</h2>
+          </div>
         </div>
-      </div>
-      <div className="container">
-        {/* <SearchPosts
-          posts={posts}
-          localSearchBlog={localSearchBlog}
-          navigate={navigate}
-          location={location}
-      /> */}
-      <div className="section-title">Latest posts</div>
-      <hr/>
-      <div className="list-items">
-        {posts.map(post => {
-          const title = post.node.frontmatter.title || post.node.fields.slug
+        <div className="container">
+          <div className="section-title">Latest posts</div>
+          <hr />
+          <div className="list-items">
+            {posts.map((post) => {
+              const title = post.node.frontmatter.title || post.node.fields.slug
 
-          return (
-            <Link to={post.node.fields.slug} itemProp="url">
-            <div className="item" key={post.node.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <Img fluid={post.node.frontmatter.featuredimage.childImageSharp.fluid} />
-                  <h2 className="blog-title">
-                    {/* <Link to={post.node.fields.slug} itemProp="url"> */}
-                      <span className="title-2" itemProp="headline">{title}</span>
-                    {/* </Link> */}
-                  </h2>
-                  <small className="publish-date">{post.node.frontmatter.date}</small>
-                </header>
-                <section className="description">
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.node.frontmatter.description || post.node.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </div>
-            </Link>
-          )
-        })}
-      </div>
-      </div>
+              return (
+                <Link to={post.node.fields.slug} itemProp="url">
+                  <div className="item" key={post.node.fields.slug}>
+                    <article
+                      className="post-list-item"
+                      itemScope
+                      itemType="http://schema.org/Article"
+                    >
+                      <header>
+                        <Img
+                          fluid={
+                            post.node.frontmatter.featuredimage.childImageSharp
+                              .fluid
+                          }
+                        />
+                        <h2 className="blog-title">
+                          {/* <Link to={post.node.fields.slug} itemProp="url"> */}
+                          <span className="title-2" itemProp="headline">
+                            {title}
+                          </span>
+                          {/* </Link> */}
+                        </h2>
+                        <small className="publish-date">
+                          {post.node.frontmatter.date}
+                        </small>
+                      </header>
+                      <section className="description">
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              post.node.frontmatter.description ||
+                              post.node.excerpt,
+                          }}
+                          itemProp="description"
+                        />
+                      </section>
+                    </article>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
       </BlogIndexContainer>
     </Layout>
   )
@@ -84,7 +88,7 @@ const BlogIndex = ({ data, navigate, location, n }) => {
 
 const BlogIndexContainer = styled.div`
   .cover-container {
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
     background-image: url('/img/blog-cover.jpg');
     height: 600px;
@@ -108,7 +112,7 @@ const BlogIndexContainer = styled.div`
         margin-top: 20px;
       }
       .publish-date {
-        color: #5B7A81;
+        color: #5b7a81;
       }
       .description {
         margin-top: 10px;
@@ -117,10 +121,10 @@ const BlogIndexContainer = styled.div`
   }
   @media screen and (max-width: 786px) {
     .list-items {
-    .item {
-      width: 100%;
+      .item {
+        width: 100%;
+      }
     }
-  }
   }
 `
 
@@ -132,7 +136,9 @@ export const pageQuery = graphql`
       index
       store
     }
-    allMarkdownRemark(filter:{frontmatter: {templateKey: {eq: "blog-post"}}}) {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
       edges {
         node {
           html
