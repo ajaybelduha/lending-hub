@@ -83,6 +83,9 @@ const BlogPostContainer = styled.div`
       font-size: 1.5rem;
     }
   }
+  @media screen and (max-width: 786px) {
+    margin-top: 20px
+  }
 `
 
 export default BlogPostTemplate

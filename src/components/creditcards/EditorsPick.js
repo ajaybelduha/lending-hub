@@ -1,72 +1,62 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 const EditorsPick = () => {
+  const response = useStaticQuery(blogs)
+  const blogData = response.allMarkdownRemark.edges
   return (
     <EditorsPickContainer>
       <div className="container">
-        <h1 className="section-title">Editor's pick</h1>
-        <div className="ep-block">
-          <div className="image">
-            {/* <img src="/img/sample-image.jpg" /> */}
+        <h1 className="section-title mb-4">Editor's pick</h1>
+        <Link to={blogData[0].node.fields.slug} itemProp="url">
+          <div className="ep-block">
+            <div className="image">
+              <Img
+                  fluid={
+                    blogData[0].node.frontmatter.featuredimage.childImageSharp.fluid
+                  }
+                />
+            </div>
+            <div className="text">
+              <h4 className="title-1 grey-text mb-2">Banking</h4>
+              <h4 className="title-2 mb-2">
+                {blogData[0].node.frontmatter.title}
+              </h4>
+              <h4 className="meta mb-2">{blogData[0].node.frontmatter.date}</h4>
+              <p className="title-1 grey-text">
+                {blogData[0].node.frontmatter.description}
+              </p>
+              <h4 className="title-2">Continue reading</h4>
+            </div>
           </div>
-          <div className="text">
-            <h4 className="title-1 grey-text mb-2">Banking</h4>
-            <h4 className="title-2 mb-2">
-              Lorem Ipsum is simply dummy of the printing and typesetting
-              industry. Lorem Ipsum
-            </h4>
-            <h4 className="meta mb-2">7 Min Read | OCT 8th 2020</h4>
-            <p className="title-1 grey-text">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500.
-            </p>
-            <h4 className="title-2">Continue reading</h4>
-          </div>
-        </div>
+        </Link>
         <div className="ep-other-blocks mt-4">
           <div className="columns">
-            <div className="column">
-              <div className="block">
-                <img src="/img/coffee-gear.png" />
-                <h4 className="title-2 my-3">
-                  Lorem Ipsum is simply dummy of the printing and typesetting
-                  industry. Lorem Ipsum
-                </h4>
-                <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
-              </div>
-            </div>
-            <div className="column">
-              <div className="block">
-                <img src="/img/coffee-gear.png" />
-                <h4 className="title-2 my-3">
-                  Lorem Ipsum is simply dummy of the printing and typesetting
-                  industry. Lorem Ipsum
-                </h4>
-                <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
-              </div>
-            </div>
-            <div className="column">
-              <div className="block">
-                <img src="/img/coffee-gear.png" />
-                <h4 className="title-2 my-3">
-                  Lorem Ipsum is simply dummy of the printing and typesetting
-                  industry. Lorem Ipsum
-                </h4>
-                <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
-              </div>
-            </div>
-            <div className="column">
-              <div className="block">
-                <img src="/img/coffee-gear.png" />
-                <h4 className="title-2 my-3">
-                  Lorem Ipsum is simply dummy of the printing and typesetting
-                  industry. Lorem Ipsum
-                </h4>
-                <h4 className="meta">7 Min Read | OCT 8th 2020</h4>
-              </div>
-            </div>
+            {blogData.map((item, index) => {
+              if (index < 4) {
+                return (
+                  <div className="column">
+                    <Link to={item.node.fields.slug} itemProp="url">
+                    <div className="block">
+                      <Img
+                        fluid={
+                          item.node.frontmatter.featuredimage.childImageSharp.fluid
+                        }
+                      />
+                      <h4 className="title-2 my-3">
+                        {item.node.frontmatter.title || item.node.fields.slug}
+                      </h4>
+                      <h4 className="meta">{item.node.frontmatter.date}</h4>
+                    </div>
+                    </Link>
+                  </div>
+                )
+              } else {
+                return null
+              }
+            })}
           </div>
         </div>
       </div>
@@ -74,7 +64,41 @@ const EditorsPick = () => {
   )
 }
 
+const blogs = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
+      edges {
+        node {
+          html
+          excerpt(pruneLength: 160)
+          fields {
+            slug
+          }
+          frontmatter {
+            templateKey
+            title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            featuredpost
+            featuredimage {
+              childImageSharp {
+                fluid(maxWidth: 310, maxHeight: 200, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            tags
+          }
+        }
+      }
+    }
+  }
+  `
+
 const EditorsPickContainer = styled.section`
+  margin-top: 50px;
   .ep-block {
     display: flex;
     border: 1px solid;
@@ -84,14 +108,18 @@ const EditorsPickContainer = styled.section`
     .block {
       box-shadow: 0px 3px 6px #00000029;
       padding: 1rem;
+      min-height: 315px;
     }
   }
   .image {
-    background-image: url('/img/coffee-gear.png');
     width: 65%;
+    .gatsby-image-wrapper {
+      height: 100%;
+    }
+    /* background-image: url('/img/coffee-gear.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: 50%; */
   }
   .text {
     width: 35%;
