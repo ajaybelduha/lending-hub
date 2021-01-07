@@ -211,8 +211,15 @@ const FeaturedBlogsContainer = styled.section`
     .carousel {
       .carousel-main-image {
         .text-over-image {
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
           padding: 1rem;
-          .type,
+          background: transparent linear-gradient(180deg,#ffffff00 0%,#000000cc 0%) 0% 0% no-repeat padding-box;
+          .type {
+            display: none
+          }
           .meta {
             font-size: 0.8rem;
           }

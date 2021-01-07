@@ -6,7 +6,6 @@ import Layout from '../../components/Layout'
 
 const BlogIndex = ({ data, navigate, location, n }) => {
   const posts = data.allMarkdownRemark.edges
-  const localSearchBlog = data.localSearchBlog
 
   if (posts.length === 0) {
     return (
@@ -132,10 +131,6 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-    localSearchBlog {
-      index
-      store
-    }
     allMarkdownRemark(
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
     ) {
