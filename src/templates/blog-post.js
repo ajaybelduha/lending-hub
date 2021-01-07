@@ -72,6 +72,14 @@ const BlogPostContainer = styled.div`
   }
   .body {
     margin-top: 50px;
+    p {
+      line-height: 1.75;
+      margin: 1.5em auto;
+      font-size: 1.1rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 `
 
@@ -100,7 +108,7 @@ export const pageQuery = graphql`
         featuredpost
         featuredimage {
           childImageSharp {
-            fluid(maxWidth: 310, maxHeight: 200, quality: 100) {
+            fluid(maxWidth: 1000, maxHeight: 600, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

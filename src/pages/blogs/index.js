@@ -40,6 +40,8 @@ const BlogIndex = ({ data, navigate, location, n }) => {
           navigate={navigate}
           location={location}
       /> */}
+      <div className="section-title">Latest posts</div>
+      <hr/>
       <div className="list-items">
         {posts.map(post => {
           const title = post.node.frontmatter.title || post.node.fields.slug
