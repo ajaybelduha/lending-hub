@@ -22,7 +22,7 @@ const BlogPostTemplate = ({ data, location }) => {
             <h1 className="section-title" itemProp="headline">{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
           </header>
-          <Img fluid={post.frontmatter.featuredimage.childImageSharp.fluid} />
+          <Img fluid={post.frontmatter?.featuredimage?.childImageSharp?.fluid} />
           <section
             dangerouslySetInnerHTML={{ __html: post.html }}
             itemProp="articleBody"
