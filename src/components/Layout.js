@@ -3,8 +3,6 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Subscribe from '../components/Subscribe'
-import 'bulma/css/bulma.css'
-import './all.sass'
 import { withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
@@ -50,11 +48,6 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
-        <script
-          defer
-          src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-        ></script>
-        {/* <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js"></script> */}
       </Helmet>
       <Navbar />
       <div>{children}</div>
