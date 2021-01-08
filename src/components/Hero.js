@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 // import Image from 'gatsby-image'
 // import HeroImage from '../../static/img/home-hero-image.png'
 
@@ -17,9 +17,9 @@ const Hero = (props) => {
                 <h4 className="section-subtitle">{subtitle}</h4>
                 <div className="blocks mt-5" onClick={onSelect}>
                   {blockItems.map((item) => (
-                    <Link to={item.link} state={{ id: item.key }}>
+                    <AniLink paintDrip hex="#000000" to={item.link} state={{ id: item.key }}>
                       <Block data={item} />
-                    </Link>
+                    </AniLink>
                   ))}
                 </div>
               </div>
@@ -63,6 +63,7 @@ const Block = ({ data }) => {
 }
 
 const HeroContainer = styled.section`
+margin-top: 3rem;
   .blocks {
     display: flex;
     flex-wrap: wrap;

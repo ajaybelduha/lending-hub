@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from 'gatsby-image'
 
 const EditorsPick = () => {
@@ -10,7 +11,7 @@ const EditorsPick = () => {
     <EditorsPickContainer>
       <div className="container">
         <h1 className="section-title mb-4">Editor's pick</h1>
-        <Link to={blogData[0].node.fields.slug} itemProp="url">
+        <AniLink paintDrip hex="#000000"to={blogData[0].node.fields.slug} itemProp="url">
           <div className="ep-block">
             <div className="image">
               <Img
@@ -31,14 +32,14 @@ const EditorsPick = () => {
               <h4 className="title-2">Continue reading</h4>
             </div>
           </div>
-        </Link>
+        </AniLink>
         <div className="ep-other-blocks mt-4">
           <div className="columns">
             {blogData.map((item, index) => {
               if (index < 4) {
                 return (
                   <div className="column">
-                    <Link to={item.node.fields.slug} itemProp="url">
+                    <AniLink paintDrip hex="#000000"to={item.node.fields.slug} itemProp="url">
                     <div className="block">
                       <Img
                         fluid={
@@ -50,7 +51,7 @@ const EditorsPick = () => {
                       </h4>
                       <h4 className="meta">{item.node.frontmatter.date}</h4>
                     </div>
-                    </Link>
+                    </AniLink>
                   </div>
                 )
               } else {

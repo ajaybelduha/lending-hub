@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const MaximizeSavings = () => {
   const calculators = [
@@ -86,7 +86,7 @@ const Block = ({ data }) => {
     setIsHovered(() => !isHovered)
   }
   return (
-    <Link to={data.link} state={{ id: data.key }}>
+    <AniLink paintDrip hex="#000000" to={data.link} state={{ id: data.key }}>
       <div
         className="block"
         onMouseEnter={toggleHover}
@@ -104,7 +104,7 @@ const Block = ({ data }) => {
           )}
         </div>
       </div>
-    </Link>
+    </AniLink>
   )
 }
 

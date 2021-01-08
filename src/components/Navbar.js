@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-// import AniLink from "gatsby-plugin-transition-link/AniLink"
-import github from '../img/github-icon.svg'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import logo from '../img/logo.png'
 import search from '../img/search.svg'
 
@@ -52,9 +51,9 @@ const Navbar = class extends React.Component {
               <span />
               <span />
             </div>
-            <Link to="/" className="navbar-item" title="Logo">
+            <AniLink paintDrip hex="#000000" to="/" className="navbar-item" title="Logo">
               <img src={logo} alt="Kaldi" style={{ width: '169px' }} />
-            </Link>
+            </AniLink>
             <div></div>
             {/* Hamburger menu */}
           </div>
@@ -63,30 +62,30 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start">
-              <Link className="navbar-item" to="/mortgages">
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/mortgages">
                 Mortgages
-              </Link>
-              <Link className="navbar-item" to="/loans">
+              </AniLink>
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/loans">
                 Loans
-              </Link>
-              <Link className="navbar-item" to="/creditcards">
+              </AniLink>
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/creditcards">
                 Credit Cards
-              </Link>
-              <Link className="navbar-item" to="/insurance">
+              </AniLink>
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/insurance">
                 Insurance
-              </Link>
-              <Link className="navbar-item" to="/banking">
+              </AniLink>
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/banking">
                 Banking
-              </Link>
-              <Link className="navbar-item" to="/blogs">
+              </AniLink>
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/blogs">
                 Blog
-              </Link>
-              <Link className="navbar-item" to="/aboutus">
+              </AniLink>
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/aboutus">
                 About Us
-              </Link>
-              <Link className="navbar-item" to="/contactus">
+              </AniLink>
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/contactus">
                 Contact Us
-              </Link>
+              </AniLink>
               {/* <AniLink paintDrip to="/creditcards">
   Go to Page 4
 </AniLink> */}

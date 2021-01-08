@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { UnderlinedLink } from '../../components/common/common'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from 'gatsby-image'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
@@ -68,7 +69,7 @@ const FeaturedBlogs = () => {
                       item.node.frontmatter.featuredimage.childImageSharp.fluid
                     }
                   />
-                  <Link to={item.node.fields.slug} itemProp="url">
+                  <AniLink paintDrip hex="#000000"to={item.node.fields.slug} itemProp="url">
                     <div className="text-over-image">
                       <h4 className="type mb-2">Finance</h4>
                       <h4 className="heading mb-2">
@@ -76,7 +77,7 @@ const FeaturedBlogs = () => {
                       </h4>
                       <h4 className="meta">{item.node.frontmatter.date}</h4>
                     </div>
-                  </Link>
+                  </AniLink>
                 </div>
               ))}
             </Carousel>
@@ -89,7 +90,7 @@ const FeaturedBlogs = () => {
                     <>
                       <div className="blog">
                         <div className="blog-content">
-                          <Link to={item.node.fields.slug} itemProp="url">
+                          <AniLink paintDrip hex="#000000"to={item.node.fields.slug} itemProp="url">
                             <h4 className="type mb-2">Finance</h4>
                             <h4 className="title-3 mb-2">
                               {item.node.frontmatter.title ||
@@ -98,7 +99,7 @@ const FeaturedBlogs = () => {
                             <h4 className="meta">
                               {item.node.frontmatter.date}
                             </h4>
-                          </Link>
+                          </AniLink>
                         </div>
                         <div>
                           <img

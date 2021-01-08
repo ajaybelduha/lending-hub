@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import logo from '../img/logo.png'
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
@@ -26,30 +25,30 @@ const Footer = class extends React.Component {
                 <section className="menu">
                   <ul className="menu-list">
                     <li className="heading-container">
-                      <Link to="/" className="navbar-item">
+                      <AniLink paintDrip hex="#000000"to="/" className="navbar-item">
                         About us
-                      </Link>
+                      </AniLink>
                       <hr />
                     </li>
                     <li>
-                      <Link to="/" className="navbar-item">
+                      <AniLink paintDrip hex="#000000"to="/" className="navbar-item">
                         About us
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/about">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/about">
                         Press room
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/products">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/products">
                         Sitemap
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/products">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/products">
                         Careers
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
                       <a
@@ -68,25 +67,25 @@ const Footer = class extends React.Component {
                 <section>
                   <ul className="menu-list">
                     <li className="heading-container">
-                      <Link to="/" className="navbar-item">
+                      <AniLink paintDrip hex="#000000"to="/" className="navbar-item">
                         Help
-                      </Link>
+                      </AniLink>
                       <hr />
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/blog">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/blog">
                         FAQs
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
                         Latest News
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
                         Popular Topics
-                      </Link>
+                      </AniLink>
                     </li>
                   </ul>
                 </section>
@@ -95,30 +94,30 @@ const Footer = class extends React.Component {
                 <section>
                   <ul className="menu-list">
                     <li className="heading-container">
-                      <Link to="/" className="navbar-item">
+                      <AniLink paintDrip hex="#000000"to="/" className="navbar-item">
                         Legal
-                      </Link>
+                      </AniLink>
                       <hr />
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/blog">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/blog">
                         Terms of use
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
                         Privacy Policy
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
                         Disclaimer
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
                         Logo Usage
-                      </Link>
+                      </AniLink>
                     </li>
                   </ul>
                 </section>
@@ -126,9 +125,9 @@ const Footer = class extends React.Component {
               <div className="column is-3">
                 <ul className="menu-list">
                   <li className="heading-container">
-                    <Link to="/" className="navbar-item">
+                    <AniLink paintDrip hex="#000000"to="/" className="navbar-item">
                       Contact Us
-                    </Link>
+                    </AniLink>
                     <hr />
                   </li>
                   <li>
