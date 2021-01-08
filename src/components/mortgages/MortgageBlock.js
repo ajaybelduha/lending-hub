@@ -67,10 +67,13 @@ const MortgageBlock = ({
             {applyNow && <img className="loading-icon" src='/img/icons/loading.svg' />}
           </BlackButton>}
           {isApplied && <div className="apply-successful">
-            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-              <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-              <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            <div>
+            <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+              <circle class="tick__circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
             </svg>
+            </div>
+            <p>Thank you for applying. We will get back to you soon!</p>
           </div>}
         </div>
       </div>
@@ -115,6 +118,16 @@ const MortgageBlockContainer = styled.div`
     }
     .action {
       width: 20%;
+      .apply-successful {
+        align-items: center;
+        display: flex;
+        svg {
+          margin-right: 20px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
     }
   }
   @media screen and (max-width: 786px) {
@@ -138,6 +151,10 @@ const MortgageBlockContainer = styled.div`
       }
       .action {
         width: 100%;
+        .apply-successful {
+          width: 70%;
+          margin: auto;
+        }
       }
     }
   }
