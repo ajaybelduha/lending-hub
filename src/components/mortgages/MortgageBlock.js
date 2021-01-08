@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { BlackButtonLink } from '../../components/common/common'
+import { BlackButton } from '../../components/common/common'
 import { can_mortgage_payment } from '../../components/common/utils'
 import Image from 'gatsby-image'
 
@@ -12,6 +12,8 @@ const MortgageBlock = ({
 }) => {
   const item = mortgages.node.frontmatter
   const [showBlock, setShowBlock] = useState(true)
+  const [applyNow, setApplyNow] = useState(false)
+  const [isApplied, setIsApplied] = useState(false)
 
   const getRate = () => {
     const { totalMortgage, rateType, mortgageTerm } = filterData
@@ -23,6 +25,13 @@ const MortgageBlock = ({
       rate = item[`variable`][`_${mortgageTerm}`]
     }
     return rate
+  }
+
+  const applyNowClick = () => {
+    setApplyNow(true)
+    setTimeout(() => {
+      setIsApplied(true)
+    }, 2000)
   }
 
   const getMonthlyAmount = () => {
@@ -53,7 +62,19 @@ const MortgageBlock = ({
 
         <div className="monthly-payment">${getMonthlyAmount()}/mo</div>
         <div className="action">
-          <BlackButtonLink to="/">Apply Now</BlackButtonLink>
+          {!isApplied && <BlackButton onClick={applyNowClick}>
+            {!applyNow && <span>Apply now</span>}
+            {applyNow && <img className="loading-icon" src='/img/icons/loading.svg' />}
+          </BlackButton>}
+          {isApplied && <div className="apply-successful">
+            <div>
+            <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+              <circle class="tick__circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            </div>
+            <p>Thank you for applying. We will get back to you soon!</p>
+          </div>}
         </div>
       </div>
       <hr />
@@ -97,6 +118,16 @@ const MortgageBlockContainer = styled.div`
     }
     .action {
       width: 20%;
+      .apply-successful {
+        align-items: center;
+        display: flex;
+        svg {
+          margin-right: 20px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
     }
   }
   @media screen and (max-width: 786px) {
@@ -120,6 +151,10 @@ const MortgageBlockContainer = styled.div`
       }
       .action {
         width: 100%;
+        .apply-successful {
+          width: 70%;
+          margin: auto;
+        }
       }
     }
   }

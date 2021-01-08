@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import { BlackButtonLink } from '../../components/common/common'
+import { BlackButton } from '../../components/common/common'
 import Accordion from '../../components/Accordion'
 import Image from 'gatsby-image'
 
@@ -22,6 +22,17 @@ const CardBlock = ({ cardData }) => {
       paragraph: summaryDescription,
     },
   ]
+
+  const [applyNow, setApplyNow] = useState(false)
+  const [isApplied, setIsApplied] = useState(false)
+
+  const applyNowClick = () => {
+    setApplyNow(true)
+    setTimeout(() => {
+      setIsApplied(true)
+    }, 2000)
+  }
+
   return (
     <CardBlockContainer>
       <hr />
@@ -67,7 +78,19 @@ const CardBlock = ({ cardData }) => {
           </div>
         </div>
         <div className="action">
-          <BlackButtonLink to={href}>Apply Now</BlackButtonLink>
+          {!isApplied && <BlackButton onClick={applyNowClick}>
+              {!applyNow && <span>Apply now</span>}
+              {applyNow && <img className="loading-icon" src='/img/icons/loading.svg' />}
+            </BlackButton>}
+            {isApplied && <div className="apply-successful">
+              <div>
+                <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                  <circle class="tick__circle" cx="26" cy="26" r="25" fill="none"/>
+                  <path class="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+              </div>
+              <p>Thank you for applying. We will get back to you soon!</p>
+            </div>}
         </div>
       </div>
       <div className="more-details">
@@ -106,6 +129,16 @@ const CardBlockContainer = styled.div`
     }
     .action {
       width: 17%;
+      .apply-successful {
+        align-items: center;
+        display: flex;
+        svg {
+          margin-right: 20px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
     }
   }
   @media screen and (max-width: 786px) {
@@ -124,6 +157,10 @@ const CardBlockContainer = styled.div`
       }
       .action {
         width: 100%;
+        .apply-successful {
+          width: 70%;
+          margin: auto;
+        }
       }
     }
   }
