@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Layout from '../../components/Layout'
@@ -38,7 +39,7 @@ const BlogIndex = ({ data, navigate, location, n }) => {
               const title = post.node.frontmatter.title || post.node.fields.slug
 
               return (
-                <Link to={post.node.fields.slug} itemProp="url">
+                <AniLink paintDrip hex="#000000"to={post.node.fields.slug} itemProp="url">
                   <div className="item" key={post.node.fields.slug}>
                     <article
                       className="post-list-item"
@@ -53,7 +54,7 @@ const BlogIndex = ({ data, navigate, location, n }) => {
                           }
                         />
                         <h2 className="blog-title">
-                          {/* <Link to={post.node.fields.slug} itemProp="url"> */}
+                          {/* <AniLink paintDrip hex="#000000"to={post.node.fields.slug} itemProp="url"> */}
                           <span className="title-2" itemProp="headline">
                             {title}
                           </span>
@@ -75,7 +76,7 @@ const BlogIndex = ({ data, navigate, location, n }) => {
                       </section>
                     </article>
                   </div>
-                </Link>
+                </AniLink>
               )
             })}
           </div>
