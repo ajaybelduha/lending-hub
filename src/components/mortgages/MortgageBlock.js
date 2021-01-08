@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { BlackButtonLink } from '../../components/common/common'
+import { BlackButton } from '../../components/common/common'
 import { can_mortgage_payment } from '../../components/common/utils'
 import Image from 'gatsby-image'
 
@@ -12,6 +12,8 @@ const MortgageBlock = ({
 }) => {
   const item = mortgages.node.frontmatter
   const [showBlock, setShowBlock] = useState(true)
+  const [applyNow, setApplyNow] = useState(false)
+  const [isApplied, setIsApplied] = useState(false)
 
   const getRate = () => {
     const { totalMortgage, rateType, mortgageTerm } = filterData
@@ -23,6 +25,13 @@ const MortgageBlock = ({
       rate = item[`variable`][`_${mortgageTerm}`]
     }
     return rate
+  }
+
+  const applyNowClick = () => {
+    setApplyNow(true)
+    setTimeout(() => {
+      setIsApplied(true)
+    }, 2000)
   }
 
   const getMonthlyAmount = () => {
@@ -53,7 +62,16 @@ const MortgageBlock = ({
 
         <div className="monthly-payment">${getMonthlyAmount()}/mo</div>
         <div className="action">
-          <BlackButtonLink to="/">Apply Now</BlackButtonLink>
+          {!isApplied && <BlackButton onClick={applyNowClick}>
+            {!applyNow && <span>Apply now</span>}
+            {applyNow && <img className="loading-icon" src='/img/icons/loading.svg' />}
+          </BlackButton>}
+          {isApplied && <div className="apply-successful">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+              <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+          </div>}
         </div>
       </div>
       <hr />

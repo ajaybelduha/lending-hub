@@ -12,11 +12,7 @@ export const BlackButtonLink = styled((props) => <Link {...props} />)`
   text-align: center;
   border: 1px solid #1c1c1e;
   transition: 0.3s;
-  :hover {
-    background-color: #ffffff;
-    color: #1c1c1e;
-    border: 1px solid #1c1c1e;
-  }
+  border: 1px solid #1c1c1e;
 `
 
 export const BlackButton = styled((props) => <button {...props} />)`
@@ -29,9 +25,17 @@ export const BlackButton = styled((props) => <button {...props} />)`
   font-family: 'Poppins Regular';
   transition: 0.3s;
   border: 1px solid #1c1c1e;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  outline: 0;
+  .loading-icon {
+    height: 55px;
+  }
   :hover {
-    opacity: 0.8;
+    opacity: 0.8
   }
 `
 
