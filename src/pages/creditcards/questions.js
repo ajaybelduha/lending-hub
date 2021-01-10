@@ -19,22 +19,26 @@ const QuestionnaireModal = (props) => {
     if (location?.state?.id !== 1) {
       setStep(3)
     }
+    setSelections({category: location?.state?.title})
   }, [])
 
   const setValue = async (key, value) => {
     let data = selections
     data[key] = value
-    await setSelections(data)
     if (key === 'cardFor' && value === 'rewards') {
       setStep(step + 1)
     } else if (key === 'cardFor' && value !== 'rewards') {
+      data['rewardType'] = 'none';
       setStep(step + 2)
     } else {
       setStep(step + 1)
     }
+    await setSelections(data)
   }
   const submitAnswers = (key, value) => {
-    navigate('/creditcards/listing')
+    navigate('/creditcards/listing', {
+      state: { selections },
+    })
   }
   return (
     <Layout>

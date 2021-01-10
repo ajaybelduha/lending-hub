@@ -6,7 +6,7 @@ import { ButtonNoStyle, SliderContainer } from '../../common/common'
 import Fade from 'react-reveal/Fade'
 
 const CreditScore = (props) => {
-  const [score, setScore] = useState(300)
+  const [score, setScore] = useState(800)
   const [rating, setRating] = useState('Good')
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const CreditScore = (props) => {
           <hr />
           <div className="buttons-container">
             <ButtonNoStyle>Clear</ButtonNoStyle>
-            <ButtonNoStyle onClick={() => props.setValue('creditScore', score)}>
+            <ButtonNoStyle onClick={() => props.setValue('creditScore', rating)}>
               Apply
             </ButtonNoStyle>
           </div>

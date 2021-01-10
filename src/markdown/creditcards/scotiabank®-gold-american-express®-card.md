@@ -2,7 +2,7 @@
 templateKey: credit-card-post
 title: Scotiabank®* Gold American Express® Card
 cardImage: /img/scotibank.png
-creditScore: 4-Poor
+creditScore: Excellent
 fee: 100
 firstYearFee: 100
 bankName: "100"

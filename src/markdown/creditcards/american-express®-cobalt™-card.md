@@ -2,7 +2,7 @@
 templateKey: credit-card-post
 title: American Express® Cobalt™ Card
 cardImage: /img/american-express-cobalt-cardcard.png
-creditScore: 3-Good
+creditScore: Good
 fee: 120
 firstYearFee: 120
 bankName: american-express

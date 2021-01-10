@@ -2,7 +2,7 @@
 templateKey: credit-card-post
 title: Desjardins Elegance Gold Visa
 cardImage: /img/card-2.png
-creditScore: 3-Good
+creditScore: Fair
 fee: 120
 firstYearFee: 120
 bankName: american-express
