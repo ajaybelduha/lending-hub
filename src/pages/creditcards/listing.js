@@ -61,7 +61,7 @@ const CCListing = (response) => {
             setFiltered={setFilteredData}
           />
           <div className="cards-container">
-            {cardsFiltered.length > 0 ? cardsFiltered.map((item) => (
+            {cardsFiltered?.length > 0 ? cardsFiltered.map((item) => (
               <CardBlock cardData={item} />
             )) : 
             <div className="no-cards-error">
