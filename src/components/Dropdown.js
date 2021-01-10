@@ -63,13 +63,13 @@ const DropdownContainer = styled.div`
     font-size: 18px;
     font-family: 'Poppins Medium';
     border-radius: 0;
-    width: 9rem;
+    width: fit-content;
     height: 53px;
     justify-content: space-between;
   }
   a.dropdown-item,
   button.dropdown-item {
-    padding-right: 0;
+    padding-right: 15px;
   }
 `
 

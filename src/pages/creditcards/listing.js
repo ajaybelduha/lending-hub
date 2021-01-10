@@ -1,12 +1,50 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Layout from '../../components/Layout'
-import Dropdown from '../../components/Dropdown'
+import ListingFilter from '../../components/creditcards/ListingFilter'
 import CardBlock from '../../components/creditcards/CardBlock'
 import { graphql } from 'gatsby'
 
 const CCListing = (response) => {
+  const { state } = response.location
+  const questionFilters = state?.selections;
   const { creditCards } = response.data
+  const cardsData = creditCards.edges
+  const [cardsListing, setCardsListing] = useState()
+  const [cardsFiltered, setCardsFiltered] = useState()
+  const [filters, setFilters] = useState(questionFilters)
+
+  useEffect(() => {
+    setCardsFiltered(cardsData)
+    setCardsListing(cardsData)
+  }, [])
+
+  useEffect(() => {
+    const filteredCards = cardsData.filter(item => {
+      const {
+        creditScore,
+        cardCategory,
+        userCategory,
+        minIncome,
+      } = item.node.frontmatter
+      const requiredCreditScore = filters.creditScore === creditScore;
+      const requiredCategory = filters.category === userCategory
+      const requiredCardFor = filters.cardFor === cardCategory
+      const requiredAnnualIncome = filters?.annualIncome > minIncome
+      
+      if (requiredCategory && requiredCreditScore && requiredCardFor && requiredAnnualIncome) {
+        return true
+      } else {
+        return false
+      }
+    })
+    setCardsFiltered(filteredCards)
+  }, [filters])
+
+  const setFilteredData = (items) => {
+    console.log(items)
+    setFilters(items)
+  }
   return (
     <CCListingContainer>
       <Layout>
@@ -17,16 +55,18 @@ const CCListing = (response) => {
             compare below. Review and select the one that best matches your
             needs.
           </h4>
-          {/* <div className="filters-container">
-                        <Dropdown default="Travel" />
-                        <Dropdown default="No Annul Fee" />
-                        <Dropdown default="Welcome Bonus" />
-                        <Dropdown default="Low to High" />
-                    </div> */}
+          <ListingFilter
+            data={cardsListing}
+            filtersFromQuestions={questionFilters}
+            setFiltered={setFilteredData}
+          />
           <div className="cards-container">
-            {creditCards.edges.map((item) => (
+            {cardsFiltered.length > 0 ? cardsFiltered.map((item) => (
               <CardBlock cardData={item} />
-            ))}
+            )) : 
+            <div className="no-cards-error">
+              <h1 className="title-24">No cards match the above query. Please try again.</h1>
+            </div>}
           </div>
         </div>
       </Layout>
@@ -35,12 +75,19 @@ const CCListing = (response) => {
 }
 
 const CCListingContainer = styled.div`
+  margin-top: 5rem;
   .filters-container {
     margin-top: 50px;
     display: flex;
   }
   .cards-container {
     margin-top: 2rem;
+  }
+  .no-cards-error {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
 
@@ -62,6 +109,9 @@ export const pageQuery = graphql`
             }
             creditScore
             fee
+            cardCategory
+            userCategory
+            minIncome
             purchaseInterest
             balanceTranferFees
             cashAdvanceInterest

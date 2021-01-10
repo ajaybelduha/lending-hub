@@ -17,7 +17,7 @@ const Hero = (props) => {
                 <h4 className="section-subtitle">{subtitle}</h4>
                 <div className="blocks mt-5" onClick={onSelect}>
                   {blockItems.map((item) => (
-                    <AniLink paintDrip hex="#000000" to={item.link} state={{ id: item.key }}>
+                    <AniLink paintDrip hex="#000000" to={item.link} state={{ id: item.key, title: item.title }}>
                       <Block data={item} />
                     </AniLink>
                   ))}

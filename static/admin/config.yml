@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: blog
+  branch: creditcard-mortgage
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
@@ -23,7 +23,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "credit-card-post"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Card Image", name: "cardImage", widget: image, required: true}
-      - {label: "Credit Score", name: "creditScore", widget: "select", options: ["1-Excellent", "2-Very Good", "3-Good", "4-Poor", "5-Very Poor"], required: true}
+      - {label: "Credit Score", name: "creditScore", widget: "select", options: ["Excellent", "Good", "Fair", "Bad"], required: true}
       - {label: "Fee", name: "fee", widget: "number", required: true}
       - {label: "First Year Fee", name: "firstYearFee", widget: "number", required: false}
       - {label: "Bank Name", name: "bankName", widget: "string", required: false}
@@ -123,31 +123,6 @@ collections:
           {label: 5 years, name: "5", widget: string, required: false}, 
         ]
       }
-
-
-  
-  - name: "loans"
-    label: "Loans"
-    folder: "src/pages/loans"
-    slug: "{{slug}}"
-    create: true
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "loans-post"}
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Logo", name: "logo", widget: image, required: true}
-      - {label: "Type", name: "type", widget: select, options: [{value: "debtConsolidation", label: "Debt Consolidation"}, {value: "creditCardPayoff", label: "Payoff Credit Cards"}, {value: "homeImprovement", label: "Home Improvement"}, {value: "payForWedding", label: "Pay for a Wedding"}, {value: "buyCar", label: "Buy a Car"}, {value: "takeVacation", label: "Take a Vacation"}, {value: "others", label: "Others"}], required: true}
-      - {label: "Minimum Credit Score", name: "minCreditScore", widget: "select", options: [{value: "5-excellent", label: "Excellent(724 +)"}, {value: "4-good", label: "Good(660-724)"}, {value: "Fair", label: "Fair(560-659)"}, {value: "poor", label: "Poor(300-559)"}], required: true}
-      - {label: "Suitable for Fulltime Job?", name: "forFulltime", widget: "boolean", required: true}
-      - {label: "Suitable for Parttime Job?", name: "forPartTime", widget: "boolean", required: true}
-      - {label: "Suitable for Self Employed?", name: "forSelfEmployed", widget: "boolean", required: true}
-      - {label: "Suitable for Unemployed?", name: "forUnemployed", widget: "boolean", required: true}
-      - {label: "Suitable for Retired?", name: "forRetired", widget: "boolean", required: true}
-      - {label: "Suitable for Others?", name: "forOthers", widget: "boolean", required: true}
-      - {label: "Minimum annual income before tax", name: "minIncome", widget: "number", required: true}
-      - {label: "Minimum monthly Debt payments", name: "monthlyDebtPaymentsRequired", widget: "number", required: true}
-      - {label: "Customer owns house?", name: "isHouseTaken", widget: "select", options: [{value: "own", label: "Own"}, {value: "rent", label: "Rent"}, {value: "neither", label: "Neither"}], required: true}
-      - {label: "Minimum monthly Rent/Mortgage payments", name: "monthlyRentPaymentsRequired", widget: "number", required: true}
-      - {label: "Bankruptcy/Consumer proposal?", name: "bcValue", widget: "select", options: [{value: "bankruptcy", label: "Bankruptcy"}, {value: "consumerProposal", label: "Consumer Proposal"}, {value: "neither", label: "Neither"}], required: true}
 
 
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { BlackButton } from '../../components/common/common'
 import Accordion from '../../components/Accordion'
@@ -32,6 +32,20 @@ const CardBlock = ({ cardData }) => {
       setIsApplied(true)
     }, 2000)
   }
+
+  // useEffect(() => {
+  //   const requiredCreditScore = filterData.creditScore === creditScore;
+  //   const requiredCategory = filterData.category === userCategory
+  //   const requiredCardFor = filterData.cardFor === cardCategory
+  //   const requiredAnnualIncome = filterData?.annualIncome > minIncome
+    
+  //   if (requiredCategory && requiredCreditScore && requiredCardFor && requiredAnnualIncome) {
+  //     setShowBlock(true)
+  //   } else {
+  //     setShowBlock(false)
+  //   }
+
+  // }, [filterData])
 
   return (
     <CardBlockContainer>
