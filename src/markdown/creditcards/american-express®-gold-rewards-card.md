@@ -2,7 +2,7 @@
 templateKey: credit-card-post
 title: Home Trust Preferred Visa
 cardImage: /img/home-trust-preferred-visacard.png
-creditScore: 5-Very Poor
+creditScore: Excellent
 fee: 120
 firstYearFee: 120
 bankName: home-trust
