@@ -2,7 +2,7 @@
 templateKey: credit-card-post
 title: MBNA Rewards Platinum Plus® Mastercard®
 cardImage: /img/card.png
-creditScore: 3-Good
+creditScore: Bad
 fee: 120
 firstYearFee: 120
 bankName: mbna
