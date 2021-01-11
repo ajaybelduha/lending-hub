@@ -1,55 +1,34 @@
 ---
 templateKey: blog-post
-title: Know Your Mortgage Options during COVID-19
+title: Mortgage Renewal
 date: 2021-01-11T22:08:00.342Z
-description: COVID-19 has caused uncertainty in all our lives. Loss of hours at
-  work due to self-isolation or illness, getting laid off from jobs, or
-  child-care responsibilities may make you worry about how will you be able to
-  pay your next mortgage. Read on to see how it has affected the mortgage
-  industry.
+description: "As the end of your mortgage term creeps upon you, you will need to
+  renew it for another term. With each new term, you have the opportunity to
+  evaluate your current mortgage and compare it to any other goals you may have.
+  You will receive a renewal slip in the mail and it can be as easy as checking
+  a box saying nothing has changed or asking to have a meeting. "
 featuredpost: true
-featuredimage: /img/corona-4983590_1920.jpg
+featuredimage: /img/pexels-andrea-piacquadio-3760067.jpg
 tags:
   - lendinghub
   - covid
   - mortgage
   - mortgage_in_covid
 ---
-COVID-19 has caused uncertainty in all our lives. Loss of hours at work due to self-isolation or illness, getting laid off from jobs, or child-care responsibilities may make you worry about how will you be able to pay your next mortgage.
+As the end of your mortgage term creeps upon you, you will need to renew it for another term. With each new term, you have the opportunity to evaluate your current mortgage and compare it to any other goals you may have. You will receive a renewal slip in the mail and it can be as easy as checking a box saying nothing has changed or asking to have a meeting. 
 
-Be it the government, various financial institutions, or other alternatives available to you, there are multiple doors that can help you sail through against your monthly mortgage payments.
+When the time comes to renew your mortgage, keep in mind the following:
 
-* **How Your Government is Helping?**
+* **Start shopping 4 months before the end of the term**. You will get a notice saying that your mortgage is up for renewal around 4 months before your mortgage term is over. This is the early renewal process that is offered to clients so that there are no penalties. If you are not ready to talk to a lender, this is a good time to start your research. Knowing what lenders are offering (mortgage rates, prepayment, and other terms) will allow you to have the ability to negotiate.
+* **Consider financial goals**. Take into consideration your financial status. You could have gotten a pay raise, lost income, or even retired. Have you recently had a baby, or do you have to pay for your child’s education; do you plan to move in the next 5 years; do you want to access some equity? Make sure you keep your needs in mind when you are choosing a mortgage rate, term, and product.
+* **Outline your mortgage.** Think and ask yourself the following questions:
 
-  Earlier, Federal Government pledged to support Canadians through this pandemic in an indirect way. The government did not take any direct action to freeze mortgage payments, instead took steps that helped Canadians – by purchasing up to $50-billion in insured mortgage debt. This behind the scene step by the Federal Government made It easier for Canadians to work with Mortgage lenders. Additionally, the government also rolled out income replacement measures for both employers and individuals. For individuals, schemes like [](https://www.canada.ca/en/services/benefits/ei/cerb-application.html)CERB (Canada Emergency Relief Benefit) were launched which aimed at replacing some income for people who suffered financially during the pandemic. For Employers and companies, the federal government offered wage subsidies to companies that saw a considerable drop in revenue due to COVID-19.
+  1. Does your monthly budget have room to increase your payment? If the answer is yes, look at the renew your monthly prepayment option.
+  2. Do you think you will receive any bonuses/inheritances you could put towards your mortgage? If yes, then look at your lump sum prepayment option.
+  3. Do you have the option to pay off your mortgage entirely? If yes, then look at the prepayment penalties with fixed vs variable rates.
+  4. Will you want to borrow more money from your lender? If yes, then look at the prepayment penalties involved in refinance/collateral mortgages.
+  5. Is there any chance you will be selling your home/moving in the next 5 years? If yes, then look at a probable/assumable mortgage.
+* **Ready to renew in the last 30 days.** Having your offer extended by 30 days allows you to be protected from any rate increases. From your research, you know that you are not being offered the best rate and therefore can use that to negotiate. Make sure to make an appointment to discuss what lenders are able to offer you.
+* **Make a decision.** After you have done your research, looking at your financialgoals, outlining your needs, and receiving an offer from your current lender, a decision is needed. The last question you need to ask yourself is which lender is giving you the best deal; your current lender or another one? If you decide you want to stay with your current lender, then you sign the mortgage renewal slip or sit down with them and try to negotiate. If you choose to go with another lender, a little more paperwork needs to be done. Be prepared for a mortgage application as the new lender may have different qualifying criteria than your current lender.
 
-
-* **What's happening with the Mortgage Industry?**
-
-  Alongside government, banks and financial institutions are also doing their bit in helping Canadians. During March, the Bank of Canada announced a series of rate cuts eventually getting the rate down to as low as 0.25%. It all started with [](https://www.ratehub.ca/blog/bank-of-canada-rate-cut-march-2020/)March 4th rate cut, followed by respective cuts on March 14th[](https://www.ratehub.ca/blog/emergency-rate-cut-march-2020/) and on March 27th[](https://www.ratehub.ca/blog/second-emergency-rate-cut-march-2020/). On Wednesday the 18th of March, six top Canadian banks announced that they would be allowing mortgage payment deferrals up to six months. These included RBC, TD, BMO, Scotiabank, CIBC, and National Bank. As of 30th June, CBA member banks[](https://cba.ca/fast-facts-on-bank-measures-in-response-to-the-covid-19-pandemic) have helped in mortgage deferrals to more than 760,000 Canadians.
-* ***What other options do you have?***
-
-  Apart from help from your Federal government and Financial Intuitions, Canadians still have few other options which can be availed:
-
-  1. **Built-In Mortgage Features**
-
-     Many mortgage lenders offer a feature that offers you to defer or skip a financial payment, when you are in a financial crisis. However, the terms vary from one financial institution to another, but as long as you have a good history of making your payments in time, you should be approved to defer payments for up to a month. The disadvantage to this option is that your mortgage will continue to accrue interest and eventually you would end up paying your principal amount and extra interest. Do remember, if you chose to defer your mortgage payment, you will still be responsible for your other obligations like property tax, maintaining adequate home insurance, and keeping the property in good repair. Check with your mortgage broker or contact us to know your options for deferral payment.
-  2. **Access your funds with HELOC**
-
-     HELOC (Home Equity Line of Credit) is an inexpensive and convenient way to get access to funds. Mostly, if you have more than 20% equity in your home, you should qualify for a HELOC. You should shop around with a number of lenders to get the best HELOC rates in Canada. The advantage of this option is - flexible repayment terms and typically require you to pay only the interest you accrue each month. If you have a HELOC account setup, you can simply withdraw money to make your mortgage payment, however, if you do not have a HELOC account – this would not be your best option during an emergency.
-  3. **Working on a solution with your Mortgage Lender**
-
-     One financial circumstance differs from another. If you’ve had good credit and haven’t had issues in making mortgage payments in the past, you are more likely to work out a deal with a Mortgage Lender. Some out of the box solutions that may work out for you are:
-
-     * Defer Payments: You may be allowed to defer payments for a longer period of time if you have made prepayments in the past.
-     * Extend your amortization: Increasing the length of time over which the remaining mortgage is paid off, you can reduce your monthly mortgage expenses. This is effective when you have just a few years of mortgage payments remaining.
-  4. **Last of your options:**
-
-     If none of the above-mentioned options works for you, and you are still unable to make your payments, you still have the following alternatives to defaulting:
-
-     * Your rights with your employer: Know your rights with your Employer, as many provinces have introduced laws that protect your job during COVID-19. These legislations prevent employers from dismissing you if you had to be home to take care of kids or be in self-isolation.
-     * Selling your home: No one would want to take up this option but if it comes to this, selling your home could free up enough cash to pay off your mortgage and get your financial plan back on track
-     * Consumer Proposal: Working with a licensed insolvency trustee, you might be able to get a good deal with your creditors that may allow you to keep your home, car, and other assets
-     * Real Estate Lawyer: Consulting a lawyer may help you understand your options, negotiate with the lender and ensure that you are treated fairly in the situation
-
-During these pressing times, the threat of losing your home is scary, however using your mortgage’s skip-a-payment option, or borrowing money from HELOC, or negotiating with your lender directly, you may be able to keep your mortgage up-to-date even if your income is temporarily interrupted.
+Keep these tips in mind the next time you have to renew your mortgage and you will be set!
