@@ -1,79 +1,60 @@
 ---
 templateKey: blog-post
-title: Writing posts with Ghost ✍️
+title: Home Insurance Myths - Busted
 date: 2021-01-05T17:17:00.750Z
-description: >-
-  Welcome, it's great to have you here.
-
-  We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time.
+description: Home Insurance can be a headache if you don’t get it right. You
+  might lose a lot of your savings because you did not protect your home or save
+  a lot of dollars because you took just the right protection. Let’s look at the
+  topmost home insurance myths.
 featuredpost: true
-featuredimage: /img/products-grid1.jpg
+featuredimage: /img/kindle-1867751_1920.jpg
 tags:
-  - loans
+  - lendinghub
+  - insurance
+  - insurance_myths
+  - busted
 ---
-## Just start writing
+Home Insurance can be a headache if you don’t get it right. You might lose a lot of your savings because you did not protect your home or save a lot of dollars because you took just the right protection. Let’s look at the topmost home insurance myths.
 
-Ghost has a powerful visual editor with familiar formatting options, as well as the ability to add dynamic content.
+* **Myth 1: You must have a home Insurance**
 
-Select your text to add formatting such as headers or to create links. Or use Markdown shortcuts to do the work for you - if that's your thing.
+  **Fact:** No, home insurance is not mandatory by the government. If you own a property and have a mortgage on it, your lender will require that you have an active home insurance policy.
+* **Myth 2: If you are out on Vacation, is your house covered?**
 
-![](https://static.ghost.org/v2.0.0/images/formatting-editor-demo.gif)
+  **Fact:** If you leave for your holidays without taking precautions you are not always covered. For example, if you go for your vacations or leave the house during the heating season, you need to ensure that you shut off the home’s water supply and empty all existing pipes so that the home’s heating is stabilized and maintained. You need to check with your insurance provider, to determine what the length of vacations needs you take precautions.
+* **Myth 3: Valuable’s at home, are they covered too?**
 
-## Rich editing at your fingertips
+  **Fact:** A standard policy does cover your personal property and most valuables only up to a selected limit of insurance. For specialty property like jewelry or furs, sub-limits will often apply. In such cases, you have the option of adding additional coverage.
+* **Myth 4: With a home insurance policy, are you also covered against sewer backup**
 
-The editor can also handle rich media objects, called **cards**, which can be organised and re-ordered using drag and drop.
+  **Fact:** Sewer backup damage occurs when the sewer systems at your home cannot handle high volumes of water because of the blockade and cause water to back up into your home through toilets and drains. Most providers offer some optional sewer backup protection but it is usually not included in the standard policies.
+* **Myth 5: Protection against Flood**
 
-You can insert a card either by clicking the `+` button, or typing `/` on a new line to search for a particular card. This allows you to efficiently insert **images**, **markdown**, **html, embeds** and more.
+  **Fact:** Generally, a home insurance policy will protect you against sudden entry or release of water in your home, but eventually it depends on the type of insurance you have. For example, a standard home insurance policy will not cover you against overland flooding (when water enters through doors and windows due to the river overflowing or snow melting).
+* **Myth 6: Your home Insurance only covers your house**
 
-**For example**:
+  **Fact:** No, your home insurance covers all its contents along with the house. Any detached structures on the property, living expenses which you would incur in-case the house is inhabitable. For condos, policies will cover unit owner improvements, it is important that you have a thorough understanding of your policy coverage.
+* **Myth 7: Market Value of my house is covered under Home Insurance**
 
-* Insert a video from YouTube directly by pasting the URL
-* Create unique content like buttons or forms using the HTML card
-* Need to share some code? Embed code blocks directly
+  **Fact:** No, home insurance does not cover the market value, only includes the rebuilding or replacement value of your house. For example, consider your house burns down, your home insurance will the costs required to rebuild the house as it was before the fire. Some insurance policy can include costs to cover the debris, such as after a fire.
+* **Myth 8: Earthquakes and Home Insurance**
 
-```
+  **Fact:** If you have an earthquake rider on your home insurance policy, then your home is protected against earthquakes. Depending on your geography do your research and get the earthquake coverage if required.
+* **Myth 9: Cheap Insurance for older and less expensive homes**
 
-```
+  **Fact:** Correct, Insurance is usually expensive for older homes since the possibility of something going wrong with older homes is more as compared to newer ones. Additionally, older homes come with old systems like plumbing that are more likely to fail as compared to new upgraded pipes and materials.
+* **Myth10: Damaged caused by Termites and insects**
 
-It's also possible to share links from across the web in a visual way using bookmark cards that automatically render information from a websites meta data. Paste any URL to try it out:
+  **Fact:** Usually home insurance policy will not cover damage caused by termites and other insects.
+* **Myth 11: Condo Corporations provide insurance that covers my condo**
 
-[Ghost: The #1 open source headless Node.js CMS](https://ghost.org/)
+  **Fact:** The insurance provided by Condo Corporations will cover the overall building structure, its exterior finishes, roof, windows, and other common areas like hallways and elevators. These insurances do not include your unit.
+* **Myth 12: If you are a tenant, your landlord’s insurance will cover everything**
 
-[The world’s most popular modern open source publishing platform. A headless Node.js CMS used by Apple, Sky News, Tinder and thousands more. MIT licensed, with 30k+ stars on Github.](https://ghost.org/)
+  **Fact:** No, Landlord’s insurance does not cover your liability and your content. You will be required to have a tenant insurance policy.
+* **Myth 13: Damage from Natural disasters or acts of God**
 
-[![](https://ghost.org/icons/icon-512x512.png?v=188b8b6d743c6338ba2eab2e35bab4f5)Ghost](https://ghost.org/)
+  **Fact:** There is no such clause as acts of god exclusion in a home insurance policy. Most policies will cover damage from hailstorms, lighting, wildfires, however, optional coverage is available for a certain type of natural disasters like earthquakes. Other types of disasters like seawater flooding or landslides are excluded.
+* **Myth 14: If you get into a fight and you get sued, will your home insurance cover the costs**
 
-[![](https://ghost.org/images/meta/Ghost.png)](https://ghost.org/)
-
-## Working with images in posts
-
-You can add images to your posts in many ways:
-
-* Upload from your computer
-* Click and drag an image into the browser
-* Paste directly into the editor from your clipboard
-* Insert using a URL
-
-### Image sizes
-
-Once inserted you can blend images beautifully into your content at different sizes and add captions and alt tags wherever needed.
-
-![](https://static.ghost.org/v3.0.0/images/image-sizes-ghost-editor.png)
-
-### Image galleries
-
-Tell visual stories using the gallery card to add up to 9 images that will display as a responsive image gallery:
-
-![](https://static.ghost.org/v3.0.0/images/gallery-sample-1.jpg)
-
-![](https://static.ghost.org/v3.0.0/images/gallery-sample-2.jpg)
-
-![](https://static.ghost.org/v3.0.0/images/gallery-sample-3.jpg)
-
-### Image optimisation
-
-Ghost will automatically resize and optimise your images with lossless compression. Your posts will be fully optimised for the web without any extra effort on your part.
-
-## Next: Publishing Options
-
-Once your post is looking good, you'll want to use the [publishing options](https://gatsby.ghost.io/publishing-options/) to ensure it gets distributed in the right places, with custom meta data, feature images and more.
+  **Fact:** The personal liability protection included in your policy only covers accidental and unintentional injury of others or damage to the property of others. In this case, you intentionally had a fight and got sued, so home insurance coverage will not protect you.
