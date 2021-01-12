@@ -8,7 +8,7 @@ description: A healthier credit score is a must in Canada. It helps you in
   history, there are some simple tips you can use which will help you to improve
   your credit score immediately.
 featuredpost: true
-featuredimage: /img/ales-nesetril-ex_p4aabxbs-unsplash.jpg
+featuredimage: /img/rupixen-com-q59hmzk38eq-unsplash.jpg
 tags:
   - lendinghub
   - credit
