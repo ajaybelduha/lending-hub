@@ -14,6 +14,7 @@ tags:
   - lendinghub
   - credit_card
   - credit_cards
+category: credit-card
 ---
 Having a credit card is important to build your credit. Below are the 10 reasons for when to use a credit card. And a few of the reasons for when NOT to use your credit card. 
 
