@@ -14,6 +14,7 @@ tags:
   - covid
   - mortgage
   - mortgage_in_covid
+category: mortgage
 ---
 As the end of your mortgage term creeps upon you, you will need to renew it for another term. With each new term, you have the opportunity to evaluate your current mortgage and compare it to any other goals you may have. You will receive a renewal slip in the mail and it can be as easy as checking a box saying nothing has changed or asking to have a meeting. 
 
