@@ -12,7 +12,7 @@ tags:
   - covid
   - mortgage
   - mortgage_broker
-category: credit-card
+category: mortgage
 ---
 A mortgage broker works on behalf of your client to find the best option available. They are to give your client an unbiased opinion and select lenders based on your client’s financial situation.
 
