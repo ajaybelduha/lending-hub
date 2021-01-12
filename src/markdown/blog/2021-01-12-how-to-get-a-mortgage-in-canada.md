@@ -9,9 +9,9 @@ featuredpost: true
 featuredimage: /img/pexels-gustavo-fring-3912387.jpg
 tags:
   - lendinghub
-  - covid
   - mortgage
-  - mortgage_in_covid
+  - mortgage_broker
+  - mortgage_in_canada
 ---
 This helpful guide will let Canadians know the basics of mortgages and how to get buy their dream home.
 
