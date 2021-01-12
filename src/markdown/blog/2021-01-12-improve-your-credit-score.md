@@ -14,6 +14,7 @@ tags:
   - credit
   - credit_score
   - improve_credit_score
+category: credit-card
 ---
 A healthier credit score is a must in Canada. It helps you in getting lower rates and easy approval for credit cards and loans. If you have a bad credit score or just want to improve your credit score for better credit history, there are some simple tips you can use which will help you to improve your credit score immediately. Before we get into the tips for improving your credit score, let’s first understand the basics of credit reports and credit scores.
 
