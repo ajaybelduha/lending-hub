@@ -14,6 +14,7 @@ tags:
   - covid
   - mortgage
   - mortgage_in_covid
+category: mortgage
 ---
 COVID-19 has caused uncertainty in all our lives. Loss of hours at work due to self-isolation or illness, getting laid off from jobs, or child-care responsibilities may make you worry about how will you be able to pay your next mortgage.
 
