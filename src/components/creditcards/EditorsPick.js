@@ -4,9 +4,17 @@ import { useStaticQuery, graphql } from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from 'gatsby-image'
 
-const EditorsPick = () => {
+const EditorsPick = ({type}) => {
+  console.log("type: ", type)
   const response = useStaticQuery(blogs)
-  const blogData = response.allMarkdownRemark.edges
+  let blogData = response.allMarkdownRemark.edges
+  console.log(blogData)
+  if (type === "mortgage") {
+    blogData = blogData.filter(item => item.node.frontmatter.category === "mortgage")
+  } else {
+    blogData = blogData.filter(item => item.node.frontmatter.category === "credit-card")
+  }
+  console.log(blogData)
   return (
     <EditorsPickContainer>
       <div className="container">
@@ -91,6 +99,7 @@ const blogs = graphql`
               }
             }
             tags
+            category
           }
         }
       }

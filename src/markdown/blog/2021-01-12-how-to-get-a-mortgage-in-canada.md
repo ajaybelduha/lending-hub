@@ -12,6 +12,7 @@ tags:
   - mortgage
   - mortgage_broker
   - mortgage_in_canada
+category: mortgage
 ---
 This helpful guide will let Canadians know the basics of mortgages and how to get buy their dream home.
 

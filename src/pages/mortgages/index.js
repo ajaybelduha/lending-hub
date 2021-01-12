@@ -41,7 +41,7 @@ const MortgagesHome = () => {
       <FeaturedMortgages />
       <MaximizeSavings />
       <FeaturedKnowledgeHub />
-      <EditorsPick />
+      <EditorsPick type="mortgage" />
     </Layout>
   )
 }

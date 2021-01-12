@@ -13,6 +13,7 @@ tags:
   - insurance
   - insurance_myths
   - busted
+category: insurance
 ---
 Home Insurance can be a headache if you don’t get it right. You might lose a lot of your savings because you did not protect your home or save a lot of dollars because you took just the right protection. Let’s look at the topmost home insurance myths.
 
