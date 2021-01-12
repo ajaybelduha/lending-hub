@@ -39,7 +39,7 @@ const CreditCardHome = () => {
       />
       <FeaturedCards />
       <FeaturedKnowledgeHub />
-      <EditorsPick />
+      <EditorsPick type="credit-card"/>
     </Layout>
   )
 }
