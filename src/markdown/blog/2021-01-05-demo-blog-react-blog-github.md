@@ -13,6 +13,7 @@ tags:
   - lendinghub
   - insurance
   - home_insurance
+category: insurance
 ---
 Planning to buy your own house? There are a lot of checkboxes that need to be checked before you can actually shift to your new home. And one of the most confusing amongst the lot can be home insurance. There is a certain type of insurance that is mandatory and few are optional. Read below on different types of insurance that the experts want homeowners to have.
 
