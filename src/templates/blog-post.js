@@ -69,7 +69,7 @@ const BlogPostTemplate = ({ data, location }) => {
 }
 
 const BlogPostContainer = styled.div`
-  margin-top: 50px;
+  margin-top: 6%;
   .headings {
     margin-bottom: 50px;
   }
@@ -83,9 +83,17 @@ const BlogPostContainer = styled.div`
     h2 {
       font-size: 1.5rem;
     }
+    li {
+      margin: 2rem 0;
+      line-height: 2rem;
+    }
+    strong {
+      font-family: 'Poppins Bold';
+      font-size: 1.2rem;
+    }
   }
   @media screen and (max-width: 786px) {
-    margin-top: 20px
+    margin-top: 15%;
   }
 `
 

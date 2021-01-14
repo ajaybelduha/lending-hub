@@ -106,15 +106,22 @@ const BlogIndexContainer = styled.div`
     .item {
       width: 310px;
       padding: 10px;
+      height: 500px;
+      overflow: hidden;
       margin-right: 15px;
       margin-bottom: 25px;
       .blog-title {
         margin-top: 20px;
+        height: 50px;
       }
       .publish-date {
         color: #5b7a81;
       }
       .description {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         margin-top: 10px;
       }
     }
