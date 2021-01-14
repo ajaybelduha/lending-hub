@@ -9,7 +9,6 @@ featuredpost: true
 featuredimage: /img/pexels-alex-green-5699432.jpg
 tags:
   - lendinghub
-  - covid
   - mortgage
   - mortgage_broker
 category: mortgage

@@ -11,7 +11,9 @@ description: Buying your new home in Canada can be an exciting journey but it is
 featuredpost: true
 featuredimage: /img/scott-graham-5fnmwej4taa-unsplash.jpg
 tags:
+  - lendinghub
   - mortgage
+  - loans
 category: mortgage
 ---
 Buying your new home in Canada can be an exciting journey but it is important that you know where to start. Across Canada, millennials are looking to invest in real estate as it turns out to be one of the best long-term investments they can make. Whether you are buying a house, an apartment, or a condo – the whole purchasing process can be intimidating. Read our guide to buy your home hassle-free in Canada.
