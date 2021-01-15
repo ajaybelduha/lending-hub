@@ -5,16 +5,13 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from 'gatsby-image'
 
 const EditorsPick = ({type}) => {
-  console.log("type: ", type)
   const response = useStaticQuery(blogs)
   let blogData = response.allMarkdownRemark.edges
-  console.log(blogData)
   if (type === "mortgage") {
     blogData = blogData.filter(item => item.node.frontmatter.category === "mortgage")
   } else {
     blogData = blogData.filter(item => item.node.frontmatter.category === "credit-card")
   }
-  console.log(blogData)
   return (
     <EditorsPickContainer>
       <div className="container">
