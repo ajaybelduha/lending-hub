@@ -6,6 +6,7 @@ description: Get to know more about the various types of credit cards
 featuredpost: true
 tags:
   - creditcard
+index: 1
 category: credit-card
 ---
 ##### Reward Credit Cards
