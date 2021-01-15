@@ -5,8 +5,8 @@ date: 2021-01-14T19:18:57.369Z
 description: Increase your knowledge on mortgages
 featuredpost: true
 tags:
-  - mortgage
-category: mortgage
+  - creditcard
+category: credit-card
 ---
 ##### Annual Percentage Rate (APR)
 

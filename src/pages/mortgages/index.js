@@ -3,7 +3,7 @@ import Layout from '../../components/Layout'
 import Hero from '../../components/Hero'
 import FeaturedMortgages from '../../components/mortgages/FeaturedMortgages'
 import MaximizeSavings from '../../components/MaximizeSavings'
-import FeaturedKnowledgeHub from '../../components/creditcards/FeaturedKnowledgeHub'
+import FeaturedKnowledgeHub from '../../components/mortgages/FeaturedKnowledgeHub'
 import EditorsPick from '../../components/creditcards/EditorsPick'
 
 const MortgagesHome = () => {
