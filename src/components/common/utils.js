@@ -34,16 +34,12 @@ const cmhc_premium = (loan_to_value) => {
 		return -1;
 
 	if (loan_to_value <= 0.80) {
-        console.log("1")
         return 0.0;
     } else if (loan_to_value <= 0.85) {
-        console.log("2")
         return 0.0280;
     } else if (loan_to_value <= 0.90) {
-        console.log("3")
         return 0.0310;
     } else if (loan_to_value <= 0.95) {
-        console.log("4")
         return 0.0400;
     }
 }

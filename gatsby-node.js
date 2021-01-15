@@ -77,6 +77,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const knowledgehubPost = path.resolve(`./src/templates/knowledgehub-post.js`)
+
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -85,6 +87,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
+          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
         ) {
           nodes {
             id
@@ -97,7 +100,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
   )
 
-  if (result.errors) {
+  const resultKknowledgeHub = await graphql(
+    `{
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: ASC }
+      limit: 1000
+      filter: { frontmatter: { templateKey: { eq: "knowledgehub-post" } } }
+    ) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+      }
+    }
+  }
+    `
+  )
+
+  if (result.errors || resultKknowledgeHub.errors) {
     reporter.panicOnBuild(
       `There was an error loading your blog posts`,
       result.errors
@@ -106,6 +127,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMarkdownRemark.nodes
+  const postsKnowledgeHub = resultKknowledgeHub.data.allMarkdownRemark.nodes
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -119,6 +141,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       createPage({
         path: post.fields.slug,
         component: blogPost,
+        context: {
+          id: post.id,
+          previousPostId,
+          nextPostId,
+        },
+      })
+    })
+  }
+
+
+  // Create knowledgehub posts pages
+  if (postsKnowledgeHub.length > 0) {
+    postsKnowledgeHub.forEach((post, index) => {
+      const previousPostId = index === 0 ? null : postsKnowledgeHub[index - 1].id
+      const nextPostId = index === postsKnowledgeHub.length - 1 ? null : postsKnowledgeHub[index + 1].id
+
+      createPage({
+        path: post.fields.slug,
+        component: knowledgehubPost,
         context: {
           id: post.id,
           previousPostId,
