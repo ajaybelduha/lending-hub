@@ -5,8 +5,8 @@ date: 2021-01-14T19:31:40.163Z
 description: Question to ask us
 featuredpost: true
 tags:
-  - mortgage
-category: mortgage
+  - creditcard
+category: credit-card
 ---
 Why are you applying for a credit card?
 

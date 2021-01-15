@@ -6,7 +6,7 @@ import {graphql, useStaticQuery} from 'gatsby'
 const data = graphql`
 query {
   allMarkdownRemark(
-    filter: { frontmatter: { templateKey: { eq: "knowledgehub-post" }, category: {eq: "credit-card"} } }
+    filter: { frontmatter: { templateKey: { eq: "knowledgehub-post" }, category: {eq: "mortgage"} } }
   ) {
     edges {
       node {
