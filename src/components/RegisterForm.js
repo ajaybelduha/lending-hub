@@ -53,19 +53,29 @@ const RegisterForm = (props) => {
       terms: '',
     },
     validate,
-    onSubmit: (values) => {
+    onSubmit: (values, actions) => {
       // alert(JSON.stringify(values, null, 2));
-      let myForm = document.getElementById('mortgage-information');
-      let formData = new FormData(myForm)
-      fetch('/', {
-        method: 'POST',
+      fetch("/", {
+        method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      }).then(() => console.log('Form successfully submitted')).catch((error) =>
-        alert(error))
+        body: encode({ "form-name": "mortgage-information", ...values })
+      })
+      .then(() => {
+        alert('Success');
+        actions.resetForm()
+      })
+      .catch(() => {
+        alert('Error');
+      })
+      .finally(() => actions.setSubmitting(false))
       //props.setValue('formValues', values)
     },
   })
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
   return (
     <RegisterFormContainer>
       <Fade bottom>
@@ -74,7 +84,7 @@ const RegisterForm = (props) => {
         </div>
         <div className="mb-6 has-text-centered">Get Instant Access</div>
         <div className="form-container">
-          <form name="mortgage-information" method="POST" id="mortgage-information" netlify onSubmit={formik.handleSubmit}>
+          <form name="mortgage-information" id="mortgage-information" data-netlify={true} onSubmit={formik.handleSubmit}>
             <input type="hidden" name="form-name" value="mortgage-information" />
             <div className="columns">
               <div className="column">
