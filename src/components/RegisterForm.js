@@ -55,7 +55,15 @@ const RegisterForm = (props) => {
     validate,
     onSubmit: (values) => {
       // alert(JSON.stringify(values, null, 2));
-      props.setValue('formValues', values)
+      let myForm = document.getElementById('mortgage-information');
+      let formData = new FormData(myForm)
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      }).then(() => console.log('Form successfully submitted')).catch((error) =>
+        alert(error))
+      //props.setValue('formValues', values)
     },
   })
   return (
@@ -66,7 +74,7 @@ const RegisterForm = (props) => {
         </div>
         <div className="mb-6 has-text-centered">Get Instant Access</div>
         <div className="form-container">
-          <form onSubmit={formik.handleSubmit}>
+          <form id="mortgage-information" data-netlify={true} onSubmit={formik.handleSubmit}>
             <div className="columns">
               <div className="column">
                 <div className="field">
