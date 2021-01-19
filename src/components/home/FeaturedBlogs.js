@@ -16,6 +16,7 @@ const FeaturedBlogs = () => {
   }
   const response = useStaticQuery(blogs)
   const blogData = response.allMarkdownRemark.edges
+  console.log(blogData)
   return (
     <FeaturedBlogsContainer>
       <div className="container">
@@ -71,7 +72,7 @@ const FeaturedBlogs = () => {
                   />
                   <AniLink paintDrip hex="#000000"to={item.node.fields.slug} itemProp="url">
                     <div className="text-over-image">
-                      <h4 className="type mb-2">Finance</h4>
+                      <h4 className="type mb-2">{item.node.frontmatter.category}</h4>
                       <h4 className="heading mb-2">
                         {item.node.frontmatter.title || item.node.fields.slug}
                       </h4>
@@ -91,7 +92,7 @@ const FeaturedBlogs = () => {
                       <div className="blog">
                         <div className="blog-content">
                           <AniLink paintDrip hex="#000000"to={item.node.fields.slug} itemProp="url">
-                            <h4 className="type mb-2">Finance</h4>
+                            <h4 className="type mb-2">{item.node.frontmatter.category}</h4>
                             <h4 className="title-3 mb-2">
                               {item.node.frontmatter.title ||
                                 item.node.fields.slug}
@@ -141,6 +142,7 @@ const blogs = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             featuredpost
+            category
             featuredimage {
               childImageSharp {
                 fluid(maxWidth: 310, maxHeight: 200, quality: 100) {
@@ -165,6 +167,7 @@ const FeaturedBlogsContainer = styled.section`
       margin-bottom: 1rem;
       .type {
         opacity: 0.39;
+        text-transform: capitalize;
       }
       .blog-content {
         width: 60%;
@@ -200,6 +203,7 @@ const FeaturedBlogsContainer = styled.section`
           padding-box;
         .type {
           font-size: 1.1rem;
+          text-transform: capitalize;
         }
         .heading {
           font-size: 1.8rem;
