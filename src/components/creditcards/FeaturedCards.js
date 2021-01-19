@@ -64,9 +64,9 @@ const Featured = () => {
             )
           })}
         </div>
-        <div className="view-all has-text-centered">
+        {/* <div className="view-all has-text-centered">
           <UnderlinedLink to="/creditcards/listing">View all</UnderlinedLink>
-        </div>
+        </div> */}
       </div>
     </FeaturedContainer>
   )
@@ -76,7 +76,7 @@ const FeaturedContainer = styled.section`
   .card-block {
     border: 1px solid #000000;
     padding: 1rem 2rem;
-    height: 400px;
+    height: 420px;
     p {
       height: 73px;
       overflow: hidden;

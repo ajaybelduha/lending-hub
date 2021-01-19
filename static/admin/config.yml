@@ -140,7 +140,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Category", name: "category", widget: "select", default: "blog", options: [{value: "credit-card", label: "Credit Cards"}, {value: "mortgage", label: "Mortgage"}, {value: "blog", label: "Blog"}, {value: "insurance", label: "Insurance"}, {value: "banking", label: "Banking"}], required: true}
+      - {label: "Category", name: "category", widget: "select", default: "blog", options: [{value: "credit card", label: "Credit Cards"}, {value: "mortgage", label: "Mortgage"}, {value: "blog", label: "Blog"}, {value: "insurance", label: "Insurance"}, {value: "banking", label: "Banking"}], required: true}
 
 
   - name: "knowledgehub"

@@ -61,14 +61,14 @@ const RegisterForm = (props) => {
         body: encode({ "form-name": "mortgage-information", ...values })
       })
       .then(() => {
-        alert('Success');
-        actions.resetForm()
+        // alert('Success');
+        // actions.resetForm()
+        props.setValue('formValues', values)
       })
       .catch(() => {
         alert('Error');
       })
       .finally(() => actions.setSubmitting(false))
-      //props.setValue('formValues', values)
     },
   })
   const encode = (data) => {
