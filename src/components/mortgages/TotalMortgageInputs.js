@@ -36,9 +36,11 @@ const TotalMortgageInputs = (props) => {
 
   const setPrincipalAndCmhc = (principal, dp) => {
     const response = getTotalMortgageAndCmhc(principal, dp)
+    const { downPaymentPercent } = formik.values
     if (response) {
       setCmhcValue(response.cmhc)
       setTotalMortgageValue(response.principal)
+      response.dp = downPaymentPercent;
       setFilteredFromInput(response)
     } else {
       setCmhcValue(0)

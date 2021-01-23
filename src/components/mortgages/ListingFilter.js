@@ -11,7 +11,6 @@ const ListingFilter = (props) => {
     { id: 'item2', label: 'Variable', value: 'variable' },
   ]
   const [selectedRateType, setSelectedRateType] = useState(rateTypes[0])
-  const [isRateTypeOpen, setIsRateTypeOpen] = useState(false)
 
   const mortgageTerms = [
     { id: 'item1', label: '1', value: 1 },
@@ -44,23 +43,6 @@ const ListingFilter = (props) => {
     setFiltered(obj)
   }, [])
 
-  const setRateTypeValue = (e, item) => {
-    e.preventDefault()
-    setSelectedRateType(item)
-    setIsRateTypeOpen(false)
-
-    const obj = {
-      rateType: item.value,
-      totalMortgage: 484640,
-      mortgageTerm: selectedMortgageTerm.value,
-    }
-    setFiltered(obj)
-  }
-
-  const toggleRateType = () => {
-    setIsRateTypeOpen(!isRateTypeOpen)
-  }
-
   const setMortgageTermValue = (e, item) => {
     e.preventDefault()
     setSelectedMortgageTerm(item)
@@ -82,6 +64,7 @@ const ListingFilter = (props) => {
     const obj = {
       rateType: selectedRateType?.value,
       totalMortgage: res?.principal,
+      downPaymentPercent: res?.dp,
       mortgageTerm: selectedMortgageTerm?.value,
     }
     setFiltered(obj)
@@ -92,10 +75,7 @@ const ListingFilter = (props) => {
       <Dropdown
         heading="Rate Type"
         selectedValue={selectedRateType}
-        isOpen={isRateTypeOpen}
-        toggle={toggleRateType}
         items={rateTypes}
-        setValue={setRateTypeValue}
       />
       <Dropdown
         heading="Mortgage Term"
