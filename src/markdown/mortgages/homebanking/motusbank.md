@@ -5,6 +5,18 @@ title: motusbank
 logo: /img/motusbank.png
 amortization: "25"
 isFeatured: true
+insured:
+  "1": "1.2"
+  "2": "1.3"
+  "3": "1.4"
+  "4": "1.6"
+  "5": "1.7"
+uninsured:
+  "1": "1.4"
+  "2": "1.5"
+  "3": "1.1"
+  "4": "1.22"
+  "5": "1.55"
 fixed:
   "1": "2.1"
   "2": "1.2"
