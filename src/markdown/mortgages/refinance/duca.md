@@ -1,15 +1,21 @@
 ---
 templateKey: refinance-mortgages
-mortgage: mortgage
-title: Duca
 logo: /img/duca.png
-amortization: "25"
-isFeatured: true
+rates:
+  "1": "1.1"
+  "2": "2.1"
+  "3": "1.65"
+  "4": "1.54"
+  "5": "1.44"
 fixed:
   "1": "1.3"
   "2": "1.4"
   "3": "2.2"
   "5": "1.79"
+mortgage: mortgage
+title: Duca
+amortization: "25"
+isFeatured: true
 variable:
   "3": "3.45"
   "5": "2.95"

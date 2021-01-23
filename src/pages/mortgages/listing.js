@@ -180,7 +180,7 @@ const MortgageStyledContainer = styled.div`
 export const mortgageQuery = graphql`
   query MortgageTemplate {
     mortgages: allMarkdownRemark(
-      filter: { frontmatter: { mortgage: { eq: "mortgage" } } }
+      filter: { frontmatter: { templateKey: { eq: "home-mortgages" } } }
     ) {
       edges {
         node {
@@ -196,14 +196,18 @@ export const mortgageQuery = graphql`
             }
             amortization
             isFeatured
-            fixed {
+            insured {
               _1
               _2
               _3
+              _4
               _5
             }
-            variable {
+             uninsured {
+              _1
+              _2
               _3
+              _4
               _5
             }
           }

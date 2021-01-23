@@ -54,51 +54,27 @@ collections:
       - {label: "Logo", name: "logo", widget: image, required: true}
       - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
       - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: true}
-      - {label: Fixed (Rates by term), name: fixed, widget: object, 
+      - {label: Insured (>20%dp), name: insured, widget: object, 
         fields: [
-        {label: "1 year", name: "1", widget: string, required: false}, 
-        {label: 2 years, name: "2", widget: string, required: false}, 
-        {label: 3 years, name: "3", widget: string, required: false}, 
-        {label: 5 years, name: "5", widget: string, required: false}, 
+        {label: "1 year", name: "1", widget: string, required: true}, 
+        {label: 2 years, name: "2", widget: string, required: true}, 
+        {label: 3 years, name: "3", widget: string, required: true}, 
+        {label: 4 years, name: "4", widget: string, required: true}, 
+        {label: 5 years, name: "5", widget: string, required: true}, 
         ]
       }
-      - {label: Variable (Rates by term), name: variable, widget: object, 
+      - {label: Uninsured 80% (<20%), name: uninsured, widget: object, 
         fields: [
-        {label: 3 years, name: "3", widget: string, required: false}, 
-        {label: 5 years, name: "5", widget: string, required: false}, 
-        ]
-      }
-
-
-  - name: "renewalMortgages"
-    label: "Renewal Mortgages"
-    folder: "src/markdown/mortgages/renewal"
-    slug: "{{slug}}"
-    create: true
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "renewal-mortgages"}
-      - {label: "mortgage", name: "mortgage", widget: "hidden", default: "mortgage"}
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Logo", name: "logo", widget: image, required: true}
-      - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
-      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: false}
-      - {label: Fixed (Rates by term), name: fixed, widget: object, 
-        fields: [
-        {label: "1 year", name: "1", widget: string, required: false}, 
-        {label: 2 years, name: "2", widget: string, required: false}, 
-        {label: 3 years, name: "3", widget: string, required: false}, 
-        {label: 4 years, name: "4", widget: string, required: false}, 
-        {label: 5 years, name: "5", widget: string, required: false}, 
-        ]
-      }
-      - {label: Variable (Rates by term), name: variable, widget: object, 
-        fields: [
-        {label: 5 years, name: "5", widget: string, required: false}, 
+        {label: "1 year", name: "1", widget: string, required: true}, 
+        {label: 2 years, name: "2", widget: string, required: true}, 
+        {label: 3 years, name: "3", widget: string, required: true}, 
+        {label: 4 years, name: "4", widget: string, required: true}, 
+        {label: 5 years, name: "5", widget: string, required: true}, 
         ]
       }
 
   - name: "refinancingMortgages"
-    label: "Refinancing Mortgages"
+    label: "Refinancing and Renewal Mortgages"
     folder: "src/markdown/mortgages/refinance"
     slug: "{{slug}}"
     create: true
@@ -109,18 +85,13 @@ collections:
       - {label: "Logo", name: "logo", widget: image, required: true}
       - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
       - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: false}
-      - {label: Fixed (Rates by term), name: fixed, widget: object, 
+      - {label: Rates, name: rates, widget: object, 
         fields: [
-        {label: 1 year, name: "1", widget: string, required: false}, 
-        {label: 2 years, name: "2", widget: string, required: false}, 
-        {label: 3 years, name: "3", widget: string, required: false}, 
-        {label: 4 years, name: "4", widget: string, required: false}, 
-        {label: 5 years, name: "5", widget: string, required: false}, 
-        ]
-      }
-      - {label: Variable (Rates by term), name: variable, widget: object, 
-        fields: [
-          {label: 5 years, name: "5", widget: string, required: false}, 
+        {label: "1 year", name: "1", widget: string, required: true}, 
+        {label: 2 years, name: "2", widget: string, required: true}, 
+        {label: 3 years, name: "3", widget: string, required: true}, 
+        {label: 4 years, name: "4", widget: string, required: true}, 
+        {label: 5 years, name: "5", widget: string, required: true}, 
         ]
       }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { BlackButton } from '../../components/common/common'
-import { can_mortgage_payment } from '../../components/common/utils'
+import { BlackButton } from '../../../components/common/common'
+import { can_mortgage_payment } from '../../../components/common/utils'
 import Image from 'gatsby-image'
 
 const MortgageBlock = ({
@@ -19,18 +19,9 @@ const MortgageBlock = ({
     const { totalMortgage, rateType, mortgageTerm, downPaymentPercent } = filterData
     const item = mortgages.node.frontmatter
     let rate
-    // if (rateType === 'fixed') {
-    //   rate = item[`fixed`][`_${mortgageTerm}`]
-    // } else {
-    //   rate = item[`variable`][`_${mortgageTerm}`]
-    // }
     const downPayment = Number(downPaymentPercent);
     console.log(downPayment)
-    if (downPayment <= 20) {
-      rate = item[`insured`][`_${mortgageTerm}`]
-    } else {
-      rate = item[`uninsured`][`_${mortgageTerm}`]
-    }
+    rate = item[`rates`][`_${mortgageTerm}`]
     return rate
   }
 
