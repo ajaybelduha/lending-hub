@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { navigate } from 'gatsby'
 import Fade from 'react-reveal/Fade'
 import { useFormik } from 'formik'
+import axios from 'axios';
 import Api from '../service/Api'
 import classNames from 'classnames'
 import {
@@ -85,8 +86,8 @@ const RegisterForm = (props) => {
     }
 
     
-
-      Api.post('https://api.followupboss.com/v1/events', data)
+      axios.get('/.netlify/functions/hello')
+      //Api.post('https://api.followupboss.com/v1/events', data)
       .then(response => {
         console.log(response);
       })
