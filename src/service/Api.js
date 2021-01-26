@@ -7,6 +7,7 @@ export default axios.create({
   headers: {
     "X-System":"LendingHubTest",
     "X-System-Key":"b7580afbf767e392d752053f98f65683",
-    'Authorization': `Basic ${token}`
+    'Authorization': `Basic ${token}`,
+    "Access-Control-Allow-Origin": "*"
   }
 });
