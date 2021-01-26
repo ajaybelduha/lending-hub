@@ -1,19 +1,19 @@
-import axios from 'axios'
-
-const token = Buffer.from(`105ff96b20d21612542057ad11a1cfcd789bae`, 'utf8').toString('base64')
-
-axios.create({
-  headers: {
-    "X-System":"LendingHubTest",
-    "X-System-Key":"b7580afbf767e392d752053f98f65683",
-    'Authorization': `Basic ${token}`,
-    "Access-Control-Allow-Origin": "*"
-  }
-});
+const axios = require('axios')
 
 
 // For more info, check https://docs.netlify.com/functions/build-with-javascript
 module.exports.handler = async function(event, context) {
+
+  const token = Buffer.from(`105ff96b20d21612542057ad11a1cfcd789bae`, 'utf8').toString('base64')
+
+  axios.create({
+    headers: {
+      "X-System":"LendingHubTest",
+      "X-System-Key":"b7580afbf767e392d752053f98f65683",
+      'Authorization': `Basic ${token}`,
+      "Access-Control-Allow-Origin": "*"
+    }
+  });
 
   let data = {
     "source": "MyAwesomeWebsite2.com",
