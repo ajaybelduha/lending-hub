@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { navigate } from 'gatsby'
 import Fade from 'react-reveal/Fade'
 import { useFormik } from 'formik'
+import Api from '../service/Api'
 import classNames from 'classnames'
 import {
   InputField,
@@ -55,20 +56,44 @@ const RegisterForm = (props) => {
     validate,
     onSubmit: (values, actions) => {
       // alert(JSON.stringify(values, null, 2));
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "mortgage-information", ...values })
+      // fetch("/", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      //   body: encode({ "form-name": "contact", ...values })
+      // })
+      // .then(() => {
+      //   // alert('Success');
+      //   // actions.resetForm()
+      //   props.setValue('formValues', values)
+      // })
+      // .catch(() => {
+      //   alert('Error');
+      // })
+      // .finally(() => actions.setSubmitting(false))
+
+      let data = {
+        "source": "MyAwesomeWebsite2.com",
+        "system": "AwesomeSiteBuilder1",
+        "type": "General Inquiry1",
+        "message": "Looking into a house under $500k in the East Boston area",
+        "person": {
+            "firstName": "Pravesh",
+            "lastName": "Choudhary",
+            "emails": [{"value": "pravesh@gmail.com"}],
+            "phones": [{"value": "999-555-9999"}]
+        }
+    }
+
+    
+
+      Api.post('https://api.followupboss.com/v1/events', data)
+      .then(response => {
+        console.log(response);
       })
-      .then(() => {
-        // alert('Success');
-        // actions.resetForm()
-        props.setValue('formValues', values)
+      .catch(error => {
+        console.log("ERROR OCCURED")
+        console.log(error);
       })
-      .catch(() => {
-        alert('Error');
-      })
-      .finally(() => actions.setSubmitting(false))
     },
   })
   const encode = (data) => {
@@ -85,7 +110,7 @@ const RegisterForm = (props) => {
         <div className="mb-6 has-text-centered">Get Instant Access</div>
         <div className="form-container">
           <form 
-            name="mortgage-information" 
+            name="contact" 
             method="post"
             action="/thanks/"
             data-netlify="true"
