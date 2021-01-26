@@ -84,7 +84,14 @@ const RegisterForm = (props) => {
         </div>
         <div className="mb-6 has-text-centered">Get Instant Access</div>
         <div className="form-container">
-          <form name="mortgage-information" id="mortgage-information" data-netlify={true} onSubmit={formik.handleSubmit}>
+          <form 
+            name="mortgage-information" 
+            method="post"
+            action="/thanks/"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={formik.handleSubmit}
+          >
             <input type="hidden" name="form-name" value="mortgage-information" />
             <div className="columns">
               <div className="column">
