@@ -16,9 +16,15 @@ import {
 const validate = (values) => {
   const errors = {}
   if (!values.name) {
-    errors.name = 'Please provide a valid name'
+    errors.name = 'Please provide a valid first name'
   } else if (values.name.length < 3) {
-    errors.name = 'Please provide a valid name'
+    errors.name = 'Please provide a valid first name'
+  }
+
+  if (!values.lastname) {
+    errors.lastname = 'Please provide a valid last name'
+  } else if (values.lastname.length < 3) {
+    errors.lastname = 'Please provide a valid last name'
   }
 
   if (!values.phone) {
@@ -46,62 +52,86 @@ const validate = (values) => {
   return errors
 }
 
+const convertSelections = (obj) => {
+  const keys = Object.keys(obj);
+  keys.map(item => {
+    const capitalized = item.charAt(0).toUpperCase() + item.slice(1)
+    const custom = `custom${capitalized}`;
+    obj[custom] = obj[item]
+    delete obj[item]
+  });
+  return obj;
+}
+
 const RegisterForm = (props) => {
+
+  const [formValues, setFormValues] = useState({})
+
+  useEffect(() => {
+    let data = {};
+    console.log(props)
+    if (props.type === "credit-card") {
+      data = JSON.parse(JSON.stringify(props.selections));
+      data.annualIncome = JSON.stringify(data.annualIncome)
+      data.expenditure = JSON.stringify(data.expenditure)
+    } else {
+      data = JSON.parse(JSON.stringify(props.selections?.formValues));
+    }
+    setFormValues(convertSelections(data))
+  }, [])
+
+  const submitData = (items) => {
+    fetch('/.netlify/functions/hello', {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      method: 'post',
+      body: JSON.stringify(items)
+    })
+    .then(res => res.json())
+    .then(response => {
+      const selections = props.selections
+      const redirect = props.redirectTo
+      navigate(redirect, {
+        state: { selections },
+      });
+    })
+    .catch(error => {
+      console.log("Error while submitting data")
+      console.log(error);
+    })
+  }
+
   const formik = useFormik({
     initialValues: {
       email: '',
       phone: '',
       name: '',
+      lastname: '',
       terms: '',
     },
     validate,
     onSubmit: (values, actions) => {
-      // alert(JSON.stringify(values, null, 2));
-      // fetch("/", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      //   body: encode({ "form-name": "contact", ...values })
-      // })
-      // .then(() => {
-      //   // alert('Success');
-      //   // actions.resetForm()
-      //   props.setValue('formValues', values)
-      // })
-      // .catch(() => {
-      //   alert('Error');
-      // })
-      // .finally(() => actions.setSubmitting(false))
 
       let data = {
-        "source": "MyAwesomeWebsite2.com",
-        "system": "AwesomeSiteBuilder1",
-        "type": "General Inquiry1",
-        "message": "Looking into a house under $500k in the East Boston area",
+        "source": "Lending Hub Website",
+        "type": "Registration",
         "person": {
-            "firstName": "Pravesh",
-            "lastName": "Choudhary",
-            "emails": [{"value": "pravesh@gmail.com"}],
-            "phones": [{"value": "999-555-9999"}]
-        }
-    }
+            "firstName": values.name,
+            "lastName": values.lastname,
+            "emails": [{"value": values.email}],
+            "phones": [{"value": values.phone}],
+            "tags": [props?.type],
+            ...formValues
+        },
+      }
 
-    
-      axios.get('/.netlify/functions/hello')
-      //Api.post('https://api.followupboss.com/v1/events', data)
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log("ERROR OCCURED")
-        console.log(error);
-      })
+      // Submit data to followup boss and redirect
+      submitData(data)
+      
     },
   })
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  }
   return (
     <RegisterFormContainer>
       <Fade bottom>
@@ -139,6 +169,31 @@ const RegisterForm = (props) => {
                   </div>
                   {formik.touched.name && formik.errors.name ? (
                     <p className="help is-danger">{formik.errors.name}</p>
+                  ) : null}
+                </div>
+              </div>
+            </div>
+
+            <div className="columns">
+              <div className="column">
+                <div className="field">
+                  <div className="control">
+                    {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                    <InputField
+                      id="lastname"
+                      name="lastname"
+                      type="text"
+                      placeholder="Last Name"
+                      className={classNames('input', {
+                        'is-danger': formik.errors.lastname,
+                      })}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.lastname}
+                    />
+                  </div>
+                  {formik.touched.lastname && formik.errors.lastname ? (
+                    <p className="help is-danger">{formik.errors.lastname}</p>
                   ) : null}
                 </div>
               </div>
