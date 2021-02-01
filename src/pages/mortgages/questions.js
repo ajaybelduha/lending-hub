@@ -46,7 +46,7 @@ const QuestionnaireModal = (props) => {
             {/* <div className="modal-background"></div> */}
                 <div className="">
                     {step === 1 && <MortgageFields type={getSelectedMortgageType()} setValue={setValue} />}
-                    {step === 2 && <RegisterForm submitText="Get Rates" setValue={submitAnswers} />}
+                    {step === 2 && <RegisterForm redirectTo='/mortgages/listing' type="mortgage" selections={selections} submitText="Get Rates" setValue={submitAnswers} />}
                 </div>
                 <button className="modal-close is-large" aria-label="close"></button>
             </div>

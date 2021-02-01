@@ -74,7 +74,12 @@ const QuestionnaireModal = (props) => {
               />
             )}
             {step === 4 && (
-              <RegisterForm submitText="Get Rates" setValue={submitAnswers} />
+              <RegisterForm 
+                redirectTo='/mortgages/refinance/listing'
+                type={getSelectedMortgageType()}
+                selections={selections}
+                submitText="Get Rates" 
+                setValue={submitAnswers} />
             )}
           </div>
           <button className="modal-close is-large" aria-label="close"></button>
