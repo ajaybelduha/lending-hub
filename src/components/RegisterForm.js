@@ -70,7 +70,7 @@ const RegisterForm = (props) => {
   useEffect(() => {
     let data = {};
     console.log(props)
-    if (props.type === "credit-card") {
+    if (props.type === "Credit Card") {
       data = JSON.parse(JSON.stringify(props.selections));
       data.annualIncome = JSON.stringify(data.annualIncome)
       data.expenditure = JSON.stringify(data.expenditure)
@@ -128,7 +128,13 @@ const RegisterForm = (props) => {
       }
 
       // Submit data to followup boss and redirect
-      submitData(data)
+      // submitData(data)
+
+      const selections = props.selections
+      const redirect = props.redirectTo
+      navigate(redirect, {
+        state: { selections },
+      });
       
     },
   })

@@ -77,6 +77,9 @@ const Navbar = class extends React.Component {
               <AniLink hex="#000000" paintDrip className="navbar-item" to="/banking">
                 Banking
               </AniLink>
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/calculator-types">
+                Calculators
+              </AniLink>
               <AniLink hex="#000000" paintDrip className="navbar-item" to="/blogs">
                 Blog
               </AniLink>

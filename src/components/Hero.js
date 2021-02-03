@@ -24,7 +24,7 @@ const Hero = (props) => {
                 </div>
               </div>
               <div className="column is-half has-text-right">
-                <img height="25em" src={imageSrc} alt="home hero image" />
+                {imageSrc && <img height="25em" src={imageSrc} alt="home hero image" />}
                 {/* <Image fixed={HeroImage} /> */}
               </div>
             </div>
@@ -47,7 +47,7 @@ const Block = ({ data }) => {
       className="block"
     >
       <figure className="image">
-        {isHovered ? <img src={data.imageHover} /> : <img src={data.image} />}
+        {data.image && (isHovered ? <img src={data.imageHover} /> : <img src={data.image} />)}
       </figure>
       <h3 className="title-2">{data.title}</h3>
       <div className="icon">
