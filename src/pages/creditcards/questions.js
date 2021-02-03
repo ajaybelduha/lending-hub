@@ -54,7 +54,7 @@ const QuestionnaireModal = (props) => {
             {step === 6 && (
               <RegisterForm
                 redirectTo='/creditcards/listing'
-                type="credit-card"
+                type="Credit Card"
                 selections={selections}
                 submitText="Let's see Cards"
                 setValue={submitAnswers}
