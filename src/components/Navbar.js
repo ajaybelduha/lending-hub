@@ -83,7 +83,7 @@ const Navbar = class extends React.Component {
               <AniLink hex="#000000" paintDrip className="navbar-item" to="/blogs">
                 Blog
               </AniLink>
-              <AniLink hex="#000000" paintDrip className="navbar-item" to="/aboutus">
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/about-us">
                 About Us
               </AniLink>
               <AniLink hex="#000000" paintDrip className="navbar-item" to="/contactus">
