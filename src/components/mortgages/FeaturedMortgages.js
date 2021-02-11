@@ -8,7 +8,7 @@ const featuredMortgages = graphql`
   query FeaturedMortgageItems {
     mortgages: allMarkdownRemark(
       filter: { frontmatter: { mortgage: { eq: "mortgage" } } }
-      limit: 3
+      limit: 4
     ) {
       edges {
         node {
@@ -61,7 +61,7 @@ const FeaturedMortgages = () => {
                     <Image fixed={card.logo.childImageSharp.fixed} />
                     <h2 className="title-24-nb">{card.title}</h2>
                   </div>
-                  <p className="has-text-left title-small mt-4">
+                  <p className="has-text-left title-1  mt-4">
                     Get an amazing rate of {card.fixed._5}% for 5 year fixed
                     with this mortgage
                   </p>
@@ -83,8 +83,8 @@ const FeaturedMortgages = () => {
 const FeaturedContainer = styled.section`
   .card-block {
     border: 1px solid #000000;
-    padding: 1rem 2rem;
-    height: 360px;
+    padding: 1rem 1rem;
+    height: fit-content;
     p {
       height: 150px;
       overflow: hidden;

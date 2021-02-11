@@ -58,6 +58,13 @@ export const InputField = styled.input`
     props.isDanger ? `1px solid #f14668` : `1px solid #707070`};
 `
 
+export const TextArea = styled.textarea`
+  height: 103px;
+  border-radius: 0;
+  border: ${(props) =>
+    props.isDanger ? `1px solid #f14668` : `1px solid #707070`};
+`
+
 export const RadioButton = styled.label`
   /* The container */
   & + .radio {
