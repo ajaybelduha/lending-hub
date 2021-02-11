@@ -13,7 +13,7 @@ const featuredCards = graphql`
           featured: { eq: true }
         }
       }
-      limit: 3
+      limit: 4
     ) {
       edges {
         node {
@@ -76,7 +76,7 @@ const FeaturedContainer = styled.section`
   .card-block {
     border: 1px solid #000000;
     padding: 1rem 2rem;
-    height: 420px;
+    height: fit-content;
     p {
       height: 73px;
       overflow: hidden;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Layout from '../components/Layout'
 import { navigate } from 'gatsby'
 import Fade from 'react-reveal/Fade'
 import { useFormik } from 'formik'
@@ -11,97 +12,61 @@ import {
   Checkbox,
   BlackButtonLink,
   BlackButton,
+  TextArea
 } from '../components/common/common'
 
+
+
+
 const validate = (values) => {
-  const errors = {}
-  if (!values.name) {
-    errors.name = 'Please provide a valid first name'
-  } else if (values.name.length < 3) {
-    errors.name = 'Please provide a valid first name'
+    const errors = {}
+    if (!values.name) {
+      errors.name = 'Please provide a valid first name'
+    } else if (values.name.length < 3) {
+      errors.name = 'Please provide a valid first name'
+    }
+  
+    if (!values.lastname) {
+      errors.lastname = 'Please provide a valid last name'
+    } else if (values.lastname.length < 3) {
+      errors.lastname = 'Please provide a valid last name'
+    }
+  
+    if (!values.phone) {
+      errors.phone = 'Please provide a valid 10 digit number'
+    } else if (
+      !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(
+        values.phone
+      )
+    ) {
+      errors.phone = 'Please provide a valid 10 digit number'
+    }
+  
+    if (!values.email) {
+      errors.email = 'Please provide a valid email'
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+      errors.email = 'Invalid email address'
+    }
+
+    if (!values.message) {
+        errors.message = 'Please provide a brief description here in 100 words minimum '
+      } else if (values.message.length < 100) {
+        errors.message = 'Please provide a brief description here in 100 words minimum'
+      }
+  
+    return errors
   }
 
-  if (!values.lastname) {
-    errors.lastname = 'Please provide a valid last name'
-  } else if (values.lastname.length < 3) {
-    errors.lastname = 'Please provide a valid last name'
-  }
 
-  if (!values.phone) {
-    errors.phone = 'Please provide a valid 10 digit number'
-  } else if (
-    !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(
-      values.phone
-    )
-  ) {
-    errors.phone = 'Please provide a valid 10 digit number'
-  }
 
-  if (!values.email) {
-    errors.email = 'Please provide a valid email'
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address'
-  }
 
-  if (!values.terms) {
-    errors.terms = 'Please accept terms and conditions to proceed'
-  } else if (values.terms[0] !== 'on') {
-    errors.terms = 'Please accept terms and conditions to proceed'
-  }
+const ContactUs = () => {
 
-  return errors
-}
-
-const convertSelections = (obj) => {
-  const keys = Object.keys(obj);
-  keys.map(item => {
-    const capitalized = item.charAt(0).toUpperCase() + item.slice(1)
-    const custom = `custom${capitalized}`;
-    obj[custom] = obj[item]
-    delete obj[item]
-  });
-  return obj;
-}
-
-const RegisterForm = (props) => {
-
-  const [formValues, setFormValues] = useState({})
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    let data = {};
-    console.log(props)
-    if (props.type === "Credit Card") {
-      data = JSON.parse(JSON.stringify(props.selections));
-      data.annualIncome = JSON.stringify(data.annualIncome)
-      data.expenditure = JSON.stringify(data.expenditure)
-    } else {
-      data = JSON.parse(JSON.stringify(props.selections?.formValues));
-    }
-    setFormValues(convertSelections(data))
-  }, [])
 
-  const submitData = (items) => {
-    fetch('/.netlify/functions/hello', {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      method: 'post',
-      body: JSON.stringify(items)
-    })
-    .then(res => res.json())
-    .then(response => {
-      const selections = props.selections
-      const redirect = props.redirectTo
-      navigate(redirect, {
-        state: { selections },
-      });
-    })
-    .catch(error => {
-      console.log("Error while submitting data")
-      console.log(error);
-    })
-  }
+  }, [])
 
   const formik = useFormik({
     initialValues: {
@@ -109,7 +74,7 @@ const RegisterForm = (props) => {
       phone: '',
       name: '',
       lastname: '',
-      terms: '',
+      message: ''
     },
     validate,
     onSubmit: (values, actions) => {
@@ -122,29 +87,28 @@ const RegisterForm = (props) => {
             "lastName": values.lastname,
             "emails": [{"value": values.email}],
             "phones": [{"value": values.phone}],
-            "tags": [props?.type],
-            ...formValues
+            "tags": ["contact-us"],
         },
       }
 
       // Submit data to followup boss and redirect
       // submitData(data)
 
-      const selections = props.selections
-      const redirect = props.redirectTo
-      navigate(redirect, {
-        state: { selections },
-      });
+      actions.resetForm();
+      setIsSubmitted(true)
+
       
     },
   })
-  return (
-    <RegisterFormContainer>
-      <Fade bottom>
-        <div className="section-title has-text-centered">
-          Tell a little bit about yourself
+
+
+    return(
+        <Layout>
+            <ContactUsContainer>
+            <div className="section-title has-text-centered">
+         Get in touch with us
         </div>
-        <div className="mb-6 has-text-centered">Get Instant Access</div>
+        <div className="mb-6 has-text-centered">We will reach out to you as soon as possible</div>
         <div className="form-container">
           <form 
             name="contact" 
@@ -250,63 +214,86 @@ const RegisterForm = (props) => {
                 </div>
               </div>
             </div>
-            <div className="checkboxes mb-4">
-              <Checkbox>
-                <input type="checkbox" id="html" />
-                <label htmlFor="html">
-                  Do you want to receive credit card news, advice and exclusive
-                  offers?
-                </label>
-              </Checkbox>
-              <Checkbox>
-                {/* <input type="checkbox" id="html2" /> */}
-                <input
-                  id="html2"
-                  name="terms"
-                  type="checkbox"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
 
-                <label htmlFor="html2">
-                  I accept Terms of Use & Privacy Policy. By creating an account
-                  I understand and consent to communication via email and text
-                  message (std. messaging rates apply) by Lendinghub Inc. and
-                  its agents/affiliates.
-                </label>
-              </Checkbox>
-              {formik.touched.terms && formik.errors.terms ? (
-                <p className="help is-danger">{formik.errors.terms}</p>
-              ) : null}
+            <div className="columns">
+            <div className="column">
+                <div className="field">
+                  <div className="control">
+                    <TextArea 
+                        id="message"
+                        name="message"
+                        type="text"
+                      placeholder="Write your message here..."
+                      className={classNames('input', {
+                        'is-danger': formik.errors.message,
+                      })}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.message}
+                    >
+                            
+                        </TextArea>
+                  </div>
+                  {formik.touched.message && formik.errors.message ? (
+                    <p className="help is-danger">{formik.errors.message}</p>
+                  ) : null}
+                </div>
+              </div>
             </div>
             {/* <BlackButtonLink to="/creditcards/listing">Let's see Cards</BlackButtonLink> */}
-            <BlackButton type="submit">{props.submitText}</BlackButton>
+            <BlackButton type="submit">Submit</BlackButton>
           </form>
         </div>
-      </Fade>
-    </RegisterFormContainer>
-  )
+        
+            {isSubmitted && <Fade>
+            <div className="apply-successful">
+                <div>
+                <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="tick__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+                </div>
+                <p>Thank you for the message. We will get back to you soon!</p>
+            </div>  
+            </Fade>}
+       
+            </ContactUsContainer>
+        </Layout>
+    )
 }
 
-const RegisterFormContainer = styled.div`
-  margin-top: 10%;
-  .form-container {
-    width: 500px;
-    margin: auto;
-    .checkboxes {
-      label {
-        font-size: 0.8rem;
-      }
-    }
-    a {
-      text-align: center;
-    }
-  }
-  @media screen and (max-width: 786px) {
+const ContactUsContainer = styled.div`
+    margin: 5%;
+    height: 600px;
     .form-container {
-      width: 100%;
+        width: 500px;
+        margin: auto;
+        .checkboxes {
+        label {
+            font-size: 0.8rem;
+        }
+        }
+        a {
+        text-align: center;
+        }
     }
-  }
+    .apply-successful {
+        margin-top: 4rem;
+        align-items: center;
+        display: flex;
+        justify-content:center;
+        svg {
+          margin-right: 20px;
+        }
+        p {
+          font-size: 24px;
+        }
+      }
+    @media screen and (max-width: 786px) {
+        .form-container {
+        width: 100%;
+        }
+    }
 `
 
-export default RegisterForm
+export default ContactUs;
