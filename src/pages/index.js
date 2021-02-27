@@ -31,12 +31,6 @@ const HomePage = () => {
       title: 'Insurance',
       link: '/insurance',
     },
-    {
-      image: '/img/icons/wallet.svg',
-      imageHover: '/img/icons/wallet_hover.svg',
-      title: 'Banking',
-      link: '/banking',
-    },
   ]
   return (
     <Layout>

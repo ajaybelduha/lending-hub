@@ -9,8 +9,10 @@ const EditorsPick = ({type}) => {
   let blogData = response.allMarkdownRemark.edges
   if (type === "mortgage") {
     blogData = blogData.filter(item => item.node.frontmatter.category === "mortgage")
-  } else {
+  } else if(type === 'credit-card') {
     blogData = blogData.filter(item => item.node.frontmatter.category === "credit-card")
+  } else {
+    blogData = blogData.filter(item => item.node.frontmatter.category === "insurance")
   }
   return (
     <EditorsPickContainer>
