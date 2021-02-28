@@ -1,5 +1,5 @@
 ---
 templateKey: faq
-title: What happens after I apply for a mortgage?
+title: How can I Improve my credit score?
 ---
-A licensed Mortgage Broker that specializes in the type of mortgage you’ve applied for will be matched with your file. The Mortgage Broker will contact you promptly to discuss your options and provide unbiased advice on how you can proceed. Your designated Mortgage Broker will then negotiate a suitable mortgage to fit your requirements.
+The three digits of your credit score number between 300 and 900 on your credit report disclose lender(s) about your credit history and ultimately the status of your financial position. The lenders use that code in assessing the risk you present as a potential borrower, which eventually impacts on how much they are willing to let you borrow. Hence, the higher the score, the healthier the credit and vice-versa. Use credit responsibly and your score can increase. You can use the following ways to improve the credit:
