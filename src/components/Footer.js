@@ -25,40 +25,20 @@ const Footer = class extends React.Component {
                 <section className="menu">
                   <ul className="menu-list">
                     <li className="heading-container">
-                      <AniLink paintDrip hex="#000000"to="/" className="navbar-item">
+                      <AniLink paintDrip hex="#000000"to="/about-us" className="navbar-item">
                         About us
                       </AniLink>
                       <hr />
                     </li>
                     <li>
-                      <AniLink paintDrip hex="#000000"to="/" className="navbar-item">
+                      <AniLink paintDrip hex="#000000"to="/about-us" className="navbar-item">
                         About us
                       </AniLink>
                     </li>
                     <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/about">
-                        Press room
-                      </AniLink>
-                    </li>
-                    <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/products">
-                        Sitemap
-                      </AniLink>
-                    </li>
-                    <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/products">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/careers">
                         Careers
                       </AniLink>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
                     </li>
                   </ul>
                 </section>
@@ -67,24 +47,24 @@ const Footer = class extends React.Component {
                 <section>
                   <ul className="menu-list">
                     <li className="heading-container">
-                      <AniLink paintDrip hex="#000000"to="/" className="navbar-item">
+                      <AniLink paintDrip hex="#000000"to="/contact-us" className="navbar-item">
                         Help
                       </AniLink>
                       <hr />
                     </li>
                     <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/blog">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/blogs">
                         FAQs
                       </AniLink>
                     </li>
                     <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
-                        Latest News
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/blogs">
+                        Blog
                       </AniLink>
                     </li>
                     <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
-                        Popular Topics
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact-us">
+                        Contact Us
                       </AniLink>
                     </li>
                   </ul>
@@ -109,16 +89,6 @@ const Footer = class extends React.Component {
                         Privacy Policy
                       </AniLink>
                     </li>
-                    <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
-                        Disclaimer
-                      </AniLink>
-                    </li>
-                    <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
-                        Logo Usage
-                      </AniLink>
-                    </li>
                   </ul>
                 </section>
               </div>
@@ -132,23 +102,27 @@ const Footer = class extends React.Component {
                   </li>
                   <li>
                     <p>
-                      LendingHub.ca Main Office
-                      <br />
-                      81 Zenway Blvd #25
-                      <br />
-                      Woodbridge, ON, L4H 0S5
-                    </p>
+                      <b>LendingHub.ca Main Office</b> <br />
+                      81 Zenway Blvd #25 Woodbridge, ON, L4H 0S5</p>
+                        <div>
+
+                        Email: info@lendinghub.ca<br />
+
+                        Office: (416) 607 7000<br />
+
+                        Fax: (805) 606 6200
+                    </div>
                   </li>
                 </ul>
                 <div className="social">
-                  <a title="facebook" href="https://facebook.com">
+                  <a title="facebook" href="https://www.facebook.com/lendinghub.ca">
                     <img
                       src={facebook}
                       alt="Facebook"
                       style={{ width: '1em', height: '1em' }}
                     />
                   </a>
-                  <a title="twitter" href="https://twitter.com">
+                  <a title="twitter" href="https://twitter.com/lendinghub?lang=en">
                     <img
                       className="fas fa-lg"
                       src={twitter}
@@ -156,22 +130,19 @@ const Footer = class extends React.Component {
                       style={{ width: '1em', height: '1em' }}
                     />
                   </a>
-                  <a title="instagram" href="https://instagram.com">
+                  <a title="instagram" href="https://www.instagram.com/lendinghub/">
                     <img
                       src={instagram}
                       alt="Instagram"
                       style={{ width: '1em', height: '1em' }}
                     />
                   </a>
-                  <a title="vimeo" href="https://vimeo.com">
-                    <img
-                      src={vimeo}
-                      alt="Vimeo"
-                      style={{ width: '1em', height: '1em' }}
-                    />
-                  </a>
                 </div>
               </div>
+            </div>
+            <hr/>
+            <div className="rights-reserved mt-4 has-text-centered">
+              Brokerage License#: 12566 LendingHub.ca © All Right Reserved 2021
             </div>
           </div>
         </div>

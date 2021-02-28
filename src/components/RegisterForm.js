@@ -77,7 +77,8 @@ const RegisterForm = (props) => {
     } else {
       data = JSON.parse(JSON.stringify(props.selections?.formValues));
     }
-    setFormValues(convertSelections(data))
+    // setFormValues(convertSelections(data))
+    setFormValues(data)
   }, [])
 
   const submitData = (items) => {
@@ -115,17 +116,19 @@ const RegisterForm = (props) => {
     onSubmit: (values, actions) => {
 
       let data = {
-        "source": "Lending Hub Website",
-        "type": "Registration",
-        "person": {
-            "firstName": values.name,
-            "lastName": values.lastname,
-            "emails": [{"value": values.email}],
-            "phones": [{"value": values.phone}],
-            "tags": [props?.type],
-            ...formValues
-        },
-      }
+          "person": {
+          "first_name": values.name,
+          "last_name": values.lastname,
+          "phone": values.phone,
+          "website": "https://www.lendinghub.ca",
+          "email": values.email,
+          "type": "Lead",
+          "custom_fields": formValues
+          }
+        } 
+
+      console.log("Data")
+      console.log(data)
 
       // Submit data to followup boss and redirect
       // submitData(data)
