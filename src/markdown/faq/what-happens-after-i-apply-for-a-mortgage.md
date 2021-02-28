@@ -1,5 +1,5 @@
 ---
 templateKey: faq
-title: Can I pay for my down payment with my RRSP?
+title: What are the benefits of Accelerated Bi-weekly Payments?
 ---
-Home Buyer Plan allows eligible first-time home buyers to withdraw up to $25,000 (tax-free) from you RRSP saving ($50,000 for couples) to finance your purchase or construction of a qualified home. To qualify, the funds must be in your RRSP for at least 90 days. This program is specifically for First time Home Buyers.
+We suggest our client to choose Accelerated Biweekly Payments for their Mortgage Payments. With accelerated bi-weekly payments, you will make 26 Biweekly, which is equivalent to 13 monthly payments in one year. The extra payment reduces the amortization period as well as increases savings with the reduction of interest payments.
