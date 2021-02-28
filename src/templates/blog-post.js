@@ -122,7 +122,7 @@ export const pageQuery = graphql`
         featuredpost
         featuredimage {
           childImageSharp {
-            fluid(maxWidth: 1000, maxHeight: 600, quality: 100) {
+            fluid(maxWidth: 1000, maxHeight: 300, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

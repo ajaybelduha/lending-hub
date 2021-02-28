@@ -22,9 +22,9 @@ const FeaturedBlogs = () => {
       <div className="container">
         <div className="header-with-link">
           <h1 className="section-title mb-3">
-            Trusted news and reviews, published daily
+            Blog
           </h1>
-          <UnderlinedLink to="/blogs">See all news</UnderlinedLink>
+          <UnderlinedLink to="/blogs">See all blogs</UnderlinedLink>
         </div>
         <div className="columns">
           <div className="column is-two-third">
@@ -170,7 +170,7 @@ const FeaturedBlogsContainer = styled.section`
         text-transform: capitalize;
       }
       .blog-content {
-        width: 60%;
+        width: 85%;
       }
       .arrow-icon {
         width: 36px;

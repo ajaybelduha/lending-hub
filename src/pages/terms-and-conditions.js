@@ -57,6 +57,9 @@ const TermsAndConditionsContainer = styled.div`
       font-family: 'Poppins Bold';
       font-size: 1.2rem;
     }
+    a {
+        color: #3273dc;
+    }
   }
   .contact-link {
         width: 200px;

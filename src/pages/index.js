@@ -14,12 +14,6 @@ const HomePage = () => {
       link: '/mortgages',
     },
     {
-      image: '/img/icons/loan.svg',
-      imageHover: '/img/icons/loan_hover.svg',
-      title: 'Loans',
-      link: '/loans',
-    },
-    {
       image: '/img/icons/surface1.svg',
       imageHover: '/img/icons/surface1_hover.svg',
       title: 'Credit Cards',
