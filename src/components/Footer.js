@@ -80,12 +80,12 @@ const Footer = class extends React.Component {
                       <hr />
                     </li>
                     <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/blog">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/terms-and-conditions">
                         Terms of use
                       </AniLink>
                     </li>
                     <li>
-                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/contact">
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/privacy-policy">
                         Privacy Policy
                       </AniLink>
                     </li>
