@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import Hero from '../../components/Hero'
 import FeaturedMortgages from '../../components/mortgages/FeaturedMortgages'
+import MortgageWatch from '../../components/mortgages/MortgageWatch'
 import MaximizeSavings from '../../components/MaximizeSavings'
 import FeaturedKnowledgeHub from '../../components/mortgages/FeaturedKnowledgeHub'
 import EditorsPick from '../../components/creditcards/EditorsPick'
@@ -39,6 +40,7 @@ const MortgagesHome = () => {
         blockItems={items}
       />
       <FeaturedMortgages />
+      <MortgageWatch />
       <MaximizeSavings />
       <FeaturedKnowledgeHub />
       <EditorsPick type="mortgage" />

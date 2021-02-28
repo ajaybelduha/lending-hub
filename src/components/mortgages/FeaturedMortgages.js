@@ -5,40 +5,44 @@ import Image from 'gatsby-image'
 import { BlackButtonLink, UnderlinedLink } from '../common/common'
 
 const featuredMortgages = graphql`
-  query FeaturedMortgageItems {
-    mortgages: allMarkdownRemark(
-      filter: { frontmatter: { mortgage: { eq: "mortgage" } } }
-      limit: 4
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            templateKey
-            logo {
-              childImageSharp {
-                fixed(width: 52, height: 52) {
-                  ...GatsbyImageSharpFixed
-                }
+query MortgageFeatured {
+  mortgages: allMarkdownRemark(
+    filter: { frontmatter: { templateKey: { eq: "home-mortgages" } } }
+    limit: 4
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          templateKey
+          logo {
+            childImageSharp {
+              fixed(width: 52, height: 52) {
+                src
               }
             }
-            amortization
-            isFeatured
-            fixed {
-              _1
-              _2
-              _3
-              _5
-            }
-            variable {
-              _3
-              _5
-            }
+          }
+          amortization
+          isFeatured
+          insured {
+            _1
+            _2
+            _3
+            _4
+            _5
+          }
+           uninsured {
+            _1
+            _2
+            _3
+            _4
+            _5
           }
         }
       }
     }
   }
+}
 `
 
 const FeaturedMortgages = () => {
@@ -62,7 +66,7 @@ const FeaturedMortgages = () => {
                     <h2 className="title-24-nb">{card.title}</h2>
                   </div>
                   <p className="has-text-left title-1  mt-4">
-                    Get an amazing rate of {card.fixed._5}% for 5 year fixed
+                    Get an amazing rate of {card.insured._5}% for 5 year fixed
                     with this mortgage
                   </p>
                   <BlackButtonLink>More Details</BlackButtonLink>

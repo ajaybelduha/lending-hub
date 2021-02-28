@@ -6,8 +6,6 @@ import Layout from '../components/Layout'
 
 const PrivacyPolicy = ({ data, location }) => {
   const post = data.markdownRemark
-  console.log(post)
-  const { previous, next } = data
 
   return (
     <Layout>
