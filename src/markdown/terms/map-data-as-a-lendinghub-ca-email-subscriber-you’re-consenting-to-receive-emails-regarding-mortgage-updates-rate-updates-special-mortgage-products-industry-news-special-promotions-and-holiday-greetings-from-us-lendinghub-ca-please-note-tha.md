@@ -1,4 +1,5 @@
 ---
+title: Terms of Service
 data: As a LendingHub.ca email subscriber, you’re consenting to receive emails
   regarding mortgage updates, rate updates, special mortgage products, industry
   news, special promotions and holiday greetings from us (LendingHub.ca). Please
