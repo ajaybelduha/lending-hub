@@ -1,19 +1,5 @@
 ---
 templateKey: faq
-title: " How much down payment is required for a second home?"
+title: Can I pay for my down payment with my RRSP?
 ---
-The following documents are generally required. However, documents vary depending on your type of employment, the type of mortgage etc.
-
-* Personal Identification (Driver’s License, Passport, Birth Certificate etc.). 
-
-* Proof of Income (Job letter, Pay stub, Notice of Assessments, Business Financial Statements etc.)
-
-* Proof of Financial Assets
-
-* Proof of Down Payment (Bank Statements, RRSP Statements, TFSA Statements etc.)
-
-* Proof of Closing Costs
-
-* Agreement of Purchase &amp; Sale
-
-* Existing Property Mortgage Statement(s), Property Tax Bill(s)
+Home Buyer Plan allows eligible first-time home buyers to withdraw up to $25,000 (tax-free) from you RRSP saving ($50,000 for couples) to finance your purchase or construction of a qualified home. To qualify, the funds must be in your RRSP for at least 90 days. This program is specifically for First time Home Buyers.
