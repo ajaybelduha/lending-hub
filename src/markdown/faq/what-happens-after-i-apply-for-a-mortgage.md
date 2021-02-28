@@ -1,5 +1,19 @@
 ---
 templateKey: faq
-title: What documents are required from me to get a mortgage?
+title: " How much down payment is required for a second home?"
 ---
-It all depends on your situation – some clients can purchase with 0% down payment, whereas another client may require 20% down payment. Generally, if you have great credit and income, 5% down payment and 1.5% of the house value for closing cost (such as legal fees and disbursements) is fine. When paying 5% down payment, the funds must be from your own sources, they cannot be borrowed from a line of credit, credit cards or family. However, there are several programs available that allow alternate sources of down payment. Call us to know more.
+The following documents are generally required. However, documents vary depending on your type of employment, the type of mortgage etc.
+
+* Personal Identification (Driver’s License, Passport, Birth Certificate etc.). 
+
+* Proof of Income (Job letter, Pay stub, Notice of Assessments, Business Financial Statements etc.)
+
+* Proof of Financial Assets
+
+* Proof of Down Payment (Bank Statements, RRSP Statements, TFSA Statements etc.)
+
+* Proof of Closing Costs
+
+* Agreement of Purchase &amp; Sale
+
+* Existing Property Mortgage Statement(s), Property Tax Bill(s)
