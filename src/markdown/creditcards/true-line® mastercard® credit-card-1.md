@@ -3,7 +3,7 @@ templateKey: credit-card-post
 title: True Line® Mastercard® credit card
 cardImage: /img/true-line-gold-mastercardcard.png
 creditScore: Good
-fee: -1
+fee: 0
 purchaseInterest: "12.99"
 balanceTransferInterest: "12.99"
 cashAdvanceInterest: "24.99"
