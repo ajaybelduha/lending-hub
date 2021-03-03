@@ -1,7 +1,7 @@
 ---
 templateKey: credit-card-post
 title: BMO® Preferred Rate Mastercard®*
-cardImage: /img/value_visa_eng.webp
+cardImage: /img/bmo-preferred-rate.png
 creditScore: Good
 fee: 20
 purchaseInterest: "12.99"
