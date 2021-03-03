@@ -5,9 +5,9 @@ cardImage: /img/smart-cash-large_tcm378-267330.png
 creditScore: Good
 fee: 0
 network: mastercard
-purchaseInterest: 19
-balanceTransferInterest: 21
-cashAdvanceInterest: 21
+purchaseInterest: "19.99"
+balanceTransferInterest: "22.99"
+cashAdvanceInterest: "24.99"
 userCategory: personal
 cardCategory: prepaid
 href: https://www.mbna.ca/en/credit-cards/cash-back/smart-cash-mastercard/
