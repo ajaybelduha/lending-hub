@@ -4,9 +4,9 @@ title: Tangerine Money-Back Credit Card
 cardImage: /img/credit_card_en.png
 creditScore: Good
 fee: 0
-purchaseInterest: 19
-balanceTransferInterest: 1
-cashAdvanceInterest: 19
+purchaseInterest: "19.95"
+balanceTransferInterest: "1.95"
+cashAdvanceInterest: "19.95"
 userCategory: personal
 cardCategory: low-balance-transfer
 href: https://www.tangerine.ca/en/products/spending/creditcard/money-back/
