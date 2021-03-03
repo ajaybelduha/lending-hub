@@ -1,19 +1,15 @@
 ---
 templateKey: credit-card-post
-title: Scotia Momentum® Mastercard ®* Credit Card
-cardImage: /img/momentum_mc_eng.webp
-creditScore: Fair
-fee: 0
-additionalInterestRateInfo: 19.99 after 6 months
-firstYearFee: ""
-network: mastercard
-purchaseInterest: "7.99"
-balanceTransferInterest: "22.99"
-cashAdvanceInterest: "22.99"
+title: Home Trust Secured Visa Card
+cardImage: /img/home-trust-secured-visa-243x153.png
+creditScore: Bad
+fee: 59
+purchaseInterest: "14.90"
+balanceTransferInterest: "14.99"
+cashAdvanceInterest: "19.80"
 userCategory: personal
 cardCategory: low-interest
-href: https://www.scotiabank.com/ca/en/personal/credit-cards/mastercard/momentum-card.html
-minIncome: ""
+href: https://www.hometrust.ca/credit-cards/secured-visa-card/visa-form/?product=lowrate
 summaryDescription: >-
   <!--StartFragment-->
 
