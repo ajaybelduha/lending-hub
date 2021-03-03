@@ -31,6 +31,7 @@ const HomePage = () => {
       <Hero
         title="Guiding you through life's financial journey"
         subtitle="Compare rates, crunch numbers and get expert guidance for life's pivotal financial moments."
+        subtitle2="LendingHub helps you compare rates from more providers than anyone else"
         imageSrc="/img/home-hero-image.png"
         blockItems={items}
       />

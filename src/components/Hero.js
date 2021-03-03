@@ -5,7 +5,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 // import HeroImage from '../../static/img/home-hero-image.png'
 
 const Hero = (props) => {
-  const { title, subtitle, imageSrc, blockItems, onSelect } = props
+  const { title, subtitle, imageSrc, blockItems, onSelect, subtitle2 } = props
   return (
     <HeroContainer>
       <div className="hero">
@@ -14,8 +14,9 @@ const Hero = (props) => {
             <div className="columns">
               <div className="column is-half">
                 <h1 className="section-title">{title}</h1>
-                <h4 className="section-subtitle">{subtitle}</h4>
-                <div className="blocks mt-5" onClick={onSelect}>
+                <h4 className="section-subtitle mt-4">{subtitle}</h4>
+                <h4 className="section-subtitle mt-6">{subtitle2}</h4>
+                <div className="blocks mt-6" onClick={onSelect}>
                   {blockItems.map((item) => (
                     <AniLink paintDrip hex="#000000" to={item.link} state={{ id: item.key, title: item.title }}>
                       <Block data={item} />

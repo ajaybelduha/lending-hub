@@ -36,6 +36,7 @@ const MortgagesHome = () => {
       <Hero
         title="Let's help you find the best mortgage rate"
         subtitle="We’ll find the best rate for you in under 2 minutes."
+        subtitle2="Evaluate Canada’s best mortgage rates in one place. LendingHub's Rate Matrix lets you compare pricing for all key mortgage types and terms."
         imageSrc="/img/mortgages-hero.png"
         blockItems={items}
       />
