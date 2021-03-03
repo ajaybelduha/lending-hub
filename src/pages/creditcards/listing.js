@@ -14,6 +14,8 @@ const CCListing = (response) => {
   const [cardsFiltered, setCardsFiltered] = useState()
   const [filters, setFilters] = useState(questionFilters)
 
+  console.log(response)
+
   useEffect(() => {
     setCardsFiltered(cardsData)
     setCardsListing(cardsData)

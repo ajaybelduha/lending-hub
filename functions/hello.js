@@ -13,8 +13,7 @@ module.exports.handler = async function(event, context) {
     }
 }
 
-const data = JSON.parse(event.body)
-// const customFieldsTextual = data.person?.custom_fields
+// const data = JSON.parse(event.body)
 
 const req = {
   params: {
@@ -22,14 +21,8 @@ const req = {
   }
 }
 
-// const api_key = 'Ixdy528xA3KLqzbB4K1'
 
-console.log("DATA IN LAMBDA")
-// console.log(customFieldsTextual);
-
-
-
-axios.get('https://api.pipelinecrm.com/api/v3/admin/person_custom_field_labels', req, config)
+axios.get('https://api.pipelinecrm.com/api/v3/admin/person_custom_field_labels.json', req, config)
 .then(res => {
   console.log(res)
 })
