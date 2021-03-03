@@ -2,30 +2,21 @@
 templateKey: credit-card-post
 title: MBNA Rewards Platinum Plus® Mastercard®
 cardImage: /img/card.png
-creditScore: Bad
-fee: 120
-firstYearFee: 120
+creditScore: Good
+fee: 5
+firstYearFee: 1
 bankName: mbna
 network: mastercard
-purchaseInterest: 19
-balanceTransferInterest: 19
-cashAdvanceInterest: 15
-balanceTranferFees: 15
+purchaseInterest: "19.99"
+balanceTransferInterest: "22.99"
+cashAdvanceInterest: "24.99"
+balanceTranferFees: ""
 userCategory: personal
-cardCategory: low-balance-transfer
+cardCategory: prepaid
 href: https://apply.mbna.ca/applicationform/generateApplicationForm.htm?src=DACC88&locale=en_CA&sid=GaCy8kZbhuw-10H.SXk.sZfrQgJmcTx8gw
 sponsered: true
-rating: "3"
-minIncome: 50000
-summaryDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-  pharetra, nisi a ultricies pellentesque, tortor est lacinia elit, ac pharetra
-  mi lorem at ipsum. Donec suscipit justo et tincidunt pellentesque.
-  Pellentesque mattis elit vel dui luctus egestas. Curabitur ac lobortis nunc.
-  Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris pharetra
-  augue vitae neque interdum interdum. Sed et aliquam urna. Quisque lobortis
-  accumsan imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et
-  ultrices posuere cubilia curae; Praesent sed euismod tellus, et rhoncus mi. In
-  et lacus a massa tempus tincidunt. Duis vitae dolor in elit dignissim aliquet
-  at et odio. Fusce elit orci, posuere eget nisl in, egestas convallis mi.
+rating: null
+minIncome: ""
+summaryDescription: ""
 featured: true
 ---
