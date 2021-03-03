@@ -135,6 +135,8 @@ const RegisterForm = (props) => {
 
       const selections = props.selections
       const redirect = props.redirectTo
+      console.log("FORM SELECTIONS")
+      console.log(props.selections)
       navigate(redirect, {
         state: { selections },
       });

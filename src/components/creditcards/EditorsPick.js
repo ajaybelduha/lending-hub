@@ -147,6 +147,12 @@ const EditorsPickContainer = styled.section`
       font-size: 1rem;
       text-transform: none;
     }
+    .grey-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
     .meta {
       font-size: 0.8rem;
     }
