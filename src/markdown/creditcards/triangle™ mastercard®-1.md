@@ -1,0 +1,15 @@
+---
+templateKey: credit-card-post
+title: Triangle™ Mastercard®
+cardImage: /img/ctfs_triangle_mc-243.png
+creditScore: Fair
+fee: 0
+network: mastercard
+purchaseInterest: 19
+balanceTransferInterest: 22
+cashAdvanceInterest: 21
+userCategory: personal
+cardCategory: prepaid
+href: https://mastercard.canadiantire.ca/content/dsa/en.html
+minIncome: 0
+---
