@@ -1,28 +1,30 @@
 ---
 templateKey: credit-card-post
-title: Scotia Momentum® VISA Card
-cardImage: /img/momentum_visa_eng.webp
-creditScore: Good
-fee: 39
-network: visa
-purchaseInterest: 19
-balanceTransferInterest: 2
-cashAdvanceInterest: 22
+title: Scotia Momentum® Mastercard ®* Credit Card
+cardImage: /img/momentum_mc_eng.webp
+creditScore: Fair
+fee: 0
+network: mastercard
+purchaseInterest: 7
+balanceTransferInterest: 22
+cashAdvanceInterest: 21
 userCategory: personal
-cardCategory: low-balance-transfer
-href: https://www.scotiabank.com/ca/en/personal/credit-cards/visa/momentum-cash-back-card.html
-minIncome: 12000
+cardCategory: prepaid
+href: https://www.scotiabank.com/ca/en/personal/credit-cards/mastercard/momentum-card.html
+minIncome: 0
 summaryDescription: >-
   <!--StartFragment-->
 
 
-  1. 2% Cash back on all eligible gas station, grocery store, drug store purchases and recurring payments.\
+  1. Cash back on all eligible gas station, grocery store, drug store purchases and recurring payments.\
 
-  2. Plus earn 1% cash back on all other eligible purchases\
+  1%\
 
-  3. Low Annual Fee - $39\
+  2. Make everyday purchases quickly and safely with just a tap of your contactless-enabled Mastercard or device\
 
-  4. Convenient with Visa payWave simply wave your card and go!
+  3. No Annual Fee\
+
+  4. Credit Limit $500 Minimum
 
 
   <!--EndFragment-->
