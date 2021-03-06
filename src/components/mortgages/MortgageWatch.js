@@ -100,6 +100,23 @@ const MortgageWatchContainer = styled.div`
         background-color: #ddd;
         top: 2rem;
     }
+    @media screen and (max-width: 786px) {
+        .separator {
+            display: none;
+        }
+        .watch-blocks {
+        .watch-heading {
+            text-align: center;
+        }
+        .watch-number {
+            font-size: 3rem;
+        }
+        .watch-block {
+            padding: 1rem 0rem;
+            justify-content: space-around;
+        }
+    }
+    }
 `
 
 export default MortgageWatch;
