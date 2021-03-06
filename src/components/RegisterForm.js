@@ -52,17 +52,6 @@ const validate = (values) => {
   return errors
 }
 
-const convertSelections = (obj) => {
-  const keys = Object.keys(obj);
-  keys.map(item => {
-    const capitalized = item.charAt(0).toUpperCase() + item.slice(1)
-    const custom = `custom${capitalized}`;
-    obj[custom] = obj[item]
-    delete obj[item]
-  });
-  return obj;
-}
-
 const RegisterForm = (props) => {
 
   const [formValues, setFormValues] = useState({})
@@ -94,9 +83,9 @@ const RegisterForm = (props) => {
     .then(response => {
       const selections = props.selections
       const redirect = props.redirectTo
-      navigate(redirect, {
-        state: { selections },
-      });
+      // navigate(redirect, {
+      //   state: { selections },
+      // });
     })
     .catch(error => {
       console.log("Error while submitting data")
@@ -115,6 +104,13 @@ const RegisterForm = (props) => {
     validate,
     onSubmit: (values, actions) => {
 
+      let tagId = 4305274
+      if (props.type === "Credit Card") {
+        tagId = 4305274;
+      } else if (props.type === 'mortgage') {
+        tagId = 4305275;
+      }
+
       let data = {
           "person": {
           "first_name": values.name,
@@ -123,6 +119,10 @@ const RegisterForm = (props) => {
           "website": "https://www.lendinghub.ca",
           "email": values.email,
           "type": "Lead",
+          "lead_status_id": 1584673,
+          "lead_source_id": 3368161,
+          "next_entry_name": "From LendingHub Website",
+          "predefined_contacts_tag_ids": [tagId], // Credit Card, Mortgage, Loans, Insurance => 4305274, 4305275, 4305276, 4305277
           "custom_fields": formValues
           }
         } 

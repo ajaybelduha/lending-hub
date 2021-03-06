@@ -53,9 +53,30 @@ const InsuranceForm = ({ open, setOpen }) => {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    useEffect(() => {
-
-    }, [])
+    const submitData = (items) => {
+        fetch('/.netlify/functions/hello', {
+          headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          method: 'post',
+          body: JSON.stringify(items)
+        })
+        .then(res => res.json())
+        .then(response => {
+            setIsSubmitted(true)
+            setTimeout(() => {
+                setOpen(false);
+            }, 3000)
+          // navigate(redirect, {
+          //   state: { selections },
+          // });
+        })
+        .catch(error => {
+          console.log("Error while submitting data")
+          console.log(error);
+        })
+      }
 
     const formik = useFormik({
         initialValues: {
@@ -68,25 +89,31 @@ const InsuranceForm = ({ open, setOpen }) => {
         onSubmit: (values, actions) => {
 
             let data = {
-                "source": "Lending Hub Website",
-                "type": "Registration",
                 "person": {
-                    "firstName": values.name,
-                    "lastName": values.lastname,
-                    "emails": [{ "value": values.email }],
-                    "phones": [{ "value": values.phone }],
-                    "tags": ["contact-us"],
-                },
-            }
-
+                "first_name": values.name,
+                "last_name": values.lastname,
+                "phone": values.phone,
+                "website": "https://www.lendinghub.ca",
+                "email": values.email,
+                "type": "Lead",
+                "lead_status_id": 1584673,
+                "lead_source_id": 3368161,
+                "next_entry_name": "From LendingHub Website",
+                "predefined_contacts_tag_ids": [4305277], // Credit Card, Insurance, Loans, Mortgage
+                }
+              } 
+      
+            console.log("Data")
+            console.log(data)
+      
             // Submit data to followup boss and redirect
-            // submitData(data)
-
-            actions.resetForm();
-            setIsSubmitted(true)
-
-
-        },
+            submitData(data)
+      
+            // navigate(redirect, {
+            //   state: { selections },
+            // });
+            
+          },
     })
 
 
@@ -219,7 +246,7 @@ const InsuranceForm = ({ open, setOpen }) => {
                                 <path class="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                             </svg>
                         </div>
-                        <p>Thank you for the message. We will get back to you soon!</p>
+                        <p>Thank you for contacting us. We will get back to you soon!</p>
                     </div>
                 </Fade>}
 
