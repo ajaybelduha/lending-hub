@@ -5,9 +5,9 @@ cardImage: /img/momentum_mc_eng.webp
 creditScore: Fair
 fee: 0
 network: mastercard
-purchaseInterest: 7
-balanceTransferInterest: 22
-cashAdvanceInterest: 21
+purchaseInterest: "7"
+balanceTransferInterest: "22"
+cashAdvanceInterest: "21"
 userCategory: personal
 cardCategory: prepaid
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/mastercard/momentum-card.html

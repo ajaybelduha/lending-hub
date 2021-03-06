@@ -13,7 +13,7 @@ cashAdvanceInterest: "22.99"
 userCategory: personal
 cardCategory: low-interest
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/mastercard/momentum-card.html
-minIncome: ""
+minIncome: 0
 summaryDescription: >-
   <!--StartFragment-->
 

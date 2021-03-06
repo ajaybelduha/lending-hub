@@ -42,6 +42,10 @@ const MortgagesHome = () => {
       />
       <FeaturedMortgages />
       <MortgageWatch />
+      <div className="mt-6 container">
+          <h1 className="section-title mb-3">Our partners</h1>
+          <img src="/img/partners.png" />
+      </div>
       <MaximizeSavings />
       <FeaturedKnowledgeHub />
       <EditorsPick type="mortgage" />

@@ -11,6 +11,6 @@ cashAdvanceInterest: "22.99"
 userCategory: personal
 cardCategory: low-interest
 href: https://www.ctfs.com/content/ctfs/en.html
-minIncome: ""
+minIncome: 0
 summaryDescription: ""
 ---

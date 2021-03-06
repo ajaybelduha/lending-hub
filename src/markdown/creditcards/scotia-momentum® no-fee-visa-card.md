@@ -14,7 +14,7 @@ cashAdvanceInterest: "22.999"
 userCategory: personal
 cardCategory: low-interest
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/visa/momentum-no-fee-card.html
-minIncome: ""
+minIncome: 0
 summaryDescription: >-
   <!--StartFragment-->
 

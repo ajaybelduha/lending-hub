@@ -7,7 +7,7 @@ const InsuranceSteps = ({ stepItems }) => {
     const [ image, setImage ] = useState(stepItems[0].image)
     return(
         <InsuraneStepsContainer>
-            <div onMouseOut={() => setImage(stepItems[0].image)}>
+            <div>
                 {stepItems.map((item, index) => {
                     return(
                         <StepItem item={item} index={index} setImage={setImage} stepItems={stepItems}/>
@@ -37,7 +37,7 @@ const StepItem = ({item, index, setImage, stepItems}) => {
     }
     const setMouseOut = () => {
         setFade(true)
-        document.getElementsByClassName('step-item')[0].classList.remove('fade')
+        // document.getElementsByClassName('step-item')[0].classList.remove('fade')
     }
     return(
         <div onMouseOver={() => setMouseIn()} onMouseOut={() => setMouseOut()} 

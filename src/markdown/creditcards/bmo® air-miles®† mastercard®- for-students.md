@@ -8,7 +8,7 @@ network: mastercard
 purchaseInterest: "19.99"
 balanceTransferInterest: "22.99"
 cashAdvanceInterest: "22.99"
-balanceTranferFees: ""
+balanceTranferFees: -1
 userCategory: personal
 cardCategory: prepaid
 href: https://www.bmo.com/main/personal/credit-cards/2-students-offers
