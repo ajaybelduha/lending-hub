@@ -16,7 +16,7 @@ cardCategory: prepaid
 href: https://www.americanexpress.com/ca/en/credit-cards/cobalt-card/?CPID=100363865&PID=15-13876250-8737457-&cjevent=692b9d61f8c411ea82d5004d0a180513
 sponsered: false
 rating: null
-minIncome: -1
+minIncome: 0
 summaryDescription: >-
   <!--StartFragment-->
 
