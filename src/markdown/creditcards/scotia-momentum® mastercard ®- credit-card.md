@@ -4,17 +4,19 @@ title: Scotia Momentum® Mastercard ®* Credit Card
 cardImage: /img/momentum_mc_eng.webp
 creditScore: Fair
 fee: 0
-firstYearFee: 7
+additionalInterestRateInfo: 19.99 after 6 months
+firstYearFee: ""
 network: mastercard
-purchaseInterest: 12
-balanceTransferInterest: 22
-cashAdvanceInterest: 22
+purchaseInterest: "7.99"
+balanceTransferInterest: "22.99"
+cashAdvanceInterest: "22.99"
 userCategory: personal
 cardCategory: low-interest
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/mastercard/momentum-card.html
 minIncome: 0
 summaryDescription: >-
-  
+  <!--StartFragment-->
+
 
   1. Cash back on all eligible gas station, grocery store, drug store purchases and recurring payments.\
 
@@ -25,4 +27,7 @@ summaryDescription: >-
   3. No Annual Fee\
 
   4. Credit Limit $500 Minimum
+
+
+  <!--EndFragment-->
 ---

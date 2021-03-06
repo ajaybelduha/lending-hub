@@ -12,14 +12,6 @@ const Footer = class extends React.Component {
       <footer className="footer">
         <div className="content">
           <div className="container">
-            <div>
-              <img
-                src={logo}
-                alt="lending hub logo"
-                className="logo"
-                style={{ width: '168px' }}
-              />
-            </div>
             <div style={{ maxWidth: '100vw' }} className="columns">
               <div className="column is-3">
                 <section className="menu">

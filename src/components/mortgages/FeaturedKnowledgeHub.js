@@ -70,12 +70,16 @@ const FeaturedKnowledgeHubContainer = styled.section`
   .kh-block {
     padding: 1rem;
     display: flex;
+    transition: all .25s linear;
     flex-direction: column;
     justify-content: space-between;
     height: 300px;
     min-width: 360px;
     border-left: 4px solid #151515;
     box-shadow: 0px 4px 12px #00000029;
+    :hover {
+      box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8);
+    }
     .description {
       display: -webkit-box;
       -webkit-line-clamp: 4;

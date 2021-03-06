@@ -5,6 +5,7 @@ import InsuranceHero from '../components/insurance/InsuranceHero'
 import Layout from '../components/Layout'
 import EditorsPick from '../components/creditcards/EditorsPick'
 import InsuranceForm from '../components/insurance/InsuranceForm'
+import InsuranceSteps from '../components/insurance/InsuranceSteps'
 import { useStaticQuery } from 'gatsby';
 import { ButtonNoStyle } from '../components/common/common';
 
@@ -25,17 +26,17 @@ const items = [
 
 const stepItems = [
     {
-        image: '/img/icons/mortgage-copy.svg',
+        image: '/img/step1.png',
         title: 'Answer a few basic questions',
         subtitle: "Just answer a few basic questions to let us know what exactly you need and we will provide you the rest",
       },
       {
-        image: '/img/icons/mortgage-copy.svg',
+        image: '/img/step2.png',
         title: 'Choose your coverage options',
         subtitle: "Select how much coverage you need for your vehicle and home. Here you can truly customize your insurance according to your needs.",
       },
       {
-        image: '/img/icons/mortgage-copy.svg',
+        image: '/img/step3.png',
         title: 'Pay Online',
         subtitle: "Pay exactly for what you buy with just few clicks online - no hidden fees. And access your insurance documents immediately.",
       }
@@ -58,41 +59,13 @@ const Insurance = () => {
                     blockItems={items} 
                     setOpen={setModal}
                 />
-                <div className="container mt-6">
+                <div className="container my-6">
                     <h1 className="section-title mb-3">Steps to buy insurance</h1>
                                 <h4 className="section-subtitle">
                                     Follow these 3 simple steps to buy insurance with us with just few clicks
                                 </h4>
                         <div className="section-2">
-                            <div>
-                                <div className="steps">
-                                    {stepItems.map((item, index) => {
-                                        return(
-                                            <StepItem item={item} index={index+1}/>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                            <div className="steps-image">
-                                <img height="25em" src={'/img/step1.png'} alt="home hero image" />
-                            </div>
-                        </div>
-                        <div className="mt-6">
-                            <h1 className="title-24">Let's get started</h1>
-                            <div className="ins-blocks">
-                                <ButtonNoStyle onClick={setModal}> 
-                                    <div class="link-to-form">
-                                        <img src="/img/icons/home-3_hover.svg" />
-                                        <h3>Home Insurance</h3>
-                                    </div>
-                                </ButtonNoStyle>
-                                <ButtonNoStyle onClick={setModal}>
-                                    <div class="link-to-form">
-                                        <img src="/img/icons/loan_hover.svg" />
-                                        <h3>Auto Insurance</h3>
-                                    </div>
-                                </ButtonNoStyle>
-                            </div>
+                                <InsuranceSteps stepItems={stepItems} />
                         </div>
                         <div className="mt-6">
                             <h1 className="section-title mb-3">Our partners</h1>
@@ -146,44 +119,10 @@ const Insurance = () => {
     )
 }
 
-const StepItem = ({item, index}) => {
-    return(
-        <div className="step-item">
-            <div className="index">{index}</div>
-            <div className="item">
-                <h3 className="head">{item.title}</h3>
-                <p className="desc">{item.subtitle}</p>
-            </div>
-        </div>
-    )
-}
-
 const InsuranceContainer = styled.div`
 margin-top: 3rem;
     .section-2 {
         display: flex;
-    }
-    .steps {
-        margin-top: 6rem;
-    }
-    .step-item {
-        display: flex;
-        align-items: flex-end;
-        width: 70%;
-        margin-top: 3rem;
-        .index {
-            font-family: "Poppins Bold";
-            font-size: 4rem;
-            margin-right: 1.5rem;
-            width: 7rem;
-        }
-        .item {
-            .head {
-                font-family: "Poppins Bold";
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-            }
-        }
     }
     .save-items {
         margin-top: 2rem;
@@ -214,14 +153,6 @@ margin-top: 3rem;
     @media screen and (max-width: 786px) {
         .section-2 {
             flex-wrap: wrap;
-        }
-        .steps {
-            margin-top: 3rem;
-        }
-        .step-item {
-            width: 100%;
-            margin-bottom: 3rem;
-            align-items: start;
         }
         .link-to-form {
             margin-bottom: 1rem;

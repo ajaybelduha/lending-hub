@@ -18,7 +18,7 @@ query MortgageFeatured {
           logo {
             childImageSharp {
               fixed(width: 52, height: 52) {
-                src
+                ...GatsbyImageSharpFixed
               }
             }
           }
@@ -48,6 +48,7 @@ query MortgageFeatured {
 const FeaturedMortgages = () => {
   const data = useStaticQuery(featuredMortgages)
   const mortgageItems = data.mortgages.edges
+  console.log(mortgageItems)
   return (
     <FeaturedContainer>
       <div className="container">
@@ -65,6 +66,7 @@ const FeaturedMortgages = () => {
                     <Image fixed={card.logo.childImageSharp.fixed} />
                     <h2 className="title-24-nb">{card.title}</h2>
                   </div>
+                  <div className="large-font mt-6">{card.insured._5}%</div>
                   <p className="has-text-left title-1  mt-4">
                     Get an amazing rate of {card.insured._5}% for 5 year fixed
                     with this mortgage
@@ -90,7 +92,7 @@ const FeaturedContainer = styled.section`
     padding: 1rem 1rem;
     height: fit-content;
     p {
-      height: 150px;
+      height: 100px;
       overflow: hidden;
     }
     .card-head {

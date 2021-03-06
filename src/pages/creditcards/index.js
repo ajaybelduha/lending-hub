@@ -34,6 +34,7 @@ const CreditCardHome = () => {
       <Hero
         title="Find the perfect credit card for you"
         subtitle="Here are the most popular credit card categories"
+        subtitle2="Looking for a new credit card? Find one that matches your lifestyle."
         imageSrc="/img/creditcard-hero.png"
         blockItems={items}
       />

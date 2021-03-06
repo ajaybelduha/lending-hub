@@ -4,9 +4,9 @@ title: SimplyCash™ Card from American Express
 cardImage: /img/simplycash_card.png
 creditScore: Good
 fee: 0
-purchaseInterest: 19
-balanceTransferInterest: 0
-cashAdvanceInterest: 21
+purchaseInterest: "19.99"
+balanceTransferInterest: "0"
+cashAdvanceInterest: "21.99"
 userCategory: personal
 cardCategory: prepaid
 href: https://www.americanexpress.com/ca/en/credit-cards/simply-cash/

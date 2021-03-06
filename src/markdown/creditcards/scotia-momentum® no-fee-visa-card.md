@@ -4,16 +4,17 @@ title: Scotia Momentum® No-Fee VISA* Card
 cardImage: /img/momentum_visa_eng.webp
 creditScore: Good
 fee: 0
+additionalInterestRateInfo: 19.99 after 6 months
 firstYearFee: ""
 bankName: Soctiabank
 network: visa
-purchaseInterest: 6
-balanceTransferInterest: 22
-cashAdvanceInterest: 22
+purchaseInterest: "7.99"
+balanceTransferInterest: "22.99"
+cashAdvanceInterest: "22.999"
 userCategory: personal
 cardCategory: low-interest
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/visa/momentum-no-fee-card.html
-minIncome: 12000
+minIncome: 0
 summaryDescription: >-
   <!--StartFragment-->
 
