@@ -41,6 +41,7 @@
     "react-helmet": "^6.0.0",
     "react-responsive-carousel": "^3.2.10",
     "react-reveal": "^1.2.2",
+    "react-step-progress-bar": "^1.0.3",
     "react-use-flexsearch": "^0.1.1",
     "styled-components": "^5.2.1",
     "uuid": "^7.0.0"

@@ -1,14 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
-import { navigate } from 'gatsby';
+import { navigate, useScrollRestoration } from 'gatsby';
 import Layout from '../../components/Layout';
 import MortgageFields from '../../components/mortgages/MortgageFields';
 import RegisterForm from '../../components/RegisterForm';
+import StepProgressBar from '../../components/ProgressSteps';
 
 const QuestionnaireModal = (props) => {
+    const totalSteps = 2;
     const [step, setStep] = useState(1);
+    const [percent, setPercent] = useState(0);
     const [selections, setSelections] = useState({});
+
+
 
     const setValue = async (key, value) => {
         console.log(key, value);
@@ -16,6 +21,7 @@ const QuestionnaireModal = (props) => {
         data[key]= value;
         await setSelections(data);
         setStep(step + 1);
+        setPercent(percent + 100/(totalSteps - 1))
     }
 
     const submitAnswers = (key, value) => {
@@ -44,6 +50,7 @@ const QuestionnaireModal = (props) => {
         <QuestionnaireModalContainer>
             <div className="container">
             {/* <div className="modal-background"></div> */}
+                <StepProgressBar percent={percent} totalSteps={totalSteps} />
                 <div className="">
                     {step === 1 && <MortgageFields type={getSelectedMortgageType()} setValue={setValue} />}
                     {step === 2 && <RegisterForm redirectTo='/mortgages/listing' type="mortgage" selections={selections} submitText="Get Rates" setValue={submitAnswers} />}
