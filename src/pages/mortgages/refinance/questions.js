@@ -7,9 +7,12 @@ import RefinanceType from '../../../components/mortgages/refinance/Questionnaire
 import PropertyType from '../../../components/mortgages/refinance/Questionnaire/PropertyType'
 import RefinanceFields from '../../../components/mortgages/refinance/Questionnaire/RefinanceFields'
 import RegisterForm from '../../../components/RegisterForm'
+import StepProgressBar from '../../../components/ProgressSteps';
 
 const QuestionnaireModal = (props) => {
+  const [totalSteps, setTotalSteps] = useState(4)
   const [step, setStep] = useState(1)
+  const [percent, setPercent] = useState(0);
   const [selections, setSelections] = useState({})
 
   useEffect(() => {
@@ -18,6 +21,7 @@ const QuestionnaireModal = (props) => {
       setStep(1)
     } else {
       setStep(2)
+      setTotalSteps(3)
     }
   }, [])
 
@@ -26,6 +30,7 @@ const QuestionnaireModal = (props) => {
     data[key] = value
     await setSelections(data)
     setStep(step + 1)
+    setPercent(percent + 100/(totalSteps - 1))
   }
 
   const submitAnswers = (key, value) => {
@@ -54,6 +59,7 @@ const QuestionnaireModal = (props) => {
       <QuestionnaireModalContainer>
         <div className="container">
           {/* <div className="modal-background"></div> */}
+          <StepProgressBar percent={percent} totalSteps={totalSteps} />
           <div className="">
             {step === 1 && (
               <RefinanceType
