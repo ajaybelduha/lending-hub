@@ -6,9 +6,10 @@ import Layout from '../../components/Layout';
 import MortgageFields from '../../components/mortgages/MortgageFields';
 import RegisterForm from '../../components/RegisterForm';
 import StepProgressBar from '../../components/ProgressSteps';
+import HomeMortgageTypes from '../../components/mortgages/HomeMortgageTypes';
 
 const QuestionnaireModal = (props) => {
-    const totalSteps = 2;
+    const totalSteps = 3;
     const [step, setStep] = useState(1);
     const [percent, setPercent] = useState(0);
     const [selections, setSelections] = useState({});
@@ -17,6 +18,9 @@ const QuestionnaireModal = (props) => {
 
     const setValue = async (key, value) => {
         console.log(key, value);
+        if (value === 'first-time') {
+            navigate('/mortgages/first-time-home-buyer');
+        }
         let data = selections;
         data[key]= value;
         await setSelections(data);
@@ -52,8 +56,9 @@ const QuestionnaireModal = (props) => {
             {/* <div className="modal-background"></div> */}
                 <StepProgressBar percent={percent} totalSteps={totalSteps} />
                 <div className="">
-                    {step === 1 && <MortgageFields type={getSelectedMortgageType()} setValue={setValue} />}
-                    {step === 2 && <RegisterForm redirectTo='/mortgages/listing' type="mortgage" selections={selections} submitText="Get Rates" setValue={submitAnswers} />}
+                    {step === 1 && <HomeMortgageTypes setValue={setValue} />}
+                    {step === 2 && <MortgageFields type={getSelectedMortgageType()} setValue={setValue} />}
+                    {step === 3 && <RegisterForm redirectTo='/mortgages/listing' type="mortgage" selections={selections} submitText="Get Rates" setValue={submitAnswers} />}
                 </div>
                 <button className="modal-close is-large" aria-label="close"></button>
             </div>
