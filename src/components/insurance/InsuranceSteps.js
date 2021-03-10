@@ -5,43 +5,44 @@ import { useScrollRestoration } from 'gatsby'
 
 const InsuranceSteps = ({ stepItems }) => {
     const [ image, setImage ] = useState(stepItems[0].image)
+    const [ selectedIndex, setSelectedIndex ] = useState(0)
     return(
-        <InsuraneStepsContainer>
+      <div className="container">
+        <HowItWorksContainer>
             <div>
                 {stepItems.map((item, index) => {
                     return(
-                        <StepItem item={item} index={index} setImage={setImage} stepItems={stepItems}/>
+                        <StepItem 
+                            item={item} 
+                            index={index} 
+                            setImage={setImage} 
+                            stepItems={stepItems} 
+                            selectedIndex={selectedIndex}
+                            setSelectedIndex={setSelectedIndex}
+                        />
                     )
                 })}
             </div>
             <div>
                 <div className="steps-image">
-                    <img height="25em" src={image} alt="home hero image" />
+                    <img src={image} alt="home hero image" />
                 </div>
             </div>
-        </InsuraneStepsContainer>
+        </HowItWorksContainer>
+        </div>
     )
 }
 
-const StepItem = ({item, index, setImage, stepItems}) => {
-    const [ fade, setFade ] = useState(true)
-    useEffect(() => {
-        if (index === 0) {
-            setFade(false)
-        }
-    }, [])
+const StepItem = ({item, index, setImage, stepItems, selectedIndex, setSelectedIndex}) => {
     
-    const setMouseIn = () => {
-        setFade(false);
+    const setFadeOut = () => {
+        setSelectedIndex(index)
         setImage(stepItems[index].image)
     }
-    const setMouseOut = () => {
-        setFade(true)
-        // document.getElementsByClassName('step-item')[0].classList.remove('fade')
-    }
+
     return(
-        <div onMouseOver={() => setMouseIn()} onMouseOut={() => setMouseOut()} 
-            className={classNames('step-item', {'fade': fade}, `step-${index}`)}>
+        <div onClick={() => setFadeOut()} 
+            className={classNames('step-item', {'fadeout': (selectedIndex === index)}, `step-${index}`)}>
             <div className="index">{index+1}</div>
             <div className="item">
                 <h3 className="head">{item.title}</h3>
@@ -51,10 +52,10 @@ const StepItem = ({item, index, setImage, stepItems}) => {
     )
 }
 
-const InsuraneStepsContainer = styled.div`
-    margin-top: 6rem;
+const HowItWorksContainer = styled.div`
     display: flex;
     .step-item {
+        opacity: 0.3;
         display: flex;
         align-items: flex-end;
         width: 70%;
@@ -77,14 +78,16 @@ const InsuraneStepsContainer = styled.div`
     }
     .steps-image {
         img {
-            width: 50rem;
+            width: 550px;
         }
     }
-    .fade {
-        opacity: 0.3;
+    .fadeout {
+        opacity: 1;
     }
     @media screen and (max-width: 786px) {
         margin-top: 3rem;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
         .step-item {
             width: 100%;
             margin-bottom: 3rem;

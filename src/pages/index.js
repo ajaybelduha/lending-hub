@@ -28,17 +28,17 @@ const HomePage = () => {
   ]
   const stepItems = [
     {
-        image: '/img/icons/conversation.svg',
+        image: '/img/step1.png',
         title: 'Answer a few question',
         subtitle: "Tell us about the type of rates you're looking for & the home you want to buy.",
       },
       {
-        image: '/img/icons/test-results.svg',
+        image: '/img/step2.png',
         title: 'Get customized results',
         subtitle: "Compare current rate quotes from dozens of lenders, all in one place.",
       },
       {
-        image: '/img/icons/transfer.svg',
+        image: '/img/step3.png',
         title: 'Contact when you\'re ready',
         subtitle: "See a quote you like? Contact the lender to learn more and lock in your rate.",
       }
