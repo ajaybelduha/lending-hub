@@ -20,12 +20,13 @@ const QuestionnaireModal = (props) => {
         console.log(key, value);
         if (value === 'first-time') {
             navigate('/mortgages/first-time-home-buyer');
+        } else {
+            let data = selections;
+            data[key]= value;
+            await setSelections(data);
+            setStep(step + 1);
+            setPercent(percent + 100/(totalSteps - 1))
         }
-        let data = selections;
-        data[key]= value;
-        await setSelections(data);
-        setStep(step + 1);
-        setPercent(percent + 100/(totalSteps - 1))
     }
 
     const submitAnswers = (key, value) => {
