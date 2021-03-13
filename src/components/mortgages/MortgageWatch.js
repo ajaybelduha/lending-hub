@@ -157,15 +157,20 @@ const MortgageWatchContainer = styled.div`
             display: none;
         }
         .watch-blocks {
+            margin-top: 0rem;
         .watch-heading {
             text-align: center;
         }
         .watch-number {
             font-size: 3rem;
+            width: inherit;
         }
         .watch-block {
             padding: 1rem 0rem;
             justify-content: space-around;
+            width: 121px;
+            margin: auto;
+            text-align: center;
         }
     }
     }

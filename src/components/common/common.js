@@ -39,6 +39,12 @@ export const BlackButton = styled((props) => <button {...props} />)`
   }
 `
 
+export const BlackButtonInverse = styled(BlackButton)`
+  color: #1c1c1e;
+  background-color: #ffffff;
+  border: 1px solid #1c1c1e;
+`
+
 export const UnderlinedLink = styled((props) => <Link {...props} />)`
   text-decoration: underline;
   color: #323131;
@@ -198,6 +204,12 @@ export const BlockStack = styled.div`
     :hover {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+  }
+  @media screen and (max-width: 786px) {
+    .p-block {
+      width: 120px;
+      height: 120px;
     }
   }
 `

@@ -47,7 +47,6 @@ const ListingFilter = (props) => {
       creditScore: selectedCreditScore.label,
       cardFor: selectedCardFor.value,
       category: item.value,
-      annualIncome: annualIncome
     }
     setFiltered(obj)
   }
@@ -82,7 +81,6 @@ const ListingFilter = (props) => {
       creditScore: selectedCreditScore.label,
       cardFor: item.value,
       category: selectedCategory.value,
-      annualIncome: annualIncome
     }
     setFiltered(obj)
   }
@@ -114,29 +112,10 @@ const ListingFilter = (props) => {
       creditScore: item.label,
       cardFor: selectedCardFor.value,
       category: selectedCategory.value,
-      annualIncome: annualIncome
     }
     setFiltered(obj)
   }
 
-
-
-
-
-
-  const [annualIncome, setAnnualIncome] = useState(filtersFromQuestions?.annualIncome[0])
-  const handleAnnualIncomeChange = (e) => {
-    const value = e.target.value;
-    setAnnualIncome(value)
-
-    const obj = {
-      creditScore: selectedCreditScore.label,
-      cardFor: selectedCardFor.value,
-      category: selectedCategory.value,
-      annualIncome: value
-    }
-    setFiltered(obj)
-  }
 
 
 
@@ -169,21 +148,6 @@ const ListingFilter = (props) => {
         items={creditScores}
         setValue={setSelectedCreditScoreValue}
       />
-        <div className="field">
-            <label className="label">Annual Income</label>
-            <div className="control has-icons-left">
-                <InputField
-                    id="annual-income"
-                    name="annualIncome"
-                    type="text"
-                    placeholder="Amount"
-                    className='input'
-                    onChange={handleAnnualIncomeChange}
-                    value={annualIncome}
-                />
-                <span className="icon is-small is-left">$</span>
-            </div>
-        </div>
     </ListingFilterContainer>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { ButtonNoStyle, SliderContainer } from '../../common/common'
+import { SliderContainer, BlackButton, BlackButtonInverse } from '../../common/common'
 import Fade from 'react-reveal/Fade'
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip
@@ -37,12 +37,14 @@ const Expenditure = (props) => {
           />
           <hr />
           <div className="buttons-container">
-            <ButtonNoStyle>Clear</ButtonNoStyle>
-            <ButtonNoStyle
-              onClick={() => props.setValue('expenditure', expenditure)}
-            >
-              Apply
-            </ButtonNoStyle>
+            <div className="button-cancel">
+             <BlackButtonInverse>Clear</BlackButtonInverse>
+            </div>
+            <div className="button-apply">
+              <BlackButton onClick={() => props.setValue('expenditure', expenditure)}>
+                Apply
+              </BlackButton>
+            </div>
           </div>
         </SliderContainer>
       </Fade>
@@ -53,13 +55,6 @@ const Expenditure = (props) => {
 const ExpenditureContainer = styled.div`
   margin-top: 10%;
   text-align: center;
-  .heading-29 {
-    font-size: 29px;
-  }
-  .buttons-container {
-    display: flex;
-    justify-content: space-between;
-  }
 `
 
 export default Expenditure

@@ -38,6 +38,12 @@ const ProgressBarContainer = styled.div`
     .RSPBprogression {
         background: #000000
     }
+    @media screen and (max-width: 786px) {
+        .RSPBprogressBar {
+            width: 80%;
+            margin: 0rem auto 2rem auto;
+        }
+    }
 `
 
 

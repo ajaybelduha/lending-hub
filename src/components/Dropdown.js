@@ -21,7 +21,7 @@ const Dropdown = (props) => {
           >
             <span>{selectedValue.label}</span>
             <span className="icon is-small">
-              <i className="fa fa-angle-down" aria-hidden="true"></i>
+              <img className="arrow-down" src="/img/down-arrow-simple.svg" />
             </span>
           </button>
         </div>
@@ -57,10 +57,14 @@ const DropdownContainer = styled.div`
       font-family: 'Poppins Medium';
     }
   }
+  .arrow-down {
+    width: 17px;
+  }
   .button {
     border-color: #1c1c1e;
+    width: 250px !important;
     border-radius: 0;
-    font-size: 18px;
+    font-size: 18px; 
     font-family: 'Poppins Medium';
     border-radius: 0;
     width: fit-content;

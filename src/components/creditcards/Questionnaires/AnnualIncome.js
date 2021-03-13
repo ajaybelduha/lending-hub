@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { ButtonNoStyle, SliderContainer } from '../../common/common'
+import { SliderContainer, BlackButton, BlackButtonInverse } from '../../common/common'
 import Fade from 'react-reveal/Fade'
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip
@@ -34,12 +34,14 @@ const AnnualIncome = (props) => {
           />
           <hr />
           <div className="buttons-container">
-            <ButtonNoStyle>Clear</ButtonNoStyle>
-            <ButtonNoStyle
-              onClick={() => props.setValue('annualIncome', annualIncome)}
-            >
-              Apply
-            </ButtonNoStyle>
+            <div className="button-cancel">
+             <BlackButtonInverse>Clear</BlackButtonInverse>
+            </div>
+            <div className="button-apply">
+              <BlackButton onClick={() => props.setValue('annualIncome', annualIncome)}>
+                Apply
+              </BlackButton>
+            </div>
           </div>
         </SliderContainer>
       </Fade>
@@ -50,13 +52,6 @@ const AnnualIncome = (props) => {
 const AnnualIncomeContainer = styled.div`
   margin-top: 10%;
   text-align: center;
-  .heading-29 {
-    font-size: 29px;
-  }
-  .buttons-container {
-    display: flex;
-    justify-content: space-between;
-  }
 `
 
 export default AnnualIncome
