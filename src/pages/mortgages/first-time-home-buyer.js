@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'gatsby';
 import styled from 'styled-components'
 import Layout from '../../components/Layout';
 import { BlackButtonLink, ButtonNoStyle }  from '../../components/common/common'
@@ -43,20 +44,29 @@ const FirstTimeHomeBuyer = () => {
                         <li><p>5% for a first-time buyer’s purchase of a resale (existing) home</p></li>
                         <li><p>5% for a first-time buyer’s purchase of a new or resale mobile/manufactured home</p></li>
                     </ul>
-                    <p>The Incentive’s shared-equity mortgage is one where the government has a shared investment in the home. As a result, the government shares in both the upside and downside of the property value.</p>
+                    <p>The Incentive’s shared-equity mortgage is one where the government has a shared investment in the home. As a result, the government shares in both the upside and downside of the property value.
+                        &nbsp;<Link style={{color: 'red'}} to="https://www.placetocallhome.ca/fthbi/mortgage-professional-toolkit">Read More</Link>
+                    </p>
                 </div>
                 <div className="section-4 mt-6">
-                    <h2 className="section-title mb-4">Eligibility and Savings Calculator</h2>
-                    <p>This calculator is for illustrative and informational purposes only.</p>
-                    <h3 className="title-3 mt-4">Do you meet the requirements as a First-time Home Buyer?</h3>
-                    <h3 className="title-3 mt-4">You are considered a first-time homebuyer if you <span className="bold">meet one of following qualifications:</span></h3>
-                    <ul className="mt-6">
-                        <li><p>You have never purchased a home before</p></li>
-                        <li><p>You’ve recently experienced a breakdown of a marriage or common-law partnership</p></li>
-                        <li><p>In the last 4 years, you did not occupy a home that you or you current spouse or common-law partner owned</p></li>
-                    </ul>
-                    <div className="button-container">
-                        <BlackButtonLink to="https://www.placetocallhome.ca/fthbi/first-time-homebuyer-incentive ">Get Started</BlackButtonLink>
+                    <h2 className="section-title mb-4">Eligibility criteria for First Time Home Buyer</h2>
+                    <p>These are a few criteria to determine your eligibility for the First-Time Home Buyer Incentive:</p>
+                    <div className="flex-container">
+                        <div className="content">
+                            <ul className="">
+                                <li><p>Your total annual qualifying income doesn’t exceed $120,000</p></li>
+                                <li><p>Your total borrowing is no more than 4 times your qualifying income</p></li>
+                                <li><p>You or your partner are a first-time homebuyer</p></li>
+                                <li><p>You are a Canadian citizen, permanent resident or non-permanent resident authorized to work in Canada</p></li>
+                                <li><p>You meet the minimum down payment requirements with traditional funds (savings, withdrawal/collapse of a Registered Retirement Savings Plan (RRSP), or a non-repayable financial gift from a relative/immediate family member)</p></li>
+                            </ul>
+                            <div className="button-container">
+                                <BlackButtonLink to="https://www.placetocallhome.ca/fthbi/first-time-homebuyer-incentive ">Get Started</BlackButtonLink>
+                            </div>
+                        </div>
+                        <div className="image">
+                            <img src="/img/first-time-home-buyer.jpg" alt="first time home buyer" />
+                        </div>
                     </div>
                 </div>
             </FTHBContainer>
@@ -108,12 +118,24 @@ const FTHBContainer = styled.div`
         }
     }
     .section-4 {
+        .flex-container {
+            margin-top: 4rem;
+            display: flex;
+            align-items: flex-start;
+            .content {
+                width: 45%;
+                margin-right: 5%;
+            }
+            .image {
+                width: 50%;
+            }
+        }
         ul {
             list-style: initial;
             margin-left: 1em;
             li {
                 margin-bottom: 1rem;
-                font-size: 1rem;
+                font-size: 1.1rem;
                 font-family: 'Poppins SemiBold'
             }
         }
@@ -145,6 +167,19 @@ const FTHBContainer = styled.div`
             .image {
                 width: 100%;
             }
+        }
+        .section-4 {
+            .flex-container {
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            .content {
+                width: 100%;
+                margin-right: initial;
+            }
+            .image {
+                width: 100%;
+            }
+        }
         }
     }
 `

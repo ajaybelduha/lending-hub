@@ -27,14 +27,12 @@ const CCListing = (response) => {
         creditScore,
         cardCategory,
         userCategory,
-        minIncome,
       } = item.node.frontmatter
       const requiredCreditScore = filters.creditScore === creditScore;
       const requiredCategory = filters.category === userCategory
       const requiredCardFor = filters.cardFor === cardCategory
-      const requiredAnnualIncome = filters?.annualIncome > minIncome
       
-      if (requiredCategory && requiredCreditScore && requiredCardFor && requiredAnnualIncome) {
+      if (requiredCategory && requiredCreditScore && requiredCardFor) {
         return true
       } else {
         return false
@@ -44,6 +42,7 @@ const CCListing = (response) => {
   }, [filters])
 
   const setFilteredData = (items) => {
+    console.log("ITEMS")
     console.log(items)
     setFilters(items)
   }

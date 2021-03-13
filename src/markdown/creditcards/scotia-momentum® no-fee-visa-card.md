@@ -10,7 +10,7 @@ bankName: Soctiabank
 network: visa
 purchaseInterest: "7.99"
 balanceTransferInterest: "22.99"
-cashAdvanceInterest: "22.999"
+cashAdvanceInterest: "22.99"
 userCategory: personal
 cardCategory: low-interest
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/visa/momentum-no-fee-card.html

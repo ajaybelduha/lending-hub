@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Subscribe from '../components/Subscribe'
+import styled from 'styled-components'
 import { withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
@@ -50,11 +51,24 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+        <LayoutContainer>{children}</LayoutContainer>
       <Subscribe />
       <Footer />
     </div>
   )
 }
+
+const LayoutContainer = styled.div`
+  .heading-29 {
+    font-size: 29px;
+  }
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    .button-apply, .button-cancel {
+      width: 100px;
+    }
+  }
+`
 
 export default TemplateWrapper
