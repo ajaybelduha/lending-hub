@@ -11,12 +11,10 @@ userCategory: personal
 cardCategory: build-credit-score
 href: https://www.hometrust.ca/credit-cards/secured-visa-card/visa-form/?product=nofee
 summaryDescription: |-
-  <!--StartFragment-->
+  
 
-  1. $0 annual fees\
-  2. Build or re-build credit\
-  3. Convenience of a credit card\
+  1. $0 annual fees
+  2. Build or re-build credit
+  3. Convenience of a credit card
   4. 14.99% annual interest rate
-
-  <!--EndFragment-->
 ---
