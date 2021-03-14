@@ -33,20 +33,6 @@ const CardBlock = ({ cardData }) => {
     }, 2000)
   }
 
-  // useEffect(() => {
-  //   const requiredCreditScore = filterData.creditScore === creditScore;
-  //   const requiredCategory = filterData.category === userCategory
-  //   const requiredCardFor = filterData.cardFor === cardCategory
-  //   const requiredAnnualIncome = filterData?.annualIncome > minIncome
-    
-  //   if (requiredCategory && requiredCreditScore && requiredCardFor && requiredAnnualIncome) {
-  //     setShowBlock(true)
-  //   } else {
-  //     setShowBlock(false)
-  //   }
-
-  // }, [filterData])
-
   return (
     <CardBlockContainer>
       <hr />
@@ -55,7 +41,7 @@ const CardBlock = ({ cardData }) => {
       <div className="card-details">
         <div className="image">
           {/* <img src="/img/true-line-gold-mastercardcard.png" /> */}
-          <Image fluid={cardImage.childImageSharp.fluid} />
+          <Image fluid={cardImage?.childImageSharp.fluid} />
         </div>
         <div className="details">
           <div className="features">
@@ -166,7 +152,8 @@ const CardBlockContainer = styled.div`
           margin: 1rem 0;
         }
         .item {
-          width: 150px;
+          width: 140px;
+          justify-content: space-between;
         }
       }
       .action {
