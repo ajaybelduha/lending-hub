@@ -14,8 +14,6 @@ const CCListing = (response) => {
   const [cardsFiltered, setCardsFiltered] = useState()
   const [filters, setFilters] = useState(questionFilters)
 
-  console.log(response)
-
   useEffect(() => {
     setCardsFiltered(cardsData)
     setCardsListing(cardsData)
@@ -28,9 +26,9 @@ const CCListing = (response) => {
         cardCategory,
         userCategory,
       } = item.node.frontmatter
-      const requiredCreditScore = filters.creditScore === creditScore;
-      const requiredCategory = filters.category === userCategory
-      const requiredCardFor = filters.cardFor === cardCategory
+      const requiredCreditScore = filters.creditScore.toLowerCase() === creditScore.toLowerCase();
+      const requiredCategory = filters.category.toLowerCase() === userCategory.toLowerCase()
+      const requiredCardFor = filters.cardFor.toLowerCase() === cardCategory.toLowerCase()
       
       if (requiredCategory && requiredCreditScore && requiredCardFor) {
         return true

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import classNames from 'classnames'
 import Dropdown from '../Dropdown'
-import { InputField } from '../common/common'
+import { InputField, BlackButtonInverse } from '../common/common'
 
 const ListingFilter = (props) => {
   const { setFiltered, filtersFromQuestions } = props
+  const [ showFilters, setShowFilters ] = useState(false)
+
   const [isCategoryOpen, setIsCategoryOpen] = useState(false)
   const categories = [
     { id: 'item1', label: 'Personal', value: 'personal' },
@@ -23,14 +26,12 @@ const ListingFilter = (props) => {
     const initialCardFor = cardFors.find(
         (item) => item.value === filtersFromQuestions.cardFor
     )
-    console.log(initialCardFor)
     setSelectedCardFor(initialCardFor)
 
 
     const initialCreditScore = creditScores.find(
         (item) => item.label === filtersFromQuestions.creditScore
     )
-    console.log(initialCreditScore)
     setSelectedCreditScore(initialCreditScore)
   }, [])
 
@@ -124,39 +125,52 @@ const ListingFilter = (props) => {
 
   return (
     <ListingFilterContainer>
-      <Dropdown
-        heading="Category"
-        selectedValue={selectedCategory}
-        isOpen={isCategoryOpen}
-        toggle={toggleCategory}
-        items={categories}
-        setValue={setSelectedCategoryValue}
-      />
-      <Dropdown
-        heading="Card For"
-        selectedValue={selectedCardFor}
-        isOpen={isCardForOpen}
-        toggle={toggleCardFor}
-        items={cardFors}
-        setValue={setSelectedCardForValue}
-      />
-      <Dropdown
-        heading="Credit Score"
-        selectedValue={selectedCreditScore}
-        isOpen={isCreditScoreOpen}
-        toggle={toggleCreditScore}
-        items={creditScores}
-        setValue={setSelectedCreditScoreValue}
-      />
+      <div class="mob-filter-toggle mb-6">
+        <BlackButtonInverse onClick={() => setShowFilters(!showFilters)}>Reset filters</BlackButtonInverse>
+      </div>
+      <div className={classNames('filters', {'hide': !showFilters})}>
+        <Dropdown
+          heading="Category"
+          selectedValue={selectedCategory}
+          isOpen={isCategoryOpen}
+          toggle={toggleCategory}
+          items={categories}
+          setValue={setSelectedCategoryValue}
+        />
+        <Dropdown
+          heading="Card For"
+          selectedValue={selectedCardFor}
+          isOpen={isCardForOpen}
+          toggle={toggleCardFor}
+          items={cardFors}
+          setValue={setSelectedCardForValue}
+        />
+        <Dropdown
+          heading="Credit Score"
+          selectedValue={selectedCreditScore}
+          isOpen={isCreditScoreOpen}
+          toggle={toggleCreditScore}
+          items={creditScores}
+          setValue={setSelectedCreditScoreValue}
+        />
+      </div>
     </ListingFilterContainer>
   )
 }
 
 const ListingFilterContainer = styled.div`
   margin-top: 20px;
-  display: flex;
-  @media screen and (max-width: 786px) {
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mob-filter-toggle {
     display: none;
+  }
+  @media screen and (max-width: 786px) {
+    .mob-filter-toggle {
+      display: block;
+    }
   }
 `
 
