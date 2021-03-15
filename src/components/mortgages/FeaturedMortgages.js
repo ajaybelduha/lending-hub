@@ -53,7 +53,7 @@ const FeaturedMortgages = () => {
     <FeaturedContainer>
       <div className="container">
         <h2 className="section-title mb-4">
-          Featured Mortgages for October 2020
+          Featured Mortgages
         </h2>
         <div className="columns">
           {mortgageItems.map((item) => {
@@ -87,6 +87,7 @@ const FeaturedMortgages = () => {
 }
 
 const FeaturedContainer = styled.section`
+  margin: 5rem 0;
   .card-block {
     border: 1px solid #000000;
     padding: 1rem 1rem;

@@ -66,6 +66,7 @@ const FeaturedKnowledgeHub = () => {
 }
 
 const FeaturedKnowledgeHubContainer = styled.section`
+  margin: 5rem 0;
   .kh-block {
     padding: 1rem;
     transition: all .25s linear;

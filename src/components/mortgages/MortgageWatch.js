@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
@@ -22,66 +22,112 @@ const data = graphql`
     }
 `
 
+function animateValue(id, start, end, duration) {
+    if (start === end) return;
+    var range = end - start;
+    var current = start;
+    var increment = end > start? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = document.querySelector(id);
+    var timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
+}
+
+// animateValue("value", 100, 25, 5000);
+
 const MortgageWatch = () => {
     const response = useStaticQuery(data);
     const items = response.markdownRemark.frontmatter;
     console.log(response)
+
+    const [theposition, setPosition] = useState(0);
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenToScroll)
+    }, [])
+
+    // useEffect(() => {
+    //     if (theposition > 0.22) {
+    //         animateValue(".watch-number", 0, 25, 5000);
+    //     }
+    // }, [theposition])
+
+    const listenToScroll = () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop
+      
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight
+      
+        const scrolled = winScroll / height
+      
+        setPosition(scrolled)
+      }
+
+      //console.log(theposition)
+
     return (
         <div className="container mt-6">
             <MortgageWatchContainer>
                 <h1 className="section-title has-text-centered">Mortgage Rate Watch</h1>
                 <div className="watch-blocks">
                     <div className="watch-block">
-                        <div className="watch-number">{items.fixed_1_year.substr(0, items.fixed_1_year.length - 1)}
+                        <div className="watch-number">{items.fixed_1_year}
                             <span className="dynamic-number-1"></span>%
                         </div>
                         <h2 className="watch-heading">FIXED 1-YEAR</h2>
                     </div>
                     <div className="separator"></div>
                     <div className="watch-block">
-                        <div className="watch-number">{items.fixed_2_year.substr(0, items.fixed_2_year.length - 1)}
+                        <div className="watch-number">{items.fixed_2_year}
                             <span className="dynamic-number-2"></span>%
                         </div>
                         <h2 className="watch-heading">FIXED 2-YEAR</h2>
                     </div>
                     <div className="separator"></div>
                     <div className="watch-block">
-                        <div className="watch-number">{items.fixed_3_year.substr(0, items.fixed_3_year.length - 1)}
+                        <div className="watch-number">{items.fixed_3_year}
                             <span className="dynamic-number-3"></span>%
                         </div>
                         <h2 className="watch-heading">FIXED 3-YEAR</h2>
                     </div>
                     <div className="separator"></div>
                     <div className="watch-block">
-                        <div className="watch-number">{items.fixed_4_year.substr(0, items.fixed_4_year.length - 1)}
+                        <div className="watch-number">{items.fixed_4_year}
                             <span className="dynamic-number-4"></span>%
                         </div>
                         <h2 className="watch-heading">FIXED 4-YEAR</h2>
                     </div>
                     <div className="separator"></div>
                     <div className="watch-block">
-                        <div className="watch-number">{items.fixed_4_year.substr(0, items.fixed_4_year.length - 1)}
+                        <div className="watch-number">{items.fixed_4_year}
                             <span className="dynamic-number-5"></span>%
                         </div>
                         <h2 className="watch-heading">FIXED 5-YEAR</h2>
                     </div>
                     <div className="separator"></div>
                     <div className="watch-block">
-                        <div className="watch-number">{items.open_1_year.substr(0, items.open_1_year.length - 1)}
+                        <div className="watch-number">{items.open_1_year}
                             <span className="dynamic-number-6"></span>%
                         </div>
                         <h2 className="watch-heading">OPEN 1-YEAR</h2>
                     </div>
                     <div className="separator"></div>
                     <div className="watch-block">
-                        <div className="watch-number">{items.variabl.substr(0, items.variabl.length - 1)}
+                        <div className="watch-number">{items.variabl}
                             <span className="dynamic-number-7"></span>%
                         </div>
                         <h2 className="watch-heading">VARIABLE</h2>
                     </div>
                     <div className="separator"></div>
                     <div className="watch-block">
-                        <div className="watch-number">{items.benchmark.substr(0, items.benchmark.length - 1)}
+                        <div className="watch-number">{items.benchmark}
                             <span className="dynamic-number-2"></span>%
                         </div>
                         <h2 className="watch-heading">BENCHMARK</h2>
@@ -94,6 +140,7 @@ const MortgageWatch = () => {
 }
 
 const MortgageWatchContainer = styled.div`
+    margin: 5rem 0;
     .watch-blocks {
         margin-top: 3rem;
         display: flex;
@@ -104,42 +151,6 @@ const MortgageWatchContainer = styled.div`
         }
         .watch-number {
             font-size: 5rem;
-            width: 200px;
-            .dynamic-number-1::after {
-                content: counter(count);
-                animation: counter-1 19s linear infinite alternate;
-                counter-reset: count 0;
-            }
-            .dynamic-number-2::after {
-                content: counter(count);
-                animation: counter-2 30s linear infinite alternate;
-                counter-reset: count 0;
-            }
-            .dynamic-number-3::after {
-                content: counter(count);
-                animation: counter-3 28s linear infinite alternate;
-                counter-reset: count 0;
-            }
-            .dynamic-number-4::after {
-                content: counter(count);
-                animation: counter-4 15s linear infinite alternate;
-                counter-reset: count 0;
-            }
-            .dynamic-number-5::after {
-                content: counter(count);
-                animation: counter-5 45s linear infinite alternate;
-                counter-reset: count 0;
-            }
-            .dynamic-number-6::after {
-                content: counter(count);
-                animation: counter-6 35s linear infinite alternate;
-                counter-reset: count 0;
-            }
-            .dynamic-number-7::after {
-                content: counter(count);
-                animation: counter-7 25s linear infinite alternate;
-                counter-reset: count 0;
-            }
         }
         .watch-block {
             padding: 2rem 4rem;
@@ -153,6 +164,7 @@ const MortgageWatchContainer = styled.div`
         top: 2rem;
     }
     @media screen and (max-width: 786px) {
+        margin: 3rem 0;
         .separator {
             display: none;
         }
@@ -163,247 +175,16 @@ const MortgageWatchContainer = styled.div`
         }
         .watch-number {
             font-size: 3rem;
-            width: inherit;
+            width: 100%;
         }
         .watch-block {
             padding: 1rem 0rem;
             justify-content: space-around;
-            width: 121px;
+            width: 50%;
             margin: auto;
             text-align: center;
         }
     }
-    }
-
-    @keyframes counter-1 {
-        0% {
-            counter-increment: count 4;
-        }
-        10% {
-            counter-increment: count 7;
-        }
-        20% {
-            counter-increment: count 3;
-        }
-        30% {
-            counter-increment: count 9;
-        }
-        40% {
-            counter-increment: count 5;
-        }
-        50% {
-            counter-increment: count 1;
-        }
-        60% {
-            counter-increment: count 6;
-        }
-        70% {
-            counter-increment: count 2;
-        }
-        80% {
-            counter-increment: count 8;
-        }
-        100% {
-            counter-increment: count 9;
-        }
-    }
-
-    @keyframes counter-2 {
-        0% {
-            counter-increment: count 3;
-        }
-        10% {
-            counter-increment: count 2;
-        }
-        20% {
-            counter-increment: count 7;
-        }
-        30% {
-            counter-increment: count 9;
-        }
-        40% {
-            counter-increment: count 1;
-        }
-        50% {
-            counter-increment: count 5;
-        }
-        60% {
-            counter-increment: count 8;
-        }
-        70% {
-            counter-increment: count 4;
-        }
-        80% {
-            counter-increment: count 0;
-        }
-        100% {
-            counter-increment: count 1;
-        }
-    }
-
-    @keyframes counter-3 {
-        0% {
-            counter-increment: count 2;
-        }
-        10% {
-            counter-increment: count 9;
-        }
-        20% {
-            counter-increment: count 1;
-        }
-        30% {
-            counter-increment: count 8;
-        }
-        40% {
-            counter-increment: count 3;
-        }
-        50% {
-            counter-increment: count 6;
-        }
-        60% {
-            counter-increment: count 4;
-        }
-        70% {
-            counter-increment: count 5;
-        }
-        80% {
-            counter-increment: count 6;
-        }
-        100% {
-            counter-increment: count 0;
-        }
-    }
-
-    @keyframes counter-4 {
-        0% {
-            counter-increment: count 2;
-        }
-        10% {
-            counter-increment: count 6;
-        }
-        20% {
-            counter-increment: count 4;
-        }
-        30% {
-            counter-increment: count 9;
-        }
-        40% {
-            counter-increment: count 1;
-        }
-        50% {
-            counter-increment: count 8;
-        }
-        60% {
-            counter-increment: count 6;
-        }
-        70% {
-            counter-increment: count 2;
-        }
-        80% {
-            counter-increment: count 1;
-        }
-        100% {
-            counter-increment: count 0;
-        }
-    }
-
-    @keyframes counter-5 {
-        0% {
-            counter-increment: count 2;
-        }
-        10% {
-            counter-increment: count 1;
-        }
-        20% {
-            counter-increment: count 8;
-        }
-        30% {
-            counter-increment: count 4;
-        }
-        40% {
-            counter-increment: count 2;
-        }
-        50% {
-            counter-increment: count 5;
-        }
-        60% {
-            counter-increment: count 9;
-        }
-        70% {
-            counter-increment: count 1;
-        }
-        80% {
-            counter-increment: count 0;
-        }
-        100% {
-            counter-increment: count 4;
-        }
-    }
-
-    @keyframes counter-6 {
-        0% {
-            counter-increment: count 2;
-        }
-        10% {
-            counter-increment: count 8;
-        }
-        20% {
-            counter-increment: count 3;
-        }
-        30% {
-            counter-increment: count 7;
-        }
-        40% {
-            counter-increment: count 1;
-        }
-        50% {
-            counter-increment: count 0;
-        }
-        60% {
-            counter-increment: count 5;
-        }
-        70% {
-            counter-increment: count 1;
-        }
-        80% {
-            counter-increment: count 8;
-        }
-        100% {
-            counter-increment: count 5;
-        }
-    }
-
-    @keyframes counter-7 {
-        0% {
-            counter-increment: count 3;
-        }
-        10% {
-            counter-increment: count 7;
-        }
-        20% {
-            counter-increment: count 0;
-        }
-        30% {
-            counter-increment: count 6;
-        }
-        40% {
-            counter-increment: count 1;
-        }
-        50% {
-            counter-increment: count 8;
-        }
-        60% {
-            counter-increment: count 3;
-        }
-        70% {
-            counter-increment: count 8;
-        }
-        80% {
-            counter-increment: count 1;
-        }
-        100% {
-            counter-increment: count 0;
-        }
     }
 `
 

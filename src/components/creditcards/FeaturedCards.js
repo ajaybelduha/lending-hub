@@ -44,7 +44,7 @@ const Featured = () => {
     <FeaturedContainer>
       <div className="container">
         <h2 className="section-title mb-4">
-          Featured Credit Cards for October 2020
+          Featured Credit Cards
         </h2>
         <div className="columns">
           {cards.map((item) => {
@@ -73,6 +73,7 @@ const Featured = () => {
 }
 
 const FeaturedContainer = styled.section`
+  margin: 5rem 0;
   .card-block {
     border: 1px solid #000000;
     padding: 1rem 2rem;
