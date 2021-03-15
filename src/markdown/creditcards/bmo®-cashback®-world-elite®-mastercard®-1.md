@@ -1,7 +1,7 @@
 ---
 templateKey: credit-card-post
 title: BMO® CashBack® World Elite®* Mastercard®*
-cardImage: /img/bmo-air-miles-world-elite-mastercard.png
+cardImage: /img/bmo-air-miles-mastercard.webp
 creditScore: Excellent
 fee: 0
 purchaseInterest: "19.99"
