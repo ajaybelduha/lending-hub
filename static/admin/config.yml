@@ -32,7 +32,7 @@ collections:
       - {label: "Interest Rate", name: "purchaseInterest", widget: "string", required: false}
       - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "string", required: false}
       - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "string", required: false}
-      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false}
+      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false, default: -1}
       - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}], required: true}
       - {label: "Card Category", required: true, name: "cardCategory", widget: "select", options: [{value: "low-interest", label: "Low Interest"}, {value: "low-balance-transfer", label: "Low Balance Transfer"}, {value: "build-credit-score", label: "Build Credit Score"}, {value: "prepaid", label: "Prepaid"}, {value: "rewards", label: "Rewards"}]}
       - {label: "Reward Card Subcategory", required: false, name: "rewardType", widget: "select", options: [{value: "cashback", label: "CashBack"}, {value: "gas", label: "Gas"}, {value: "speciality", label: "Speciality"}, {value: "travel", label: "Traval"}, {value: "any", label: "Any"}]}
