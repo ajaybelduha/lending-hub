@@ -43,7 +43,7 @@ const FeaturedKnowledgeHub = () => {
             <div className="column">
               <AniLink paintDrip hex="#000000" to={item.node.fields.slug}>
                 <div className="kh-block">
-                  <h3 className="bold is-size-4">{item.node.frontmatter.title}</h3>
+                  <h3 className="semibold is-size-4">{item.node.frontmatter.title}</h3>
                   <p className="">{item.node.frontmatter.description}</p>
                   <div className="description">
                     <p

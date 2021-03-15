@@ -50,8 +50,8 @@ const Subscribe = () => {
   return (
     <SubscribeContainer>
       <div className="container">
-        <div className="subscribe-container columns">
-          <div className="column">
+        <div className="subscribe-container">
+          <div className="text">
             <h2 className="title-small mb-3">
               Stay up to speed on your financial journey
             </h2>
@@ -60,7 +60,7 @@ const Subscribe = () => {
               sent right to your inbox.
             </p>
           </div>
-          <div className="column">
+          <div className="email-field">
             <div className="is-flex-desktop">
               <div className="field">
                 <div className="control">
@@ -100,16 +100,26 @@ const SubscribeContainer = styled.section`
     border: 1px solid #707070;
     border-radius: 0.5rem;
     padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .text {
+      width: 65%
+    }
+    .email-field {
+      width: 35%;
+    }
     input {
       border-radius: 0;
       border-color: #707070;
       font-size: 1.1rem;
       padding: 1rem;
-      height: 66px;
-      width: 346px;
+      height: 46px;
+      max-width: 270px;
+      width: 100%;
     }
     button {
-      height: 66px;
+      height: 46px;
       border-radius: 0;
       margin-left: 1rem;
       padding: 0 2rem;
@@ -131,6 +141,14 @@ const SubscribeContainer = styled.section`
     padding: 1rem;
     .subscribe-container {
       padding: 10px;
+      flex-wrap: wrap;
+      .text {
+      width: 100%
+    }
+    .email-field {
+      margin-top: 2rem;
+      width: 100%;
+    }
       button {
         width: 100%;
         margin-left: 0;

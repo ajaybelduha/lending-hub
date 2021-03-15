@@ -109,6 +109,7 @@ const Block = ({ data }) => {
 }
 
 const MaximizeSavingsContainer = styled.section`
+  margin: 5rem 0;
   .block {
     /* margin-right: 10px; */
     height: 100px;
@@ -149,6 +150,7 @@ const MaximizeSavingsContainer = styled.section`
     }
   }
   @media screen and (max-width: 786px) {
+    margin: 3rem 0;
     .block {
       padding: 0;
     }

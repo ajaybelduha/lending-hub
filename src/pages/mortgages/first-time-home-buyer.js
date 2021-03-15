@@ -62,33 +62,34 @@ const FirstTimeHomeBuyer = () => {
                                     <li><p>You meet the minimum down payment requirements with traditional funds (savings, withdrawal/collapse of a Registered Retirement Savings Plan (RRSP), or a non-repayable financial gift from a relative/immediate family member)</p></li>
                                 </ul>
                                 <div className="button-container">
-                                    <BlackButtonLink to="https://www.placetocallhome.ca/fthbi/first-time-homebuyer-incentive ">Get Started</BlackButtonLink>
+                                    <BlackButtonLink to="https://www.placetocallhome.ca/fthbi/eligibility-savings-calculator">Get Started</BlackButtonLink>
                                 </div>
                             </div>
                             <div className="image carousel">
                                 {/* <img src="/img/first-time-home-buyer.jpg" alt="first time home buyer" /> */}
-                                <Carousel autoPlay>
+                                <Carousel showThumbs={false} autoPlay>
                                     <div>
-                                        <Link to="https://www.placetocallhome.ca/fthbi/first-time-homebuyer-incentive">
-                                            <img alt="" src="/img/first-time-buyer-1.jpg" />
-                                        </Link>
+
+                                        <img alt="" src="/img/first-time-buyer-1.jpg" />
+
                                     </div>
                                     <div>
-                                    <Link to="https://www.placetocallhome.ca/fthbi/first-time-homebuyer-incentive">
+
                                         <img alt="" src="/img/first-time-buyer-2.jpg" />
-                                        </Link>
+
                                     </div>
                                     <div>
-                                    <Link to="https://www.placetocallhome.ca/fthbi/first-time-homebuyer-incentive">
+
                                         <img alt="" src="/img/first-time-buyer-3.jpg" />
-                                        </Link>
+
                                     </div>
                                     <div>
-                                    <Link to="https://www.placetocallhome.ca/fthbi/first-time-homebuyer-incentive">
+
                                         <img alt="" src="/img/first-time-buyer-4.jpg" />
-                                        </Link>
+
                                     </div>
                                 </Carousel>
+                                <h3 className="title-1 has-text-centered mt-3">Here are few examples</h3>
                             </div>
                         </div>
                     </div>

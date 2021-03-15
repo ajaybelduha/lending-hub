@@ -8,7 +8,7 @@ const HowItWorks = ({ stepItems }) => {
     const [ selectedIndex, setSelectedIndex ] = useState(0)
     return(
       <div className="container">
-        <h1 className="section-title mb-3 has-text-centered">How it works</h1>
+        <h1 className="section-title mb-3 has-text-centered mt-6">How it works</h1>
         <HowItWorksContainer>
             <div>
                 {stepItems.map((item, index) => {
@@ -54,6 +54,7 @@ const StepItem = ({item, index, setImage, stepItems, selectedIndex, setSelectedI
 }
 
 const HowItWorksContainer = styled.div`
+    margin: 5rem 0;
     display: flex;
     .step-item {
         opacity: 0.3;
@@ -71,7 +72,7 @@ const HowItWorksContainer = styled.div`
         }
         .item {
             .head {
-                font-family: "Poppins Bold";
+                font-family: "Poppins SemiBold";
                 font-size: 1.5rem;
                 margin-bottom: 1rem;
             }
@@ -87,12 +88,16 @@ const HowItWorksContainer = styled.div`
     }
     @media screen and (max-width: 786px) {
         margin-top: 3rem;
+        margin-bottom: 0;
         flex-wrap: wrap;
         flex-direction: column-reverse;
         .step-item {
             width: 100%;
             margin-bottom: 3rem;
             align-items: start;
+            .index {
+                margin-left: 1rem;
+            }
         }
     }
 `

@@ -31,7 +31,7 @@ const FeaturedBlogs = () => {
             <Carousel
               showThumbs={false}
               emulateTouch
-              height="443px"
+              // height="443px"
               renderArrowPrev={(onClickHandler, hasPrev, label) =>
                 hasPrev && (
                   <button
@@ -159,6 +159,7 @@ const blogs = graphql`
 `
 
 const FeaturedBlogsContainer = styled.section`
+  margin-bottom: 5rem;
   .blogs-list {
     .blog {
       display: flex;
@@ -213,6 +214,7 @@ const FeaturedBlogsContainer = styled.section`
     }
   }
   @media screen and (max-width: 786px) {
+    margin-bottom: 3rem;
     .carousel {
       .carousel-main-image {
         .text-over-image {

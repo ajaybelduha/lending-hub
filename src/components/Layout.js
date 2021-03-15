@@ -11,7 +11,7 @@ const TemplateWrapper = ({ children }) => {
     <div>
       <Helmet>
         <html className="has-navbar-fixed-top" lang="en" />
-        <title>Lending Hub</title>
+        <title>LendingHub.ca – Your Local Mortgage Brokerage</title>
         <meta
           name="description"
           content="Credit Cards | Loans | Mortgages | Insurance"
@@ -20,18 +20,18 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
+          href={`https://www.lendinghub.ca/wp-content/uploads/2019/10/cropped-Logo-180x180.jpg`}
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
+          href={`https://www.lendinghub.ca/wp-content/uploads/2019/10/cropped-Logo-180x180.jpg`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
+          href={`https://www.lendinghub.ca/wp-content/uploads/2019/10/cropped-Logo-180x180.jpg`}
           sizes="16x16"
         />
 

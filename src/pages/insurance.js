@@ -67,47 +67,47 @@ const Insurance = () => {
                         <div className="section-2">
                                 <InsuranceSteps stepItems={stepItems} />
                         </div>
-                        <div className="mt-6">
+                        <div className="partners">
                             <h1 className="section-title mb-3">Our partners</h1>
                             <img src="/img/partners.png" />
                         </div>
                 </div><br/>
-                <div className="container mt-6">
+                <div className="container">
                     <h1 className="section-title mb-3">See how you can save $$ when you switch to Lending Hub</h1>
                                 {/* <h4 className="section-subtitle">
                                     Follow these 3 simple steps to buy insurance with us with just few clicks
                                 </h4> */}
                     <ul className="save-items">
                         <li className="save-item">
-                            <h3 className="title-24">Bundle up</h3>
+                            <h3 className="title-24-nb">Bundle up</h3>
                             <p>Combine your card and home insurance to save</p>
                         </li>
                         <li className="save-item">
-                            <h3 className="title-24">Multi Vehicle</h3>
+                            <h3 className="title-24-nb">Multi Vehicle</h3>
                             <p>Combine multiple vehicles in your house hold to save</p>
                         </li>
                         <li className="save-item">
-                            <h3 className="title-24">Multi home</h3>
+                            <h3 className="title-24-nb">Multi home</h3>
                             <p>Combine insurance on all your properties to save more</p>
                         </li>
                         <li className="save-item">
-                            <h3 className="title-24">Alumini and Professional Preferred Rates</h3>
+                            <h3 className="title-24-nb">Alumini and Professional Preferred Rates</h3>
                             <p>Preferred rates for the alumini, professionals, alumini and affinity group members </p>
                         </li>
                         <li className="save-item">
-                            <h3 className="title-24">Winter Tire Discount</h3>
+                            <h3 className="title-24-nb">Winter Tire Discount</h3>
                             <p>Drive with 4 winter tires from December to March</p>
                         </li>
                         <li className="save-item">
-                            <h3 className="title-24">Home Security Savings</h3>
+                            <h3 className="title-24-nb">Home Security Savings</h3>
                             <p>Get additional savings for a connected water alarm system</p>
                         </li>
                         <li className="save-item">
-                            <h3 className="title-24">Newly build home savings</h3>
+                            <h3 className="title-24-nb">Newly build home savings</h3>
                             <p>If your home is newly built, you can get even more savings for insurance.</p>
                         </li>
                         <li className="save-item">
-                            <h3 className="title-24">Ontario Retiree Savings</h3>
+                            <h3 className="title-24-nb">Ontario Retiree Savings</h3>
                             <p>Ontario Retirees will save more on their insurnace</p>
                         </li>
                     </ul>
@@ -145,6 +145,9 @@ margin-top: 3rem;
             margin-right: 1rem;
         }
     }
+    .partners {
+        margin: 10rem 0;
+    }
     .ins-blocks {
         margin-top: 2rem;
         display: flex;
@@ -159,6 +162,9 @@ margin-top: 3rem;
             width: 100%;
             justify-content: center;
             padding: 15px 0px;
+        }
+        .partners {
+            margin: 0rem 0;
         }
         .ins-blocks {
             button {

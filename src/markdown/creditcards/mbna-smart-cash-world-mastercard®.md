@@ -9,7 +9,7 @@ network: mastercard
 purchaseInterest: "19.99"
 balanceTransferInterest: "22.99"
 cashAdvanceInterest: "24.99"
-balanceTranferFees: ""
+balanceTranferFees: -1
 userCategory: personal
 cardCategory: prepaid
 href: https://www.mbna.ca/en/credit-cards/cash-back/smart-cash-world-mastercard/

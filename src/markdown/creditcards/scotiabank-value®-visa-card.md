@@ -9,7 +9,7 @@ network: visa
 purchaseInterest: "12.99"
 balanceTransferInterest: "0.99"
 cashAdvanceInterest: "12.99"
-balanceTranferFees: ""
+balanceTranferFees: -1
 userCategory: personal
 cardCategory: prepaid
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/visa/value-card.html
