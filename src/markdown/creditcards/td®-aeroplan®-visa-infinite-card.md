@@ -17,11 +17,11 @@ summaryDescription: >-
 
   1. Earn Aeroplan points on your everyday Purchases. Whether you use your TD® Aeroplan® Visa Infinite Card for gas, bills or groceries, you’re rewarded with Aeroplan points that can take you across the globe.\
 
-  2. Plus, get a first-year annual fee rebate.\
+  2. Travelling lightly through the airport and saving on baggage fees\
 
-  3. Enjoy a Priority Pass™ Membership and 4 complimentary visits per year at over 1,300 airport lounges\
+  3. Primary Cardholders, Additional Cardholders, and travel companions (up to eight) travelling on the same reservation will all enjoy their first checked bag free (up to 23kg/50lb) when your travel originates on an Air Canada flight. Enroll for NEXUS and once every 48 months get an application fee rebate (up to $100 CAD)\
 
-  4. Speed up your border crossings with a NEXUS application fee rebate so you can spend less time in line when you travel
+  4. Additional Cardholders can also take advantage of this NEXUS fee rebate. For a limited time, earn 1.5 bonus Aeroplan points for each $1 spent on eligible purchases at participating Starbucks® locations
 
 
   <!--EndFragment-->
