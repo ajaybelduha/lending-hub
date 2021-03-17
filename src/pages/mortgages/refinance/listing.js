@@ -178,7 +178,7 @@ const MortgageStyledContainer = styled.div`
 export const mortgageQuery = graphql`
 query RefinanceTemplate {
   mortgages: allMarkdownRemark(
-    filter: { frontmatter: { templateKey: { eq: "refinance-mortgages" } } }
+    filter: { frontmatter: { templateKey: { eq: "mortgages" } } }
   ) {
     edges {
       node {

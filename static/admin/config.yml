@@ -44,13 +44,13 @@ collections:
       - {label: "Is Featured?", name: "featured", widget: "boolean", required: false}
 
   
-  - name: "homeBuyingMortgages"
-    label: "Home Buying Mortgages"
-    folder: "src/markdown/mortgages/homebanking"
+  - name: "mortgages"
+    label: "Mortgages"
+    folder: "src/markdown/mortgages"
     slug: "{{slug}}"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-mortgages"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mortgages"}
       - {label: "mortgage", name: "mortgage", widget: "hidden", default: "mortgage"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Logo", name: "logo", widget: image, required: true}
@@ -74,20 +74,7 @@ collections:
         {label: 5 years, name: "5", widget: string, required: true}, 
         ]
       }
-
-  - name: "refinancingMortgages"
-    label: "Refinancing and Renewal Mortgages"
-    folder: "src/markdown/mortgages/refinance"
-    slug: "{{slug}}"
-    create: true
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "refinance-mortgages"}
-      - {label: "mortgage", name: "mortgage", widget: "hidden", default: "mortgage"}
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Logo", name: "logo", widget: image, required: true}
-      - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
-      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: false}
-      - {label: Rates, name: rates, widget: object, 
+      - {label: Rates for Renewal/Refinancing, name: rates, widget: object, 
         fields: [
         {label: "1 year", name: "1", widget: string, required: true}, 
         {label: 2 years, name: "2", widget: string, required: true}, 
@@ -96,7 +83,6 @@ collections:
         {label: 5 years, name: "5", widget: string, required: true}, 
         ]
       }
-
 
 
   - name: "blog"
