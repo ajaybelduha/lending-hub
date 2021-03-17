@@ -44,9 +44,9 @@ collections:
       - {label: "Is Featured?", name: "featured", widget: "boolean", required: false}
 
   
-  - name: "homeBuyingMortgages"
-    label: "Home Buying Mortgages"
-    folder: "src/markdown/mortgages/homebanking"
+  - name: "mortgages"
+    label: "Mortgages"
+    folder: "src/markdown/mortgages"
     slug: "{{slug}}"
     create: true
     fields:
