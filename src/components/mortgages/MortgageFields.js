@@ -72,6 +72,12 @@ const MortgageFields = (props) => {
     },
   })
 
+  useEffect(() => {
+    if (props.selections?.subsequentBuyerType === 'own-investment-property') {
+      formik.setFieldValue('downPaymentPercent', 20)
+    }
+  }, [])
+
   const validateAndSetNumber = async (e) => {
     e.preventDefault()
     const { value, name } = e.target
@@ -92,6 +98,16 @@ const MortgageFields = (props) => {
       setTotalMortgageValue(0)
     }
   }
+
+  useEffect(() => {
+    if (props.selections?.subsequentBuyerType === 'own-investment-property') {
+      const { purchasePrice, downPaymentPercent } = formik.values
+      if (purchasePrice) {
+        const numericValue = (downPaymentPercent * purchasePrice) / 100
+        formik.setFieldValue('downPaymentNumeric', numericValue)
+      }
+    }
+  }, [formik.values.purchasePrice])
 
   useEffect(() => {
     const { purchasePrice, downPaymentNumeric } = formik.values
@@ -222,6 +238,7 @@ const MortgageFields = (props) => {
                       onChange={validateAndSetNumber}
                       onBlur={formik.handleBlur}
                       value={formik.values.downPaymentPercent}
+                      disabled={props.selections.subsequentBuyerType === 'own-investment-property'}
                     />
                   </div>
                   {formik.touched.downPaymentPercent &&
