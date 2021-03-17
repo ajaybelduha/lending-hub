@@ -3,25 +3,25 @@ import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { BlockStack } from '../common/common'
 
-const HomeMortgageTypes = (props) => {
-  const types = [
-    { label: 'First time Home Buyer', value: 'first-time' },
-    { label: 'Subsequent Home Buyer', value: 'subsequent' }
+const SubsequentBuyerTypes = (props) => {
+  const propertyFor = [
+    { label: 'Own an investment property', value: 'own-investment-property' },
+    { label: 'Own an occupied property', value: 'own-occupied-property' }
   ]
   return (
-    <HomeMortgageTypesContainer>
+    <SubsequentBuyerTypesContainer>
       <Fade bottom>
         <div className="card-purpose has-text-centered">
-          <div className="section-title mb-6">You can consider me as</div>
+          <div className="section-title mb-6">Type of property owned by you</div>
           <BlockStack>
             {' '}
             {/*onClick={props.onNext}*/}
-            {types.map((item) => (
+            {propertyFor.map((item) => (
               <div
                 key={item.value}
                 value={item.value}
                 className="p-block bold"
-                onClick={() => props.setValue('homeMortgageType', item.value)}
+                onClick={() => props.setValue('subsequentBuyerType', item.value)}
               >
                 {' '}
                 {item.label}
@@ -30,12 +30,12 @@ const HomeMortgageTypes = (props) => {
           </BlockStack>
         </div>
       </Fade>
-    </HomeMortgageTypesContainer>
+    </SubsequentBuyerTypesContainer>
   )
 }
 
-const HomeMortgageTypesContainer = styled.div`
+const SubsequentBuyerTypesContainer = styled.div`
   margin-top: 10%;
 `
 
-export default HomeMortgageTypes
+export default SubsequentBuyerTypes
