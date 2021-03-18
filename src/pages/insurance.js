@@ -26,27 +26,30 @@ const items = [
       }
   ]
 
-const stepItems = [
-    {
-        image: '/img/step1.png',
-        title: 'Answer a few basic questions',
-        subtitle: "Just answer a few basic questions to let us know what exactly you need and we will provide you the rest",
-      },
-      {
-        image: '/img/step2.png',
-        title: 'Choose your coverage options',
-        subtitle: "Select how much coverage you need for your vehicle and home. Here you can truly customize your insurance according to your needs.",
-      },
-      {
-        image: '/img/step3.png',
-        title: 'Pay Online',
-        subtitle: "Pay exactly for what you buy with just few clicks online - no hidden fees. And access your insurance documents immediately.",
-      }
-]
 
-
-const Insurance = () => {
+const Insurance = ({data}) => {
+    const response = data.insurance.edges[0].node.frontmatter
+    console.log("INSURANCE")
+    console.log(response)
     const [openModal, setOpenModal] = useState(false);
+
+    const stepItems = [
+        {
+            image: response.section2.point1Image,
+            title: response.section2.point1,
+            subtitle: response.section2.point1description,
+          },
+          {
+            image: response.section2.point2Image,
+            title: response.section2.point2,
+            subtitle: response.section2.point2description,
+          },
+          {
+            image: response.section2.point3Image,
+            title: response.section2.point3,
+            subtitle: response.section2.point3description,
+          },
+    ]
 
     const setModal = () => {
         setOpenModal(!openModal)
@@ -69,7 +72,7 @@ const Insurance = () => {
                         <div className="section-2">
                                 <InsuranceSteps stepItems={stepItems} />
                         </div>
-                        <OurPartners />
+                        <OurPartners data={response.partners} />
                 </div><br/>
                 <div className="container">
                     <h1 className="section-title mb-3">See how you can save $$ when you switch to Lending Hub</h1>
@@ -182,30 +185,164 @@ margin-top: 3rem;
 
 export const pageQuery = graphql`
 query HomePageInsurance {
-  homepage: allMarkdownRemark(
-    filter: { frontmatter: { templateKey: { eq: "homepage-creditcard" } } }
-  ) {
-    edges {
-      node {
-        frontmatter {
-          title
-          section1 {
-            heading
-            subheading1
-            subheading2
-            image {
+    insurance: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "insurance" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            section1 {
+              heading
+            }
+            section2 {
+            point1
+            point1Image {
               childImageSharp {
                 fluid(maxWidth: 800, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid
                 }
               }
             }
+            point1description
+            point2
+            point2description
+            point2Image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            point3
+            point3description
+            point3Image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                }
+              }
+            }
+        }
+        partners{
+            heading
+            image1 {
+              childImageSharp {
+                fixed(width: 100, height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image2{
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image3 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image4 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image5 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image6 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image7 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image8 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image9 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image10 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image11 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image12 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image13 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image14 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image15 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image16 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+          }
           }
         }
       }
     }
   }
-}
 `
 
 export default Insurance;
