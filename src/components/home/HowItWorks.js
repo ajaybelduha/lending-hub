@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Image from 'gatsby-image'
 import classNames from 'classnames'
 import { useScrollRestoration } from 'gatsby'
 
@@ -26,7 +27,8 @@ const HowItWorks = ({ stepItems }) => {
             </div>
             <div>
                 <div className="steps-image">
-                    <img src={image} alt="home hero image" />
+                    {/* <img src={image} alt="home hero image" /> */}
+                    <Image fluid={image?.childImageSharp.fluid} />
                 </div>
             </div>
         </HowItWorksContainer>
@@ -79,6 +81,7 @@ const HowItWorksContainer = styled.div`
         }
     }
     .steps-image {
+        width: 550px;
         img {
             width: 550px;
         }
@@ -98,6 +101,10 @@ const HowItWorksContainer = styled.div`
             .index {
                 margin-left: 1rem;
             }
+        }
+        .steps-image {
+            width: 100%;
+            height: 300px;
         }
     }
 `

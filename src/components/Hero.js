@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-// import Image from 'gatsby-image'
+import Image from 'gatsby-image'
 // import HeroImage from '../../static/img/home-hero-image.png'
 
 const Hero = (props) => {
@@ -24,9 +24,10 @@ const Hero = (props) => {
                   ))}
                 </div>
               </div>
-              <div className="column is-half has-text-right">
-                {imageSrc && <img height="25em" src={imageSrc} alt="home hero image" />}
+              <div className="column is-half banner-image has-text-right">
+                {/* {imageSrc && <img height="25em" src={imageSrc} alt="home hero image" />} */}
                 {/* <Image fixed={HeroImage} /> */}
+                <Image fluid={imageSrc?.childImageSharp.fluid} />
               </div>
             </div>
           </div>
@@ -65,9 +66,14 @@ const Block = ({ data }) => {
 
 const HeroContainer = styled.section`
 margin-top: 3rem;
+margin-bottom: 5rem;
   .blocks {
     display: flex;
     flex-wrap: wrap;
+  }
+  .banner-image {
+    width: 500px;
+    margin-left: auto;
   }
   .block {
     text-align: center;
@@ -106,6 +112,9 @@ margin-top: 3rem;
   @media screen and (max-width: 786px) {
     .blocks {
       justify-content: flex-start;
+    }
+    .banner-image {
+      width: 100%s;
     }
     .block {
       width: 150px;

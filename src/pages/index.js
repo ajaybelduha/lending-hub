@@ -1,11 +1,13 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import HowItWorks from '../components/home/HowItWorks'
 import MaximizeSavings from '../components/MaximizeSavings'
 import FeaturedBlogs from '../components/home/FeaturedBlogs'
 
-const HomePage = () => {
+const HomePage = ({data}) => {
+  const response = data.homepage.edges[0].node.frontmatter
   const items = [
     {
       image: '/img/icons/mortgage-copy.svg',
@@ -28,36 +30,104 @@ const HomePage = () => {
   ]
   const stepItems = [
     {
-        image: '/img/step1.png',
-        title: 'Answer a few question',
-        subtitle: "Tell us about the type of rates you're looking for & the home you want to buy.",
+        image: response.section2.point1Image,
+        title: response.section2.point1,
+        subtitle: response.section2.point1description,
       },
       {
-        image: '/img/step2.png',
-        title: 'Get customized results',
-        subtitle: "Compare current rate quotes from dozens of lenders, all in one place.",
+        image: response.section2.point2Image,
+        title: response.section2.point2,
+        subtitle: response.section2.point2description,
       },
       {
-        image: '/img/step3.png',
-        title: 'Contact when you\'re ready',
-        subtitle: "See a quote you like? Contact the lender to learn more and lock in your rate.",
-      }
+        image: response.section2.point3Image,
+        title: response.section2.point3,
+        subtitle: response.section2.point3description,
+      },
 ]
 
   return (
     <Layout>
       <Hero
-        title="Guiding you through life's financial journey"
-        subtitle="Compare rates, crunch numbers and get expert guidance for life's pivotal financial moments."
-        subtitle2="LendingHub helps you compare rates from more providers than anyone else"
-        imageSrc="/img/home-hero-image.png"
+        title={response.section1.heading}
+        subtitle={response.section1.subheading1}
+        subtitle2={response.section1.subheading2}
+        imageSrc={response.section1.image}
         blockItems={items}
       />
       <HowItWorks stepItems={stepItems} />
-      <MaximizeSavings />
+      <MaximizeSavings data={response.section3} />
       <FeaturedBlogs />
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+query HomePageMain {
+  homepage: allMarkdownRemark(
+    filter: { frontmatter: { templateKey: { eq: "homepage-main" } } }
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          section1 {
+            heading
+            subheading1
+            subheading2
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          section2 {
+            point1
+            point1Image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            point1description
+            point2
+            point2description
+            point2Image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            point3
+            point3description
+            point3Image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          section3 {
+            heading
+            subheading1
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
 
 export default HomePage

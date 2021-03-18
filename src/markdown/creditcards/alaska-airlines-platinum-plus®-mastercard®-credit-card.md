@@ -1,17 +1,16 @@
 ---
 templateKey: credit-card-post
-title: BMO®* Rewards Mastercard®*
-cardImage: /img/bmo-rewards-mastercard.png
+title: Alaska Airlines Platinum Plus® Mastercard® credit card
+cardImage: /img/alaska-airline-platinum-plus_tcm378-267333-1-.png
 creditScore: Good
-fee: 0
-network: mastercard
+fee: 75
 purchaseInterest: "19.99"
-balanceTransferInterest: "1.99"
+balanceTransferInterest: "22.99"
 cashAdvanceInterest: "22.99"
 userCategory: personal
 cardCategory: rewards
 rewardType: travel
-href: https://www.bmo.com/main/personal/credit-cards/bmo-rewards-mastercard/
+href: https://www.mbna.ca/en/credit-cards/travel/alaska-airlines-mastercard/
 summaryDescription: >-
   \
 

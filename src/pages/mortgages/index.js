@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import Hero from '../../components/Hero'
 import FeaturedMortgages from '../../components/mortgages/FeaturedMortgages'
@@ -8,7 +9,10 @@ import FeaturedKnowledgeHub from '../../components/mortgages/FeaturedKnowledgeHu
 import EditorsPick from '../../components/creditcards/EditorsPick'
 import OurPartners from '../../components/mortgages/OurPartners'
 
-const MortgagesHome = () => {
+const MortgagesHome = ({data}) => {
+  const response = data.homepage.edges[0].node.frontmatter
+  console.log("MORTGAGE RESPONSE")
+  console.log(response)
   const items = [
     {
       key: 1,
@@ -35,20 +39,174 @@ const MortgagesHome = () => {
   return (
     <Layout>
       <Hero
-        title="Let's help you find the best mortgage rate"
-        subtitle="We’ll find the best rate for you in under 2 minutes."
-        subtitle2="Evaluate Canada’s best mortgage rates in one place. LendingHub's Rate Matrix lets you compare pricing for all key mortgage types and terms."
-        imageSrc="/img/mortgages-hero.png"
+        title={response.section1.heading}
+        subtitle={response.section1.subheading1}
+        subtitle2={response.section1.subheading2}
+        imageSrc={response.section1.image}
         blockItems={items}
       />
       <FeaturedMortgages />
       <MortgageWatch />
-      <OurPartners />
-      <MaximizeSavings />
+      <OurPartners data={response.partners} />
+      <MaximizeSavings data={response.section3} />
       <FeaturedKnowledgeHub />
       <EditorsPick type="mortgage" />
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+query HomePageMortgage {
+  homepage: allMarkdownRemark(
+    filter: { frontmatter: { templateKey: { eq: "homepage-mortgage" } } }
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          section1 {
+            heading
+            subheading1
+            subheading2
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          partners{
+            heading
+            image1 {
+              childImageSharp {
+                fixed(width: 100, height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image2{
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image3 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image4 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image5 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image6 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image7 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image8 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image9 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image10 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image11 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image12 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image13 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image14 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image15 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+            image16 {
+              childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            } 
+          }
+          section3 {
+            heading
+            subheading1
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
 
 export default MortgagesHome

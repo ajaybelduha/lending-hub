@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'gatsby-image'
 import styled from 'styled-components'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -23,38 +24,35 @@ const responsive = {
     }
 };
 
-const OurPartners = () => {
+const OurPartners = ({data}) => {
+    console.log("PARTNERS DATA")
+    console.log(data)
+    const images = Object.values(data)
+    console.log(images)
     return (
         <div className="mt-6 container">
-            <h1 className="section-title">Our partners</h1>
+            <h1 className="section-title">{data.heading}</h1>
             {/* <img src="/img/partners.png" /> */}
             <OurPartnersContainer>
             <Carousel
                 className="partners-carousel" 
                 responsive={responsive}
-                autoPlay
+                autoPlay={true}
                 autoPlaySpeed={1000}
                 infinite={true}
                 arrows={false}
                 // customTransition="all 5"
                 // transitionDuration={1000}
             >
-                <div><img src="/img/partners/partners-1.png" /></div>
-                <div><img src="/img/partners/partners-2.png" /></div>
-                <div><img src="/img/partners/partners-3.png" /></div>
-                <div><img src="/img/partners/partners-4.png" /></div>
-                <div><img src="/img/partners/partners-5.png" /></div>
-                <div><img src="/img/partners/partners-6.png" /></div>
-                <div><img src="/img/partners/partners-7.png" /></div>
-                <div><img src="/img/partners/partners-8.png" /></div>
-                <div><img src="/img/partners/partners-9.png" /></div>
-                <div><img src="/img/partners/partners-10.png" /></div>
-                <div><img src="/img/partners/partners-11.png" /></div>
-                <div><img src="/img/partners/partners-12.png" /></div>
-                <div><img src="/img/partners/partners-13.png" /></div>
-                <div><img src="/img/partners/partners-14.png" /></div>
-                <div><img src="/img/partners/partners-15.png" /></div>
-                <div><img src="/img/partners/partners-16.png" /></div>
+                {images.map((item, index) => {
+                    if (index > 0) {
+                        return(
+                            <div>
+                                <Image fixed={item?.childImageSharp.fixed} />
+                            </div>
+                        )
+                    }
+                })}
             </Carousel>
             </OurPartnersContainer>
         </div>
@@ -67,8 +65,9 @@ const OurPartnersContainer = styled.div`
             padding: 2rem;
             display: flex;
             align-items: center;
-            div {
+            > div {
                 margin-right: 1rem;
+                margin:auto;
             }
         }
     }

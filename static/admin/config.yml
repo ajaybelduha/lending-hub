@@ -215,4 +215,157 @@ collections:
       - {label: VARIABL, name: variabl, widget: string}
       - {label: prime, name: prime, widget: string}
       - {label: BENCHMARK, name: benchmark, widget: string}
+
+  - name: "homepageMain"
+    label: "Homepage - Main"
+    folder: "src/markdown/homepages"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage-main"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Main"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Section 2 (How it works), name: section2, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Point 1", name: "point1", widget: string, required: true}, 
+        {label: "Point 1 description", name: "point1description", widget: string, required: true}, 
+        {label: "Point 1 Image", name: "point1Image", widget: image, required: true}, 
+        {label: "Point 2", name: "point2", widget: string, required: true}, 
+        {label: "Point 2 description", name: "point2description", widget: string, required: true}, 
+        {label: "Point 2 Image", name: "point2Image", widget: image, required: true}, 
+        {label: "Point 3", name: "point3", widget: string, required: true}, 
+        {label: "Point 3 description", name: "point3description", widget: string, required: true}, 
+        {label: "Point 3 Image", name: "point3Image", widget: image, required: true}, 
+        ]
+      }
+      - {label: Section 3 (Maximize your savings), name: section3, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        ]
+      }
+
+  - name: "homepageMortgage"
+    label: "Homepage - Mortgage"
+    folder: "src/markdown/homepages/mortgage"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage-mortgage"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Mortgage"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Partners, name: partners, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image 1, name: "image1", widget: image, required: false}, 
+        {label: Image 2, name: "image2", widget: image, required: false}, 
+        {label: Image 3, name: "image3", widget: image, required: false}, 
+        {label: Image 4, name: "image4", widget: image, required: false}, 
+        {label: Image 5, name: "image5", widget: image, required: false}, 
+        {label: Image 6, name: "image6", widget: image, required: false}, 
+        {label: Image 7, name: "image7", widget: image, required: false}, 
+        {label: Image 8, name: "image8", widget: image, required: false}, 
+        {label: Image 9, name: "image9", widget: image, required: false}, 
+        {label: Image 10, name: "image10", widget: image, required: false}, 
+        {label: Image 11, name: "image11", widget: image, required: false}, 
+        {label: Image 12, name: "image12", widget: image, required: false}, 
+        {label: Image 13, name: "image13", widget: image, required: false}, 
+        {label: Image 14, name: "image14", widget: image, required: false}, 
+        {label: Image 15, name: "image15", widget: image, required: false}, 
+        {label: Image 16, name: "image16", widget: image, required: false}, 
+        ]
+      }
+      - {label: Section (Maximize your savings), name: section3, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        ]
+      }
       
+  - name: "homepageCreditCard"
+    label: "Homepage - Credit Card"
+    folder: "src/markdown/homepages/creditcard"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage-creditcard"}
+      - {label: Title, name: title, widget: string, default: "Homepage - creditcard"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+
+  - name: "homepageInsurance"
+    label: "Homepage - Insurance"
+    folder: "src/markdown/homepages/insurance"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage-insurance"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Insurance"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Subheading", name: "subheading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Section 2 (How it works), name: section2, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Point 1", name: "point1", widget: string, required: true}, 
+        {label: "Point 1 description", name: "point1description", widget: string, required: true}, 
+        {label: "Point 1 Image", name: "point1Image", widget: image, required: true}, 
+        {label: "Point 2", name: "point2", widget: string, required: true}, 
+        {label: "Point 2 description", name: "point2description", widget: string, required: true}, 
+        {label: "Point 2 Image", name: "point2Image", widget: image, required: true}, 
+        {label: "Point 3", name: "point3", widget: string, required: true}, 
+        {label: "Point 3 description", name: "point3description", widget: string, required: true}, 
+        {label: "Point 3 Image", name: "point3Image", widget: image, required: true}, 
+        ]
+      }
+      - {label: Partners, name: partners, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image 1, name: "image1", widget: image, required: false}, 
+        {label: Image 2, name: "image2", widget: image, required: false}, 
+        {label: Image 3, name: "image3", widget: image, required: false}, 
+        {label: Image 4, name: "image4", widget: image, required: false}, 
+        {label: Image 5, name: "image5", widget: image, required: false}, 
+        {label: Image 6, name: "image6", widget: image, required: false}, 
+        {label: Image 7, name: "image7", widget: image, required: false}, 
+        {label: Image 8, name: "image8", widget: image, required: false}, 
+        {label: Image 9, name: "image9", widget: image, required: false}, 
+        {label: Image 10, name: "image10", widget: image, required: false}, 
+        {label: Image 11, name: "image11", widget: image, required: false}, 
+        {label: Image 12, name: "image12", widget: image, required: false}, 
+        {label: Image 13, name: "image13", widget: image, required: false}, 
+        {label: Image 14, name: "image14", widget: image, required: false}, 
+        {label: Image 15, name: "image15", widget: image, required: false}, 
+        {label: Image 16, name: "image16", widget: image, required: false}, 
+        ]
+      }
+  
