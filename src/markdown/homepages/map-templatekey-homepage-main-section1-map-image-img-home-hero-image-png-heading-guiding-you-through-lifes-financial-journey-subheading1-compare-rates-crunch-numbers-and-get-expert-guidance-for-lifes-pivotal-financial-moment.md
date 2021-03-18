@@ -1,5 +1,6 @@
 ---
 templateKey: homepage-main
+title: Homepage - Main
 section1:
   image: /img/home-hero-image.png
   heading: Guiding you through life's financial journey
