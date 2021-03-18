@@ -318,7 +318,7 @@ collections:
 
   - name: "homepageInsurance"
     label: "Homepage - Insurance"
-    folder: "src/markdown/insurance"
+    folder: "src/markdown/homepages/insurance"
     slug: "{{slug}}"
     create: true
     fields:

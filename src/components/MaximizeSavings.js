@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Image from 'gatsby-image'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
-const MaximizeSavings = () => {
+const MaximizeSavings = ({data}) => {
   const calculators = [
     {
       key: 'mortgage-payment',
@@ -40,11 +41,9 @@ const MaximizeSavings = () => {
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-two-third">
-                <h1 className="section-title">Maximize Your Savings</h1>
+                <h1 className="section-title">{data.heading}</h1>
                 <h4 className="section-subtitle">
-                  Wondering how long it’ll take to pay off a balance? Want to
-                  see how much you can save with a balance transfer card? Find
-                  out with our calculators.
+                  {data.subheading1}
                 </h4>
                 <div className="columns is-multiline mt-5">
                   {calculators.map((item) => {
@@ -65,12 +64,12 @@ const MaximizeSavings = () => {
                 </div>
               </div>
               <div className="column is-one-third has-text-right">
-                <img
+                {/* <img
                   height="25em"
                   src="/img/maximize-savings.png"
                   alt="maximize savings image"
-                />
-                {/* <Image fixed={HeroImage} /> */}
+                /> */}
+                 <Image fluid={data.image?.childImageSharp.fluid} />
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { graphql } from 'gatsby';
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import styled from 'styled-components';
 import InsuranceHero from '../components/insurance/InsuranceHero'
@@ -176,6 +177,35 @@ margin-top: 3rem;
             width: 100%;
         }
     }
+`
+
+
+export const pageQuery = graphql`
+query HomePageInsurance {
+  homepage: allMarkdownRemark(
+    filter: { frontmatter: { templateKey: { eq: "homepage-creditcard" } } }
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          section1 {
+            heading
+            subheading1
+            subheading2
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 `
 
 export default Insurance;
