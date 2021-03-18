@@ -6,6 +6,7 @@ import MortgageWatch from '../../components/mortgages/MortgageWatch'
 import MaximizeSavings from '../../components/MaximizeSavings'
 import FeaturedKnowledgeHub from '../../components/mortgages/FeaturedKnowledgeHub'
 import EditorsPick from '../../components/creditcards/EditorsPick'
+import OurPartners from '../../components/mortgages/OurPartners'
 
 const MortgagesHome = () => {
   const items = [
@@ -42,10 +43,7 @@ const MortgagesHome = () => {
       />
       <FeaturedMortgages />
       <MortgageWatch />
-      <div className="mt-6 container">
-          <h1 className="section-title mb-3">Our partners</h1>
-          <img src="/img/partners.png" />
-      </div>
+      <OurPartners />
       <MaximizeSavings />
       <FeaturedKnowledgeHub />
       <EditorsPick type="mortgage" />

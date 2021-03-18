@@ -39,6 +39,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
+    "react-multi-carousel": "^2.6.2",
     "react-responsive-carousel": "^3.2.10",
     "react-reveal": "^1.2.2",
     "react-step-progress-bar": "^1.0.3",

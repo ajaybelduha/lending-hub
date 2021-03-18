@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import EditorsPick from '../components/creditcards/EditorsPick'
 import InsuranceForm from '../components/insurance/InsuranceForm'
 import InsuranceSteps from '../components/insurance/InsuranceSteps'
+import OurPartners from '../components/mortgages/OurPartners'
 import { useStaticQuery } from 'gatsby';
 import { ButtonNoStyle } from '../components/common/common';
 
@@ -67,10 +68,7 @@ const Insurance = () => {
                         <div className="section-2">
                                 <InsuranceSteps stepItems={stepItems} />
                         </div>
-                        <div className="partners">
-                            <h1 className="section-title mb-3">Our partners</h1>
-                            <img src="/img/partners.png" />
-                        </div>
+                        <OurPartners />
                 </div><br/>
                 <div className="container">
                     <h1 className="section-title mb-3">See how you can save $$ when you switch to Lending Hub</h1>
