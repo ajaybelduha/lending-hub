@@ -318,11 +318,11 @@ collections:
 
   - name: "homepageInsurance"
     label: "Homepage - Insurance"
-    folder: "src/markdown/homepages/insurance"
+    folder: "src/markdown/insurance"
     slug: "{{slug}}"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage-insurance"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "insurance"}
       - {label: Title, name: title, widget: string, default: "Homepage - Insurance"}
       - {label: Section 1, name: section1, widget: object, 
         fields: [

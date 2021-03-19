@@ -27,7 +27,7 @@ const Hero = (props) => {
               <div className="column is-half banner-image has-text-right">
                 {/* {imageSrc && <img height="25em" src={imageSrc} alt="home hero image" />} */}
                 {/* <Image fixed={HeroImage} /> */}
-                <Image fluid={imageSrc?.childImageSharp.fluid} />
+                <Image fluid={imageSrc?.childImageSharp?.fluid} />
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ margin-bottom: 5rem;
       justify-content: flex-start;
     }
     .banner-image {
-      width: 100%s;
+      width: 100%;
     }
     .block {
       width: 150px;
