@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Image from 'gatsby-image'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { ButtonNoStyle } from '../common/common'
 // import Image from 'gatsby-image'
@@ -25,8 +26,7 @@ const InsuranceHero = (props) => {
                 </div>
               </div>
               <div className="column is-half has-text-right">
-                {imageSrc && <img height="25em" src={imageSrc} alt="home hero image" />}
-                {/* <Image fixed={HeroImage} /> */}
+                <Image fluid={imageSrc?.childImageSharp?.fluid} />
               </div>
             </div>
           </div>

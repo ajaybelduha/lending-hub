@@ -58,9 +58,9 @@ const Insurance = ({data}) => {
         <Layout>
             <InsuranceContainer>
                 <InsuranceHero 
-                    title="Let's help you find the right Insurance coverage"
-                    subtitle="Find news and advice on homeowners, renters, auto, health and life insurance."
-                    imageSrc="/img/insurance.png"
+                    title={response.section1.heading}
+                    subtitle={response.section1.subheading1}
+                    imageSrc={response.section1.image}
                     blockItems={items} 
                     setOpen={setModal}
                 />
@@ -192,7 +192,16 @@ query HomePageInsurance {
         node {
           frontmatter {
             section1 {
-              heading
+                heading
+                subheading1
+                subheading2
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 800, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
             }
             section2 {
             point1
