@@ -32,6 +32,7 @@ const Insurance = ({data}) => {
     console.log("INSURANCE")
     console.log(response)
     const [openModal, setOpenModal] = useState(false);
+    const [insuranceType, setInsuranceType] = useState('Home Buying')
 
     const stepItems = [
         {
@@ -51,7 +52,8 @@ const Insurance = ({data}) => {
           },
     ]
 
-    const setModal = () => {
+    const setModal = (type) => {
+        setInsuranceType(type)
         setOpenModal(!openModal)
     }
     return(
@@ -115,7 +117,7 @@ const Insurance = ({data}) => {
                     </ul>
                 </div>
                 <EditorsPick type="insurance"/>
-                <InsuranceForm open={openModal} setOpen={setModal} />
+                <InsuranceForm insuranceType={insuranceType} open={openModal} setOpen={setModal} />
             </InsuranceContainer>
         </Layout>
     )
@@ -233,120 +235,120 @@ query HomePageInsurance {
             }
         }
         partners{
-            heading
-            image1 {
-              childImageSharp {
-                fixed(width: 100, height: 100) {
-                  ...GatsbyImageSharpFixed
-                }
+          heading
+          image1 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image2{
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image2{
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image3 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image3 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image4 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image4 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image5 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image5 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image6 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image6 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image7 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image7 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image8 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image8 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image9 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image9 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image10 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image10 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image11 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image11 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image12 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image12 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image13 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image13 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image14 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image14 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image15 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image15 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-            image16 {
-              childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
-                }
+            }
+          } 
+          image16 {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
-            } 
-          }
+            }
+          } 
+        }
           }
         }
       }

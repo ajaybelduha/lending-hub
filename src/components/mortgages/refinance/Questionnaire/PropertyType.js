@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 import { BlockStack } from '../../../common/common';
  
 const PropertyType = (props) => {
-    const refinanceType = [
+    const propertyType = [
         {label: 'Owner Occupied', value: 'owner-occupied'},
         {label: 'Owner Occupied + Rental', value: 'owner-occupied-rental'},
         {label: 'Rental', value: 'rental'},
@@ -15,12 +15,12 @@ const PropertyType = (props) => {
                 <div className="card-purpose has-text-centered">
                     <div className="section-title">What type of refinance you are looking for?</div>
                     <BlockStack >            {/*onClick={props.onNext}*/}
-                        {refinanceType.map(item => (
+                        {propertyType.map(item => (
                             <div 
                                 key={item.value} 
                                 value={item.value} 
                                 className="p-block bold"
-                                onClick={() => props.setValue('cardFor', item.value)}
+                                onClick={() => props.setValue('propertyType', item.value)}
                             >   {item.label}
                             </div>
                         ))}

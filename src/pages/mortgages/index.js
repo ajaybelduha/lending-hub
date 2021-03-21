@@ -80,113 +80,113 @@ query HomePageMortgage {
             heading
             image1 {
               childImageSharp {
-                fixed(width: 100, height: 100) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image2{
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image3 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image4 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image5 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image6 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image7 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image8 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image9 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image10 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image11 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image12 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image13 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image14 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image15 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 
             image16 {
               childImageSharp {
-                fixed(width: 150) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             } 

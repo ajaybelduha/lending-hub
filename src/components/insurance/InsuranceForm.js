@@ -9,6 +9,7 @@ import {
     TextArea,
     ButtonNoStyle
 } from '../../components/common/common'
+import { PIPELINE_ID } from '../../utils/constants';
 
 
 
@@ -49,7 +50,7 @@ const validate = (values) => {
 
 
 
-const InsuranceForm = ({ open, setOpen }) => {
+const InsuranceForm = ({ open, setOpen, insuranceType }) => {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -88,6 +89,11 @@ const InsuranceForm = ({ open, setOpen }) => {
         validate,
         onSubmit: (values, actions) => {
 
+            let subTagId = 4307818
+            if (insuranceType === 'Car Insurance') {
+                subTagId = 4307819;
+            }
+
             let data = {
                 "person": {
                 "first_name": values.name,
@@ -96,10 +102,10 @@ const InsuranceForm = ({ open, setOpen }) => {
                 "website": "https://www.lendinghub.ca",
                 "email": values.email,
                 "type": "Lead",
-                "lead_status_id": 1584673,
-                "lead_source_id": 3368161,
+                "lead_status_id": PIPELINE_ID.lead_status_id,
+                "lead_source_id": PIPELINE_ID.lead_source_id,
                 "next_entry_name": "From LendingHub Website",
-                "predefined_contacts_tag_ids": [4305277], // Credit Card, Insurance, Loans, Mortgage
+                "predefined_contacts_tag_ids": [PIPELINE_ID.insurance, subTagId], // Credit Card, Insurance, Loans, Mortgage
                 }
               } 
       

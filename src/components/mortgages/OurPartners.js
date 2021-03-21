@@ -5,21 +5,21 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 6
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 6
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
-    },
+    // superLargeDesktop: {
+    //     // the naming can be any, depends on you.
+    //     breakpoint: { max: 4000, min: 3000 },
+    //     items: 6
+    // },
+    // desktop: {
+    //     breakpoint: { max: 3000, min: 1024 },
+    //     items: 6
+    // },
+    // tablet: {
+    //     breakpoint: { max: 1024, min: 464 },
+    //     items: 2
+    // },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
+        breakpoint: { max: 786, min: 0 },
         items: 1
     }
 };
@@ -48,12 +48,23 @@ const OurPartners = ({data}) => {
                     if (index > 0) {
                         return(
                             <div>
-                                <Image fixed={item?.childImageSharp.fixed} />
+                                <Image fluid={item?.childImageSharp.fluid} />
                             </div>
                         )
                     }
                 })}
             </Carousel>
+            <div className="flex-images-desktop">
+                {images.map((item, index) => {
+                        if (index > 0) {
+                            return(
+                                <div className="item">
+                                    <Image fluid={item?.childImageSharp.fluid} />
+                                </div>
+                            )
+                        }
+                })}
+            </div>
             </OurPartnersContainer>
         </div>
     )
@@ -61,14 +72,35 @@ const OurPartners = ({data}) => {
 
 const OurPartnersContainer = styled.div`
     .partners-carousel {
-        .react-multi-carousel-item {
-            padding: 2rem;
+        display: none;
+    }
+    .flex-images-desktop {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            > div {
-                margin-right: 1rem;
-                margin:auto;
+            justify-content: flex-start;
+            .item {
+                padding: 1rem;
+                width: 180px;
             }
+        }
+    @media screen and (max-width: 786px) {
+        .partners-carousel {
+            display: block;
+            .react-multi-carousel-item {
+                padding: 0 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                > div {
+                    width: 100vw;
+                    margin-right: 1rem;
+                    margin:auto;
+                }
+            }
+        }
+        .flex-images-desktop {
+            display: none;
         }
     }
 `

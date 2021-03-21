@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { navigate } from 'gatsby'
 import Fade from 'react-reveal/Fade'
 import { useFormik } from 'formik'
-import axios from 'axios';
-import Api from '../service/Api'
 import classNames from 'classnames'
 import {
   InputField,
@@ -12,86 +10,18 @@ import {
   BlackButtonLink,
   BlackButton,
 } from '../components/common/common'
-
-const validate = (values) => {
-  const errors = {}
-  if (!values.name) {
-    errors.name = 'Please provide a valid first name'
-  } else if (values.name.length < 3) {
-    errors.name = 'Please provide a valid first name'
-  }
-
-  if (!values.lastname) {
-    errors.lastname = 'Please provide a valid last name'
-  } else if (values.lastname.length < 3) {
-    errors.lastname = 'Please provide a valid last name'
-  }
-
-  if (!values.phone) {
-    errors.phone = 'Please provide a valid 10 digit number'
-  } else if (
-    !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(
-      values.phone
-    )
-  ) {
-    errors.phone = 'Please provide a valid 10 digit number'
-  }
-
-  if (!values.email) {
-    errors.email = 'Please provide a valid email'
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address'
-  }
-
-  if (!values.terms) {
-    errors.terms = 'Please accept terms and conditions to proceed'
-  } else if (values.terms[0] !== 'on') {
-    errors.terms = 'Please accept terms and conditions to proceed'
-  }
-
-  return errors
-}
+import { types, MortgageTypes, CardCategories, PIPELINE_ID } from '../utils/constants'
+import { createPipelineContent, submitData } from '../service/Pipelinecrm'
+import { validateRegisterDetails, createDataForCRM } from '../components/common/utils'
 
 const RegisterForm = (props) => {
 
   const [formValues, setFormValues] = useState({})
 
   useEffect(() => {
-    let data = {};
-    console.log(props)
-    if (props.type === "Credit Card") {
-      data = JSON.parse(JSON.stringify(props.selections));
-      data.annualIncome = JSON.stringify(data.annualIncome)
-      data.expenditure = JSON.stringify(data.expenditure)
-    } else {
-      data = JSON.parse(JSON.stringify(props.selections?.formValues));
-    }
-    // setFormValues(convertSelections(data))
-    setFormValues(data)
+    const formData = createDataForCRM(props)
+    setFormValues(formData)
   }, [])
-
-  const submitData = (items) => {
-    fetch('/.netlify/functions/hello', {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      method: 'post',
-      body: JSON.stringify(items)
-    })
-    .then(res => res.json())
-    .then(response => {
-      const selections = props.selections
-      const redirect = props.redirectTo
-      // navigate(redirect, {
-      //   state: { selections },
-      // });
-    })
-    .catch(error => {
-      console.log("Error while submitting data")
-      console.log(error);
-    })
-  }
 
   const formik = useFormik({
     initialValues: {
@@ -101,45 +31,22 @@ const RegisterForm = (props) => {
       lastname: '',
       terms: '',
     },
-    validate,
+    validateRegisterDetails,
     onSubmit: (values, actions) => {
 
-      let tagId = 4305274
-      if (props.type === "Credit Card") {
-        tagId = 4305274;
-      } else if (props.type === 'mortgage') {
-        tagId = 4305275;
-      }
-
-      let data = {
-          "person": {
-          "first_name": values.name,
-          "last_name": values.lastname,
-          "phone": values.phone,
-          "website": "https://www.lendinghub.ca",
-          "email": values.email,
-          "type": "Lead",
-          "lead_status_id": 1584673,
-          "lead_source_id": 3368161,
-          "next_entry_name": "From LendingHub Website",
-          "predefined_contacts_tag_ids": [tagId], // Credit Card, Mortgage, Loans, Insurance => 4305274, 4305275, 4305276, 4305277
-          "custom_fields": formValues
-          }
-        } 
+      const data = createPipelineContent(props, values, formValues)
 
       console.log("Data")
       console.log(data)
+      submitData(data, props)
 
-      // Submit data to followup boss and redirect
-      // submitData(data)
-
-      const selections = props.selections
-      const redirect = props.redirectTo
-      console.log("FORM SELECTIONS")
-      console.log(props.selections)
-      navigate(redirect, {
-        state: { selections },
-      });
+      // const selections = props.selections
+      // const redirect = props.redirectTo
+      // console.log("FORM SELECTIONS")
+      // console.log(props.selections)
+      // navigate(redirect, {
+      //   state: { selections },
+      // });
       
     },
   })
