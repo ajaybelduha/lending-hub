@@ -6,7 +6,7 @@ creditScore: Good
 fee: 0
 purchaseInterest: "19.99"
 cashAdvanceInterest: "22.99"
-userCategory: personal
+userCategory: student
 cardCategory: rewards
 href: https://www.cibc.com/en/personal-banking/credit-cards/all-credit-cards/aventura-visa-for-students.html
 summaryDescription: >-
