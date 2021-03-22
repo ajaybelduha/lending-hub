@@ -19,11 +19,11 @@ summaryDescription: >-
 
   1. No Annual Fee\
 
-  2. Earn 1 SCENE point for every $1 you spend on your everyday credit card purchases.\
+  2. Earn up to 5% in GM Earnings1 on the first $5,000 spent annually, and 2% thereafter\
 
-  3. Earn 5 SCENE points for every $1 you spend on credit card purchases at Cineplex theatres or at cineplex.com.\
+  3. $1 in GM Earnings = $1 off the purchase price or lease of a new Chevrolet, Buick, GMC, or Cadillac\
 
-  4. Redeem for a FREE movie with just 1,250 points.
+  4. Earnings do not expire as long as you are a cardholder
 
 
   <!--EndFragment-->
