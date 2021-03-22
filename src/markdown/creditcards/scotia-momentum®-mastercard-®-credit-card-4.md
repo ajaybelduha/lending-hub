@@ -2,7 +2,7 @@
 templateKey: credit-card-post
 title: Scotia Momentum® Mastercard ®* Credit Card
 cardImage: /img/momentum_mc_eng-6-.webp
-creditScore: Fair
+creditScore: Good
 fee: 0
 purchaseInterest: "7.99"
 balanceTransferInterest: "22.99"
