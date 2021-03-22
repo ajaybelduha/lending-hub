@@ -8,6 +8,7 @@ import PropertyType from '../../../components/mortgages/refinance/Questionnaire/
 import RefinanceFields from '../../../components/mortgages/refinance/Questionnaire/RefinanceFields'
 import RegisterForm from '../../../components/RegisterForm'
 import StepProgressBar from '../../../components/ProgressSteps';
+import { types } from '../../../utils/constants'
 
 const QuestionnaireModal = (props) => {
   const [totalSteps, setTotalSteps] = useState(4)
@@ -82,7 +83,7 @@ const QuestionnaireModal = (props) => {
             {step === 4 && (
               <RegisterForm 
                 redirectTo='/mortgages/refinance/listing'
-                type={getSelectedMortgageType()}
+                type={types.MORTGAGE}
                 selections={selections}
                 submitText="Get Rates" 
                 setValue={submitAnswers} />

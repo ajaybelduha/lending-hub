@@ -7,7 +7,7 @@ import { ButtonNoStyle } from '../common/common'
 // import HeroImage from '../../static/img/home-hero-image.png'
 
 const InsuranceHero = (props) => {
-  const { title, subtitle, imageSrc, blockItems, onSelect } = props
+  const { title, subtitle, imageSrc, blockItems } = props
   return (
     <HeroContainer>
       <div className="hero">
@@ -17,9 +17,9 @@ const InsuranceHero = (props) => {
               <div className="column is-half">
                 <h1 className="section-title">{title}</h1>
                 <h4 className="section-subtitle">{subtitle}</h4>
-                <div className="blocks mt-5" onClick={onSelect}>
+                <div className="blocks mt-5">
                   {blockItems.map((item) => (
-                    <ButtonNoStyle onClick={props.setOpen}>
+                    <ButtonNoStyle onClick={() => props.setOpen(item.title)}>
                       <Block data={item} />
                     </ButtonNoStyle>
                   ))}

@@ -6,13 +6,10 @@ import classNames from 'classnames'
 import {
   InputField,
   RadioButton,
-  Checkbox,
-  BlackButtonLink,
   BlackButton,
 } from '../../components/common/common'
+import { propertyFor } from '../../utils/constants'
 import { getTotalMortgageAndCmhc } from '../../components/common/utils'
-import Dropdown from '../../components/Dropdown'
-import { useStaticQuery } from 'gatsby'
 
 const validate = (values) => {
   const errors = {}
@@ -73,7 +70,7 @@ const MortgageFields = (props) => {
   })
 
   useEffect(() => {
-    if (props.selections?.subsequentBuyerType === 'own-investment-property') {
+    if (props.selections?.subsequentBuyerType === propertyFor[0].value) {  // Own Investment Property then fix percent to 20
       formik.setFieldValue('downPaymentPercent', 20)
     }
   }, [])
@@ -100,7 +97,7 @@ const MortgageFields = (props) => {
   }
 
   useEffect(() => {
-    if (props.selections?.subsequentBuyerType === 'own-investment-property') {
+    if (props.selections?.subsequentBuyerType === propertyFor[0].value) {
       const { purchasePrice, downPaymentPercent } = formik.values
       if (purchasePrice) {
         const numericValue = (downPaymentPercent * purchasePrice) / 100
@@ -238,7 +235,7 @@ const MortgageFields = (props) => {
                       onChange={validateAndSetNumber}
                       onBlur={formik.handleBlur}
                       value={formik.values.downPaymentPercent}
-                      disabled={props.selections.subsequentBuyerType === 'own-investment-property'}
+                      disabled={props.selections.subsequentBuyerType === propertyFor[0].value}
                     />
                   </div>
                   {formik.touched.downPaymentPercent &&

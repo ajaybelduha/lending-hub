@@ -2,12 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { BlockStack } from '../common/common'
+import { propertyFor } from '../../utils/constants'
 
 const SubsequentBuyerTypes = (props) => {
-  const propertyFor = [
-    { label: 'Own an investment property', value: 'own-investment-property' },
-    { label: 'Own an occupied property', value: 'own-occupied-property' }
-  ]
   return (
     <SubsequentBuyerTypesContainer>
       <Fade bottom>

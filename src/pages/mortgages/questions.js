@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import { navigate, useScrollRestoration } from 'gatsby';
+import { MortgageTypes, types } from '../../utils/constants'
 import Layout from '../../components/Layout';
 import MortgageFields from '../../components/mortgages/MortgageFields';
 import RegisterForm from '../../components/RegisterForm';
@@ -40,13 +41,13 @@ const QuestionnaireModal = (props) => {
 
     const getSelectedMortgageType = () => {
         const id = props?.location?.state?.id
-        let mortgageType = 'Home Buying';
+        let mortgageType = MortgageTypes.HOME_BUYING;
         if (id === 2) {
-            mortgageType = 'Refinance'
+            mortgageType = MortgageTypes.REFINANCE
         } else if (id === 3) {
-            mortgageType = 'Renewal'
+            mortgageType = MortgageTypes.RENEWAL
         } else {
-            mortgageType = 'Home Buying'
+            mortgageType = MortgageTypes.HOME_BUYING
         }
         return mortgageType
     }
@@ -61,7 +62,7 @@ const QuestionnaireModal = (props) => {
                     {step === 1 && <HomeMortgageTypes setValue={setValue} />}
                     {step === 2 && <SubsequentBuyerTypes setValue={setValue} />}
                     {step === 3 && <MortgageFields selections={selections}  type={getSelectedMortgageType()} setValue={setValue} />}
-                    {step === 4 && <RegisterForm redirectTo='/mortgages/listing' type="mortgage" selections={selections} submitText="Get Rates" setValue={submitAnswers} />}
+                    {step === 4 && <RegisterForm redirectTo='/mortgages/listing' type={types.MORTGAGE} selections={selections} submitText="Get Rates" setValue={submitAnswers} />}
                 </div>
                 <button className="modal-close is-large" aria-label="close"></button>
             </div>

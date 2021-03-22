@@ -2,16 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { BlockStack } from '../../common/common'
+import { cardFor } from '../../../utils/constants'
 
 const CardTypes = (props) => {
-  const cardFor = [
-    { label: 'Build Credit Score', value: 'build-credit-score' },
-    { label: 'Low Balance Transfer', value: 'low-balance-transfer' },
-    { label: 'Low Interest', value: 'low-interest' },
-    { label: 'Prepaid Cards', value: 'prepaid' },
-    { label: 'Rewards', value: 'rewards' },
-    { label: 'Any', value: 'any' },
-  ]
   return (
     <CardTypesContainer>
       <Fade bottom>
