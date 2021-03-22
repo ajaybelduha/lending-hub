@@ -44,4 +44,6 @@ export const PIPELINE_ID = {
     refinance_tag: 4307814,
     insurance: 4305277,
     home_insurnace: 4307818,
+    car_insurance_tag: 4307819,
+    home_insurance_tag: 4307818
 }

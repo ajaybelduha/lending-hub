@@ -89,9 +89,9 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
         validate,
         onSubmit: (values, actions) => {
 
-            let subTagId = 4307818
+            let subTagId = PIPELINE_ID.home_insurance_tag
             if (insuranceType === 'Car Insurance') {
-                subTagId = 4307819;
+                subTagId = PIPELINE_ID.car_insurance_tag;
             }
 
             let data = {
@@ -105,7 +105,7 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
                 "lead_status_id": PIPELINE_ID.lead_status_id,
                 "lead_source_id": PIPELINE_ID.lead_source_id,
                 "next_entry_name": "From LendingHub Website",
-                "predefined_contacts_tag_ids": [PIPELINE_ID.insurance, subTagId], // Credit Card, Insurance, Loans, Mortgage
+                "predefined_contacts_tag_ids": [PIPELINE_ID.insurance, subTagId], 
                 }
               } 
       
@@ -113,7 +113,7 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
             console.log(data)
       
             // Submit data to followup boss and redirect
-            submitData(data)
+            // submitData(data)
       
             // navigate(redirect, {
             //   state: { selections },

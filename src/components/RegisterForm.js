@@ -35,18 +35,19 @@ const RegisterForm = (props) => {
     onSubmit: (values, actions) => {
 
       const data = createPipelineContent(props, values, formValues)
+      // pipeline crm api changes and register form code made better
 
       console.log("Data")
       console.log(data)
-      submitData(data, props)
+      // submitData(data, props)
 
-      // const selections = props.selections
-      // const redirect = props.redirectTo
-      // console.log("FORM SELECTIONS")
-      // console.log(props.selections)
-      // navigate(redirect, {
-      //   state: { selections },
-      // });
+      const selections = props.selections
+      const redirect = props.redirectTo
+      console.log("FORM SELECTIONS")
+      console.log(props.selections)
+      navigate(redirect, {
+        state: { selections },
+      });
       
     },
   })
