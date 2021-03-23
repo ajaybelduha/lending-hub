@@ -1,6 +1,6 @@
 ---
 templateKey: team
-title: Rohan Sharma
+title: Rohan Malhotra
 designation: Sales Owner
 aboutme: Outstanding training programs and opportunities with RE/MAX will allow
   me to achieve extraordinary goals and gain exceptional knowledge from this new
