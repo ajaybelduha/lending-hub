@@ -1,6 +1,6 @@
 ---
 templateKey: team
-title: RON SALLY
+title: SUNIL SALLY
 designation: BROKER/OWNER
 photo: /img/sunil-sally.png
 aboutme: Some information about RON
