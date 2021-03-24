@@ -9,7 +9,7 @@ section1:
   subheading2: Lendinghub.ca has been empowering the vision of their clients since
     1988. Your mortgage is important to you and to us. We aim to make every
     effort to be the best at what we do.
-  image: /img/ron-sally.png
+  image: /img/aboutus.jpg
 section2:
   heading: Our people
   subheading: Meet our team of digital warriors, ready to harness the force for good.
@@ -26,6 +26,8 @@ section3:
   designation1: BROKER/OWNER
   name2: RON SALLY
   designation2: BROKER OF RECORD
+  photo1: /img/sunil-sally.png
+  photo 2: /img/ron-sally.png
 section4:
   video1: 83xUvyr1Jxk
   video2: roUtNCkl0OU
