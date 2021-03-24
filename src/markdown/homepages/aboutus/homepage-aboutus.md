@@ -13,6 +13,7 @@ section1:
 section2:
   heading: Our people
   subheading: Meet our team of digital warriors, ready to harness the force for good.
+  backgroundImage: /img/team.jpg
 section3:
   heading: Leading our way
   subheading: We understand that for both clients as well as agents buying or
