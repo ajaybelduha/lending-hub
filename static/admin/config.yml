@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: creditcard-mortgage
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
@@ -316,6 +316,77 @@ collections:
         ]
       }
 
+  - name: "homepageOurTeam"
+    label: "Homepage - Our Team"
+    folder: "src/markdown/homepages/ourteam"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ourteam"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Our Team"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+
+  - name: "homepageAboutUs"
+    label: "Homepage - About Us"
+    folder: "src/markdown/homepages/aboutus"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "aboutus"}
+      - {label: Title, name: title, widget: string, default: "Homepage-aboutus"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Section 2, name: section2, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Sub Heading", name: "subheading", widget: string, required: true}, 
+        {label: Background Image, name: "backgroundImage", widget: image, required: true}, 
+        ]
+      }
+      - {label: Section 3, name: section3, widget: object, 
+        fields: [
+          {label: "Heading", name: "heading", widget: string, required: true}, 
+          {label: "Sub Heading", name: "subheading", widget: string, required: true},
+          {label: "Name 1", name: "name1", widget: "string", required: true},
+          {label: "Designation 1", name: "designation1", widget: "string", required: true},
+          {label: Photo 1, name: "photo1", widget: image, required: true}, 
+          {label: "Name 2", name: "name2", widget: "string", required: true},
+          {label: "Designation 2", name: "designation2", widget: "string", required: true},
+          {label: Photo 2, name: "photo2", widget: image, required: true}, 
+        ]
+      }
+      - {label: Section 4, name: section4, widget: object, 
+        fields: [
+          {label: "Video 1", name: "video1", widget: string, required: false}, 
+          {label: "Video 2", name: "video2", widget: string, required: false},
+          {label: "Video 3", name: "video3", widget: string, required: false},
+          {label: "Video 4", name: "video4", widget: string, required: false},
+          {label: "Video 5", name: "video5", widget: string, required: false},
+          {label: "Video 6", name: "video6", widget: string, required: false},
+          {label: "Video 7", name: "video7", widget: string, required: false},
+          {label: "Video 8", name: "video8", widget: string, required: false},
+          {label: "Video 9", name: "video9", widget: string, required: false},
+          {label: "Video 10", name: "video10", widget: string, required: false},
+          {label: "Video 11", name: "video11", widget: string, required: false},
+          {label: "Video 12", name: "video12", widget: string, required: false},
+          {label: "Video 13", name: "video13", widget: string, required: false},
+          {label: "Video 14", name: "video14", widget: string, required: false},
+        ]
+      }
+
   - name: "homepageInsurance"
     label: "Homepage - Insurance"
     folder: "src/markdown/insurance"
@@ -366,6 +437,32 @@ collections:
         {label: Image 14, name: "image14", widget: image, required: false}, 
         {label: Image 15, name: "image15", widget: image, required: false}, 
         {label: Image 16, name: "image16", widget: image, required: false}, 
+        ]
+      }
+
+  - name: "team"
+    label: "Team"
+    folder: "src/markdown/team"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
+      - {label: "Name", name: "title", widget: "string", required: true}
+      - {label: "Designation", name: "designation", widget: "string", required: true}
+      - {label: "Photo", name: "photo", widget: image, required: true}
+      - {label: "About Me", name: "aboutme", widget: text, required: false}
+      - {label: "Phone Number", name: "phone", widget: string, required: true}
+      - {label: "Email", name: "email", widget: "string", required: true}
+      - {label: "Is CEO?", name: "isceo", widget: "boolean", required: false, default: false}
+      - {label: "Location", name: "location", widget: "string", required: false}
+      - {label: "Website", name: "website", widget: "string", required: false}
+      - {label: Social Links, name: social, widget: object, 
+        fields: [
+        {label: "Instagram", name: "instagram", widget: string, required: false}, 
+        {label: "Facebook", name: "facebook", widget: string, required: false}, 
+        {label: "Linkedin", name: "linkedin", widget: string, required: false}, 
+        {label: "Twitter", name: "twitter", widget: string, required: false}, 
+        {label: "Youtube", name: "youtube", widget: string, required: false}, 
         ]
       }
   

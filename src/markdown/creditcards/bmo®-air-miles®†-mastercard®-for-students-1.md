@@ -7,7 +7,7 @@ fee: 0
 purchaseInterest: "19.99"
 balanceTransferInterest: "1.99"
 cashAdvanceInterest: "22.99"
-balanceTranferFees: ""
+balanceTranferFees: -1
 userCategory: personal
 cardCategory: rewards
 rewardType: speciality
