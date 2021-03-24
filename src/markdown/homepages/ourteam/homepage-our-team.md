@@ -1,4 +1,5 @@
 ---
+templateKey: ourteam
 title: Homepage - Our Team
 section1:
   heading: Find news and advice on homeowners, renters, auto, health and life insurance.

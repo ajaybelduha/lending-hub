@@ -32,6 +32,11 @@ const Footer = class extends React.Component {
                         Careers
                       </AniLink>
                     </li>
+                    <li>
+                      <AniLink paintDrip hex="#000000"className="navbar-item" to="/our-team">
+                        Our Team
+                      </AniLink>
+                    </li>
                   </ul>
                 </section>
               </div>

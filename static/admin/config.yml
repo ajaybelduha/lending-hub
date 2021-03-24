@@ -333,6 +333,60 @@ collections:
         ]
       }
 
+  - name: "homepageAboutUs"
+    label: "Homepage - About Us"
+    folder: "src/markdown/homepages/aboutus"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "aboutus"}
+      - {label: Title, name: title, widget: string, default: "Homepage-aboutus"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Section 2, name: section2, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Sub Heading", name: "subheading", widget: string, required: true}, 
+        {label: Background Image, name: "backgroundImage", widget: image, required: true}, 
+        ]
+      }
+      - {label: Section 3, name: section3, widget: object, 
+        fields: [
+          {label: "Heading", name: "heading", widget: string, required: true}, 
+          {label: "Sub Heading", name: "subheading", widget: string, required: true},
+          {label: "Name 1", name: "name1", widget: "string", required: true},
+          {label: "Designation 1", name: "designation1", widget: "string", required: true},
+          {label: Photo 1, name: "photo1", widget: image, required: true}, 
+          {label: "Name 2", name: "name2", widget: "string", required: true},
+          {label: "Designation 2", name: "designation2", widget: "string", required: true},
+          {label: Photo 2, name: "photo2", widget: image, required: true}, 
+        ]
+      }
+      - {label: Section 4, name: section4, widget: object, 
+        fields: [
+          {label: "Video 1", name: "video1", widget: string, required: false}, 
+          {label: "Video 2", name: "video2", widget: string, required: false},
+          {label: "Video 3", name: "video3", widget: string, required: false},
+          {label: "Video 4", name: "video4", widget: string, required: false},
+          {label: "Video 5", name: "video5", widget: string, required: false},
+          {label: "Video 6", name: "video6", widget: string, required: false},
+          {label: "Video 7", name: "video7", widget: string, required: false},
+          {label: "Video 8", name: "video8", widget: string, required: false},
+          {label: "Video 9", name: "video9", widget: string, required: false},
+          {label: "Video 10", name: "video10", widget: string, required: false},
+          {label: "Video 11", name: "video11", widget: string, required: false},
+          {label: "Video 12", name: "video12", widget: string, required: false},
+          {label: "Video 13", name: "video13", widget: string, required: false},
+          {label: "Video 14", name: "video14", widget: string, required: false},
+        ]
+      }
+
   - name: "homepageInsurance"
     label: "Homepage - Insurance"
     folder: "src/markdown/insurance"

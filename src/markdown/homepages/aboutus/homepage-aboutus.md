@@ -28,7 +28,7 @@ section3:
   name2: RON SALLY
   designation2: BROKER OF RECORD
   photo1: /img/sunil-sally.png
-  photo 2: /img/ron-sally.png
+  photo2: /img/ron-sally.png
 section4:
   video1: 83xUvyr1Jxk
   video2: roUtNCkl0OU
