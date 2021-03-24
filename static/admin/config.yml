@@ -316,6 +316,23 @@ collections:
         ]
       }
 
+  - name: "homepageOurTeam"
+    label: "Homepage - Our Team"
+    folder: "src/markdown/homepages/ourteam"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ourteam"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Our Team"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+
   - name: "homepageInsurance"
     label: "Homepage - Insurance"
     folder: "src/markdown/insurance"
@@ -366,6 +383,32 @@ collections:
         {label: Image 14, name: "image14", widget: image, required: false}, 
         {label: Image 15, name: "image15", widget: image, required: false}, 
         {label: Image 16, name: "image16", widget: image, required: false}, 
+        ]
+      }
+
+  - name: "team"
+    label: "Team"
+    folder: "src/markdown/team"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
+      - {label: "Name", name: "title", widget: "string", required: true}
+      - {label: "Designation", name: "designation", widget: "string", required: true}
+      - {label: "Photo", name: "photo", widget: image, required: true}
+      - {label: "About Me", name: "aboutme", widget: text, required: false}
+      - {label: "Phone Number", name: "phone", widget: string, required: true}
+      - {label: "Email", name: "email", widget: "string", required: true}
+      - {label: "Is CEO?", name: "isceo", widget: "boolean", required: false, default: false}
+      - {label: "Location", name: "location", widget: "string", required: false}
+      - {label: "Website", name: "website", widget: "string", required: false}
+      - {label: Social Links, name: social, widget: object, 
+        fields: [
+        {label: "Instagram", name: "instagram", widget: string, required: false}, 
+        {label: "Facebook", name: "facebook", widget: string, required: false}, 
+        {label: "Linkedin", name: "linkedin", widget: string, required: false}, 
+        {label: "Twitter", name: "twitter", widget: string, required: false}, 
+        {label: "Youtube", name: "youtube", widget: string, required: false}, 
         ]
       }
   
