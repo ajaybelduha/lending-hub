@@ -16,6 +16,10 @@ At Lendinghub.ca, we aim to innovate, create and grow. We seek opportunities tha
 
 
 
+
+
+
+
 #### **Our Technology**
 
 Our innovative technological systems allow brokers to operate their businesses efficiently. Our tech team provides solutions for training, communication, and growing online resource centers.
