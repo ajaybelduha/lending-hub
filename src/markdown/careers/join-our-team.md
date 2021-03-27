@@ -6,7 +6,15 @@ title: Join our Team
 
 At Lendinghub.ca, we aim to innovate, create and grow. We seek opportunities that will help us and our team expand our knowledge, learn what is new in the industry and how we can implement these techniques to better ourselves and the company. Any opportunity we take on, we can achieve. Do you believe you have what it takes to become a part of the Lendinghub.ca Family?
 
+
+
+![team](/img/team.jpg "Team of careers")
+
+
+
 ## So, why join the Lendinghub.ca team?
+
+
 
 #### **Our Technology**
 
