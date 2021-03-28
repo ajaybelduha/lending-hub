@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { Carousel } from 'react-responsive-carousel';
 import styled from 'styled-components'
 import Layout from '../../components/Layout';
-import { BlackButtonLink, ButtonNoStyle } from '../../components/common/common'
+import { BlackButtonLink, ButtonNoStyle, UnderlinedLink } from '../../components/common/common'
 
 const FirstTimeHomeBuyer = () => {
     return (
@@ -62,7 +62,7 @@ const FirstTimeHomeBuyer = () => {
                                     <li><p>You meet the minimum down payment requirements with traditional funds (savings, withdrawal/collapse of a Registered Retirement Savings Plan (RRSP), or a non-repayable financial gift from a relative/immediate family member)</p></li>
                                 </ul>
                                 <div className="button-container">
-                                    <BlackButtonLink to="https://www.placetocallhome.ca/fthbi/eligibility-savings-calculator">Get Started</BlackButtonLink>
+                                    <Link style={{ color: 'red', textDecoration: 'underline' }} to="https://www.placetocallhome.ca/fthbi/eligibility-savings-calculator">Eligibility and Savings Calculator</Link>
                                 </div>
                             </div>
                             <div className="image carousel">
@@ -165,7 +165,6 @@ const FTHBContainer = styled.div`
         }
         .button-container {
             margin-top: 3rem;
-            width: 10rem;
         }
         .carousel {
             a {

@@ -202,9 +202,8 @@ const HeroContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     .team-block {
-      width: 45%;
-      margin-top: 2rem;
-      margin-right: 3rem;
+      width: 35%;
+      margin: auto;
       transition-duration: .3s;
       transition-property: transform;
       transition-timing-function: ease-out;
@@ -260,6 +259,7 @@ const HeroContainer = styled.div`
       .teams-blocks {
         flex-wrap: wrap;
         .team-block {
+          width: 100%;
           margin-right: 0;
           img {
             width: 100%;
@@ -277,9 +277,11 @@ const HeroContainer = styled.div`
        }
      }
      .items {
+      flex-wrap: wrap;
+    justify-content: center;
        .team-block {
-         width: 45%;
-         margin: 0px 0.5rem;
+         width: 100%;
+         margin: auto;
          height: inherit;
          margin-bottom: 3rem;
        }

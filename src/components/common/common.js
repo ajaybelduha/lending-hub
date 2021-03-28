@@ -238,3 +238,25 @@ export const SliderContainer = styled.div`
     width: 90%;
   }
 `
+
+export const BackButton = ({ setStep }) => {
+  const BackStyle = styled.div`
+    button {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem;
+      img {
+        width: 25px;
+        margin-right: 1rem;
+      }
+    }
+  `
+  return (
+    <BackStyle>
+      <ButtonNoStyle onClick={setStep}>
+        <img src="/img/back-arrow.svg" alt="back-arrow" />
+        <p className="title-1">Back</p>
+      </ButtonNoStyle>
+    </BackStyle>
+  )
+}

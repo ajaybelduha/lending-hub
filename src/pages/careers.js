@@ -51,6 +51,7 @@ const CarrersContainer = styled.div`
     }
     h2 {
       font-size: 1.5rem;
+      margin-bottom: 2rem;
     }
     li {
       margin: 2rem 0;
