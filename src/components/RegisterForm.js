@@ -7,11 +7,9 @@ import classNames from 'classnames'
 import {
   InputField,
   Checkbox,
-  BlackButtonLink,
-  BlackButton,
+  BlackButton
 } from '../components/common/common'
-import { types, MortgageTypes, CardCategories, PIPELINE_ID } from '../utils/constants'
-import { createPipelineContent, submitData } from '../service/Pipelinecrm'
+import { createPipelineContent } from '../service/Pipelinecrm'
 import { validateRegisterDetails, createDataForCRM } from '../components/common/utils'
 
 const RegisterForm = (props) => {
@@ -19,6 +17,7 @@ const RegisterForm = (props) => {
   const [formValues, setFormValues] = useState({})
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     const formData = createDataForCRM(props)
     setFormValues(formData)
   }, [])
@@ -36,15 +35,10 @@ const RegisterForm = (props) => {
 
       const data = createPipelineContent(props, values, formValues)
       // pipeline crm api changes and register form code made better
-
-      console.log("Data")
-      console.log(data)
       // submitData(data, props)
 
       const selections = props.selections
       const redirect = props.redirectTo
-      console.log("FORM SELECTIONS")
-      console.log(props.selections)
       navigate(redirect, {
         state: { selections },
       });

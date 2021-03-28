@@ -70,6 +70,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
 const BlogPostContainer = styled.div`
   margin-top: 6%;
+  padding: 0 20%;
   .headings {
     margin-bottom: 50px;
   }
@@ -94,6 +95,7 @@ const BlogPostContainer = styled.div`
   }
   @media screen and (max-width: 786px) {
     margin-top: 15%;
+    padding: 0 0%;
   }
 `
 

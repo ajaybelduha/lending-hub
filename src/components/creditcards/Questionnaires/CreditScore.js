@@ -19,7 +19,7 @@ const CreditScore = (props) => {
     } else if (score > 720 && score <= 850) {
       setRating('Excellent')
     }
-  }, score)
+  }, [score])
 
   const setScoreValue = (val) => {
     setScore(val)

@@ -31,7 +31,7 @@ const CalculatorTypes = () => {
     return (
         <Layout>
             <Hero
-                title="All the Mortgage Calculators"
+                title="All Calculators"
                 subtitle="Here you will find all the mortgage calculators you will even need in the home buying process."
                 imageSrc="/img/calculators.jpg"
                 blockItems={items}

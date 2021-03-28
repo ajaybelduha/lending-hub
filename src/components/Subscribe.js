@@ -142,6 +142,9 @@ const SubscribeContainer = styled.section`
     .subscribe-container {
       padding: 10px;
       flex-wrap: wrap;
+      .input {
+        max-width: inherit;
+      }
       .text {
       width: 100%
     }

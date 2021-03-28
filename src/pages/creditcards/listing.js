@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Layout from '../../components/Layout'
 import ListingFilter from '../../components/creditcards/ListingFilter'
@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 
 const CCListing = (response) => {
   const { state } = response.location
-  const questionFilters = state?.selections;
+  const questionFilters = state?.selections
   const { creditCards } = response.data
   const cardsData = creditCards.edges
   const [cardsListing, setCardsListing] = useState()
@@ -24,12 +24,19 @@ const CCListing = (response) => {
       const {
         creditScore,
         cardCategory,
-        userCategory,
+        userCategory
       } = item.node.frontmatter
-      const requiredCreditScore = filters.creditScore.toLowerCase() === creditScore.toLowerCase();
+
+      let requiredCreditScore
+      if (filters.creditScore === 'Excellent') { // Show Good also when excellent
+        requiredCreditScore = (filters.creditScore.toLowerCase() === creditScore.toLowerCase()) || creditScore.toLowerCase() === 'good'
+      } else {
+        requiredCreditScore = filters.creditScore.toLowerCase() === creditScore.toLowerCase()
+      }
+      
       const requiredCategory = filters.category.toLowerCase() === userCategory.toLowerCase()
       const requiredCardFor = filters.cardFor.toLowerCase() === cardCategory.toLowerCase()
-      
+
       if (requiredCategory && requiredCreditScore && requiredCardFor) {
         return true
       } else {
@@ -40,8 +47,6 @@ const CCListing = (response) => {
   }, [filters])
 
   const setFilteredData = (items) => {
-    console.log("ITEMS")
-    console.log(items)
     setFilters(items)
   }
   return (
@@ -60,10 +65,11 @@ const CCListing = (response) => {
             setFiltered={setFilteredData}
           />
           <div className="cards-container">
-            {cardsFiltered?.length > 0 ? cardsFiltered.map((item) => (
+            {cardsFiltered?.length > 0
+              ? cardsFiltered.map((item) => (
               <CardBlock cardData={item} />
-            )) : 
-            <div className="no-cards-error">
+              ))
+              : <div className="no-cards-error">
               <h1 className="title-24">No cards match the above query. Please try again.</h1>
             </div>}
           </div>

@@ -78,7 +78,7 @@ const OurPartnersContainer = styled.div`
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             .item {
                 padding: 1rem;
                 width: 180px;

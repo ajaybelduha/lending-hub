@@ -25,9 +25,7 @@ const Hero = (props) => {
                 </div>
               </div>
               <div className="column is-half banner-image has-text-right">
-                {/* {imageSrc && <img height="25em" src={imageSrc} alt="home hero image" />} */}
-                {/* <Image fixed={HeroImage} /> */}
-                <Image fluid={imageSrc?.childImageSharp?.fluid} />
+                {imageSrc.childImageSharp ? <Image fluid={imageSrc?.childImageSharp?.fluid} /> : <img height="25em" src={imageSrc} alt="home hero image" />}
               </div>
             </div>
           </div>

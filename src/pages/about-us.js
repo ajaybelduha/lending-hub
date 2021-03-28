@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { graphql } from 'gatsby';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Image from 'gatsby-image'
 import classNames from 'classnames'
 import AniLink from 'gatsby-plugin-transition-link'
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import YouTube from 'react-youtube';
-
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
+import YouTube from 'react-youtube'
 
 const responsive = {
   superLargeDesktop: {
@@ -28,7 +27,7 @@ const responsive = {
     breakpoint: { max: 786, min: 0 },
     items: 1
   }
-};
+}
 
 // const videoIds = ['83xUvyr1Jxk',
 //   'roUtNCkl0OU', 'VHZI2TnedlA', 'vT7fX45FNTI',
@@ -40,40 +39,39 @@ const opts = {
   height: '100%',
   width: '100%',
   playerVars: {
-    autoplay: 0,
-  },
-};
+    autoplay: 0
+  }
+}
 
 const items = [
   {
     image: '/img/icons/best_rates.png',
-    title: 'Best Rates',
+    title: 'Best Rates'
   },
   {
     image: '/img/icons/money.png',
-    title: 'Save Money',
+    title: 'Save Money'
   },
   {
     image: '/img/icons/innovation.png',
-    title: 'Innovation',
+    title: 'Innovation'
   },
   {
     image: '/img/icons/customized_solutions.png',
-    title: 'Customized Solutions',
+    title: 'Customized Solutions'
   },
   {
     image: '/img/icons/customer_service.png',
-    title: 'Customer Service',
+    title: 'Customer Service'
   },
   {
     image: '/img/icons/time.png',
-    title: 'Save Time',
-  },
+    title: 'Save Time'
+  }
 ]
 
-
-const AboutUs = ({data}) => {
-  const response = data.aboutus.frontmatter;
+const AboutUs = ({ data }) => {
+  const response = data.aboutus.frontmatter
   const videoIds = Object.values(response.section4)
 
   const [showModal, setShowModal] = useState(false)
@@ -107,7 +105,6 @@ const AboutUs = ({data}) => {
             <TeamBlock slug={'/markdown/team/ron-sally-1/'} photo={response.section3.photo2} name={response.section3.name2} designation={response.section3.designation2} />
           </div>
 
-
         </div>
         <div className="videos-carousel-container container">
           <Carousel
@@ -119,7 +116,6 @@ const AboutUs = ({data}) => {
             arrows={true}
           >
 
-
             {videoIds.map(item => {
               return (
                 <div className="amazingcarousel-item-container" style={{ position: 'relative', margin: '0px 2px' }}>
@@ -130,7 +126,7 @@ const AboutUs = ({data}) => {
                       </a>
                       <div className="amazingcarousel-play-video" style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%', cursor: 'pointer', backgroundImage: 'url("https://remaxmillennium.ca/wp-content/plugins/FreemakeSliderPlugin/engine/playvideo-64-64-0.png")', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }} />
                       <div className="amazingcarousel-hover-effect" style={{ display: 'none', position: 'absolute', left: 0, top: 0, width: '100%', height: '100%', cursor: 'pointer', backgroundImage: 'url("https://remaxmillennium.ca/wp-content/plugins/FreemakeSliderPlugin/engine/hoveroverlay-64-64-8.png")', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }} />
-                      <div style={{ display: 'none', position: 'absolute', bottom: 6, right: 6, font: '12px Arial,Tahoma,Helvetica,sans-serif', color: '#666', padding: '2px 4px', WebkitBorderRadius: 2, MozBorderRadius: 2, borderRadius: 2, backgroundColor: '#fff', opacity: '0.9', filter: 'alpha(opacity=90)', cursor: 'pointer' }}><a href="http://natribu.org/" style={{ textDecoration: 'none', font: '12px Arial,Tahoma,Helvetica,sans-serif', color: '#333' }} target="_blank">WordPress Carousel Free Version</a></div>
+                      <div style={{ display: 'none', position: 'absolute', bottom: 6, right: 6, font: '12px Arial,Tahoma,Helvetica,sans-serif', color: '#666', padding: '2px 4px', WebkitBorderRadius: 2, MozBorderRadius: 2, borderRadius: 2, backgroundColor: '#fff', opacity: '0.9', filter: 'alpha(opacity=90)', cursor: 'pointer' }}><a href="http://natribu.org/" style={{ textDecoration: 'none', font: '12px Arial,Tahoma,Helvetica,sans-serif', color: '#333' }} target="_blank" rel="noreferrer">WordPress Carousel Free Version</a></div>
                     </div>
                   </button>
                 </div>
@@ -139,8 +135,8 @@ const AboutUs = ({data}) => {
 
           </Carousel>
         </div>
-        <Modal showModal={showModal} 
-          setShowModal={setShowModal} 
+        <Modal showModal={showModal}
+          setShowModal={setShowModal}
           videoId={videoId}
         />
       </AboutUsContainer>
@@ -148,7 +144,7 @@ const AboutUs = ({data}) => {
   )
 }
 
-const TeamBlock = ({photo, name, designation, slug}) => {
+const TeamBlock = ({ photo, name, designation, slug }) => {
   return (
     <div className="team-block has-text-centered">
       <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
@@ -203,7 +199,7 @@ const Hero = (props) => {
   )
 }
 
-const Modal = ({showModal, setShowModal, videoId}) => {
+const Modal = ({ showModal, setShowModal, videoId }) => {
   const responsiveData = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -222,20 +218,20 @@ const Modal = ({showModal, setShowModal, videoId}) => {
       breakpoint: { max: 786, min: 0 },
       items: 1
     }
-  };
+  }
 
   const stopVideo = () => {
-    controlVideo('stopVideo');
-    setShowModal(false);
+    controlVideo('stopVideo')
+    setShowModal(false)
   }
 
   const controlVideo = (vidcontrol) => {
-    var div = document.getElementById("thevideo");
-    var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
-    iframe.postMessage('{"event":"command","func":"' + vidcontrol + '","args":""}', '*');
-}
+    const div = document.getElementById('thevideo')
+    const iframe = div.getElementsByTagName('iframe')[0].contentWindow
+    iframe.postMessage('{"event":"command","func":"' + vidcontrol + '","args":""}', '*')
+  }
   return (
-    <div className={classNames('modal', {'is-active': showModal})}>
+    <div className={classNames('modal', { 'is-active': showModal })}>
       <div className="modal-background"></div>
       <div className="modal-content">
           <div id="thevideo">
@@ -389,9 +385,8 @@ margin-top: 3rem;
     display: flex;
     justify-content: flex-start;
     .team-block {
-      width: 45%;
-      margin-top: 2rem;
-      margin-right: 3rem;
+      width: 35%;
+      margin: auto;
       transition-duration: .3s;
       transition-property: transform;
       transition-timing-function: ease-out;
@@ -448,7 +443,7 @@ margin-top: 3rem;
     flex-wrap: wrap;
     justify-content: center;
     .team-block {
-      margin-top: 2rem;
+      margin-top: 4rem;
       margin-right: 0rem;
       img {
         width: 100%;
@@ -458,4 +453,4 @@ margin-top: 3rem;
   }
 `
 
-export default AboutUs;
+export default AboutUs

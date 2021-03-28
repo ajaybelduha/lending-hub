@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
+import { ButtonNoStyle, BackButton } from '../../../components/common/common'
 import Layout from '../../../components/Layout'
 import RefinanceType from '../../../components/mortgages/refinance/Questionnaire/RefinanceType'
 import PropertyType from '../../../components/mortgages/refinance/Questionnaire/PropertyType'
@@ -11,6 +12,7 @@ import StepProgressBar from '../../../components/ProgressSteps';
 import { types } from '../../../utils/constants'
 
 const QuestionnaireModal = (props) => {
+  const percentStep = 50
   const [totalSteps, setTotalSteps] = useState(4)
   const [step, setStep] = useState(1)
   const [percent, setPercent] = useState(0);
@@ -31,7 +33,7 @@ const QuestionnaireModal = (props) => {
     data[key] = value
     await setSelections(data)
     setStep(step + 1)
-    setPercent(percent + 100/(totalSteps - 1))
+    setPercent(percent + percentStep)
   }
 
   const submitAnswers = (key, value) => {
@@ -53,11 +55,21 @@ const QuestionnaireModal = (props) => {
     return mortgageType
   }
 
+  const onBackButtonClick = () => {
+    if (step > 1) {
+      setStep(step - 1)
+      setPercent(percent - percentStep)
+    } else {
+      navigate('/mortgages')
+    }
+  }
+
   const journey = props?.location?.state?.id === 2 ? 'refinance' : 'renewal'
 
   return (
     <Layout>
       <QuestionnaireModalContainer>
+        <BackButton setStep={onBackButtonClick} />
         <div className="container">
           {/* <div className="modal-background"></div> */}
           <StepProgressBar percent={percent} totalSteps={totalSteps} />
