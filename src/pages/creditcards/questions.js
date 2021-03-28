@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { navigate } from 'gatsby'
 import Layout from '../../components/Layout'
 import { types } from '../../utils/constants'
+import { BackButton } from '../../components/common/common'
 import CardTypes from '../../components/creditcards/Questionnaires/CardTypes'
 import CardSubCategory from '../../components/creditcards/Questionnaires/CardSubCategory'
 import CreditScore from '../../components/creditcards/Questionnaires/CreditScore'
@@ -13,6 +14,7 @@ import RegisterForm from '../../components/RegisterForm'
 import StepProgressBar from '../../components/ProgressSteps';
 
 const QuestionnaireModal = (props) => {
+  let percentStep = 50
   const [totalSteps, setTotalSteps] = useState(3)
   const [step, setStep] = useState(1)
   const [percent, setPercent] = useState(0);
@@ -33,6 +35,7 @@ const QuestionnaireModal = (props) => {
     if (key === 'cardFor' && value === 'rewards') {
       setStep(step + 1)
       setTotalSteps(4)
+      percentStep = 34
     } else if (key === 'cardFor' && value !== 'rewards') {
       data['rewardType'] = 'none';
       setStep(step + 2)
@@ -40,16 +43,27 @@ const QuestionnaireModal = (props) => {
       setStep(step + 1)
     }
     await setSelections(data)
-    setPercent(percent + 100/(totalSteps - 1))
+    setPercent(percent + percentStep)
   }
   const submitAnswers = (key, value) => {
     navigate('/creditcards/listing', {
       state: { selections },
     })
   }
+
+  const onBackButtonClick = () => {
+    if (step > 1) {
+      setStep(step - 1)
+      setPercent(percent - percentStep)
+    } else {
+      navigate('/creditcards')
+    }
+  }
+
   return (
     <Layout>
       <QuestionnaireModalContainer>
+      <BackButton setStep={onBackButtonClick} />
         <div className="container">
           {/* <div className="modal-background"></div> */}
           <StepProgressBar percent={percent} totalSteps={totalSteps} />
