@@ -250,6 +250,9 @@ export const BackButton = ({ setStep }) => {
         margin-right: 1rem;
       }
     }
+    @media screen and (max-width: 786px) {
+      margin-bottom: 2rem;
+    }
   `
   return (
     <BackStyle>
