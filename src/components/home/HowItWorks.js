@@ -1,52 +1,112 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Image from 'gatsby-image'
+import classNames from 'classnames'
+import { useScrollRestoration } from 'gatsby'
 
-const HowItWorks = () => {
-  return (
-    <HowItWorksContainer>
-      <div className="container has-text-centered">
-        <h1 className="section-title mb-3">How it works</h1>
-        <div className="columns">
-          <div className="column mx-4">
-            <img src="/img/icons/conversation.svg" />
-            <h3 className="title-3">Answer a few questions</h3>
-            <h4 className="section-subtitle">
-              Tell us about the type of rates you're looking for & the home you
-              want to buy.
-            </h4>
-          </div>
-          <div className="column mx-4">
-            <img src="/img/icons/test-results.svg" />
-            <h3 className="title-3">Get customized results</h3>
-            <h4 className="section-subtitle">
-              Compare current rate quotes from dozens of lenders, all in one
-              place.
-            </h4>
-          </div>
-          <div className="column mx-4">
-            <img src="/img/icons/transfer.svg" />
-            <h3 className="title-3">Contact when you're ready</h3>
-            <h4 className="section-subtitle">
-              See a quote you like? Contact the lender to learn more and lock in
-              your rate.
-            </h4>
-          </div>
+const HowItWorks = ({ stepItems }) => {
+    const [ image, setImage ] = useState(stepItems[0].image)
+    const [ selectedIndex, setSelectedIndex ] = useState(0)
+    return(
+      <div className="container">
+        <h1 className="section-title mb-3 has-text-centered mt-6">How it works</h1>
+        <HowItWorksContainer>
+            <div>
+                {stepItems.map((item, index) => {
+                    return(
+                        <StepItem 
+                            item={item} 
+                            index={index} 
+                            setImage={setImage} 
+                            stepItems={stepItems} 
+                            selectedIndex={selectedIndex}
+                            setSelectedIndex={setSelectedIndex}
+                        />
+                    )
+                })}
+            </div>
+            <div>
+                <div className="steps-image">
+                    {/* <img src={image} alt="home hero image" /> */}
+                    <Image fluid={image?.childImageSharp.fluid} />
+                </div>
+            </div>
+        </HowItWorksContainer>
         </div>
-      </div>
-    </HowItWorksContainer>
-  )
+    )
 }
 
-const HowItWorksContainer = styled.section`
-  img {
-    margin-bottom: 1rem;
-  }
-  h3 {
-    margin-bottom: 1rem;
-  }
-  h4 {
-    color: #636366;
-  }
+const StepItem = ({item, index, setImage, stepItems, selectedIndex, setSelectedIndex}) => {
+    
+    const setFadeOut = () => {
+        setSelectedIndex(index)
+        setImage(stepItems[index].image)
+    }
+
+    return(
+        <div onClick={() => setFadeOut()} 
+            className={classNames('step-item', {'fadeout': (selectedIndex === index)}, `step-${index}`)}>
+            <div className="index">{index+1}</div>
+            <div className="item">
+                <h3 className="head">{item.title}</h3>
+                <p className="desc">{item.subtitle}</p>
+            </div>
+        </div>
+    )
+}
+
+const HowItWorksContainer = styled.div`
+    margin: 5rem 0;
+    display: flex;
+    .step-item {
+        opacity: 0.3;
+        display: flex;
+        align-items: flex-end;
+        width: 70%;
+        margin-top: 3rem;
+        transition: all .25s linear;
+        cursor: pointer;
+        .index {
+            font-family: "Poppins Bold";
+            font-size: 4rem;
+            margin-right: 1.5rem;
+            width: 7rem;
+        }
+        .item {
+            .head {
+                font-family: "Poppins SemiBold";
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .steps-image {
+        width: 550px;
+        img {
+            width: 550px;
+        }
+    }
+    .fadeout {
+        opacity: 1;
+    }
+    @media screen and (max-width: 786px) {
+        margin-top: 3rem;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        .step-item {
+            width: 100%;
+            margin-bottom: 3rem;
+            align-items: start;
+            .index {
+                margin-left: 1rem;
+            }
+        }
+        .steps-image {
+            width: 100%;
+            height: 300px;
+        }
+    }
 `
 
-export default HowItWorks
+export default HowItWorks;

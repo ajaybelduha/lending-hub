@@ -1,5 +1,5 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React, { useState } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import styled from 'styled-components'
 import Img from 'gatsby-image'
@@ -7,6 +7,7 @@ import Layout from '../../components/Layout'
 
 const BlogIndex = ({ data, navigate, location, n }) => {
   const posts = data.allMarkdownRemark.edges
+  const [filteredPosts , setFilteredPosts] = useState(posts)
 
   if (posts.length === 0) {
     return (
@@ -22,6 +23,36 @@ const BlogIndex = ({ data, navigate, location, n }) => {
     )
   }
 
+  const onFilterClick = (e) => {
+    e.preventDefault();
+    const name = e.target.name;
+    let filteredData = posts;
+
+    switch(name) {
+      case 'mortgage':
+        filteredData = posts.filter(item => item.node.frontmatter.tags.includes('mortgage'))
+        setFilteredPosts(filteredData)
+        break;
+      case 'credit-card': {}
+        filteredData = posts.filter(item => item.node.frontmatter.tags.includes('credit_card'))
+        setFilteredPosts(filteredData)
+        break;
+      case 'loans':
+        filteredData = posts.filter(item => item.node.frontmatter.tags.includes('loans'))
+        setFilteredPosts(filteredData)
+        break;  
+      case 'insurance':
+        filteredData = posts.filter(item => item.node.frontmatter.tags.includes('insurance'))
+        setFilteredPosts(filteredData)
+        break;
+      case 'all':
+        setFilteredPosts(posts)
+        break;
+      default:
+      setFilteredPosts(posts)
+    }
+  }
+
   return (
     <Layout>
       <BlogIndexContainer>
@@ -32,10 +63,18 @@ const BlogIndex = ({ data, navigate, location, n }) => {
           </div>
         </div>
         <div className="container">
-          <div className="section-title">Latest posts</div>
-          <hr />
+          <div className="section-title">Latest posts</div><br/>
+          <div class="tabs">
+            <ul>
+              <li className="is-active"><a name="all" onClick={onFilterClick}>All</a></li>
+              <li><a name="mortgage" onClick={onFilterClick}>Mortgage</a></li>
+              <li><a name="credit-card" onClick={onFilterClick}>Credit Card</a></li>
+              <li><a name="loans" onClick={onFilterClick}>Loans</a></li>
+              <li><a name="insurance" onClick={onFilterClick}>Insurance</a></li>
+            </ul>
+          </div>
           <div className="list-items">
-            {posts.map((post) => {
+            {filteredPosts.map((post) => {
               const title = post.node.frontmatter.title || post.node.fields.slug
 
               return (

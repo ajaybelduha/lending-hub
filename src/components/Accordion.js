@@ -10,7 +10,7 @@ class Accordion extends React.Component {
           <ul {...{ className: 'accordion-list' }}>
             {moreDetails.map((data, key) => {
               return (
-                <li {...{ className: 'accordion-list__item', key }}>
+                <li {...{ className: 'accordion-list__item' }}>
                   <AccordionItem {...data} />
                 </li>
               )
@@ -48,7 +48,13 @@ class AccordionItem extends React.Component {
         </div>
         <div {...{ className: 'accordion-item__inner' }}>
           <div {...{ className: 'accordion-item__content' }}>
-            <p {...{ className: 'accordion-item__paragraph' }}>{paragraph}</p>
+            <p {...{ className: 'accordion-item__paragraph' }}>
+            <section
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+              itemProp="articleBody"
+              className="body"
+            />
+            </p>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ const featuredCards = graphql`
           featured: { eq: true }
         }
       }
-      limit: 3
+      limit: 4
     ) {
       edges {
         node {
@@ -44,7 +44,7 @@ const Featured = () => {
     <FeaturedContainer>
       <div className="container">
         <h2 className="section-title mb-4">
-          Featured Credit Cards for October 2020
+          Featured Credit Cards
         </h2>
         <div className="columns">
           {cards.map((item) => {
@@ -64,19 +64,20 @@ const Featured = () => {
             )
           })}
         </div>
-        <div className="view-all has-text-centered">
+        {/* <div className="view-all has-text-centered">
           <UnderlinedLink to="/creditcards/listing">View all</UnderlinedLink>
-        </div>
+        </div> */}
       </div>
     </FeaturedContainer>
   )
 }
 
 const FeaturedContainer = styled.section`
+  margin: 5rem 0;
   .card-block {
     border: 1px solid #000000;
     padding: 1rem 2rem;
-    height: 400px;
+    height: fit-content;
     p {
       height: 73px;
       overflow: hidden;

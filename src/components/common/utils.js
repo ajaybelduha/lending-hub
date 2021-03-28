@@ -1,5 +1,5 @@
 
-
+import { types} from '../../utils/constants'
 
 export const getTotalMortgageAndCmhc = (price, payment, num_years) => {
     var downpayment_percent = null;
@@ -93,3 +93,62 @@ export const can_mortgage_payment = (principal, annual_rate, num_years, periods_
 
 	return Math.ceil(payment);
 }
+
+
+export const validateRegisterDetails = (values) => {
+	const errors = {}
+	if (!values.name) {
+	  errors.name = 'Please provide a valid first name'
+	} else if (values.name.length < 3) {
+	  errors.name = 'Please provide a valid first name'
+	}
+  
+	if (!values.lastname) {
+	  errors.lastname = 'Please provide a valid last name'
+	} else if (values.lastname.length < 3) {
+	  errors.lastname = 'Please provide a valid last name'
+	}
+  
+	if (!values.phone) {
+	  errors.phone = 'Please provide a valid 10 digit number'
+	} else if (
+	  !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(
+		values.phone
+	  )
+	) {
+	  errors.phone = 'Please provide a valid 10 digit number'
+	}
+  
+	if (!values.email) {
+	  errors.email = 'Please provide a valid email'
+	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+	  errors.email = 'Invalid email address'
+	}
+  
+	if (!values.terms) {
+	  errors.terms = 'Please accept terms and conditions to proceed'
+	} else if (values.terms[0] !== 'on') {
+	  errors.terms = 'Please accept terms and conditions to proceed'
+	}
+  
+	return errors
+  }
+
+  export const createDataForCRM = (req) => {
+    let data = {};
+    console.log(req)
+    if (req.type === types.CREDITCARD) {
+      data = JSON.parse(JSON.stringify(req.selections));
+      data.annualIncome = JSON.stringify(data.annualIncome)
+      data.expenditure = JSON.stringify(data.expenditure)
+    } else if(req.type === types.MORTGAGE) {
+      data = JSON.parse(JSON.stringify(req.selections?.formValues));
+      data.homeMortgageType = req.selections?.homeMortgageType;
+      data.subsequentBuyerType = req.selections?.subsequentBuyerType;
+      data.propertyType = req.selections?.propertyType;
+      data.refinanceType = req.selections?.refinanceType;
+    }  else {
+      data = JSON.parse(JSON.stringify(req.selections?.formValues));
+    }
+    return data;
+  }

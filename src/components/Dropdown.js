@@ -21,7 +21,7 @@ const Dropdown = (props) => {
           >
             <span>{selectedValue.label}</span>
             <span className="icon is-small">
-              <i className="fa fa-angle-down" aria-hidden="true"></i>
+              <img className="arrow-down" src="/img/icons/down-arrow-simple.svg" />
             </span>
           </button>
         </div>
@@ -57,19 +57,39 @@ const DropdownContainer = styled.div`
       font-family: 'Poppins Medium';
     }
   }
+  .dropdown-content {
+    width: 250px;
+  }
+  .arrow-down {
+    width: 17px;
+  }
   .button {
     border-color: #1c1c1e;
+    width: 250px;
     border-radius: 0;
-    font-size: 18px;
+    font-size: 18px; 
     font-family: 'Poppins Medium';
     border-radius: 0;
-    width: fit-content;
     height: 53px;
     justify-content: space-between;
   }
   a.dropdown-item,
   button.dropdown-item {
     padding-right: 15px;
+  }
+  @media screen and (max-width: 786px) {
+    margin-bottom: 2rem;
+    margin-right: 0;
+    width: 100%;
+    .dropdown {
+      width: 100%;
+      .dropdown-trigger {
+        width: 100%;
+        .button {
+          width: 100%
+        }
+      }
+    }
   }
 `
 

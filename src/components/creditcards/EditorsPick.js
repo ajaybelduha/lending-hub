@@ -9,8 +9,10 @@ const EditorsPick = ({type}) => {
   let blogData = response.allMarkdownRemark.edges
   if (type === "mortgage") {
     blogData = blogData.filter(item => item.node.frontmatter.category === "mortgage")
-  } else {
+  } else if(type === 'credit-card') {
     blogData = blogData.filter(item => item.node.frontmatter.category === "credit-card")
+  } else {
+    blogData = blogData.filter(item => item.node.frontmatter.category === "insurance")
   }
   return (
     <EditorsPickContainer>
@@ -26,7 +28,7 @@ const EditorsPick = ({type}) => {
                 />
             </div>
             <div className="text">
-              <h4 className="title-1 grey-text mb-2">Banking</h4>
+              <h4 className="title-1 grey-text type mb-2">{blogData[0].node.frontmatter.category}</h4>
               <h4 className="title-2 mb-2">
                 {blogData[0].node.frontmatter.title}
               </h4>
@@ -51,6 +53,7 @@ const EditorsPick = ({type}) => {
                           item.node.frontmatter.featuredimage.childImageSharp.fluid
                         }
                       />
+                      <h4 className="type grey-text mt-2">{item.node.frontmatter.category}</h4>
                       <h4 className="title-2 my-3">
                         {item.node.frontmatter.title || item.node.fields.slug}
                       </h4>
@@ -105,17 +108,23 @@ const blogs = graphql`
   `
 
 const EditorsPickContainer = styled.section`
-  margin-top: 50px;
+  margin: 5rem 0;
   .ep-block {
     display: flex;
     border: 1px solid;
     height: 376px;
+    .type {
+      text-transform: capitalize;
+    }
   }
   .ep-other-blocks {
     .block {
       box-shadow: 0px 3px 6px #00000029;
       padding: 1rem;
-      min-height: 315px;
+      min-height: 350px;
+      .type {
+        text-transform: capitalize;
+      }
     }
   }
   .image {
@@ -137,6 +146,12 @@ const EditorsPickContainer = styled.section`
     .heading {
       font-size: 1rem;
       text-transform: none;
+    }
+    .grey-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .meta {
       font-size: 0.8rem;

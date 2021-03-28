@@ -7,63 +7,42 @@ import classNames from 'classnames'
 import {
   InputField,
   Checkbox,
-  BlackButtonLink,
-  BlackButton,
+  BlackButton
 } from '../components/common/common'
-
-const validate = (values) => {
-  const errors = {}
-  if (!values.name) {
-    errors.name = 'Please provide a valid name'
-  } else if (values.name.length < 3) {
-    errors.name = 'Please provide a valid name'
-  }
-
-  if (!values.phone) {
-    errors.phone = 'Please provide a valid 10 digit number'
-  } else if (
-    !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(
-      values.phone
-    )
-  ) {
-    errors.phone = 'Please provide a valid 10 digit number'
-  }
-
-  if (!values.email) {
-    errors.email = 'Please provide a valid email'
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address'
-  }
-
-  if (!values.terms) {
-    errors.terms = 'Please accept terms and conditions to proceed'
-  } else if (values.terms[0] !== 'on') {
-    errors.terms = 'Please accept terms and conditions to proceed'
-  }
-
-  return errors
-}
+import { createPipelineContent } from '../service/Pipelinecrm'
+import { validateRegisterDetails, createDataForCRM } from '../components/common/utils'
 
 const RegisterForm = (props) => {
+
+  const [formValues, setFormValues] = useState({})
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    const formData = createDataForCRM(props)
+    setFormValues(formData)
+  }, [])
+
   const formik = useFormik({
     initialValues: {
       email: '',
       phone: '',
       name: '',
+      lastname: '',
       terms: '',
     },
-    validate,
-    onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
-      let myForm = document.getElementById('mortgage-information');
-      let formData = new FormData(myForm)
-      fetch('/', {
-        method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      }).then(() => console.log('Form successfully submitted')).catch((error) =>
-        alert(error))
-      //props.setValue('formValues', values)
+    validateRegisterDetails,
+    onSubmit: (values, actions) => {
+
+      const data = createPipelineContent(props, values, formValues)
+      // pipeline crm api changes and register form code made better
+      // submitData(data, props)
+
+      const selections = props.selections
+      const redirect = props.redirectTo
+      navigate(redirect, {
+        state: { selections },
+      });
+      
     },
   })
   return (
@@ -74,7 +53,14 @@ const RegisterForm = (props) => {
         </div>
         <div className="mb-6 has-text-centered">Get Instant Access</div>
         <div className="form-container">
-          <form name="mortgage-information" method="POST" id="mortgage-information" netlify onSubmit={formik.handleSubmit}>
+          <form 
+            name="contact" 
+            method="post"
+            action="/thanks/"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={formik.handleSubmit}
+          >
             <input type="hidden" name="form-name" value="mortgage-information" />
             <div className="columns">
               <div className="column">
@@ -85,7 +71,7 @@ const RegisterForm = (props) => {
                       id="name"
                       name="name"
                       type="text"
-                      placeholder="Name"
+                      placeholder="First Name"
                       className={classNames('input', {
                         'is-danger': formik.errors.name,
                       })}
@@ -96,6 +82,31 @@ const RegisterForm = (props) => {
                   </div>
                   {formik.touched.name && formik.errors.name ? (
                     <p className="help is-danger">{formik.errors.name}</p>
+                  ) : null}
+                </div>
+              </div>
+            </div>
+
+            <div className="columns">
+              <div className="column">
+                <div className="field">
+                  <div className="control">
+                    {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
+                    <InputField
+                      id="lastname"
+                      name="lastname"
+                      type="text"
+                      placeholder="Last Name"
+                      className={classNames('input', {
+                        'is-danger': formik.errors.lastname,
+                      })}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.lastname}
+                    />
+                  </div>
+                  {formik.touched.lastname && formik.errors.lastname ? (
+                    <p className="help is-danger">{formik.errors.lastname}</p>
                   ) : null}
                 </div>
               </div>

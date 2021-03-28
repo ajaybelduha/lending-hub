@@ -65,25 +65,25 @@ const Navbar = class extends React.Component {
               <AniLink hex="#000000" paintDrip className="navbar-item" to="/mortgages">
                 Mortgages
               </AniLink>
-              <AniLink hex="#000000" paintDrip className="navbar-item" to="/loans">
-                Loans
-              </AniLink>
               <AniLink hex="#000000" paintDrip className="navbar-item" to="/creditcards">
                 Credit Cards
               </AniLink>
               <AniLink hex="#000000" paintDrip className="navbar-item" to="/insurance">
                 Insurance
               </AniLink>
-              <AniLink hex="#000000" paintDrip className="navbar-item" to="/banking">
+              {/* <AniLink hex="#000000" paintDrip className="navbar-item" to="/banking">
                 Banking
+              </AniLink> */}
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/calculator-types">
+                Calculators
               </AniLink>
               <AniLink hex="#000000" paintDrip className="navbar-item" to="/blogs">
                 Blog
               </AniLink>
-              <AniLink hex="#000000" paintDrip className="navbar-item" to="/aboutus">
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/about-us">
                 About Us
               </AniLink>
-              <AniLink hex="#000000" paintDrip className="navbar-item" to="/contactus">
+              <AniLink hex="#000000" paintDrip className="navbar-item" to="/contact-us">
                 Contact Us
               </AniLink>
               {/* <AniLink paintDrip to="/creditcards">

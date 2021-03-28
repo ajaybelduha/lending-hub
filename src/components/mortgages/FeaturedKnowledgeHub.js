@@ -43,7 +43,8 @@ const FeaturedKnowledgeHub = () => {
             <div className="column">
               <AniLink paintDrip hex="#000000" to={item.node.fields.slug}>
                 <div className="kh-block">
-                  <h3 className="bold is-size-4">{item.node.frontmatter.title}</h3>
+                  <h3 className="semibold is-size-4">{item.node.frontmatter.title}</h3>
+                  <p className="">{item.node.frontmatter.description}</p>
                   <div className="description">
                     <p
                       dangerouslySetInnerHTML={{
@@ -54,7 +55,7 @@ const FeaturedKnowledgeHub = () => {
                       itemProp="description"
                     />
                   </div>
-                  <p className="bold">Continue reading...</p>
+                  <p className="bold">Know More...</p>
                 </div>
               </AniLink>
             </div>
@@ -69,15 +70,19 @@ const FeaturedKnowledgeHubContainer = styled.section`
   .kh-block {
     padding: 1rem;
     display: flex;
+    transition: all .25s linear;
     flex-direction: column;
     justify-content: space-between;
-    height: 500px;
+    height: 300px;
     min-width: 360px;
     border-left: 4px solid #151515;
     box-shadow: 0px 4px 12px #00000029;
+    :hover {
+      box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8);
+    }
     .description {
       display: -webkit-box;
-      -webkit-line-clamp: 10;
+      -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }

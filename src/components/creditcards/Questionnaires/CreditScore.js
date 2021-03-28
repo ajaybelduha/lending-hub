@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { ButtonNoStyle, SliderContainer } from '../../common/common'
+import { SliderContainer, BlackButton, BlackButtonInverse } from '../../common/common'
 import Fade from 'react-reveal/Fade'
 
 const CreditScore = (props) => {
@@ -19,7 +19,7 @@ const CreditScore = (props) => {
     } else if (score > 720 && score <= 850) {
       setRating('Excellent')
     }
-  }, score)
+  }, [score])
 
   const setScoreValue = (val) => {
     setScore(val)
@@ -48,10 +48,14 @@ const CreditScore = (props) => {
           <div className="credit-text mt-6">{rating}</div>
           <hr />
           <div className="buttons-container">
-            <ButtonNoStyle>Clear</ButtonNoStyle>
-            <ButtonNoStyle onClick={() => props.setValue('creditScore', rating)}>
-              Apply
-            </ButtonNoStyle>
+            <div className="button-cancel">
+             <BlackButtonInverse>Clear</BlackButtonInverse>
+            </div>
+            <div className="button-apply">
+              <BlackButton onClick={() => props.setValue('creditScore', rating)}>
+                Apply
+              </BlackButton>
+            </div>
           </div>
         </SliderContainer>
       </Fade>
@@ -62,13 +66,6 @@ const CreditScore = (props) => {
 const CreditScoreContainer = styled.div`
   text-align: center;
   margin-top: 10%;
-  .heading-29 {
-    font-size: 29px;
-  }
-  .buttons-container {
-    display: flex;
-    justify-content: space-between;
-  }
 `
 
 export default CreditScore

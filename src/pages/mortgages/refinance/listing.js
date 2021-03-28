@@ -4,7 +4,7 @@ import Layout from '../../../components/Layout'
 import Dropdown from '../../../components/Dropdown'
 import ListingFilter from '../../../components/mortgages/refinance/ListingFilter'
 import { graphql, useStaticQuery } from 'gatsby'
-import MortgageBlock from '../../../components/mortgages/MortgageBlock'
+import MortgageBlock from '../../../components/mortgages/refinance/MortgageBlock'
 
 const RefinanceListings = (response) => {
   const { state } = response.location
@@ -176,38 +176,36 @@ const MortgageStyledContainer = styled.div`
 `
 
 export const mortgageQuery = graphql`
-  query RefinanceTemplate {
-    mortgages: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "refinance-mortgages" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            templateKey
-            logo {
-              childImageSharp {
-                fixed(width: 52, height: 52) {
-                  ...GatsbyImageSharpFixed
-                }
+query RefinanceTemplate {
+  mortgages: allMarkdownRemark(
+    filter: { frontmatter: { templateKey: { eq: "mortgages" } } }
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          templateKey
+          logo {
+            childImageSharp {
+              fixed(width: 52, height: 52) {
+                ...GatsbyImageSharpFixed
               }
             }
-            amortization
-            isFeatured
-            fixed {
-              _1
-              _2
-              _3
-              _5
-            }
-            variable {
-              _5
-            }
+          }
+          amortization
+          isFeatured
+          rates {
+            _1
+            _2
+            _3
+            _4
+            _5
           }
         }
       }
     }
   }
+}
 `
 
 export default RefinanceListings

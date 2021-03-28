@@ -108,6 +108,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
+  margin-bottom: 3rem
   padding: 3rem 0rem 0rem
   background-color: transparent
 
@@ -198,11 +199,14 @@ $menu-label-color: $white-ter
 .bold 
   font-family: 'Poppins Bold'
 
+.semibold 
+  font-family: 'Poppins SemiBold'
+
 .grey-text 
   color: #707070
 
 .section-title 
-  font-size: 2.6rem
+  font-size: 2rem
   font-family: 'Poppins Bold'
 
 .section-subtitle
@@ -231,6 +235,11 @@ $menu-label-color: $white-ter
   font-size: 1.1rem
   font-family: 'Poppins Semibold'
 
+.large-font 
+  font-size: 2.4rem
+  font-family: 'Poppins Bold'
+
+
 @media screen and ( max-width: 786px )
   .section-title 
     font-size: 2rem
@@ -242,6 +251,9 @@ $menu-label-color: $white-ter
     font-size: 1.1rem
   .title-24-nb
     font-size: 1.1rem
+
+  .hide
+    display: none !important
 
 
 
@@ -297,3 +309,26 @@ $menu-label-color: $white-ter
 @keyframes fill
   100%
     box-shadow: inset 0px 0px 0px 30px #7ac142
+
+
+
+
+
+.indexedStep 
+  color: #fff
+  width: 40px
+  height: 40px
+  font-size: 20px
+  background-color: hsla(0,0%,83%,.8)
+  border-radius: 50%
+  display: flex
+  justify-content: center
+  align-items: center
+@media screen and ( max-width: 786px )
+  .indexedStep
+    width: 25px
+    height: 25px
+    font-size: 14px
+
+.indexedStep.accomplished 
+  background-color: #000000

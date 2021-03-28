@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-// import Image from 'gatsby-image'
+import Image from 'gatsby-image'
 // import HeroImage from '../../static/img/home-hero-image.png'
 
 const Hero = (props) => {
-  const { title, subtitle, imageSrc, blockItems, onSelect } = props
+  const { title, subtitle, imageSrc, blockItems, onSelect, subtitle2 } = props
   return (
     <HeroContainer>
       <div className="hero">
@@ -14,8 +14,9 @@ const Hero = (props) => {
             <div className="columns">
               <div className="column is-half">
                 <h1 className="section-title">{title}</h1>
-                <h4 className="section-subtitle">{subtitle}</h4>
-                <div className="blocks mt-5" onClick={onSelect}>
+                <h4 className="section-subtitle mt-4">{subtitle}</h4>
+                <h4 className="section-subtitle mt-6">{subtitle2}</h4>
+                <div className="blocks mt-6" onClick={onSelect}>
                   {blockItems.map((item) => (
                     <AniLink paintDrip hex="#000000" to={item.link} state={{ id: item.key, title: item.title }}>
                       <Block data={item} />
@@ -23,9 +24,8 @@ const Hero = (props) => {
                   ))}
                 </div>
               </div>
-              <div className="column is-half has-text-right">
-                <img height="25em" src={imageSrc} alt="home hero image" />
-                {/* <Image fixed={HeroImage} /> */}
+              <div className="column is-half banner-image has-text-right">
+                {imageSrc.childImageSharp ? <Image fluid={imageSrc?.childImageSharp?.fluid} /> : <img height="25em" src={imageSrc} alt="home hero image" />}
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@ const Block = ({ data }) => {
       className="block"
     >
       <figure className="image">
-        {isHovered ? <img src={data.imageHover} /> : <img src={data.image} />}
+        {data.image && (isHovered ? <img src={data.imageHover} /> : <img src={data.image} />)}
       </figure>
       <h3 className="title-2">{data.title}</h3>
       <div className="icon">
@@ -64,9 +64,14 @@ const Block = ({ data }) => {
 
 const HeroContainer = styled.section`
 margin-top: 3rem;
+margin-bottom: 5rem;
   .blocks {
     display: flex;
     flex-wrap: wrap;
+  }
+  .banner-image {
+    width: 500px;
+    margin-left: auto;
   }
   .block {
     text-align: center;
@@ -105,6 +110,9 @@ margin-top: 3rem;
   @media screen and (max-width: 786px) {
     .blocks {
       justify-content: flex-start;
+    }
+    .banner-image {
+      width: 100%;
     }
     .block {
       width: 150px;

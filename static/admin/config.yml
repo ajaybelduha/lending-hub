@@ -24,106 +24,65 @@ collections:
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Card Image", name: "cardImage", widget: image, required: true}
       - {label: "Credit Score", name: "creditScore", widget: "select", options: ["Excellent", "Good", "Fair", "Bad"], required: true}
-      - {label: "Fee", name: "fee", widget: "number", required: true}
+      - {label: "Annual Fee", name: "fee", widget: "number", required: true}
+      - {label: "Additional Interest Rate Information", name: "additionalInterestRateInfo", widget: "string", required: false}
       - {label: "First Year Fee", name: "firstYearFee", widget: "number", required: false}
       - {label: "Bank Name", name: "bankName", widget: "string", required: false}
       - {label: "Network", name: "network", widget: "select", options: ["mastercard","visa"], required: false}
-      - {label: "Purchase Interest", name: "purchaseInterest", widget: "number", required: false}
-      - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "number", required: false}
-      - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "number", required: false}
-      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false}
+      - {label: "Interest Rate", name: "purchaseInterest", widget: "string", required: false}
+      - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "string", required: false}
+      - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "string", required: false}
+      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false, default: -1}
       - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}], required: true}
       - {label: "Card Category", required: true, name: "cardCategory", widget: "select", options: [{value: "low-interest", label: "Low Interest"}, {value: "low-balance-transfer", label: "Low Balance Transfer"}, {value: "build-credit-score", label: "Build Credit Score"}, {value: "prepaid", label: "Prepaid"}, {value: "rewards", label: "Rewards"}]}
+      - {label: "Reward Card Subcategory", required: false, name: "rewardType", widget: "select", options: [{value: "cashback", label: "CashBack"}, {value: "gas", label: "Gas"}, {value: "speciality", label: "Speciality"}, {value: "travel", label: "Traval"}, {value: "any", label: "Any"}]}
       - {label: "External Site Link", name: "href", widget: "string", required: true}
       - {label: "Is it sponsered?", name: "sponsered", widget: "boolean", required: false}
       - {label: "Rating", name: "rating", widget: "select", options: ["0","1", "2", "3", "4", "5"], required: false}
-      - {label: "Minimum Required Income", name: "minIncome", widget: "number", required: true}
+      - {label: "Minimum Required Annual Income", name: "minIncome", widget: "number", required: false}
       - {label: "Summary Description", name: "summaryDescription", widget: "markdown", required: false}
       - {label: "Is Featured?", name: "featured", widget: "boolean", required: false}
 
   
-  - name: "homeBuyingMortgages"
-    label: "Home Buying Mortgages"
-    folder: "src/markdown/mortgages/homebanking"
+  - name: "mortgages"
+    label: "Mortgages"
+    folder: "src/markdown/mortgages"
     slug: "{{slug}}"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-mortgages"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mortgages"}
       - {label: "mortgage", name: "mortgage", widget: "hidden", default: "mortgage"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Logo", name: "logo", widget: image, required: true}
       - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
       - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: true}
-      - {label: Fixed (Rates by term), name: fixed, widget: object, 
+      - {label: Insured (>20%dp), name: insured, widget: object, 
         fields: [
-        {label: "1 year", name: "1", widget: string, required: false}, 
-        {label: 2 years, name: "2", widget: string, required: false}, 
-        {label: 3 years, name: "3", widget: string, required: false}, 
-        {label: 5 years, name: "5", widget: string, required: false}, 
+        {label: "1 year", name: "1", widget: string, required: true}, 
+        {label: 2 years, name: "2", widget: string, required: true}, 
+        {label: 3 years, name: "3", widget: string, required: true}, 
+        {label: 4 years, name: "4", widget: string, required: true}, 
+        {label: 5 years, name: "5", widget: string, required: true}, 
         ]
       }
-      - {label: Variable (Rates by term), name: variable, widget: object, 
+      - {label: Uninsured 80% (<20%), name: uninsured, widget: object, 
         fields: [
-        {label: 3 years, name: "3", widget: string, required: false}, 
-        {label: 5 years, name: "5", widget: string, required: false}, 
+        {label: "1 year", name: "1", widget: string, required: true}, 
+        {label: 2 years, name: "2", widget: string, required: true}, 
+        {label: 3 years, name: "3", widget: string, required: true}, 
+        {label: 4 years, name: "4", widget: string, required: true}, 
+        {label: 5 years, name: "5", widget: string, required: true}, 
         ]
       }
-
-
-  - name: "renewalMortgages"
-    label: "Renewal Mortgages"
-    folder: "src/markdown/mortgages/renewal"
-    slug: "{{slug}}"
-    create: true
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "renewal-mortgages"}
-      - {label: "mortgage", name: "mortgage", widget: "hidden", default: "mortgage"}
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Logo", name: "logo", widget: image, required: true}
-      - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
-      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: false}
-      - {label: Fixed (Rates by term), name: fixed, widget: object, 
+      - {label: Rates for Renewal/Refinancing, name: rates, widget: object, 
         fields: [
-        {label: "1 year", name: "1", widget: string, required: false}, 
-        {label: 2 years, name: "2", widget: string, required: false}, 
-        {label: 3 years, name: "3", widget: string, required: false}, 
-        {label: 4 years, name: "4", widget: string, required: false}, 
-        {label: 5 years, name: "5", widget: string, required: false}, 
+        {label: "1 year", name: "1", widget: string, required: true}, 
+        {label: 2 years, name: "2", widget: string, required: true}, 
+        {label: 3 years, name: "3", widget: string, required: true}, 
+        {label: 4 years, name: "4", widget: string, required: true}, 
+        {label: 5 years, name: "5", widget: string, required: true}, 
         ]
       }
-      - {label: Variable (Rates by term), name: variable, widget: object, 
-        fields: [
-        {label: 5 years, name: "5", widget: string, required: false}, 
-        ]
-      }
-
-  - name: "refinancingMortgages"
-    label: "Refinancing Mortgages"
-    folder: "src/markdown/mortgages/refinance"
-    slug: "{{slug}}"
-    create: true
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "refinance-mortgages"}
-      - {label: "mortgage", name: "mortgage", widget: "hidden", default: "mortgage"}
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Logo", name: "logo", widget: image, required: true}
-      - {label: "Amortization", name: "amortization", widget: "select", default: "25", options: [{value: "5", label: "5 years"}, {value: "10", label: "10 years"}, {value: "15", label: "15 years"}, {value: "20", label: "20 years"}, {value: "25", label: "25 years"}, {value: "30", label: "30 years"}], required: true}
-      - {label: "Is Featured?", name: "isFeatured", widget: "boolean", required: false}
-      - {label: Fixed (Rates by term), name: fixed, widget: object, 
-        fields: [
-        {label: 1 year, name: "1", widget: string, required: false}, 
-        {label: 2 years, name: "2", widget: string, required: false}, 
-        {label: 3 years, name: "3", widget: string, required: false}, 
-        {label: 4 years, name: "4", widget: string, required: false}, 
-        {label: 5 years, name: "5", widget: string, required: false}, 
-        ]
-      }
-      - {label: Variable (Rates by term), name: variable, widget: object, 
-        fields: [
-          {label: 5 years, name: "5", widget: string, required: false}, 
-        ]
-      }
-
 
 
   - name: "blog"
@@ -140,7 +99,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Category", name: "category", widget: "select", default: "blog", options: [{value: "credit-card", label: "Credit Cards"}, {value: "mortgage", label: "Mortgage"}, {value: "blog", label: "Blog"}, {value: "insurance", label: "Insurance"}, {value: "banking", label: "Banking"}], required: true}
+      - {label: "Category", name: "category", widget: "select", default: "blog", options: [{value: "credit card", label: "Credit Cards"}, {value: "mortgage", label: "Mortgage"}, {value: "blog", label: "Blog"}, {value: "insurance", label: "Insurance"}, {value: "banking", label: "Banking"}], required: true}
 
 
   - name: "knowledgehub"
@@ -198,3 +157,312 @@ collections:
           - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
           - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+
+  - name: "terms"
+    label: "Terms of Service"
+    folder: "src/markdown/terms"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "terms"}
+      - {label: Title, name: title, widget: string}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "privacy"
+    label: "Privacy Policy"
+    folder: "src/markdown/policy"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "privacy-policy"}
+      - {label: Title, name: title, widget: string}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "careers"
+    label: "Careers"
+    folder: "src/markdown/careers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "careers"}
+      - {label: Title, name: title, widget: string}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "faq"
+    label: "FAQs"
+    folder: "src/markdown/faq"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "faq"}
+      - {label: Question, name: title, widget: string}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "mortgageWatch"
+    label: "Mortgage Watch"
+    folder: "src/markdown/mortgageWatch"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mortgageWatch"}
+      - {label: Title, name: title, widget: string, default: "Mortgage Watch Data"}
+      - {label: FIXED 1-YEAR, name: fixed-1-year, widget: string}
+      - {label: FIXED 2-YEAR, name: fixed-2-year, widget: string}
+      - {label: FIXED 3-YEAR, name: fixed-3-year, widget: string}
+      - {label: FIXED 4-YEAR, name: fixed-4-year, widget: string}
+      - {label: FIXED 5-YEAR, name: fixed-5-year, widget: string}
+      - {label: OPEN 1-YEAR, name: open-1-year, widget: string}
+      - {label: VARIABL, name: variabl, widget: string}
+      - {label: prime, name: prime, widget: string}
+      - {label: BENCHMARK, name: benchmark, widget: string}
+
+  - name: "homepageMain"
+    label: "Homepage - Main"
+    folder: "src/markdown/homepages"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage-main"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Main"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Section 2 (How it works), name: section2, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Point 1", name: "point1", widget: string, required: true}, 
+        {label: "Point 1 description", name: "point1description", widget: string, required: true}, 
+        {label: "Point 1 Image", name: "point1Image", widget: image, required: true}, 
+        {label: "Point 2", name: "point2", widget: string, required: true}, 
+        {label: "Point 2 description", name: "point2description", widget: string, required: true}, 
+        {label: "Point 2 Image", name: "point2Image", widget: image, required: true}, 
+        {label: "Point 3", name: "point3", widget: string, required: true}, 
+        {label: "Point 3 description", name: "point3description", widget: string, required: true}, 
+        {label: "Point 3 Image", name: "point3Image", widget: image, required: true}, 
+        ]
+      }
+      - {label: Section 3 (Maximize your savings), name: section3, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        ]
+      }
+
+  - name: "homepageMortgage"
+    label: "Homepage - Mortgage"
+    folder: "src/markdown/homepages/mortgage"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage-mortgage"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Mortgage"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Partners, name: partners, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image 1, name: "image1", widget: image, required: false}, 
+        {label: Image 2, name: "image2", widget: image, required: false}, 
+        {label: Image 3, name: "image3", widget: image, required: false}, 
+        {label: Image 4, name: "image4", widget: image, required: false}, 
+        {label: Image 5, name: "image5", widget: image, required: false}, 
+        {label: Image 6, name: "image6", widget: image, required: false}, 
+        {label: Image 7, name: "image7", widget: image, required: false}, 
+        {label: Image 8, name: "image8", widget: image, required: false}, 
+        {label: Image 9, name: "image9", widget: image, required: false}, 
+        {label: Image 10, name: "image10", widget: image, required: false}, 
+        {label: Image 11, name: "image11", widget: image, required: false}, 
+        {label: Image 12, name: "image12", widget: image, required: false}, 
+        {label: Image 13, name: "image13", widget: image, required: false}, 
+        {label: Image 14, name: "image14", widget: image, required: false}, 
+        {label: Image 15, name: "image15", widget: image, required: false}, 
+        {label: Image 16, name: "image16", widget: image, required: false}, 
+        ]
+      }
+      - {label: Section (Maximize your savings), name: section3, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        ]
+      }
+      
+  - name: "homepageCreditCard"
+    label: "Homepage - Credit Card"
+    folder: "src/markdown/homepages/creditcard"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage-creditcard"}
+      - {label: Title, name: title, widget: string, default: "Homepage - creditcard"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+
+  - name: "homepageOurTeam"
+    label: "Homepage - Our Team"
+    folder: "src/markdown/homepages/ourteam"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ourteam"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Our Team"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+
+  - name: "homepageAboutUs"
+    label: "Homepage - About Us"
+    folder: "src/markdown/homepages/aboutus"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "aboutus"}
+      - {label: Title, name: title, widget: string, default: "Homepage-aboutus"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Section 2, name: section2, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Sub Heading", name: "subheading", widget: string, required: true}, 
+        {label: Background Image, name: "backgroundImage", widget: image, required: true}, 
+        ]
+      }
+      - {label: Section 3, name: section3, widget: object, 
+        fields: [
+          {label: "Heading", name: "heading", widget: string, required: true}, 
+          {label: "Sub Heading", name: "subheading", widget: string, required: true},
+          {label: "Name 1", name: "name1", widget: "string", required: true},
+          {label: "Designation 1", name: "designation1", widget: "string", required: true},
+          {label: Photo 1, name: "photo1", widget: image, required: true}, 
+          {label: "Name 2", name: "name2", widget: "string", required: true},
+          {label: "Designation 2", name: "designation2", widget: "string", required: true},
+          {label: Photo 2, name: "photo2", widget: image, required: true}, 
+        ]
+      }
+      - {label: Section 4, name: section4, widget: object, 
+        fields: [
+          {label: "Video 1", name: "video1", widget: string, required: false}, 
+          {label: "Video 2", name: "video2", widget: string, required: false},
+          {label: "Video 3", name: "video3", widget: string, required: false},
+          {label: "Video 4", name: "video4", widget: string, required: false},
+          {label: "Video 5", name: "video5", widget: string, required: false},
+          {label: "Video 6", name: "video6", widget: string, required: false},
+          {label: "Video 7", name: "video7", widget: string, required: false},
+          {label: "Video 8", name: "video8", widget: string, required: false},
+          {label: "Video 9", name: "video9", widget: string, required: false},
+          {label: "Video 10", name: "video10", widget: string, required: false},
+          {label: "Video 11", name: "video11", widget: string, required: false},
+          {label: "Video 12", name: "video12", widget: string, required: false},
+          {label: "Video 13", name: "video13", widget: string, required: false},
+          {label: "Video 14", name: "video14", widget: string, required: false},
+        ]
+      }
+
+  - name: "homepageInsurance"
+    label: "Homepage - Insurance"
+    folder: "src/markdown/insurance"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "insurance"}
+      - {label: Title, name: title, widget: string, default: "Homepage - Insurance"}
+      - {label: Section 1, name: section1, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Subheading", name: "subheading", widget: string, required: true}, 
+        {label: Image, name: "image", widget: image, required: true}, 
+        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Section 2 (How it works), name: section2, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: "Point 1", name: "point1", widget: string, required: true}, 
+        {label: "Point 1 description", name: "point1description", widget: string, required: true}, 
+        {label: "Point 1 Image", name: "point1Image", widget: image, required: true}, 
+        {label: "Point 2", name: "point2", widget: string, required: true}, 
+        {label: "Point 2 description", name: "point2description", widget: string, required: true}, 
+        {label: "Point 2 Image", name: "point2Image", widget: image, required: true}, 
+        {label: "Point 3", name: "point3", widget: string, required: true}, 
+        {label: "Point 3 description", name: "point3description", widget: string, required: true}, 
+        {label: "Point 3 Image", name: "point3Image", widget: image, required: true}, 
+        ]
+      }
+      - {label: Partners, name: partners, widget: object, 
+        fields: [
+        {label: "Heading", name: "heading", widget: string, required: true}, 
+        {label: Image 1, name: "image1", widget: image, required: false}, 
+        {label: Image 2, name: "image2", widget: image, required: false}, 
+        {label: Image 3, name: "image3", widget: image, required: false}, 
+        {label: Image 4, name: "image4", widget: image, required: false}, 
+        {label: Image 5, name: "image5", widget: image, required: false}, 
+        {label: Image 6, name: "image6", widget: image, required: false}, 
+        {label: Image 7, name: "image7", widget: image, required: false}, 
+        {label: Image 8, name: "image8", widget: image, required: false}, 
+        {label: Image 9, name: "image9", widget: image, required: false}, 
+        {label: Image 10, name: "image10", widget: image, required: false}, 
+        {label: Image 11, name: "image11", widget: image, required: false}, 
+        {label: Image 12, name: "image12", widget: image, required: false}, 
+        {label: Image 13, name: "image13", widget: image, required: false}, 
+        {label: Image 14, name: "image14", widget: image, required: false}, 
+        {label: Image 15, name: "image15", widget: image, required: false}, 
+        {label: Image 16, name: "image16", widget: image, required: false}, 
+        ]
+      }
+
+  - name: "team"
+    label: "Team"
+    folder: "src/markdown/team"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
+      - {label: "Name", name: "title", widget: "string", required: true}
+      - {label: "Designation", name: "designation", widget: "string", required: true}
+      - {label: "Photo", name: "photo", widget: image, required: true}
+      - {label: "About Me", name: "aboutme", widget: text, required: false}
+      - {label: "Phone Number", name: "phone", widget: string, required: true}
+      - {label: "Email", name: "email", widget: "string", required: true}
+      - {label: "Is CEO?", name: "isceo", widget: "boolean", required: false, default: false}
+      - {label: "Location", name: "location", widget: "string", required: false}
+      - {label: "Website", name: "website", widget: "string", required: false}
+      - {label: Social Links, name: social, widget: object, 
+        fields: [
+        {label: "Instagram", name: "instagram", widget: string, required: false}, 
+        {label: "Facebook", name: "facebook", widget: string, required: false}, 
+        {label: "Linkedin", name: "linkedin", widget: string, required: false}, 
+        {label: "Twitter", name: "twitter", widget: string, required: false}, 
+        {label: "Youtube", name: "youtube", widget: string, required: false}, 
+        ]
+      }
+  

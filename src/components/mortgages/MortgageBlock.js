@@ -16,13 +16,20 @@ const MortgageBlock = ({
   const [isApplied, setIsApplied] = useState(false)
 
   const getRate = () => {
-    const { totalMortgage, rateType, mortgageTerm } = filterData
+    const { totalMortgage, rateType, mortgageTerm, downPaymentPercent } = filterData
     const item = mortgages.node.frontmatter
     let rate
-    if (rateType === 'fixed') {
-      rate = item[`fixed`][`_${mortgageTerm}`]
+    // if (rateType === 'fixed') {
+    //   rate = item[`fixed`][`_${mortgageTerm}`]
+    // } else {
+    //   rate = item[`variable`][`_${mortgageTerm}`]
+    // }
+    const downPayment = Number(downPaymentPercent);
+    console.log(downPayment)
+    if (downPayment <= 20) {
+      rate = item[`insured`][`_${mortgageTerm}`]
     } else {
-      rate = item[`variable`][`_${mortgageTerm}`]
+      rate = item[`uninsured`][`_${mortgageTerm}`]
     }
     return rate
   }

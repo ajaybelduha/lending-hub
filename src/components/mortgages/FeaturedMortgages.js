@@ -5,50 +5,55 @@ import Image from 'gatsby-image'
 import { BlackButtonLink, UnderlinedLink } from '../common/common'
 
 const featuredMortgages = graphql`
-  query FeaturedMortgageItems {
-    mortgages: allMarkdownRemark(
-      filter: { frontmatter: { mortgage: { eq: "mortgage" } } }
-      limit: 3
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            templateKey
-            logo {
-              childImageSharp {
-                fixed(width: 52, height: 52) {
-                  ...GatsbyImageSharpFixed
-                }
+query MortgageFeatured {
+  mortgages: allMarkdownRemark(
+    filter: { frontmatter: { templateKey: { eq: "home-mortgages" } } }
+    limit: 4
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          templateKey
+          logo {
+            childImageSharp {
+              fixed(width: 52, height: 52) {
+                ...GatsbyImageSharpFixed
               }
             }
-            amortization
-            isFeatured
-            fixed {
-              _1
-              _2
-              _3
-              _5
-            }
-            variable {
-              _3
-              _5
-            }
+          }
+          amortization
+          isFeatured
+          insured {
+            _1
+            _2
+            _3
+            _4
+            _5
+          }
+           uninsured {
+            _1
+            _2
+            _3
+            _4
+            _5
           }
         }
       }
     }
   }
+}
 `
 
 const FeaturedMortgages = () => {
   const data = useStaticQuery(featuredMortgages)
   const mortgageItems = data.mortgages.edges
+  console.log(mortgageItems)
   return (
     <FeaturedContainer>
       <div className="container">
         <h2 className="section-title mb-4">
-          Featured Mortgages for October 2020
+          Featured Mortgages
         </h2>
         <div className="columns">
           {mortgageItems.map((item) => {
@@ -61,8 +66,9 @@ const FeaturedMortgages = () => {
                     <Image fixed={card.logo.childImageSharp.fixed} />
                     <h2 className="title-24-nb">{card.title}</h2>
                   </div>
-                  <p className="has-text-left title-small mt-4">
-                    Get an amazing rate of {card.fixed._5}% for 5 year fixed
+                  <div className="large-font mt-6">{card.insured._5}%</div>
+                  <p className="has-text-left title-1  mt-4">
+                    Get an amazing rate of {card.insured._5}% for 5 year fixed
                     with this mortgage
                   </p>
                   <BlackButtonLink>More Details</BlackButtonLink>
@@ -81,12 +87,13 @@ const FeaturedMortgages = () => {
 }
 
 const FeaturedContainer = styled.section`
+  margin: 5rem 0;
   .card-block {
     border: 1px solid #000000;
-    padding: 1rem 2rem;
-    height: 360px;
+    padding: 1rem 1rem;
+    height: fit-content;
     p {
-      height: 150px;
+      height: 100px;
       overflow: hidden;
     }
     .card-head {

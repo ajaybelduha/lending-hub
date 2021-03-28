@@ -39,6 +39,12 @@ export const BlackButton = styled((props) => <button {...props} />)`
   }
 `
 
+export const BlackButtonInverse = styled(BlackButton)`
+  color: #1c1c1e;
+  background-color: #ffffff;
+  border: 1px solid #1c1c1e;
+`
+
 export const UnderlinedLink = styled((props) => <Link {...props} />)`
   text-decoration: underline;
   color: #323131;
@@ -53,6 +59,13 @@ export const ButtonNoStyle = styled.button`
 
 export const InputField = styled.input`
   height: 53px;
+  border-radius: 0;
+  border: ${(props) =>
+    props.isDanger ? `1px solid #f14668` : `1px solid #707070`};
+`
+
+export const TextArea = styled.textarea`
+  height: 103px;
   border-radius: 0;
   border: ${(props) =>
     props.isDanger ? `1px solid #f14668` : `1px solid #707070`};
@@ -193,6 +206,12 @@ export const BlockStack = styled.div`
         0 10px 10px rgba(0, 0, 0, 0.22);
     }
   }
+  @media screen and (max-width: 786px) {
+    .p-block {
+      width: 120px;
+      height: 120px;
+    }
+  }
 `
 
 export const SliderContainer = styled.div`
@@ -219,3 +238,25 @@ export const SliderContainer = styled.div`
     width: 90%;
   }
 `
+
+export const BackButton = ({ setStep }) => {
+  const BackStyle = styled.div`
+    button {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem;
+      img {
+        width: 25px;
+        margin-right: 1rem;
+      }
+    }
+  `
+  return (
+    <BackStyle>
+      <ButtonNoStyle onClick={setStep}>
+        <img src="/img/back-arrow.svg" alt="back-arrow" />
+        <p className="title-1">Back</p>
+      </ButtonNoStyle>
+    </BackStyle>
+  )
+}

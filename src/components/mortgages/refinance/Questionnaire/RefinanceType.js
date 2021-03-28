@@ -21,7 +21,7 @@ const RefinanceType = (props) => {
                                 key={item.value} 
                                 value={item.value} 
                                 className="p-block bold"
-                                onClick={() => props.setValue('cardFor', item.value)}
+                                onClick={() => props.setValue('refinanceType', item.value)}
                             >   {item.label}
                             </div>
                         ))}
