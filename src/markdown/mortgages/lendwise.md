@@ -2,7 +2,7 @@
 templateKey: mortgages
 mortgage: mortgage
 title: Lendwise
-logo: /img/merix.png
+logo: /img/lendwise.png
 amortization: "25"
 isFeatured: true
 insured:
