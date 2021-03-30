@@ -1,28 +1,28 @@
 ---
 templateKey: home-mortgages
 mortgage: mortgage
-title: Laurentian Bank
-logo: /img/laurentian.png
+title: CMLS
+logo: /img/download.png
 amortization: "25"
 isFeatured: true
 insured:
-  "1": "1.2"
-  "2": "1.1"
-  "3": "1.45"
-  "4": "1.39"
-  "5": "2.1"
+  "1": "2.99"
+  "2": "2.24"
+  "3": "1.64"
+  "4": "1.79"
+  "5": "2.09"
 uninsured:
-  "1": "1.22"
-  "2": "1.33"
-  "3": "1.55"
-  "4": "1.66"
-  "5": "2.1"
+  "1": "-"
+  "2": "-"
+  "3": "-"
+  "4": "-"
+  "5": "2.34"
 rates:
-  "1": "1.1"
-  "2": "2.2"
-  "3": "3.3"
-  "4": "4.4"
-  "5": "5.5"
+  "1": "-"
+  "2": "-"
+  "3": "-"
+  "4": "-"
+  "5": "2.34"
 fixed:
   "1": "2.2"
   "2": "1.5"
