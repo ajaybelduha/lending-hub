@@ -1,28 +1,28 @@
 ---
 templateKey: home-mortgages
 mortgage: mortgage
-title: motusbank
-logo: /img/motusbank.png
+title: Desjardins
+logo: /img/desjardins-vector-logo.png
 amortization: "25"
 isFeatured: true
 insured:
-  "1": "1.2"
-  "2": "1.3"
-  "3": "1.4"
-  "4": "1.6"
-  "5": "1.7"
+  "1": "2.64"
+  "2": "1.79"
+  "3": "1.84"
+  "4": "1.89"
+  "5": "1.84"
 uninsured:
-  "1": "1.4"
-  "2": "1.5"
-  "3": "1.1"
-  "4": "1.22"
-  "5": "1.55"
+  "1": "2.64"
+  "2": "1.79"
+  "3": "1.84"
+  "4": "1.89"
+  "5": "1.94"
 rates:
-  "1": "1.1"
-  "2": "2.2"
-  "3": "3.3"
-  "4": "4.4"
-  "5": "5.5"
+  "1": "2.64"
+  "2": "1.79"
+  "3": "1.84"
+  "4": "1.89"
+  "5": "1.94"
 fixed:
   "1": "2.1"
   "2": "1.2"
