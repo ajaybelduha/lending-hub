@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Layout from '../../components/Layout'
 import { graphql } from 'gatsby'
 import Hero from '../../components/Hero'
-import FeaturedCards from '../../components/creditcards/FeaturedCards'
+// import FeaturedCards from '../../components/creditcards/FeaturedCards'
 import FeaturedKnowledgeHub from '../../components/creditcards/FeaturedKnowledgeHub'
 import EditorsPick from '../../components/creditcards/EditorsPick'
 
@@ -42,7 +42,7 @@ const CreditCardHome = ({data}) => {
         imageSrc={response.section1.image}
         blockItems={items}
       />
-      <FeaturedCards />
+      {/* <FeaturedCards /> */}
       <FeaturedKnowledgeHub />
       <EditorsPick type="credit-card"/>
     </Layout>

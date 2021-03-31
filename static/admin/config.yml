@@ -23,19 +23,20 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "credit-card-post"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Card Image", name: "cardImage", widget: image, required: true}
-      - {label: "Credit Score", name: "creditScore", widget: "select", options: ["Excellent", "Good", "Fair", "Bad"], required: true}
+      - {label: "Credit Score", name: "creditScore", widget: "select", options: ["Excellent", "Good", "Fair", "Poor"], required: true}
       - {label: "Annual Fee", name: "fee", widget: "number", required: true}
+      - {label: "Annual Fee Options", name: "feeOptions", widget: "select", options: [{value: "nofees", label: "No Fees"}, {value: "dontmind", label: "I don't mind"}, {value: "either", label: "Either"}], required: true}
       - {label: "Additional Interest Rate Information", name: "additionalInterestRateInfo", widget: "string", required: false}
       - {label: "First Year Fee", name: "firstYearFee", widget: "number", required: false}
       - {label: "Bank Name", name: "bankName", widget: "string", required: false}
-      - {label: "Network", name: "network", widget: "select", options: ["mastercard","visa"], required: false}
+      - {label: "Network", name: "network", widget: "select", options: ["Mastercard","Visa","American Express","All"], required: true}
       - {label: "Interest Rate", name: "purchaseInterest", widget: "string", required: false}
       - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "string", required: false}
       - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "string", required: false}
       - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false, default: -1}
-      - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}], required: true}
-      - {label: "Card Category", required: true, name: "cardCategory", widget: "select", options: [{value: "low-interest", label: "Low Interest"}, {value: "low-balance-transfer", label: "Low Balance Transfer"}, {value: "build-credit-score", label: "Build Credit Score"}, {value: "prepaid", label: "Prepaid"}, {value: "rewards", label: "Rewards"}]}
-      - {label: "Reward Card Subcategory", required: false, name: "rewardType", widget: "select", options: [{value: "cashback", label: "CashBack"}, {value: "gas", label: "Gas"}, {value: "speciality", label: "Speciality"}, {value: "travel", label: "Traval"}, {value: "any", label: "Any"}]}
+      - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}], required: false}
+      - {label: "Card Category", required: true, name: "cardCategory", widget: "select", options: [{value: "low-interest", label: "Low Interest"}, {value: "balance-transfer", label: "Balance Transfer"}, {value: "build-credit-score", label: "Build Credit Score"}, {value: "business", label: "Business"}, {value: "rewards", label: "Rewards"}]}
+      - {label: "Reward Card Subcategory", required: false, name: "rewardType", widget: "select", options: [{value: "cashback", label: "CashBack"}, {value: "all", label: "All"}, {value: "travel", label: "Traval"}, {value: "points", label: "Points"}]}
       - {label: "External Site Link", name: "href", widget: "string", required: true}
       - {label: "Is it sponsered?", name: "sponsered", widget: "boolean", required: false}
       - {label: "Rating", name: "rating", widget: "select", options: ["0","1", "2", "3", "4", "5"], required: false}
