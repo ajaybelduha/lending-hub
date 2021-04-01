@@ -11,6 +11,6 @@ balanceTransferInterest: "22.99"
 balanceTranferFees: ""
 userCategory: personal
 cardCategory: rewards
-rewardType: cashback
+rewardType: travel
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/visa/passport-infinite-card.html?cid=a-27077b-24435c-
 ---
