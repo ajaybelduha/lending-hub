@@ -1,6 +1,6 @@
 ---
 templateKey: credit-card-post
-title: Cash Back World Mastercard credit card
+title: Desjardins Cash Back World Mastercard
 cardImage: /img/b10-mcworld-pw-e.png
 creditScore: Excellent
 fee: 50
