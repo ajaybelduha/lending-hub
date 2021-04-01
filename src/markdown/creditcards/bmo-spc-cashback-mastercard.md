@@ -8,7 +8,7 @@ feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.99"
 balanceTranferFees: ""
-userCategory: personal
+userCategory: student
 cardCategory: rewards
 rewardType: cashback
 href: https://www.bmo.com/main/personal/students/#credit-cards
