@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "19.90"
 balanceTransferInterest: "0"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: https://www.desjardins.com/ca/personal/loans-credit/credit-cards/cash-back-world-mastercard/index.jsp

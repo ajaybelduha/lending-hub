@@ -9,7 +9,7 @@ firstYearFee: ""
 network: Mastercard
 purchaseInterest: "19.75"
 balanceTransferInterest: "19.75"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: https://www.capitalone.ca/credit-cards/costco/

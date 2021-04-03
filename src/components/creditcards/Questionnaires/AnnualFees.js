@@ -2,42 +2,37 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { BlockStack } from '../../common/common'
+import { annualFeesData } from '../../../utils/constants'
 
-const CardSubCategory = (props) => {
-  const subCategory = [
-    { label: 'Cashback', value: 'cashback' },
-    { label: 'Points', value: 'points' },
-    { label: 'Travel Reward', value: 'travel-reward' },
-    { label: 'All', value: 'all' }
-  ]
+const AnnualFees = (props) => {
   return (
-    <CardSubCategoryContainer>
+    <AnnualFeesContainer>
       <Fade bottom>
         <div className="title-24 mb-6">
-          Please select your preferred reward type
+          Annual Fees
         </div>
         <BlockStack>
-          {subCategory.map((item) => (
+          {annualFeesData.map((item) => (
             <div
               key={item.value}
               value={item.value}
               className="p-block bold"
-              onClick={() => props.setValue('rewardType', item.value)}
+              onClick={() => props.setValue('annualFees', item.value)}
             >
               {item.label}
             </div>
           ))}
         </BlockStack>
       </Fade>
-    </CardSubCategoryContainer>
+    </AnnualFeesContainer>
   )
 }
 
-const CardSubCategoryContainer = styled.div`
+const AnnualFeesContainer = styled.div`
   text-align: center;
   .heading-29 {
     font-size: 29px;
   }
 `
 
-export default CardSubCategory
+export default AnnualFees

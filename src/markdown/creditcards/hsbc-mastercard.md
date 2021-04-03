@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "12.90"
 balanceTransferInterest: "12.90"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: cashback

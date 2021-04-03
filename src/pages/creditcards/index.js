@@ -8,30 +8,14 @@ import EditorsPick from '../../components/creditcards/EditorsPick'
 
 const CreditCardHome = ({data}) => {
   const response = data.homepage.edges[0].node.frontmatter
-  console.log("Credit Card RESPONSE")
-  console.log(response)
   const items = [
     {
       key: 1,
       image: '/img/icons/employees.svg',
       imageHover: '/img/icons/employees_hover.svg',
-      title: 'Personal',
+      title: 'Get Started',
       link: '/creditcards/questions',
-    },
-    {
-      key: 2,
-      image: '/img/icons/graduated.svg',
-      imageHover: '/img/icons/graduated_hover.svg',
-      title: 'Students',
-      link: '/creditcards/questions',
-    },
-    {
-      key: 3,
-      image: '/img/icons/briefcase.svg',
-      imageHover: '/img/icons/briefcase_hover.svg',
-      title: 'Business',
-      link: '/creditcards/questions',
-    },
+    }
   ]
   return (
     <Layout>

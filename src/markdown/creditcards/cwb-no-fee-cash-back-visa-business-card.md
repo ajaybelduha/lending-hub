@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: Visa
 purchaseInterest: "19.90"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: https://www.cwbank.com/business/credit-cards

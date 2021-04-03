@@ -44,7 +44,7 @@ const Dropdown = (props) => {
 }
 
 const DropdownContainer = styled.div`
-  margin-right: 3rem;
+  margin-right: 2rem;
   .label {
     margin-bottom: 0.5em;
   }
@@ -58,14 +58,14 @@ const DropdownContainer = styled.div`
     }
   }
   .dropdown-content {
-    width: 250px;
+    width: 200px;
   }
   .arrow-down {
     width: 17px;
   }
   .button {
     border-color: #1c1c1e;
-    width: 250px;
+    width: 200px;
     border-radius: 0;
     font-size: 18px; 
     font-family: 'Poppins Medium';

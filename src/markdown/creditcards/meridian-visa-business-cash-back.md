@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: Visa
 purchaseInterest: "19.50"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: rewards
 rewardType: cashback

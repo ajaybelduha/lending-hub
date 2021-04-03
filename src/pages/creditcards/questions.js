@@ -12,38 +12,25 @@ import AnnualIncome from '../../components/creditcards/Questionnaires/AnnualInco
 import Expenditure from '../../components/creditcards/Questionnaires/Expenditure'
 import RegisterForm from '../../components/RegisterForm'
 import StepProgressBar from '../../components/ProgressSteps';
+import AnnualFees from '../../components/creditcards/Questionnaires/AnnualFees'
 
 const QuestionnaireModal = (props) => {
-  let percentStep = 50
-  const [totalSteps, setTotalSteps] = useState(3)
+  const percentStep = 34
+  const [totalSteps, setTotalSteps] = useState(4)
   const [step, setStep] = useState(1)
   const [percent, setPercent] = useState(0);
   const [selections, setSelections] = useState({})
 
-  useEffect(() => {
-    const { location } = props
-    if (location?.state?.id !== 1) {  // Not Personal
-      setStep(3)
-      setTotalSteps(2)
-    }
-    setSelections({category: location?.state?.title})
-  }, [])
-
   const setValue = async (key, value) => {
-    let data = selections
+    const data = selections
     data[key] = value
-    if (key === 'cardFor' && value === 'rewards') {
-      setStep(step + 1)
-      setTotalSteps(4)
-      percentStep = 34
-    } else if (key === 'cardFor' && value !== 'rewards') {
-      data['rewardType'] = 'none';
-      setStep(step + 2)
-    } else {
-      setStep(step + 1)
-    }
-    await setSelections(data)
+    // if (value !== 'rewards') { // When rewards are also showin in the questions
+    //   setStep(step + 1)
+    //   setPercent(percent + percentStep)
+    // }
+    setStep(step + 1)
     setPercent(percent + percentStep)
+    await setSelections(data)
   }
   const submitAnswers = (key, value) => {
     navigate('/creditcards/listing', {
@@ -65,12 +52,14 @@ const QuestionnaireModal = (props) => {
       <QuestionnaireModalContainer>
       <BackButton setStep={onBackButtonClick} />
         <div className="container">
-          {/* <div className="modal-background"></div> */}
+        <div className="section-title has-text-centered">
+          Find your perfect card in 60 seconds
+        </div><br/><br/>
           <StepProgressBar percent={percent} totalSteps={totalSteps} />
           <div className="">
             {step === 1 && <CardTypes setValue={setValue} />}
-            {step === 2 && <CardSubCategory setValue={setValue} />}
-            {step === 3 && <CreditScore setValue={setValue} />}
+            {step === 2 && <CreditScore setValue={setValue} />}
+            {step === 3 && <AnnualFees setValue={setValue} />}
             {step === 4 && (
               <RegisterForm
                 redirectTo='/creditcards/listing'
