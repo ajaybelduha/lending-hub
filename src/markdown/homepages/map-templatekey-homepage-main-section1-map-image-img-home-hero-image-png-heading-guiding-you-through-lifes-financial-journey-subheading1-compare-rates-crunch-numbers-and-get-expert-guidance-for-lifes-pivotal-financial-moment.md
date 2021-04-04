@@ -12,10 +12,10 @@ section2:
   point2: Get customized results
   heading: How it works
   point3: Contact when you're ready
-  point3Image: /img/step3.png
-  point2Image: /img/step2.png
+  point3Image: /img/hiw-3.png
+  point2Image: /img/hiw-2.png
   point3description: See a quote you like? Contact the lender to learn more and lock in your rate.
-  point1Image: /img/step1.png
+  point1Image: /img/hiw-1.png
   point2description: Compare current rate quotes from dozens of lenders, all in one place.
   point1description: Tell us about the type of rates you're looking for & the home
     you want to buy.
