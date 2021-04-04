@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.99"
 balanceTransferInterest: "0"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: https://www.laurentianbank.ca/en/entreprises/products/visa_business_performance.html

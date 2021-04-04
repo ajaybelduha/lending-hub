@@ -8,7 +8,7 @@ feeOptions: nofees
 network: American Express
 purchaseInterest: "19.99"
 balanceTransferInterest: "22.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: travel
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/american-express/no-fee-amex-card.html?cid=a-27077b-23274c-

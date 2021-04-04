@@ -8,7 +8,7 @@ feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.90"
 balanceTransferInterest: "22.90"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: https://www.hsbc.ca/credit-cards/products/premier-mastercard/

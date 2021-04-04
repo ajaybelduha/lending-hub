@@ -7,7 +7,7 @@ fee: 65
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: https://www.laurentianbank.ca/en/personal_banking_services/my_ideas/ideas_visa_dollars.html

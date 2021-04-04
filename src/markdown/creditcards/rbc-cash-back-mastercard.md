@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: http://www.rbcroyalbank.com/credit-cards/cash-back-credit-cards/cash-back-mastercard/index.html

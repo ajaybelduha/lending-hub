@@ -27,9 +27,9 @@ const ListingFilter = ({ setFiltered, filtersFromQuestions }) => {
       (item) => item.value === filtersFromQuestions.annualFees
     )
     const obj = {
-      cardFor: initialCardFor.label,
-      creditScore: initialCreditScore.label,
-      network: networks[0].label,
+      cardFor: initialCardFor.value,
+      creditScore: initialCreditScore.value,
+      network: networks[0].value,
       annualFees: initialAnnualFees.value,
       rewardType: subCategory[3].value
     }
@@ -43,19 +43,19 @@ const ListingFilter = ({ setFiltered, filtersFromQuestions }) => {
         <BlackButtonInverse onClick={() => setShowFilters(!showFilters)}>Reset filters</BlackButtonInverse>
       </div>
       <div className={classNames('filters', { hide: !showFilters })}>
-        <NetworkDropdown onDropdownSelect={onDropdownSelect} />
-        <CardForDropdown onDropdownSelect={onDropdownSelect} />
-        <CreditScoreDropdown onDropdownSelect={onDropdownSelect} />
-        <AnnualFeesDropdown onDropdownSelect={onDropdownSelect} />
-        {dropdownValues.cardFor === 'rewards' && <RewardTypeDropdown onDropdownSelect={onDropdownSelect} />}
+        <NetworkDropdown onDropdownSelect={onDropdownSelect} selected={dropdownValues} />
+        <CardForDropdown onDropdownSelect={onDropdownSelect} selected={dropdownValues} />
+        <CreditScoreDropdown onDropdownSelect={onDropdownSelect} selected={dropdownValues} />
+        <AnnualFeesDropdown onDropdownSelect={onDropdownSelect} selected={dropdownValues} />
+        {dropdownValues.cardFor === 'rewards' && <RewardTypeDropdown onDropdownSelect={onDropdownSelect} selected={dropdownValues} />}
       </div>
     </ListingFilterContainer>
   )
 }
 
-const NetworkDropdown = ({ onDropdownSelect }) => {
+const NetworkDropdown = ({ onDropdownSelect, selected }) => {
   const [isNetworkOpen, setIsNetworkOpen] = useState(false)
-  const [selectedNetwork, setSelectedNetwork] = useState(networks[0])
+  const [selectedNetwork, setSelectedNetwork] = useState(networks[3])
 
   const toggleNetwork = () => {
     setIsNetworkOpen(!isNetworkOpen)
@@ -80,9 +80,16 @@ const NetworkDropdown = ({ onDropdownSelect }) => {
   )
 }
 
-const CardForDropdown = ({ onDropdownSelect }) => {
+const CardForDropdown = ({ onDropdownSelect, selected }) => {
   const [isCardForOpen, setIsCardForOpen] = useState(false)
   const [selectedCardFor, setSelectedCardFor] = useState(cardFor[0])
+
+  useEffect(() => {
+    console.log("cardfordropdown")
+    console.log(cardFor, selected.cardFor)
+    const value = cardFor.find(item => selected.cardFor === item.value)
+    value && setSelectedCardFor(value)
+  }, [selected])
 
   const toggleCardFor = () => {
     setIsCardForOpen(!isCardForOpen)
@@ -107,7 +114,7 @@ const CardForDropdown = ({ onDropdownSelect }) => {
   )
 }
 
-const CreditScoreDropdown = ({ onDropdownSelect }) => {
+const CreditScoreDropdown = ({ onDropdownSelect, selected }) => {
   const [isCreditScoreOpen, setIsCreditScoreOpen] = useState(false)
   const [selectedCreditScore, setSelectedCreditScore] = useState(creditScores[0])
 
@@ -134,9 +141,9 @@ const CreditScoreDropdown = ({ onDropdownSelect }) => {
   )
 }
 
-const RewardTypeDropdown = ({ onDropdownSelect }) => {
+const RewardTypeDropdown = ({ onDropdownSelect, selected }) => {
   const [isRewardTypeOpen, setIsRewardTypeOpen] = useState(false)
-  const [selectedRewardType, setSelectedRewardType] = useState(subCategory[0])
+  const [selectedRewardType, setSelectedRewardType] = useState(subCategory[3])
 
   const toggleRewardTypes = () => {
     setIsRewardTypeOpen(!isRewardTypeOpen)

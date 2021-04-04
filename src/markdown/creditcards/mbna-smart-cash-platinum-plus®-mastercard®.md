@@ -8,7 +8,7 @@ feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.99"
 balanceTransferInterest: "22.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: https://www.mbna.ca/en/credit-cards/cash-back/smart-cash-mastercard/

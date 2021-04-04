@@ -24,8 +24,9 @@ const CCListing = (response) => {
       const {
         creditScore,
         cardCategory,
-        userCategory,
-        feeOptions
+        network,
+        feeOptions,
+        rewardType
       } = item.node.frontmatter
 
       let requiredCreditScore
@@ -35,16 +36,12 @@ const CCListing = (response) => {
         requiredCreditScore = filters.creditScore.toLowerCase() === creditScore.toLowerCase()
       }
 
-      let requiredFeeOptions
-      if (filters.annualFees === 'either') {
-        requiredFeeOptions = filters.annualFees.toLowerCase() === 'nofees' || filters.annualFees.toLowerCase() === 'dontmind' || filters.annualFees.toLowerCase() === 'either'
-      } else {
-        requiredFeeOptions = filters.annualFees.toLowerCase() === feeOptions.toLowerCase()
-      }
-      
+      const requiredFeeOptions = filters.annualFees.toLowerCase() === feeOptions.toLowerCase() || filters.annualFees.toLowerCase() === 'either'
       const requiredCardFor = filters.cardFor.toLowerCase() === cardCategory.toLowerCase()
+      const requiredNetwork = filters.network === network || filters.network === 'All'
+      const requiredRewardType = filters.rewardType === rewardType || filters.rewardType === 'all'
 
-      if (requiredFeeOptions && requiredCreditScore && requiredCardFor) {
+      if (requiredFeeOptions && requiredCreditScore && requiredCardFor && requiredNetwork && requiredRewardType) {
         return true
       } else {
         return false

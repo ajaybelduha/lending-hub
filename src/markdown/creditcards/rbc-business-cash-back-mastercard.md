@@ -8,7 +8,7 @@ feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.99"
 balanceTransferInterest: ""
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: rewards
 rewardType: cashback

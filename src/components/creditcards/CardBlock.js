@@ -41,7 +41,7 @@ const CardBlock = ({ cardData }) => {
       <div className="card-details">
         <div className="image">
           {/* <img src="/img/true-line-gold-mastercardcard.png" /> */}
-          <Image fluid={cardImage?.childImageSharp.fluid} />
+          {cardImage?.childImageSharp ? <Image fluid={cardImage?.childImageSharp.fluid} /> : <img src="/img/true-line-gold-mastercardcard.png" />}
         </div>
         <div className="details">
           <div className="features">

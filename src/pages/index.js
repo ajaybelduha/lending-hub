@@ -6,45 +6,45 @@ import HowItWorks from '../components/home/HowItWorks'
 import MaximizeSavings from '../components/MaximizeSavings'
 import FeaturedBlogs from '../components/home/FeaturedBlogs'
 
-const HomePage = ({data}) => {
+const HomePage = ({ data }) => {
   const response = data.homepage.edges[0].node.frontmatter
   const items = [
     {
       image: '/img/icons/mortgage-copy.svg',
       imageHover: '/img/icons/home-3_hover.svg',
       title: 'Mortgages',
-      link: '/mortgages',
+      link: '/mortgages'
     },
     {
       image: '/img/icons/surface1.svg',
       imageHover: '/img/icons/surface1_hover.svg',
       title: 'Credit Cards',
-      link: '/creditcards',
+      link: '/creditcards'
     },
     {
       image: '/img/icons/insurance.svg',
       imageHover: '/img/icons/insurance_hover.svg',
       title: 'Insurance',
-      link: '/insurance',
-    },
+      link: '/insurance'
+    }
   ]
   const stepItems = [
     {
-        image: response.section2.point1Image,
-        title: response.section2.point1,
-        subtitle: response.section2.point1description,
-      },
-      {
-        image: response.section2.point2Image,
-        title: response.section2.point2,
-        subtitle: response.section2.point2description,
-      },
-      {
-        image: response.section2.point3Image,
-        title: response.section2.point3,
-        subtitle: response.section2.point3description,
-      },
-]
+      image: response.section2.point1Image,
+      title: response.section2.point1,
+      subtitle: response.section2.point1description
+    },
+    {
+      image: response.section2.point2Image,
+      title: response.section2.point2,
+      subtitle: response.section2.point2description
+    },
+    {
+      image: response.section2.point3Image,
+      title: response.section2.point3,
+      subtitle: response.section2.point3description
+    }
+  ]
 
   return (
     <Layout>
@@ -55,7 +55,7 @@ const HomePage = ({data}) => {
         imageSrc={response.section1.image}
         blockItems={items}
       />
-      <HowItWorks stepItems={stepItems} />
+      <HowItWorks title={'How it works'} subtitle={''} stepItems={stepItems} />
       <MaximizeSavings data={response.section3} />
       <FeaturedBlogs />
     </Layout>

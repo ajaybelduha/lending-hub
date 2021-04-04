@@ -7,7 +7,7 @@ fee: 120
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "20.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: cashback
 href: https://www.td.com/ca/en/personal-banking/products/credit-cards/cash-back/cash-back-visa-infinite-card_b/?s_tnt=474653:1:0&

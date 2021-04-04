@@ -6,10 +6,10 @@ import InsuranceHero from '../components/insurance/InsuranceHero'
 import Layout from '../components/Layout'
 import EditorsPick from '../components/creditcards/EditorsPick'
 import InsuranceForm from '../components/insurance/InsuranceForm'
-import InsuranceSteps from '../components/insurance/InsuranceSteps'
 import OurPartners from '../components/mortgages/OurPartners'
 import { useStaticQuery } from 'gatsby';
 import { ButtonNoStyle } from '../components/common/common';
+import HowItWorks from '../components/home/HowItWorks'
 
 const items = [
     {
@@ -67,12 +67,8 @@ const Insurance = ({data}) => {
                     setOpen={setModal}
                 />
                 <div className="container my-6">
-                    <h1 className="section-title mb-3">Steps to buy insurance</h1>
-                                <h4 className="section-subtitle">
-                                    Follow these 3 simple steps to buy insurance with us with just few clicks
-                                </h4>
                         <div className="section-2">
-                                <InsuranceSteps stepItems={stepItems} />
+                                <HowItWorks title={'Steps to buy insurance'} subtitle={'Follow these 3 simple steps to buy insurance with us with just few clicks'} stepItems={stepItems} />
                         </div>
                         <OurPartners data={response.partners} />
                 </div><br/>
