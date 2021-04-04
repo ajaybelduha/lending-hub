@@ -27,9 +27,6 @@ const CreditScore = (props) => {
   return (
     <CreditScoreContainer>
       <Fade bottom>
-        <div className="section-title">
-          Find your perfect card in 60 seconds
-        </div>
         <div className="title-24 mb-6">Do you know your credit score?</div>
         <SliderContainer>
           <div className="value title-24">{score}</div>
@@ -65,7 +62,6 @@ const CreditScore = (props) => {
 
 const CreditScoreContainer = styled.div`
   text-align: center;
-  margin-top: 10%;
 `
 
 export default CreditScore

@@ -33,7 +33,7 @@ const StepProgressBar = ({percent, totalSteps}) => {
 const ProgressBarContainer = styled.div`
     .RSPBprogressBar {
         width: 600px;
-        margin: 3rem auto;
+        margin: 1rem auto 3rem auto;
     }
     .RSPBprogression {
         background: #000000

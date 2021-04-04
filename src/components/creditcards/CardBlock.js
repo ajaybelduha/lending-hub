@@ -36,45 +36,31 @@ const CardBlock = ({ cardData }) => {
   return (
     <CardBlockContainer>
       <hr />
-      <h2 className="title-24">{title}</h2>
-      <p>This offer not available for resident of quebec</p>
+      <h2 className="title-2">{title}</h2>
+      {/* <p>This offer not available for resident of quebec</p> */}
       <div className="card-details">
         <div className="image">
           {/* <img src="/img/true-line-gold-mastercardcard.png" /> */}
-          <Image fluid={cardImage?.childImageSharp.fluid} />
+          {cardImage?.childImageSharp ? <Image fluid={cardImage?.childImageSharp.fluid} /> : <img src="/img/true-line-gold-mastercardcard.png" />}
         </div>
         <div className="details">
           <div className="features">
-            {/* <div className="column"> */}
             <div className="item">
               <div className="key">Annual Fee</div>
               <div className="value bold">${fee}</div>
             </div>
-            {/* </div> */}
-            {/* <div className="column"> */}
             <div className="item">
               <div className="key">Interest Rate</div>
               <div className="value bold">{purchaseInterest}%</div>
             </div>
-            {/* </div> */}
-            {/* <div className="column"> */}
             <div className="item">
-              <div className="key">Balance Transfer</div>
+              <div className="key">Balance Transfer Rate</div>
               <div className="value bold">{balanceTranferFees}%</div>
             </div>
-            {/* </div>
-                        <div className="column"> */}
-            <div className="item">
-              <div className="key">Cash Advance</div>
-              <div className="value bold">{cashAdvanceInterest}%</div>
-            </div>
-            {/* </div> */}
-            {/* <div className="column"> */}
             <div className="item">
               <div className="key">Credit Score Type</div>
               <div className="value bold">{creditScore}</div>
             </div>
-            {/* </div> */}
           </div>
         </div>
         <div className="action">
@@ -93,9 +79,9 @@ const CardBlock = ({ cardData }) => {
             </div>}
         </div>
       </div>
-      <div className="more-details">
+      {data[0].paragraph && <div className="more-details">
         <Accordion data={data} />
-      </div>
+      </div>}
     </CardBlockContainer>
   )
 }
@@ -111,14 +97,15 @@ const CardBlockContainer = styled.div`
     flex-wrap: wrap;
     margin: 2rem 0;
     .image {
-      width: 23%;
+      width: 15%;
     }
     .details {
-      width: 60%;
+      width: 70%;
       padding: 0px 3%;
       .features {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
       }
       .item {
         width: 150px;
@@ -128,7 +115,7 @@ const CardBlockContainer = styled.div`
       }
     }
     .action {
-      width: 17%;
+      width: 15%;
       .apply-successful {
         align-items: center;
         display: flex;

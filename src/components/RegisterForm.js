@@ -10,10 +10,9 @@ import {
   BlackButton
 } from '../components/common/common'
 import { createPipelineContent } from '../service/Pipelinecrm'
-import { validateRegisterDetails, createDataForCRM } from '../components/common/utils'
+import { validate, createDataForCRM } from '../components/common/utils'
 
 const RegisterForm = (props) => {
-
   const [formValues, setFormValues] = useState({})
 
   useEffect(() => {
@@ -28,11 +27,10 @@ const RegisterForm = (props) => {
       phone: '',
       name: '',
       lastname: '',
-      terms: '',
+      terms: ''
     },
-    validateRegisterDetails,
+    validate,
     onSubmit: (values, actions) => {
-
       const data = createPipelineContent(props, values, formValues)
       // pipeline crm api changes and register form code made better
       // submitData(data, props)
@@ -40,10 +38,9 @@ const RegisterForm = (props) => {
       const selections = props.selections
       const redirect = props.redirectTo
       navigate(redirect, {
-        state: { selections },
-      });
-      
-    },
+        state: { selections }
+      })
+    }
   })
   return (
     <RegisterFormContainer>
@@ -53,8 +50,8 @@ const RegisterForm = (props) => {
         </div>
         <div className="mb-6 has-text-centered">Get Instant Access</div>
         <div className="form-container">
-          <form 
-            name="contact" 
+          <form
+            name="contact"
             method="post"
             action="/thanks/"
             data-netlify="true"
@@ -73,16 +70,18 @@ const RegisterForm = (props) => {
                       type="text"
                       placeholder="First Name"
                       className={classNames('input', {
-                        'is-danger': formik.errors.name,
+                        'is-danger': formik.errors.name
                       })}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.name}
                     />
                   </div>
-                  {formik.touched.name && formik.errors.name ? (
+                  {formik.touched.name && formik.errors.name
+                    ? (
                     <p className="help is-danger">{formik.errors.name}</p>
-                  ) : null}
+                      )
+                    : null}
                 </div>
               </div>
             </div>
@@ -98,16 +97,18 @@ const RegisterForm = (props) => {
                       type="text"
                       placeholder="Last Name"
                       className={classNames('input', {
-                        'is-danger': formik.errors.lastname,
+                        'is-danger': formik.errors.lastname
                       })}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.lastname}
                     />
                   </div>
-                  {formik.touched.lastname && formik.errors.lastname ? (
+                  {formik.touched.lastname && formik.errors.lastname
+                    ? (
                     <p className="help is-danger">{formik.errors.lastname}</p>
-                  ) : null}
+                      )
+                    : null}
                 </div>
               </div>
             </div>
@@ -122,16 +123,18 @@ const RegisterForm = (props) => {
                       type="email"
                       placeholder="Email"
                       className={classNames('input', {
-                        'is-danger': formik.errors.email,
+                        'is-danger': formik.errors.email
                       })}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.email}
                     />
                   </div>
-                  {formik.touched.email && formik.errors.email ? (
+                  {formik.touched.email && formik.errors.email
+                    ? (
                     <p className="help is-danger">{formik.errors.email}</p>
-                  ) : null}
+                      )
+                    : null}
                 </div>
               </div>
               <div className="column">
@@ -144,16 +147,18 @@ const RegisterForm = (props) => {
                       type="text"
                       placeholder="Phone"
                       className={classNames('input', {
-                        'is-danger': formik.errors.phone,
+                        'is-danger': formik.errors.phone
                       })}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.phone}
                     />
                   </div>
-                  {formik.touched.phone && formik.errors.phone ? (
+                  {formik.touched.phone && formik.errors.phone
+                    ? (
                     <p className="help is-danger">{formik.errors.phone}</p>
-                  ) : null}
+                      )
+                    : null}
                 </div>
               </div>
             </div>
@@ -182,9 +187,11 @@ const RegisterForm = (props) => {
                   its agents/affiliates.
                 </label>
               </Checkbox>
-              {formik.touched.terms && formik.errors.terms ? (
+              {formik.touched.terms && formik.errors.terms
+                ? (
                 <p className="help is-danger">{formik.errors.terms}</p>
-              ) : null}
+                  )
+                : null}
             </div>
             {/* <BlackButtonLink to="/creditcards/listing">Let's see Cards</BlackButtonLink> */}
             <BlackButton type="submit">{props.submitText}</BlackButton>
