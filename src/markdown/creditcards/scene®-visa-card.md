@@ -11,6 +11,6 @@ balanceTransferInterest: "22.99"
 balanceTranferFees: ""
 userCategory: personal
 cardCategory: rewards
-rewardType: travel
+rewardType: points
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/visa/scene-card.html?cid=a-27077b-23282c-&dclid=CKi8yMLh5-8CFcKSwAodoJIHng
 ---
