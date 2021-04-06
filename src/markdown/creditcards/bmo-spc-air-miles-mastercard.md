@@ -11,5 +11,5 @@ balanceTranferFees: ""
 userCategory: personal
 cardCategory: rewards
 rewardType: points
-href: https://www.bmo.com/pdf/16-2811_BMO_SPC_Affinity_BenGuide_Ev5.pdf
+href: https://www.bmo.com/main/personal/students/#credit-cards
 ---
