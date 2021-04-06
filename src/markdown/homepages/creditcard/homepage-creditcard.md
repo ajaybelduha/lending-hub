@@ -13,11 +13,11 @@ section2:
   point3: Are you willing to pay a fee?
   point4: View and Compare your cards
   point4Image: /img/hiw-cc-4.png
-  point4description: .
+  point4description: ""
   point3Image: /img/hiw-cc-3.png
   point2Image: /img/hiw-cc-2.png
-  point3description: .
+  point3description: ""
   point1Image: /img/hiw-cc-1.png
-  point2description: .
-  point1description: .
+  point2description: ""
+  point1description: ""
 ---
