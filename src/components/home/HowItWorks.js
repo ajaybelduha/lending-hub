@@ -29,12 +29,10 @@ const HowItWorks = ({ stepItems, title, subtitle }) => {
                   )
                 })}
             </div>
-            <div>
                 <div className="steps-image">
                     {/* <img src={image} alt="home hero image" /> */}
                     <Image fluid={image?.childImageSharp.fluid} />
                 </div>
-            </div>
         </HowItWorksContainer>
         </div>
   )
@@ -62,16 +60,16 @@ const HowItWorksContainer = styled.div`
     margin: 5rem 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .steps-text {
         background-color: #EAEAEA;
         width: 50%;
         border-radius: 1rem;
     }
     .step-item {
-        opacity: 0.3;
         display: flex;
         padding: 3rem 4rem;
-        align-items: flex-end;
+        align-items: center;
         transition: all .25s linear;
         cursor: pointer;
         .index {
@@ -113,6 +111,7 @@ const HowItWorksContainer = styled.div`
             width: 100%;
             align-items: center;
             padding: 1.5rem 1rem;
+            min-height: 6rem;
             .item {
                 .head {
                 font-size: 1rem;
@@ -125,6 +124,8 @@ const HowItWorksContainer = styled.div`
             .index {
                 margin-left: 1rem;
                 line-height: 1rem;
+                margin-right: 2rem;
+                width: initial;
             }
             
         }
