@@ -8,7 +8,7 @@ feeOptions: dontmind
 firstYearFee: ""
 network: Mastercard
 purchaseInterest: "19.90"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: null
 cardCategory: rewards
 rewardType: points

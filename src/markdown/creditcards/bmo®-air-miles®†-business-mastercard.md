@@ -7,7 +7,7 @@ fee: 120
 feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: rewards
 rewardType: points

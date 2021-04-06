@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.80"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: travel
 href: https://www.capitalone.ca/credit-cards/aspire-travel-platinum/

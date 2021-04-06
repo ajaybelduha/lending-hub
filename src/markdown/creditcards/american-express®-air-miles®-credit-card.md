@@ -8,7 +8,7 @@ feeOptions: nofees
 network: American Express
 purchaseInterest: "19.99"
 balanceTransferInterest: "1.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: points
 href: https://www.americanexpress.com/ca/en/credit-cards/air-miles-credit-card/?linknav=ca-en-amex-cardshop-allcards-learn-americanExpressAIRMILESCreditCard&cpid=100186460

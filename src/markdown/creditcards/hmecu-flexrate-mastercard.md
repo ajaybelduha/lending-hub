@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "0"
 balanceTransferInterest: "0"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: points

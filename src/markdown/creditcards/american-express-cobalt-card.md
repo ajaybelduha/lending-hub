@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: American Express
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: points
 href: https://www.americanexpress.com/ca/en/credit-cards/cobalt-card/?linknav=ca-en-amex-cardshop-allcards-image-cobaltCard-fc&cpid=100186460

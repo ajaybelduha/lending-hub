@@ -6,7 +6,7 @@ creditScore: Excellent
 fee: 0
 feeOptions: nofees
 network: Mastercard
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: points
 href: https://www.happysavings.ca/products/borrowing/mastercard/hubert-mastercard/

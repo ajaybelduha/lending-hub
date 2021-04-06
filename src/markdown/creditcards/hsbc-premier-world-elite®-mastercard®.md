@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "17.90"
 balanceTransferInterest: "17.90"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: travel
 href: https://www.hsbc.ca/credit-cards/products/premier-world-elite/

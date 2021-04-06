@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.90"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: points

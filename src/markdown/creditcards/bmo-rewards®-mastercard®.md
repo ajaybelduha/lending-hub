@@ -9,7 +9,7 @@ additionalInterestRateInfo: ""
 network: Mastercard
 purchaseInterest: "19.99"
 balanceTransferInterest: "1.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: points

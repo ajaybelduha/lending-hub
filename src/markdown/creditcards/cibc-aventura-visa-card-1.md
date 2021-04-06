@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: Visa
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: points

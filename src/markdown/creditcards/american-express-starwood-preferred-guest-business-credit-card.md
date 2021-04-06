@@ -7,7 +7,7 @@ fee: 150
 feeOptions: dontmind
 network: American Express
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: points
 href: https://www.americanexpress.com/ca/en/credit-cards/small-business-starwood-card/?linknav=ca-en-amex-cardshop-allcards-learn-starwoodPreferredGuestBusinessCreditCard&cpid=100186460

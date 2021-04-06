@@ -7,7 +7,7 @@ fee: 65
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.50"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: points

@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: American Express
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: rewards
 rewardType: points

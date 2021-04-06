@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: points
 href: https://www.ctfs.com/content/ctfs/en/cards.html

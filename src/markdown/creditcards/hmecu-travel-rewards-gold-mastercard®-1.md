@@ -6,7 +6,7 @@ creditScore: Excellent
 fee: 99
 feeOptions: dontmind
 network: Mastercard
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: points

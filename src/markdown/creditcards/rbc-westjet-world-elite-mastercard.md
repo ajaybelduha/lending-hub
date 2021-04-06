@@ -7,7 +7,7 @@ fee: 119
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: travel
 href: https://www.rbcroyalbank.com/credit-cards/travel/westjet-rbc-world-elite-mastercard.html

@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: American Express
 purchaseInterest: "19.99"
 cashAdvanceInterest: "21.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: points
 href: https://www.americanexpress.com/ca/en/credit-cards/aeroplan-reserve/?linknav=ca-en-amex-cardshop-allcards-learn-americanExpressAeroplanPlusReserveCard&cpid=100186460

@@ -7,7 +7,7 @@ fee: 150
 feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: travel

@@ -8,7 +8,7 @@ feeOptions: nofees
 firstYearFee: ""
 network: Visa
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: student
 cardCategory: rewards
 rewardType: points
