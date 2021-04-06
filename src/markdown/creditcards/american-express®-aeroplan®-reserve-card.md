@@ -3,10 +3,11 @@ templateKey: credit-card-post
 title: American Express® Aeroplan®* Reserve Card
 cardImage: /img/aeroplan-reserve-card.png
 creditScore: Excellent
-fee: 899
+fee: 599
 feeOptions: dontmind
 network: American Express
 purchaseInterest: "19.99"
+cashAdvanceInterest: "21.99"
 balanceTranferFees: ""
 cardCategory: rewards
 rewardType: points
