@@ -1,6 +1,6 @@
 ---
 templateKey: credit-card-post
-title: The RBC Avion Visa Business
+title: RBC Avion Visa Business
 cardImage: /img/visa-business-platinum-avion-card.png
 creditScore: Excellent
 fee: 120
