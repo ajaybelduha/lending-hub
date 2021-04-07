@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { BlackButton } from '../../components/common/common'
 import Accordion from '../../components/Accordion'
 import Image from 'gatsby-image'
+import { navigate } from 'gatsby-link'
 
 const CardBlock = ({ cardData }) => {
   const {
@@ -15,6 +16,7 @@ const CardBlock = ({ cardData }) => {
     cashAdvanceInterest,
     href,
     summaryDescription,
+    exter
   } = cardData.node.frontmatter
   const data = [
     {
@@ -27,10 +29,7 @@ const CardBlock = ({ cardData }) => {
   const [isApplied, setIsApplied] = useState(false)
 
   const applyNowClick = () => {
-    setApplyNow(true)
-    setTimeout(() => {
-      setIsApplied(true)
-    }, 2000)
+    navigate(href)
   }
 
   return (
@@ -64,19 +63,9 @@ const CardBlock = ({ cardData }) => {
           </div>
         </div>
         <div className="action">
-          {!isApplied && <BlackButton onClick={applyNowClick}>
-              {!applyNow && <span>Apply now</span>}
-              {applyNow && <img className="loading-icon" src='/img/icons/loading.svg' />}
+          {<BlackButton onClick={applyNowClick}>
+              Apply Now
             </BlackButton>}
-            {isApplied && <div className="apply-successful">
-              <div>
-                <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                  <circle class="tick__circle" cx="26" cy="26" r="25" fill="none"/>
-                  <path class="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                </svg>
-              </div>
-              <p>Thank you for applying. We will get back to you soon!</p>
-            </div>}
         </div>
       </div>
       {data[0].paragraph && <div className="more-details">

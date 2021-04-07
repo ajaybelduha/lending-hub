@@ -8,7 +8,7 @@ feeOptions: nofees
 network: Visa
 purchaseInterest: "19.99"
 balanceTransferInterest: "21.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: points
 href: https://www.mbna.ca/en/credit-cards/retail-store/nordstrom-rewards-visa/

@@ -8,7 +8,7 @@ feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.99"
 balanceTransferInterest: "21.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 userCategory: null
 cardCategory: rewards
 rewardType: points

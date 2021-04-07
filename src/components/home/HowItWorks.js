@@ -68,7 +68,7 @@ const HowItWorksContainer = styled.div`
     }
     .step-item {
         display: flex;
-        padding: 3rem 4rem;
+        padding: 1.2rem 4rem;
         align-items: center;
         transition: all .25s linear;
         cursor: pointer;
@@ -110,7 +110,7 @@ const HowItWorksContainer = styled.div`
         .step-item {
             width: 100%;
             align-items: center;
-            padding: 1.5rem 1rem;
+            padding: 1rem 1rem;
             min-height: 6rem;
             .item {
                 .head {

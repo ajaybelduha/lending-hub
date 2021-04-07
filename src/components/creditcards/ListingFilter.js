@@ -28,7 +28,7 @@ const ListingFilter = ({ setFiltered, filtersFromQuestions }) => {
     )
     const obj = {
       cardFor: initialCardFor.value,
-      creditScore: initialCreditScore.value,
+      creditScore: initialCreditScore.label,
       network: networks[0].value,
       annualFees: initialAnnualFees.value,
       rewardType: subCategory[3].value
@@ -127,7 +127,7 @@ const CreditScoreDropdown = ({ onDropdownSelect, selected }) => {
     setSelectedCreditScore(item)
     setIsCreditScoreOpen(false)
 
-    onDropdownSelect('creditScore', item.value)
+    onDropdownSelect('creditScore', item.label)
   }
   return (
     <Dropdown
