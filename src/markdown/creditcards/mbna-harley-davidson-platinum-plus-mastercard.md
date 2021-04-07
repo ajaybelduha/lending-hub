@@ -8,7 +8,7 @@ feeOptions: nofees
 network: Mastercard
 purchaseInterest: "19.99"
 balanceTransferInterest: "1.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: points
 href: https://www.mbna.ca/en/credit-cards/retail-store/harley-davidson-rewards-mastercard/

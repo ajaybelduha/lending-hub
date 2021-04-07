@@ -24,6 +24,7 @@ collections:
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Card Image", name: "cardImage", widget: image, required: true}
       - {label: "Credit Score", name: "creditScore", widget: "select", options: ["Excellent", "Good", "Fair", "Poor"], required: true}
+      - {label: "Credit Score 2", name: "creditScoreTwo", widget: "select", options: ["Excellent", "Good", "Fair", "Poor", "None"], required: true, default: "None"}
       - {label: "Annual Fee", name: "fee", widget: "number", required: true}
       - {label: "Annual Fee Options", name: "feeOptions", widget: "select", options: [{value: "nofees", label: "No Fees"}, {value: "dontmind", label: "I don't mind"}, {value: "either", label: "Either"}], required: true}
       - {label: "Additional Interest Rate Information", name: "additionalInterestRateInfo", widget: "string", required: false}
@@ -33,7 +34,7 @@ collections:
       - {label: "Interest Rate", name: "purchaseInterest", widget: "string", required: false, default: 0}
       - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "string", required: false, default: 0}
       - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "string", required: false, default: 0}
-      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false, default: 0}
+      - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false, default: 1}
       - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}], required: false}
       - {label: "Card Category", required: true, name: "cardCategory", widget: "select", options: [{value: "low-interest", label: "Low Interest"}, {value: "balance-transfer", label: "Balance Transfer"}, {value: "build-credit-score", label: "Build Credit Score"}, {value: "business", label: "Business"}, {value: "rewards", label: "Rewards"}]}
       - {label: "Reward Card Subcategory", required: false, name: "rewardType", widget: "select", options: [{value: "cashback", label: "CashBack"}, {value: "all", label: "All"}, {value: "travel", label: "Travel Rewards"}, {value: "points", label: "Points"}, {value: "na", label: "NA"}], default: "NA"}
