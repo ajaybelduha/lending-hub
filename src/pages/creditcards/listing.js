@@ -23,6 +23,7 @@ const CCListing = (response) => {
     const filteredCards = cardsData.filter(item => {
       const {
         creditScore,
+        creditScoreTwo,
         cardCategory,
         network,
         feeOptions,
@@ -31,9 +32,9 @@ const CCListing = (response) => {
 
       let requiredCreditScore
       if (filters.creditScore === 'Excellent') { // Show Good also when excellent
-        requiredCreditScore = (filters.creditScore.toLowerCase() === creditScore.toLowerCase()) || creditScore.toLowerCase() === 'good'
+        requiredCreditScore = (filters.creditScore === creditScore) || creditScore === 'Good' // || filters.creditScore === creditScoreTwo || creditScoreTwo === 'Good'
       } else {
-        requiredCreditScore = filters.creditScore.toLowerCase() === creditScore.toLowerCase()
+        requiredCreditScore = filters.creditScore === creditScore // || filters.creditScore === creditScoreTwo
       }
 
       const requiredFeeOptions = filters.annualFees.toLowerCase() === feeOptions.toLowerCase() || filters.annualFees.toLowerCase() === 'either'

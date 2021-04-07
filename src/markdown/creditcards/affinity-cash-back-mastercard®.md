@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Affinity Cash Back Mastercard®
 cardImage: /img/cash-back-mastercard0.jpg
 creditScore: Excellent
+creditScoreTwo: None
 fee: 0
 feeOptions: nofees
 network: Mastercard
