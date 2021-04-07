@@ -7,7 +7,7 @@ fee: 60
 feeOptions: dontmind
 network: American Express
 purchaseInterest: "30"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: points
 href: https://creditnervana.com/american-express-aeroplanplus-card-review

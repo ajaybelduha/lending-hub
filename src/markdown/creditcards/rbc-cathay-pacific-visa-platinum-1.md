@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: Visa
 purchaseInterest: "20.50"
 cashAdvanceInterest: "22.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: points
 href: https://www.rbcroyalbank.com/credit-cards/travel/rbc-cathay-pacific-visa-platinum.html

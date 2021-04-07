@@ -117,6 +117,7 @@ query CreditCardListing {
             }
           }
           creditScore
+          creditScoreTwo
           fee
           feeOptions
           network

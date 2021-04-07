@@ -9,7 +9,7 @@ firstYearFee: ""
 network: American Express
 purchaseInterest: "19.99"
 balanceTransferInterest: "1.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: cashback
 href: https://www.americanexpress.com/ca/en/credit-cards/simply-cash-preferred/

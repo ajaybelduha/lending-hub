@@ -7,7 +7,7 @@ fee: 150
 feeOptions: dontmind
 network: American Express
 purchaseInterest: "30"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: points
 href: https://www.americanexpress.com/ca/en/charge-cards/gold-rewards-card/?linknav=ca-en-amex-cardshop-allcards-image-americanExpressGoldRewardsCard-fc&cpid=100186460

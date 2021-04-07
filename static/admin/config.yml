@@ -24,7 +24,7 @@ collections:
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Card Image", name: "cardImage", widget: image, required: true}
       - {label: "Credit Score", name: "creditScore", widget: "select", options: ["Excellent", "Good", "Fair", "Poor"], required: true}
-      - {label: "Credit Score 2", name: "creditScoreTwo", widget: "select", options: ["Excellent", "Good", "Fair", "Poor", "None"], required: true, default: "None"}
+      - {label: "Credit Score 2", name: "creditScoreTwo", widget: "select", options: ["Excellent", "Good", "Fair", "Poor", "None"], required: false, default: "None"}
       - {label: "Annual Fee", name: "fee", widget: "number", required: true}
       - {label: "Annual Fee Options", name: "feeOptions", widget: "select", options: [{value: "nofees", label: "No Fees"}, {value: "dontmind", label: "I don't mind"}, {value: "either", label: "Either"}], required: true}
       - {label: "Additional Interest Rate Information", name: "additionalInterestRateInfo", widget: "string", required: false}

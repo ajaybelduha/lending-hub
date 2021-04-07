@@ -8,7 +8,7 @@ feeOptions: nofees
 firstYearFee: ""
 network: Mastercard
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: cashback
 href: https://www.ctfs.com/content/ctfs/en/cards/gas_advantage.html

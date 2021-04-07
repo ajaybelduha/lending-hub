@@ -8,7 +8,7 @@ feeOptions: dontmind
 firstYearFee: -2
 network: Visa
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 userCategory: business
 cardCategory: rewards
 rewardType: points

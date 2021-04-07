@@ -7,7 +7,7 @@ fee: 110
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: points
 href: https://www.rbcroyalbank.com/credit-cards/rewards/rbc-rewards-visa-preferred.html

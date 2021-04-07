@@ -8,7 +8,7 @@ feeOptions: nofees
 network: Visa
 purchaseInterest: "19.90"
 balanceTransferInterest: "0"
-balanceTranferFees: ""
+balanceTranferFees: 1
 userCategory: student
 cardCategory: rewards
 rewardType: cashback

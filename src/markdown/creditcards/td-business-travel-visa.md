@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.99"
 balanceTransferInterest: "22.99"
-balanceTranferFees: ""
+balanceTranferFees: 1
 userCategory: business
 cardCategory: rewards
 rewardType: points

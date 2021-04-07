@@ -7,7 +7,7 @@ fee: 0
 feeOptions: nofees
 network: Mastercard
 purchaseInterest: "21.45"
-balanceTranferFees: ""
+balanceTranferFees: 1
 cardCategory: rewards
 rewardType: points
 href: https://hudsonsbaycredit.capitalone.ca/credit.html
