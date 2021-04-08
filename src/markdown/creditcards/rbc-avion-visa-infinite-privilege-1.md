@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: RBC Avion Visa Infinite Privilege
 cardImage: /img/avp_infinite_en_sm-2x.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 399
 feeOptions: dontmind
 network: Visa
