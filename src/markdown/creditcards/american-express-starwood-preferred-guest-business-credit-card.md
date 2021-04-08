@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: American Express Starwood Preferred Guest Business Credit Card
 cardImage: /img/starwood-preferred-guest-business-credit-card-feature-image.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 150
 feeOptions: dontmind
 network: American Express
