@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " Scotiabank® GM®*  Visa* Card"
 cardImage: /img/scotiaclassic_infinite_eng.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa
