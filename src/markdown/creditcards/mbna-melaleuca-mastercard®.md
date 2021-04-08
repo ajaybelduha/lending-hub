@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: MBNA Melaleuca Mastercard®
 cardImage: /img/aarxxx_plt_cc_vhd_lrg_mkt_e_tcm378-267406.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
