@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: CIBC Aero Platinum Visa For Students
 cardImage: /img/featurebannerimage.render.tablet-.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 39
 feeOptions: dontmind
 network: Visa
