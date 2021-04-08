@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Affinity Word Mastercard
 cardImage: /img/world-mastercard.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 150
 feeOptions: dontmind
 network: Mastercard
