@@ -1,9 +1,10 @@
 ---
 templateKey: credit-card-post
 title: CIBC Dividend Visa Card
-cardImage: /img/featurebannerimage.render.tablet.png
+cardImage: /img/featurebannerimage.render.mobile.webp
 creditScore: Excellent
-fee: 3
+creditScoreTwo: Good
+fee: 0
 feeOptions: nofees
 network: Visa
 purchaseInterest: "19.99"
