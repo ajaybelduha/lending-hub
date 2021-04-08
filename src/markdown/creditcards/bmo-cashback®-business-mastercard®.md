@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: BMO CashBack® Business Mastercard®
 cardImage: /img/bmo-sb-cashback-mastercard-en.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
