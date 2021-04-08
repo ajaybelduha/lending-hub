@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Collabria Travel Rewards Gold Mastercard
 cardImage: /img/537ed8ab-e660-4b20-b677-058f09d2f2a6.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 110
 feeOptions: dontmind
 network: Mastercard
