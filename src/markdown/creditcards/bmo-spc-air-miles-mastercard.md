@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: BMO SPC Air Miles Mastercard
 cardImage: /img/v-hi.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
