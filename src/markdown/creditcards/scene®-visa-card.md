@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " SCENE®*  Visa* Card"
 cardImage: /img/scotia_scene_eng.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa
