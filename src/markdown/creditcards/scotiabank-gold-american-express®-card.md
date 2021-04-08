@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Scotiabank Gold American Express® Card
 cardImage: /img/gold_american_express_card_eng.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 120
 feeOptions: dontmind
 network: American Express
