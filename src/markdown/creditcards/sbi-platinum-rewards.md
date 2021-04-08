@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: SBI Platinum Rewards
 cardImage: /img/sbi-platinum-rewards.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 120
 feeOptions: dontmind
 network: Visa
