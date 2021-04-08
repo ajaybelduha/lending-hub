@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: HMECU CENTRA GOLD MASTERCARD®
 cardImage: /img/hmecu_mc_centragold.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 50
 feeOptions: dontmind
 firstYearFee: ""
