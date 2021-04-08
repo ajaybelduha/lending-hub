@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: BMO® AIR MILES®† Business Mastercard
 cardImage: /img/bmo-sb-airmiles-mastercard-en.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 120
 feeOptions: dontmind
 network: Mastercard
