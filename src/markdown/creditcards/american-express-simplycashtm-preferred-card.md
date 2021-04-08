@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: American Express SimplyCashTM Preferred Card
 cardImage: /img/simplycash_preferred_card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 99
 feeOptions: dontmind
 network: American Express
