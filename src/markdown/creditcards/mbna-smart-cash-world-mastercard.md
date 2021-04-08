@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: MBNA Smart Cash World Mastercard
 cardImage: /img/smart-cash-world-platinum_tcm378-267491.png
 creditScore: Fair
+creditScoreTwo: Good
 fee: 39
 feeOptions: dontmind
 network: Mastercard
