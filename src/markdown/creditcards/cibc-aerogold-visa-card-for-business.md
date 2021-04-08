@@ -2,7 +2,8 @@
 templateKey: credit-card-post
 title: CIBC Aerogold Visa Card For Business
 cardImage: /img/featurebannerimage.render.tablet.png
-creditScore: Fair
+creditScore: Excellent
+creditScoreTwo: Good
 fee: 180
 feeOptions: dontmind
 network: Visa
