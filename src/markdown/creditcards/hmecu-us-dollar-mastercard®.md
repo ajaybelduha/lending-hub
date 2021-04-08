@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: HMECU US DOLLAR MASTERCARD®
 cardImage: /img/hmecu_mc_usdollar.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 50
 feeOptions: dontmind
 network: Mastercard
