@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: BMO AIR MILES®† Mastercard®
 cardImage: /img/bmo-air-miles-mastercard.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
