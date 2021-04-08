@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Hubert World Mastercard®
 cardImage: /img/sunova_mastercard_world_hubert-768x492.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 199
 feeOptions: dontmind
 firstYearFee: ""
