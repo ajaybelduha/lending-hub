@@ -2,7 +2,8 @@
 templateKey: credit-card-post
 title: TD Aeroplan Visa Business
 cardImage: /img/aeroplan-business-visa-card_en_comp1-10_548x344_tcm380-335860.jpg
-creditScore: Fair
+creditScore: Excellent
+creditScoreTwo: Good
 fee: 149
 feeOptions: dontmind
 network: Visa
