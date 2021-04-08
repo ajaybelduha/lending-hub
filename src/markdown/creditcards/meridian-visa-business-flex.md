@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "Meridian Visa Business Flex "
 cardImage: /img/cc-meridian-businessflexcashback.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 49
 feeOptions: dontmind
 network: Visa
