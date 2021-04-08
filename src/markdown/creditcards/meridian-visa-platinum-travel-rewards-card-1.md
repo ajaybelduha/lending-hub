@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Meridian Visa Platinum Travel Rewards Card
 cardImage: /img/cc-meridian-platinumtravelreward0s.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 49
 feeOptions: dontmind
 network: Visa
