@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: HMECU TRAVEL REWARDS GOLD MASTERCARD®
 cardImage: /img/hmecu_mc_travelrewardsgoldm.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 99
 feeOptions: dontmind
 network: Mastercard
