@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: MBNA Platinum Plus
 cardImage: /img/card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
