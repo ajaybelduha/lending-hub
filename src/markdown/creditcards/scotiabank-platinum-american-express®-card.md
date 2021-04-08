@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Scotiabank Platinum American Express® Card
 cardImage: /img/amex_platinum_enghh.png
 creditScore: Fair
+creditScoreTwo: Good
 fee: 399
 feeOptions: dontmind
 network: American Express
