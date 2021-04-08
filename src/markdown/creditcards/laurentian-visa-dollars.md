@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "Laurentian Visa Dollars "
 cardImage: /img/laurentian-bank-visa-dollars_69b949619281.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 65
 feeOptions: dontmind
 network: Visa
