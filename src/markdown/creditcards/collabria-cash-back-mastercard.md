@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Collabria Cash Back Mastercard
 cardImage: /img/cashbackmastercard_365x170.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
