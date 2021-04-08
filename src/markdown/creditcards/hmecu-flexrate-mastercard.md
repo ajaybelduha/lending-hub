@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: HMECU Flexrate Mastercard
 cardImage: /img/hmecu-web-flexrate.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 40
 feeOptions: dontmind
 network: Mastercard
