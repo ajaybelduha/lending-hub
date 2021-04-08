@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " American Express SimplyCashTM Card "
 cardImage: /img/simplycash_card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: American Express
