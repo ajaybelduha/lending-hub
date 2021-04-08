@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: HMECU PLATINUM BUSINESS MASTERCARD®
 cardImage: /img/hmecu_mc_platinumbusiness.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 99
 feeOptions: dontmind
 network: Mastercard
