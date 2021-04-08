@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "RBC Rewards+ Visa "
 cardImage: /img/rvc_rewardsplus_en_sm-2x.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: dontmind
 network: Visa
