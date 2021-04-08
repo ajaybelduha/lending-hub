@@ -2,7 +2,8 @@
 templateKey: credit-card-post
 title: Scotiabank L'earn Visa Card
 cardImage: /img/learn_visa_eng.png
-creditScore: Fair
+creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa
