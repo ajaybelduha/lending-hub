@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Meridian Visa US Dollar Card
 cardImage: /img/cc-meridian-usdollars.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 65
 feeOptions: dontmind
 network: Visa
