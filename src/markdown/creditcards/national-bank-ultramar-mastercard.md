@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: National Bank Ultramar Mastercard
 cardImage: /img/national-bank-ultramar-mastercard_4770119a33a5.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
