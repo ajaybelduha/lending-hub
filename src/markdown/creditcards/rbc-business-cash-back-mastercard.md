@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "RBC Business Cash Back Mastercard "
 cardImage: /img/business-cashback-card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
