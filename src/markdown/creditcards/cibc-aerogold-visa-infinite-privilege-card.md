@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "CIBC Aerogold Visa Infinite Privilege Card "
 cardImage: /img/featurebannerimage.render.tablet9.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 399
 feeOptions: dontmind
 firstYearFee: ""
