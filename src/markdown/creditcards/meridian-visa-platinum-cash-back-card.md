@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Meridian Visa Platinum Cash Back Card
 cardImage: /img/cc-meridian-platinumcashback.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 49
 feeOptions: dontmind
 network: Visa
