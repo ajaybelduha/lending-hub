@@ -2,7 +2,8 @@
 templateKey: credit-card-post
 title: "Meridian Visa Cash Back Card "
 cardImage: /img/cc-meridian-cashback.png
-creditScore: Fair
+creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa
