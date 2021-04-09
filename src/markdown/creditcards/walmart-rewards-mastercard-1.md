@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Walmart Rewards Mastercard
 cardImage: /img/walmart-rewards-mastercard_105342c469e6.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard
