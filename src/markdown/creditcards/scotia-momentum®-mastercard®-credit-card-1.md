@@ -13,6 +13,6 @@ cashAdvanceInterest: 0
 balanceTranferFees: ""
 userCategory: personal
 cardCategory: low-interest
-rewardType: NA
+rewardType: cashback
 href: https://www.scotiabank.com/ca/en/personal/credit-cards/mastercard/momentum-card.html?cid=a-27077b-24123c-&dclid=CN7CqdWw8e8CFaFf1Qodu5cA2g
 ---
