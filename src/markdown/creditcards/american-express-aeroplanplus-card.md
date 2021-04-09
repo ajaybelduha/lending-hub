@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: American Express AeroplanPlus Card
 cardImage: /img/aeroplanplus_card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 60
 feeOptions: dontmind
 network: American Express
