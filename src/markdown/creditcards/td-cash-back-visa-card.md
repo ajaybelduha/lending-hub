@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: TD Cash Back Visa* Card
 cardImage: /img/cash_back_visa_card-large_tcm341-237864.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa
