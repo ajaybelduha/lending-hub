@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: American Express AeroplanPlus Platinum Card
 cardImage: /img/aeroplanplus_platinum_card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 499
 feeOptions: dontmind
 network: American Express
