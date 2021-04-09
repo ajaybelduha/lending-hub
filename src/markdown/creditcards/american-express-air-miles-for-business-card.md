@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: American Express Air Miles For Business Card
 cardImage: /img/air_miles_for_business_card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 182
 feeOptions: dontmind
 firstYearFee: ""
