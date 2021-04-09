@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: TD Cash Back Visa Infinite* Card
 cardImage: /img/cash-back-infinite-visa-card-large_tcm341-237865.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 120
 feeOptions: dontmind
 network: Visa
