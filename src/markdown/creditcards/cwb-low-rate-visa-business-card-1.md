@@ -1,7 +1,7 @@
 ---
 templateKey: credit-card-post
 title: "CWB Low Rate Visa Business Card "
-cardImage: /img/lowratecard-903x903.webp
+cardImage: /img/2021-04-12-14.08.50.jpg
 creditScore: Excellent
 creditScoreTwo: Good
 fee: 25
