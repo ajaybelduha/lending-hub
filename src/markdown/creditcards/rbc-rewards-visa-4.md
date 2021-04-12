@@ -3,7 +3,7 @@ templateKey: credit-card-post
 title: "RBC Rewards+ Visa "
 cardImage: /img/rvc_rewardsplus_en_smkbm.png
 creditScore: Fair
-creditScoreTwo: None
+creditScoreTwo: Poor
 fee: 0
 feeOptions: nofees
 network: Visa
