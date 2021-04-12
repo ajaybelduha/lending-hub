@@ -3,7 +3,7 @@ templateKey: credit-card-post
 title: Capital One Aspire Travel Platinum Mastercard
 cardImage: /img/atp-en-static-d97169a174f8da97cf67856c0ea37cc2.png
 creditScore: Excellent
-creditScoreTwo: Good
+creditScoreTwo: None
 fee: 0
 feeOptions: nofees
 network: Mastercard
