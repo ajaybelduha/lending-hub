@@ -12,7 +12,7 @@ balanceTransferInterest: "1.99"
 cashAdvanceInterest: 0
 balanceTranferFees: ""
 userCategory: personal
-cardCategory: business
+cardCategory: balance-transfer
 rewardType: all
 href: https://www.bmo.com/main/personal/credit-cards/bmo-airmiles-mastercard/
 ---
