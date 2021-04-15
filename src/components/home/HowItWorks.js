@@ -88,6 +88,7 @@ const HowItWorksContainer = styled.div`
     }
     .steps-image {
         width: 550px;
+        max-height: 400px;
         img {
             width: 550px;
         }

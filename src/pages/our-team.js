@@ -49,7 +49,7 @@ const OurTeam = ({data}) => {
           blockItems={items}
           setOpen={setModal}
         />
-          <div className="container">
+          {/* <div className="container">
             <div className="our-leadership">
               <h2 className="section-title">Our Leadership</h2>
               <div className="teams-blocks">
@@ -73,7 +73,7 @@ const OurTeam = ({data}) => {
                 })}
               </div>
             </div>
-          </div>
+          </div> */}
           <OurTeamForm open={openModal} setOpen={setModal} />
           </HeroContainer>
         </Layout>
