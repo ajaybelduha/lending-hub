@@ -52,6 +52,7 @@ const CCListing = (response) => {
   }, [filters])
 
   const setFilteredData = (items) => {
+    console.log("items-> ",items)
     setFilters(items)
   }
   return (

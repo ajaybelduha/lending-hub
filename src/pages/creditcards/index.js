@@ -12,8 +12,8 @@ const CreditCardHome = ({data}) => {
   const items = [
     {
       key: 1,
-      image: '/img/icons/employees.svg',
-      imageHover: '/img/icons/employees_hover.svg',
+      image: '/img/icons/surface1.svg',
+      imageHover: '/img/icons/surface1_hover.svg',
       title: 'Get Started',
       link: '/creditcards/questions',
     }
