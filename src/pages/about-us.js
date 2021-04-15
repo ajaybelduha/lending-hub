@@ -101,8 +101,8 @@ const AboutUs = ({ data }) => {
           <h2 className="section-title mb-6">{response.section3.heading}</h2>
           <p className="section-subtitle mb-4">{response.section3.subheading}</p>
           <div className="teams-blocks mt-5">
-            <TeamBlock slug={'/markdown/team/ron-sally/'} photo={response.section3.photo1} name={response.section3.name1} designation={response.section3.designation1} />
-            <TeamBlock slug={'/markdown/team/ron-sally-1/'} photo={response.section3.photo2} name={response.section3.name2} designation={response.section3.designation2} />
+            <TeamBlock photo={response.section3.photo1} name={response.section3.name1} designation={response.section3.designation1} />
+            {/* <TeamBlock slug={'/markdown/team/ron-sally-1/'} photo={response.section3.photo2} name={response.section3.name2} designation={response.section3.designation2} /> */}
           </div>
 
         </div>
@@ -144,16 +144,14 @@ const AboutUs = ({ data }) => {
   )
 }
 
-const TeamBlock = ({ photo, name, designation, slug }) => {
+const TeamBlock = ({ photo, name, designation }) => {
   return (
     <div className="team-block has-text-centered">
-      <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
       <Image fluid={photo?.childImageSharp?.fluid} />
-      <div className="team-desc">
+      <div className="team-desc mt-4">
         <h3 className="title-small">{name}</h3>
         <p className="">{designation}</p>
       </div>
-      </AniLink>
     </div>
   )
 }
@@ -284,15 +282,6 @@ query {
                 }
               }
              }
-             name2
-             designation2
-             photo2 {
-              childImageSharp {
-                fluid(maxWidth: 800, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-             }
            }
            section4 {
              video1
@@ -385,8 +374,8 @@ margin-top: 3rem;
     display: flex;
     justify-content: flex-start;
     .team-block {
-      width: 35%;
-      margin: auto;
+      width: 50%;
+      margin: 1rem auto;
       transition-duration: .3s;
       transition-property: transform;
       transition-timing-function: ease-out;
