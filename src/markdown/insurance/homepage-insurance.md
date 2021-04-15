@@ -13,7 +13,7 @@ section2:
   heading: Why choose us?
   point3: Advice you can trust
   point4: Trust us
-  point4Image: /img/apple-touch-icon.png
+  point4Image: /img/alterna-savings-credit-union.png
   point4description: When you deal with our Team you can communicate in whatever
     way you are most comfortable with, or that fits into your busy life
   point3Image: /img/step3.png
