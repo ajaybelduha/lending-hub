@@ -23,11 +23,11 @@ section3:
     Millennium means less work, fret and risk. Your real estate transaction is
     one of the largest and most important events in your life. Let us take care
     of it with the attention and experience that is necessary.
-  name1: SUNIL SALLY
+  name1: Sunil Sally and Ron Sally
   designation1: BROKER/OWNER
   name2: RON SALLY
   designation2: BROKER OF RECORD
-  photo1: /img/sunil-sally.png
+  photo1: /img/sunil-ron.png
   photo2: /img/ron-sally.png
 section4:
   video1: 83xUvyr1Jxk
