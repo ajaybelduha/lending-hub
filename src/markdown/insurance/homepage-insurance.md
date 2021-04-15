@@ -8,19 +8,23 @@ section1:
   subheading2: .
   subheading: .
 section2:
-  point1: Answer a few basic questions
-  point2: Choose your coverage options
-  heading: Steps to buy insurance
-  point3: Pay Online
+  point1: Choice you need
+  point2: Flexibility for you
+  heading: Why choose us?
+  point3: Advice you can trust
+  point4: Trust us
+  point4description: When you deal with our Team you can communicate in whatever
+    way you are most comfortable with, or that fits into your busy life
   point3Image: /img/step3.png
   point2Image: /img/step2.png
-  point3description: Pay exactly for what you buy with just few clicks online - no
-    hidden fees. And access your insurance documents immediately.
+  point3description: When you deal with our Team you can communicate in whatever
+    way you are most comfortable with, or that fits into your busy life
   point1Image: /img/insurance_howitworks.svg
-  point2description: Select how much coverage you need for your vehicle and home.
-    Here you can truly customize your insurance according to your needs.
-  point1description: Just answer a few basic questions to let us know what exactly
-    you need and we will provide you the rest
+  point2description: When you deal with our Team you can communicate in whatever
+    way you are most comfortable with, or that fits into your busy life
+  point1description: Unlike direct-writers who only work a single company, our
+    Team work with multiple Insurance Companies to insure our clients get proper
+    coverages at the best prices.
 partners:
   image16: /img/partners-16.png
   heading: Our partners
