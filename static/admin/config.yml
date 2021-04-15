@@ -431,10 +431,13 @@ collections:
         {label: "Point 1 Image", name: "point1Image", widget: image, required: true}, 
         {label: "Point 2", name: "point2", widget: string, required: true}, 
         {label: "Point 2 description", name: "point2description", widget: string, required: true}, 
-        {label: "Point 2 Image", name: "point2Image", widget: image, required: true}, 
+        {label: "Point 2 Image", name: "point2Image", widget: image, required: false}, 
         {label: "Point 3", name: "point3", widget: string, required: true}, 
         {label: "Point 3 description", name: "point3description", widget: string, required: true}, 
-        {label: "Point 3 Image", name: "point3Image", widget: image, required: true}, 
+        {label: "Point 3 Image", name: "point3Image", widget: image, required: false}, 
+        {label: "Point 4", name: "point4", widget: string, required: true}, 
+        {label: "Point 4 description", name: "point4description", widget: string, required: false}, 
+        {label: "Point 4 Image", name: "point4Image", widget: image, required: false}, 
         ]
       }
       - {label: Partners, name: partners, widget: object, 
@@ -471,8 +474,8 @@ collections:
       - {label: "Photo", name: "photo", widget: image, required: true}
       - {label: "About Me", name: "aboutme", widget: text, required: false}
       - {label: "Phone Number", name: "phone", widget: string, required: true}
-      - {label: "Email", name: "email", widget: "string", required: true}
       - {label: "Is CEO?", name: "isceo", widget: "boolean", required: false, default: false}
+      - {label: "Email", name: "email", widget: "string", required: true}
       - {label: "Location", name: "location", widget: "string", required: false}
       - {label: "Website", name: "website", widget: "string", required: false}
       - {label: Social Links, name: social, widget: object, 
