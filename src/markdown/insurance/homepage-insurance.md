@@ -20,7 +20,7 @@ section2:
   point2Image: /img/step2.png
   point3description: When you deal with our Team you can communicate in whatever
     way you are most comfortable with, or that fits into your busy life
-  point1Image: /img/insurance_howitworks.svg
+  point1Image: /img/insurance_howitworks.png
   point2description: When you deal with our Team you can communicate in whatever
     way you are most comfortable with, or that fits into your busy life
   point1description: Unlike direct-writers who only work a single company, our
