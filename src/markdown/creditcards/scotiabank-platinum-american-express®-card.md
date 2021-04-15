@@ -1,0 +1,17 @@
+---
+templateKey: credit-card-post
+title: Scotiabank Platinum American Express® Card
+cardImage: /img/amex_platinum_enghh.png
+creditScore: Fair
+creditScoreTwo: Good
+fee: 399
+feeOptions: dontmind
+network: American Express
+purchaseInterest: "19.99"
+balanceTransferInterest: "22.99"
+balanceTranferFees: 0
+userCategory: personal
+cardCategory: rewards
+rewardType: travel
+href: https://www.scotiabank.com/ca/en/personal/credit-cards/american-express/platinum-card.html
+---

@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: American Express Cobalt Card
 cardImage: /img/american_express_cobalt_card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: American Express

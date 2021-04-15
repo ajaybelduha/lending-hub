@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " ScotiaGold Passport®  Visa* Card"
 cardImage: /img/scotiagold_passport_engk.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 110
 feeOptions: dontmind
 network: Visa

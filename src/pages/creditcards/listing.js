@@ -32,9 +32,9 @@ const CCListing = (response) => {
 
       let requiredCreditScore
       if (filters.creditScore === 'Excellent') { // Show Good also when excellent
-        requiredCreditScore = (filters.creditScore === creditScore) || creditScore === 'Good' // || filters.creditScore === creditScoreTwo || creditScoreTwo === 'Good'
+        requiredCreditScore = (filters.creditScore === creditScore) || creditScore === 'Good' || filters.creditScore === creditScoreTwo || creditScoreTwo === 'Good'
       } else {
-        requiredCreditScore = filters.creditScore === creditScore // || filters.creditScore === creditScoreTwo
+        requiredCreditScore = filters.creditScore === creditScore || filters.creditScore === creditScoreTwo
       }
 
       const requiredFeeOptions = filters.annualFees.toLowerCase() === feeOptions.toLowerCase() || filters.annualFees.toLowerCase() === 'either'

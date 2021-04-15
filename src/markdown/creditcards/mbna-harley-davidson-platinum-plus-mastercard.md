@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: MBNA Harley-Davidson Platinum Plus Mastercard
 cardImage: /img/abavxx_plt_cc_vhd_xl_mkt_e_tcm378-267478.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard

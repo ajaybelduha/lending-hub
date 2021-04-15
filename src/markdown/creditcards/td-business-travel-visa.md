@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "TD Business Travel Visa "
 cardImage: /img/business-travel-visa-cardmn-large_tcm380-234290.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 149
 feeOptions: dontmind
 network: Visa

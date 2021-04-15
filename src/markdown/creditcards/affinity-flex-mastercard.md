@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Affinity Flex Mastercard
 cardImage: /img/cash-back-mastercard.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 40
 feeOptions: dontmind
 network: Mastercard

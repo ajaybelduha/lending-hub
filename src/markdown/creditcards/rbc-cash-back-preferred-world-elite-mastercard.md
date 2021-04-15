@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: RBC Cash Back Preferred World Elite Mastercard
 cardImage: /img/mcp_cashbackpreferred_en_sm-2x.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 99
 feeOptions: dontmind
 network: Mastercard

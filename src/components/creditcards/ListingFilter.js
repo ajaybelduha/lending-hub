@@ -85,8 +85,6 @@ const CardForDropdown = ({ onDropdownSelect, selected }) => {
   const [selectedCardFor, setSelectedCardFor] = useState(cardFor[0])
 
   useEffect(() => {
-    console.log("cardfordropdown")
-    console.log(cardFor, selected.cardFor)
     const value = cardFor.find(item => selected.cardFor === item.value)
     value && setSelectedCardFor(value)
   }, [selected])
@@ -121,6 +119,11 @@ const CreditScoreDropdown = ({ onDropdownSelect, selected }) => {
   const toggleCreditScore = () => {
     setIsCreditScoreOpen(!isCreditScoreOpen)
   }
+
+  useEffect(() => {
+    const value = creditScores.find(item => selected.creditScore === item.label)
+    value && setSelectedCreditScore(value)
+  }, [selected])
 
   const setSelectedCreditScoreValue = (e, item) => {
     e.preventDefault()

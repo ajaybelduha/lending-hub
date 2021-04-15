@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: CIBC Dividend Visa For Student
 cardImage: /img/image.render.tabletk.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa

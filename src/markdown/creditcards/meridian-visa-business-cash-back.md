@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Meridian Visa Business Cash Back
 cardImage: /img/cc-meridian-businessflexcashback.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa

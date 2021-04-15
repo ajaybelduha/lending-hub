@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "SBI Travel Rewards Gold "
 cardImage: /img/sbi-travel-rewards-gold.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 110
 feeOptions: dontmind
 network: Mastercard

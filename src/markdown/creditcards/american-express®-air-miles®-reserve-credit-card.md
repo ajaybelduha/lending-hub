@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: American Express® AIR MILES®* Reserve Credit Card
 cardImage: /img/air_miles_reserve_credit_card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 299
 feeOptions: dontmind
 network: American Express

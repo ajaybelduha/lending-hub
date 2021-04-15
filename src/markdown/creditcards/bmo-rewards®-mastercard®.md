@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: BMO Rewards® Mastercard®*
 cardImage: /img/bmo-rewards-mastercard.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 additionalInterestRateInfo: ""

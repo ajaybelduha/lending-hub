@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Collabria Travel Rewards Gold Visa
 cardImage: /img/unitycu_visa_travelrewardsgold_web.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 110
 feeOptions: dontmind
 network: Visa

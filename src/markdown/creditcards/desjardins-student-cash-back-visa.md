@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Desjardins Student Cash Back Visa
 cardImage: /img/b10-n-carte-remise-etudiant-e.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa

@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: HSBC World Elite Mastercard
 cardImage: /img/cq5dam.web.1280.1280000.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 149
 feeOptions: dontmind
 network: Mastercard

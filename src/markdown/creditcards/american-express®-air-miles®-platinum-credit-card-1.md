@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " American Express® AIR MILES®* Platinum Credit Card"
 cardImage: /img/air_miles_platinum_credit_card0.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 65
 feeOptions: dontmind
 network: American Express

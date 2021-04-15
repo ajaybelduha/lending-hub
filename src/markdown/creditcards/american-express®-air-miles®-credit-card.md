@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " American Express® AIR MILES®* Credit Card"
 cardImage: /img/air_miles_credit_cardo0.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: American Express

@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: TD Platinum Travel Visa* Card
 cardImage: /img/platinum-travel-visa-card-large_tcm341-234264.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 89
 feeOptions: dontmind
 network: Visa

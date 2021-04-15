@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: BMO CashBack® Mastercard®*
 cardImage: /img/bmo-cashback-mastercard.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard

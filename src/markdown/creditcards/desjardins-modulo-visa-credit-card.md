@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Desjardins Modulo Visa credit card
 cardImage: /img/b10-carte-visa-modulo-e.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 50
 feeOptions: dontmind
 network: Visa

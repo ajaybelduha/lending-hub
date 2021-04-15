@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Collabria Cash Back Visa
 cardImage: /img/collabria-cash-back-visa.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa

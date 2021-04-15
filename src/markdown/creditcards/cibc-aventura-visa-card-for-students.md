@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "CIBC Aventura Visa Card For Students "
 cardImage: /img/cq5dam.web.767.767fgxg.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa

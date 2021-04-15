@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Laurentian Visa Business Performance
 cardImage: /img/visa_affaire_p_an.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 110
 feeOptions: dontmind
 network: Visa

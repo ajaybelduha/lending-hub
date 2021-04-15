@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Canadian Tire Gas Advantage® Mastercard®
 cardImage: /img/ctfs-card-gas-desktop-v2.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard

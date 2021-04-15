@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: HMECU CASH BACK MASTERCARD®
 cardImage: /img/hmecu_mc_cashback.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard

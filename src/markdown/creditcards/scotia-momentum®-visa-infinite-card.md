@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Scotia Momentum® Visa Infinite* Card
 cardImage: /img/momentum_visa_infinite_eng.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 120
 feeOptions: either
 network: Visa

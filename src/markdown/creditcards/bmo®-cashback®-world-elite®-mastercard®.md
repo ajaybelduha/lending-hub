@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: BMO® CashBack® World Elite®* Mastercard®*
 cardImage: /img/bmo-cashback-world-elite-mastercard.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 79
 feeOptions: dontmind
 network: Mastercard

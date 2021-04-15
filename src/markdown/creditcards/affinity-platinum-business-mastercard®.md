@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Affinity Platinum Business Mastercard®
 cardImage: /img/classic-mastercard.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 120
 feeOptions: dontmind
 network: Mastercard

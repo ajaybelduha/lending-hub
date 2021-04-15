@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Hudson Bay Mastercard
 cardImage: /img/hb-mastercard-en.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard

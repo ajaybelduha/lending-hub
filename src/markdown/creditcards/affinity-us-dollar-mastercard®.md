@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " Affinity US Dollar Mastercard®"
 cardImage: /img/us-dollar-mastercard.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 65
 feeOptions: dontmind
 network: Mastercard

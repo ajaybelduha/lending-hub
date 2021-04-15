@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: CWB Visa Infinite Business Card
 cardImage: /img/card-cwb-business-en.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 99
 feeOptions: dontmind
 network: Visa

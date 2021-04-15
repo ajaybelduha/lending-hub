@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " CIBC Aero Platinum Visa Card "
 cardImage: /img/featurebannerimage.rendkjer.tablet.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 39
 feeOptions: dontmind
 network: Visa

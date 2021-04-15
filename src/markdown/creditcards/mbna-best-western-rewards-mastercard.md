@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: MBNA Best Western Rewards Mastercard
 cardImage: /img/mbna-best-western-rewards-card-french-450x284.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard

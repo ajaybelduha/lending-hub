@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: " American Express Gold Rewards Card"
 cardImage: /img/gold_rewards_card.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 150
 feeOptions: dontmind
 network: American Express

@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Meridian Visa Infinite* Travel Rewards Card
 cardImage: /img/cc-meridian-infinitetravelrewards0.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 99
 feeOptions: dontmind
 network: Visa

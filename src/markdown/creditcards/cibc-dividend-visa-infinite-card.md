@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "CIBC Dividend Visa Infinite Card "
 cardImage: /img/image.render.tablet.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 99
 feeOptions: dontmind
 network: Visa

@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Scotia Momentum®  No-Fee Visa* Card
 cardImage: /img/momentum_visa_eng.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa

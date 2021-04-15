@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Scotiabank  American Express® Card
 cardImage: /img/amex_red_eng.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: American Express

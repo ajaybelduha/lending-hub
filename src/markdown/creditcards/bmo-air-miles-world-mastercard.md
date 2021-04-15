@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: BMO Air Miles World Mastercard
 cardImage: /img/bmo-air-miles-world-mastercard.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 99
 feeOptions: dontmind
 network: Mastercard

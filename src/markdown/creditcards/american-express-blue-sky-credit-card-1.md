@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: American Express Blue Sky Credit Card
 cardImage: /img/blue_sky_can_chip_338x211.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: American Express

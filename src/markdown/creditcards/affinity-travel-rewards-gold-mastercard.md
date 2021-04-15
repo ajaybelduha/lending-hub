@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Affinity Travel Rewards Gold Mastercard
 cardImage: /img/travel-rewards-gold-mastercard.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 110
 feeOptions: dontmind
 network: Mastercard

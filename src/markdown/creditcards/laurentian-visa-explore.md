@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Laurentian Visa Explore
 cardImage: /img/laurentian-bank-visa-explore_0f2a1424f83b.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 110
 feeOptions: dontmind
 network: Visa

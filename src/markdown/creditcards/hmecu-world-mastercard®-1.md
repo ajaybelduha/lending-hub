@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: HMECU WORLD MASTERCARD®
 cardImage: /img/hmecu_mc_worldm.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 120
 feeOptions: dontmind
 network: Mastercard

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { ButtonNoStyle } from '../common/common'
+import { ButtonNoStyle, BlackButton, FeatureBox } from '../common/common'
 // import Image from 'gatsby-image'
 // import HeroImage from '../../static/img/home-hero-image.png'
 
@@ -15,14 +15,21 @@ const InsuranceHero = (props) => {
           <div className="container">
             <div className="columns">
               <div className="column is-half">
-                <h1 className="section-title">{title}</h1>
+                <h1 className="section-title mb-3">{title}</h1>
                 <h4 className="section-subtitle">{subtitle}</h4>
                 <div className="blocks mt-5">
-                  {blockItems.map((item) => (
-                    <ButtonNoStyle onClick={() => props.setOpen(item.title)}>
-                      <Block data={item} />
-                    </ButtonNoStyle>
-                  ))}
+                  <div className="cta">
+                    <BlackButton onClick={props.setOpen}>
+                        <img className="image" src="/img/icons/insurance_getstarted.svg" />
+                        <div className="cta-text">Get Started</div>
+                        <img className="image-arrow" src="/img/icons/left-arrow-white-small.svg" />
+                      </BlackButton>
+                  </div>
+                  <div className="features">
+                    <FeatureBox title="Save upto 85%" subtitle="Lowest Premiums" image="/img/icons/insurance_feature_1.svg" />
+                    <FeatureBox title="30+ Insurers" subtitle="To choose from" image="/img/icons/insurance_feature_2.svg" />
+                    <FeatureBox title="10 Lakh+" subtitle="Bundled Insurance" image="/img/icons/insurance_feature_3.svg" />
+                  </div>
                 </div>
               </div>
               <div className="column is-half has-text-right">
@@ -36,86 +43,35 @@ const InsuranceHero = (props) => {
   )
 }
 
-const Block = ({ data }) => {
-  const [isHovered, setIsHovered] = useState(false)
-  const toggleHover = () => {
-    setIsHovered(() => !isHovered)
-  }
-  return (
-    <div
-      onMouseEnter={toggleHover}
-      onMouseLeave={toggleHover}
-      className="block"
-    >
-      <figure className="image">
-        {data.image && (isHovered ? <img src={data.imageHover} /> : <img src={data.image} />)}
-      </figure>
-      <h3 className="title-2">{data.title}</h3>
-      <div className="icon">
-        {/* <img src="/img/left-arrow.svg" /> */}
-        {isHovered ? (
-          <img width={'36px'} src="/img/icons/left-arrow-hover.svg" />
-        ) : (
-          <img src="/img/left-arrow.svg" />
-        )}
-      </div>
-    </div>
-  )
-}
-
 const HeroContainer = styled.section`
-margin-top: 3rem;
+  margin-top: 3rem;
   .blocks {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .block {
-    text-align: center;
-    padding: 1rem;
-    width: 174px;
-    height: 174px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    .cta {
+      width: 16rem;
+      .cta-text {
+        font-size: 1rem;
+        margin-right: 1rem;
+      }
+      .image {
+        width: 3rem;
+        margin-right: 1rem;
+      }
+      .image-arrow {
+        width: 1.2rem;
+      }
+    }
+    .features {
+      margin-top: 3rem;
+      display: flex;
+    justify-content: space-between;
     align-items: center;
-    border: 1px solid #dddddd;
-    cursor: pointer;
-    :hover {
-      background-color: #1c1c1e;
-      transition: all 0.5s ease;
-      h3 {
-        color: #ffffff;
-      }
-    }
-    .image {
-      margin-bottom: 10px;
-      img {
-        width: 50px;
-        height: 50px;
-      }
-    }
-    h3 {
-      margin-bottom: 10px;
-    }
-    .icon {
-      width: 36px;
+
     }
   }
   @media screen and (max-width: 786px) {
     .blocks {
-      justify-content: flex-start;
-    }
-    .block {
-      width: 150px;
-      height: 150px;
-      .image {
-        margin-bottom: 5px;
-        img {
-          width: 40px;
-          height: 40px;
-        }
+      .features {
+        flex-wrap: wrap;
       }
     }
   }

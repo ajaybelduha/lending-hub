@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: TD Rewards Visa* Card
 cardImage: /img/td_rewards_visa_card_large_tcm341-241737.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa

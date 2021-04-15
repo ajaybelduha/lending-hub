@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Canadian Tire Cash Advantage® Mastercard®
 cardImage: /img/ctfs-card-cash-desktop-v2.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard

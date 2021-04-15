@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: CIBC Aventura Gold Visa Card
 cardImage: /img/cq5dam.web.767.767jh.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 120
 feeOptions: dontmind
 network: Visa

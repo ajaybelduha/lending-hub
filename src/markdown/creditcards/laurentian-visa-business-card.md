@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: "Laurentian Visa Business Card "
 cardImage: /img/0visa-affaireperf_an.gif
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 20
 feeOptions: dontmind
 network: Visa

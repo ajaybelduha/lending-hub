@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: Scotia Momentum®   Mastercard®* Credit Card
 cardImage: /img/momentum_mc_eng.jpg
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Mastercard

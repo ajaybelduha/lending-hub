@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: CIBC Aventura Visa Card
 cardImage: /img/cq5dam.web.767.767jjjb.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa

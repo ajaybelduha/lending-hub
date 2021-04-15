@@ -3,6 +3,7 @@ templateKey: credit-card-post
 title: CIBC Tim Hortons Rewards For Students
 cardImage: /img/cibc-visa-double-double-light-en-ret.png
 creditScore: Excellent
+creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 firstYearFee: ""

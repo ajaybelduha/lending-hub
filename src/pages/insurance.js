@@ -1,69 +1,62 @@
-import React, {useState} from 'react';
-import { graphql } from 'gatsby';
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import styled from 'styled-components'
 import InsuranceHero from '../components/insurance/InsuranceHero'
 import Layout from '../components/Layout'
 import EditorsPick from '../components/creditcards/EditorsPick'
 import InsuranceForm from '../components/insurance/InsuranceForm'
 import OurPartners from '../components/mortgages/OurPartners'
-import { useStaticQuery } from 'gatsby';
-import { ButtonNoStyle } from '../components/common/common';
+
+import { ButtonNoStyle } from '../components/common/common'
 import HowItWorks from '../components/home/HowItWorks'
 
 const items = [
+  {
+    image: '/img/icons/insurance_getstarted.svg',
+    imageHover: '/img/icons/insurance_getstarted.svg',
+    title: 'Get started',
+    link: '/mortgages'
+  }
+]
+
+const Insurance = ({ data }) => {
+  const response = data.insurance.edges[0].node.frontmatter
+  console.log('INSURANCE')
+  console.log(response)
+  const [openModal, setOpenModal] = useState(false)
+  const [insuranceType, setInsuranceType] = useState('Home Buying')
+
+  const stepItems = [
     {
-        image: '/img/icons/mortgage-copy.svg',
-        imageHover: '/img/icons/home-3_hover.svg',
-        title: 'Home Insurance',
-        link: '/mortgages',
-      },
-      {
-        image: '/img/icons/loan.svg',
-        imageHover: '/img/icons/loan_hover.svg',
-        title: 'Auto Insurance',
-        link: '/mortgages',
-      }
+      image: response.section2.point1Image,
+      title: response.section2.point1,
+      subtitle: response.section2.point1description
+    },
+    {
+      image: response.section2.point2Image,
+      title: response.section2.point2,
+      subtitle: response.section2.point2description
+    },
+    {
+      image: response.section2.point3Image,
+      title: response.section2.point3,
+      subtitle: response.section2.point3description
+    }
   ]
 
-
-const Insurance = ({data}) => {
-    const response = data.insurance.edges[0].node.frontmatter
-    console.log("INSURANCE")
-    console.log(response)
-    const [openModal, setOpenModal] = useState(false);
-    const [insuranceType, setInsuranceType] = useState('Home Buying')
-
-    const stepItems = [
-        {
-            image: response.section2.point1Image,
-            title: response.section2.point1,
-            subtitle: response.section2.point1description,
-          },
-          {
-            image: response.section2.point2Image,
-            title: response.section2.point2,
-            subtitle: response.section2.point2description,
-          },
-          {
-            image: response.section2.point3Image,
-            title: response.section2.point3,
-            subtitle: response.section2.point3description,
-          },
-    ]
-
-    const setModal = (type) => {
-        setInsuranceType(type)
-        setOpenModal(!openModal)
-    }
-    return(
+  const setModal = () => {
+    setInsuranceType()
+    setOpenModal(!openModal)
+  }
+  return (
         <Layout>
             <InsuranceContainer>
-                <InsuranceHero 
+                <InsuranceHero
                     title={response.section1.heading}
                     subtitle={response.section1.subheading1}
                     imageSrc={response.section1.image}
-                    blockItems={items} 
+                    blockItems={items}
                     setOpen={setModal}
                 />
                 <div className="container my-6">
@@ -116,7 +109,7 @@ const Insurance = ({data}) => {
                 <InsuranceForm insuranceType={insuranceType} open={openModal} setOpen={setModal} />
             </InsuranceContainer>
         </Layout>
-    )
+  )
 }
 
 const InsuranceContainer = styled.div`
@@ -179,7 +172,6 @@ margin-top: 3rem;
         }
     }
 `
-
 
 export const pageQuery = graphql`
 query HomePageInsurance {
@@ -352,4 +344,4 @@ query HomePageInsurance {
   }
 `
 
-export default Insurance;
+export default Insurance
