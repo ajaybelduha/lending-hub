@@ -29,19 +29,19 @@ section2:
 partners:
   image16: /img/partners-16.png
   heading: Our partners
-  image1: /img/partners-1.png
-  image2: /img/partners-2.png
-  image3: /img/partners-3.png
-  image4: /img/partners-4.png
-  image10: /img/partners-10.png
-  image5: /img/partners-5.png
+  image1: /img/aviva_logo-1.png
+  image2: /img/chieftain.png
+  image3: /img/commonwell.png
+  image4: /img/echelon.png
+  image10: /img/pafco-insurance.png
+  image5: /img/goremutual.png
   image11: /img/partners-11.png
-  image6: /img/partners-6.png
+  image6: /img/intact.png
   image12: /img/partners-12.png
-  image7: /img/partners-7.png
+  image7: /img/jevco-insurance-logo-1.png
   image13: /img/partners-13.png
-  image8: /img/partners-8.png
+  image8: /img/lloyds-of-london.png
   image14: /img/partners-14.png
-  image9: /img/partners-9.png
+  image9: /img/novex.png
   image15: /img/partners-15.png
 ---
