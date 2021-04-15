@@ -2,9 +2,10 @@
 templateKey: homepage-creditcard
 title: Homepage - creditcard
 section1:
-  heading: Find the perfect credit card for you
-  subheading1: Here are the most popular credit card categories
-  subheading2: Looking for a new credit card? Find one that matches your lifestyle.
+  heading: Let’s find the perfect credit card for you
+  subheading1: Looking for a new credit card? Find one that matches your lifestyle.
+  subheading2: There is no one “best credit card in Canada,” but rather a lot of
+    credit cards that are best for different people.
   image: /img/creditcard-hero.png
 section2:
   point1: Choose between Rewards or Low Interest
