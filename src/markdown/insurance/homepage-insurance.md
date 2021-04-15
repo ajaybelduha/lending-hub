@@ -4,8 +4,9 @@ title: Homepage - Insurance
 section1:
   heading: Let's help you find the right Insurance coverage
   image: /img/best-high-interest-savings-accounts-in-canada.png
-  subheading1: Find news and advice on homeowners, renters, auto, health and life insurance.
+  subheading1: Fill out our online insurance quote form in as little as 5 minutes.
   subheading2: .
+  subheading: .
 section2:
   point1: Answer a few basic questions
   point2: Choose your coverage options
