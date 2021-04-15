@@ -29,7 +29,7 @@ const ListingFilter = ({ setFiltered, filtersFromQuestions }) => {
     const obj = {
       cardFor: initialCardFor.value,
       creditScore: initialCreditScore.label,
-      network: networks[0].value,
+      network: networks[3].value,
       annualFees: initialAnnualFees.value,
       rewardType: subCategory[3].value
     }

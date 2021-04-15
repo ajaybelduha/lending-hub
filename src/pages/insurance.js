@@ -9,7 +9,7 @@ import InsuranceForm from '../components/insurance/InsuranceForm'
 import OurPartners from '../components/mortgages/OurPartners'
 
 import { ButtonNoStyle } from '../components/common/common'
-import HowItWorks from '../components/home/HowItWorks'
+import HowItWorks from '../components/insurance/HowItWorks'
 
 const items = [
   {
@@ -42,6 +42,11 @@ const Insurance = ({ data }) => {
       image: response.section2.point3Image,
       title: response.section2.point3,
       subtitle: response.section2.point3description
+    },
+    {
+      image: response.section2.point4Image,
+      title: response.section2.point4,
+      subtitle: response.section2.point4description
     }
   ]
 
@@ -61,7 +66,7 @@ const Insurance = ({ data }) => {
                 />
                 <div className="container my-6">
                         <div className="section-2">
-                                <HowItWorks title={'Steps to buy insurance'} subtitle={'Follow these 3 simple steps to buy insurance with us with just few clicks'} stepItems={stepItems} />
+                                <HowItWorks title={'Why choose us?'} subtitle={'Get details on how we can help keep your money where it belongs, in your pockets'} stepItems={stepItems} />
                         </div>
                         <OurPartners data={response.partners} />
                 </div><br/>
@@ -221,6 +226,15 @@ query HomePageInsurance {
                 }
               }
             }
+            point4
+            point4description
+            point4Image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                }
+              }
+            }
         }
         partners{
           heading
@@ -288,48 +302,6 @@ query HomePageInsurance {
             }
           } 
           image10 {
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          } 
-          image11 {
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          } 
-          image12 {
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          } 
-          image13 {
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          } 
-          image14 {
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          } 
-          image15 {
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          } 
-          image16 {
             childImageSharp {
               fluid(maxWidth: 800, quality: 100) {
                 ...GatsbyImageSharpFluid

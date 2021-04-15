@@ -128,7 +128,7 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
         <> {open &&
             <InsuranceFormContainer>
                 <div className="section-title has-text-centered pad-top">
-                    Auto Insurance Quote Form
+                    Get free quote from 30+ insurers<br/> with lowest premiums
                 </div>
                 <div className="form-container mt-6">
                     <form

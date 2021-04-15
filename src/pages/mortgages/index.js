@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
-import Hero from '../../components/Hero'
+import MortgageHero from '../../components/mortgages/MortgageHero'
 import FeaturedMortgages from '../../components/mortgages/FeaturedMortgages'
 import MortgageWatch from '../../components/mortgages/MortgageWatch'
 import MaximizeSavings from '../../components/MaximizeSavings'
@@ -19,6 +19,7 @@ const MortgagesHome = ({data}) => {
       image: '/img/icons/home.svg',
       imageHover: '/img/icons/home_hover.svg',
       title: 'Home Buying',
+      description: 'I need a pre-approval, proof of financing for my offer or a new mortgage for the property I am buying.',
       link: '/mortgages/questions',
     },
     {
@@ -26,6 +27,7 @@ const MortgagesHome = ({data}) => {
       image: '/img/icons/mortgage.svg',
       imageHover: '/img/icons/mortgage_hover.svg',
       title: 'Refinancing Mortgage',
+      description: 'I want to add a Home Equity Line of Credit for future use, lower my mortgage payments and increase cash flow,consolidate my debts, access my equity to fund an investment or major expense.',
       link: '/mortgages/refinance/questions',
     },
     {
@@ -33,12 +35,13 @@ const MortgagesHome = ({data}) => {
       image: '/img/icons/renewable.svg',
       imageHover: '/img/icons/renewable_hover.svg',
       title: 'Renewal Mortgage',
+      description: 'I want to renew my mortgage or compare my current lender’s offer with Lending hub offer because my mortgage renewal date is coming up.',
       link: '/mortgages/refinance/questions',
     },
   ]
   return (
     <Layout>
-      <Hero
+      <MortgageHero
         title={response.section1.heading}
         subtitle={response.section1.subheading1}
         subtitle2={response.section1.subheading2}

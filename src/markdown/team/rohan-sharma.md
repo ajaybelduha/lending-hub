@@ -8,6 +8,7 @@ aboutme: Outstanding training programs and opportunities with RE/MAX will allow
   grow my business. Working in their best interest to provide them with the best
   results is my top priority
 name: Mitesh Shetty
+isceo: true
 photo: /img/creditcard-hero.png
 phone: "8989898989"
 email: mitesh@gmail.com
