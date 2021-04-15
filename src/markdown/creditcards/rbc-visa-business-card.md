@@ -8,9 +8,9 @@ fee: 12
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.99"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: business
 rewardType: all

@@ -8,7 +8,7 @@ fee: 13
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "17.99"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
 balanceTranferFees: 1
 cardCategory: build-credit-score

@@ -7,10 +7,10 @@ creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa
-purchaseInterest: 0
-balanceTransferInterest: 0
+purchaseInterest: "-"
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: build-credit-score
 rewardType: NA
 href: https://www.fintelconnect.com/t/url.php/cid/24130/sid/27077

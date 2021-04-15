@@ -8,9 +8,9 @@ fee: 6
 feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "0"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: build-credit-score
 rewardType: NA

@@ -8,9 +8,9 @@ fee: 250
 feeOptions: dontmind
 network: American Express
 purchaseInterest: "30"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: business
 rewardType: all

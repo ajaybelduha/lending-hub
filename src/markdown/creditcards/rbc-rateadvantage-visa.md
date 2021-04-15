@@ -8,9 +8,9 @@ fee: 0
 feeOptions: nofees
 network: Visa
 purchaseInterest: "8.45"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: low-interest
 rewardType: all
 href: https://www.rbcroyalbank.com/credit-cards/low-interest/rbc-rateadvantage-visa.html

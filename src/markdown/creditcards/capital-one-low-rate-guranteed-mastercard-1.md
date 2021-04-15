@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "14.90"
 balanceTransferInterest: "14.90"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: build-credit-score
 rewardType: NA
 href: https://www.capitalone.ca/credit-cards/low-rate-mastercard/

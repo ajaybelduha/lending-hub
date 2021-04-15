@@ -8,9 +8,9 @@ fee: 50
 feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "9.90"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: low-interest
 rewardType: all

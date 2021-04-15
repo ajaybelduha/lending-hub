@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "12.90"
 balanceTransferInterest: "12.90"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: low-interest
 rewardType: NA
 href: https://www.collabriacreditcards.ca

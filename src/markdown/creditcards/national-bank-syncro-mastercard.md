@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "8.90"
 balanceTransferInterest: "12.90"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: low-interest
 rewardType: all

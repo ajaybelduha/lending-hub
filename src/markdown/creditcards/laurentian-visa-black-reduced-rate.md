@@ -8,9 +8,9 @@ fee: 30
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "12.49"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: low-interest
 rewardType: NA

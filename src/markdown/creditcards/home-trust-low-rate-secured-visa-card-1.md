@@ -8,9 +8,9 @@ fee: 59
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "14.90"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: build-credit-score
 rewardType: NA
 href: https://www.hometrust.ca/credit-cards/secured-visa-card/visa-form/?product=lowrate&referrer=2241355

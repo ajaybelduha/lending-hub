@@ -8,7 +8,7 @@ fee: 0
 feeOptions: nofees
 network: Visa
 purchaseInterest: "19.99"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
 balanceTranferFees: 30
 cardCategory: build-credit-score

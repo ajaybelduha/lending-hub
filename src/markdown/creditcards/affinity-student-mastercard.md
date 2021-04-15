@@ -8,7 +8,7 @@ fee: 0
 feeOptions: nofees
 network: Mastercard
 purchaseInterest: "11.90"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
 balanceTranferFees: 1
 userCategory: personal

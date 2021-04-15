@@ -8,9 +8,9 @@ fee: 0
 feeOptions: nofees
 network: Visa
 purchaseInterest: "11.9"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: low-interest
 rewardType: NA

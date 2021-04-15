@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "12.90"
 balanceTransferInterest: "12.90"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: business
 rewardType: NA
 href: https://www.collabriacreditcards.ca/affiliate_healthcare-municipal-employees-credit-union/business-cards/pc95/card_national-low-rate-business-mastercard

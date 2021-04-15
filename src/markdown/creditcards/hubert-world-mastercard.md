@@ -7,7 +7,7 @@ fee: 199
 feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "19.90"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: points
 href: https://www.happysavings.ca/products/borrowing/mastercard/hubert-world-mastercard/

@@ -7,8 +7,8 @@ creditScoreTwo: Good
 fee: 25
 feeOptions: dontmind
 network: Visa
-purchaseInterest: 0
-balanceTransferInterest: 0
+purchaseInterest: "-"
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
 balanceTranferFees: 1
 userCategory: personal

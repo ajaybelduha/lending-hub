@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "19.97"
 balanceTransferInterest: "0.97"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: business
 rewardType: all

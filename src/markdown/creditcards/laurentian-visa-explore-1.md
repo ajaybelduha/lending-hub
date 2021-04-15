@@ -10,7 +10,7 @@ network: Visa
 purchaseInterest: "19.99"
 balanceTransferInterest: "2.99"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: balance-transfer
 rewardType: all

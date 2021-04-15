@@ -31,8 +31,8 @@ collections:
       - {label: "First Year Fee", name: "firstYearFee", widget: "number", required: false}
       - {label: "Bank Name", name: "bankName", widget: "string", required: false}
       - {label: "Network", name: "network", widget: "select", options: ["Mastercard","Visa","American Express","All"], required: true}
-      - {label: "Interest Rate", name: "purchaseInterest", widget: "string", required: false, default: 0}
-      - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "string", required: false, default: 0}
+      - {label: "Interest Rate", name: "purchaseInterest", widget: "string", required: false, default: "-"}
+      - {label: "Balance Transfer Interest", name: "balanceTransferInterest", widget: "string", required: false, default: "-"}
       - {label: "Cash Advance Interest", name: "cashAdvanceInterest", widget: "string", required: false, default: 0}
       - {label: "Balance Transfer Fee", name: "balanceTranferFees", widget: "number", required: false, default: 1}
       - {label: "User Category", name: "userCategory", widget: "select", options: [{value: "personal", label: "Personal"}, {value: "student", label: "Student"}, {value: "business", label: "Business"}], required: false}

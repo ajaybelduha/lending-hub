@@ -7,7 +7,7 @@ fee: 165
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "20.50"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: points
 href: https://www.rbcroyalbank.com/credit-cards/travel/rbc-british-airways-visa-infinite.html

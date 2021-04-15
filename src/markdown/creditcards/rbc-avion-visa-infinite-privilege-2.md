@@ -8,7 +8,7 @@ feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.99"
 cashAdvanceInterest: "22.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: travel
 href: https://www.rbcroyalbank.com/credit-cards/travel/rbc-avion-visa-infinite-privilege.html

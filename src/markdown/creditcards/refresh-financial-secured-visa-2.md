@@ -7,10 +7,10 @@ creditScoreTwo: Good
 fee: 13
 feeOptions: dontmind
 network: Visa
-purchaseInterest: 0
-balanceTransferInterest: 0
+purchaseInterest: "-"
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: build-credit-score
 rewardType: NA
 href: https://refreshfinancial.ca/credit-building/?webform=credit-card-application&referid=RateShop.ca&utm_campaign=Partner&utm_medium=Referral&utm_source=CardTable

@@ -7,10 +7,10 @@ creditScoreTwo: Good
 fee: 499
 feeOptions: dontmind
 network: American Express
-purchaseInterest: 0
-balanceTransferInterest: 0
+purchaseInterest: "-"
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: business
 rewardType: all

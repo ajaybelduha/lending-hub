@@ -263,3 +263,46 @@ export const BackButton = ({ setStep }) => {
     </BackStyle>
   )
 }
+
+export const FeatureBox = ({ title, subtitle, image }) => {
+  const Style = styled.div`
+    .item {
+      display: flex;
+      border-radius: 8px;
+      align-items: center;
+    border: 1px solid #1c1c1e;
+    padding: 8px 20px;
+    .img {
+      width: 2rem;
+      margin-right: 10px;
+    }
+    .text {
+      .head {
+        font-size: 1rem;
+      }
+      .subhead {
+        font-size: 0.7rem;
+      }
+    }
+    }
+    @media screen and (max-width: 786px) {
+      .item {
+        margin-bottom: 1rem;
+      }
+    }
+  `
+
+  return (
+    <Style>
+      <div className="item">
+                      <div className="img">
+                        <img src={image} />
+                      </div>
+                      <div className="text">
+                        <div className="head bold">{title}</div>
+                        <div className="subhead">{subtitle}</div>
+                      </div>
+                    </div>
+    </Style>
+  )
+}

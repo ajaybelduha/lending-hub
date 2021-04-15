@@ -9,9 +9,9 @@ feeOptions: dontmind
 additionalInterestRateInfo: ""
 network: Visa
 purchaseInterest: "11.99"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: low-interest
 rewardType: NA
 href: https://www.rbcroyalbank.com/credit-cards/low-interest/rbc-visa-classic-low-rate.html

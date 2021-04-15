@@ -8,9 +8,9 @@ fee: 0
 feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "19.90"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: business
 rewardType: NA

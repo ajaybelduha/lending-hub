@@ -8,9 +8,9 @@ fee: 39
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "19.99"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: build-credit-score
 rewardType: all
 href: https://www.rbcroyalbank.com/credit-cards/rewards/signature-rbc-rewards-visa.html

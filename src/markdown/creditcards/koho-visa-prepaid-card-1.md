@@ -7,8 +7,8 @@ creditScoreTwo: Good
 fee: 0
 feeOptions: nofees
 network: Visa
-purchaseInterest: 0
-balanceTransferInterest: 0
+purchaseInterest: "-"
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
 balanceTranferFees: 1
 cardCategory: build-credit-score

@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "19.80"
 balanceTransferInterest: "19.80"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: build-credit-score
 rewardType: NA
 href: https://www.capitalone.ca/credit-cards/guaranteed-secured-mastercard2/#card-details

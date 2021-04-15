@@ -10,7 +10,7 @@ network: Visa
 purchaseInterest: "13.99"
 balanceTransferInterest: "0"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: business
 cardCategory: business
 rewardType: all

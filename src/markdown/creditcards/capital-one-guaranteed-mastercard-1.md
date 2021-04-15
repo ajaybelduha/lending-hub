@@ -8,7 +8,7 @@ fee: 59
 feeOptions: dontmind
 network: Mastercard
 purchaseInterest: "19.80"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
 balanceTranferFees: 1
 cardCategory: build-credit-score

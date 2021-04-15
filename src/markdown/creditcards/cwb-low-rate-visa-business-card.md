@@ -8,9 +8,9 @@ fee: 25
 feeOptions: dontmind
 network: Visa
 purchaseInterest: "12.90"
-balanceTransferInterest: 0
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: low-interest
 rewardType: NA
 href: https://www.cwbank.com/business/credit-cards

@@ -9,7 +9,7 @@ feeOptions: dontmind
 network: American Express
 purchaseInterest: "19.99"
 balanceTransferInterest: "22.99"
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: rewards
 rewardType: travel

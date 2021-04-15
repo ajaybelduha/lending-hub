@@ -7,10 +7,10 @@ creditScoreTwo: Good
 fee: 7
 feeOptions: dontmind
 network: Mastercard
-purchaseInterest: 0
-balanceTransferInterest: 0
+purchaseInterest: "-"
+balanceTransferInterest: "-"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: build-credit-score
 rewardType: NA
 href: https://www.bmo.com/main/personal/credit-cards/prepaid-credit-cards/

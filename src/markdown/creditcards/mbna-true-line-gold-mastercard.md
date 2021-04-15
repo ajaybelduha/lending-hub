@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "8.99"
 balanceTransferInterest: "1.99"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: low-interest
 rewardType: all
 href: https://www.mbna.ca/en/credit-cards/low-interest/true-line-gold-mastercard/

@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "19.90"
 balanceTransferInterest: "22.90"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: rewards
 rewardType: all
 href: https://www.hsbc.ca/credit-cards/products/premier-mastercard/

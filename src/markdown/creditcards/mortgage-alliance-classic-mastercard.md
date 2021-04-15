@@ -11,7 +11,7 @@ network: Mastercard
 purchaseInterest: "11.90"
 balanceTransferInterest: "11.90"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 cardCategory: low-interest
 rewardType: NA
 href: https://www.collabriacreditcards.ca/mortgage-alliance-1.aspx

@@ -10,7 +10,7 @@ network: Mastercard
 purchaseInterest: "19.99"
 balanceTransferInterest: "22.99"
 cashAdvanceInterest: 0
-balanceTranferFees: ""
+balanceTranferFees: 0
 userCategory: personal
 cardCategory: build-credit-score
 rewardType: NA
