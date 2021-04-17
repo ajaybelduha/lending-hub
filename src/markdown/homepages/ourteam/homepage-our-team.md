@@ -18,7 +18,7 @@ section2:
     Millennium means less work, fret and risk. Your real estate transaction is
     one of the largest and most important events in your life. Let us take care
     of it with the attention and experience that is necessary.
-  name2: asdfa
-  designation2: asdfasdf
+  name2: ---
+  designation2: ---
   photo2: /img/alterna-savings-credit-union.png
 ---
