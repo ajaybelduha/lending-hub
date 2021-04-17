@@ -11,7 +11,7 @@ section2:
   name1: Sunil Sally and Ron Sally
   designation1: BROKERS/OWNERS
   photo1: /img/sunil-ron.png
-  subheading: .
+  subheading: ..
   name2: asdfa
   designation2: asdfasdf
   photo2: /img/alterna-savings-credit-union.png
