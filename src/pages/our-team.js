@@ -32,7 +32,7 @@ const items = [
 const OurTeam = ({data}) => {
     const [openModal, setOpenModal] = useState(false);
     const members = data.allMarkdownRemark.edges;
-    console.log(data)
+    console.log('our team -> ',data)
     const hero = data.homepage.edges[0].node.frontmatter;
 
     const setModal = () => {
@@ -49,6 +49,15 @@ const OurTeam = ({data}) => {
           blockItems={items}
           setOpen={setModal}
         />
+        <div className="people container my-6">
+          <h2 className="section-title mb-4">{hero.section2.heading}</h2>
+          <p className="section-subtitle mb-4">{hero.section2.subheading}</p>
+          <div className="teams-blocks mt-5">
+            <TeamBlock photo={hero.section2.photo1} name={hero.section2.name1} designation={hero.section2.designation1} />
+            {/* <TeamBlock slug={'/markdown/team/ron-sally-1/'} photo={response.section3.photo2} name={response.section3.name2} designation={response.section3.designation2} /> */}
+          </div>
+
+        </div>
           {/* <div className="container">
             <div className="our-leadership">
               <h2 className="section-title">Our Leadership</h2>
@@ -90,7 +99,7 @@ const Hero = (props) => {
                 <div className="column is-half">
                   <h1 className="section-title">{title}</h1>
                   <h4 className="section-subtitle mt-4">{subtitle}</h4>
-                  <h4 className="section-subtitle mt-6">{subtitle2}</h4>
+                  {/* <h4 className="section-subtitle mt-6">{subtitle2}</h4> */}
                   <BlackButton onClick={() => props.setOpen()} className="join-team"><img src={teamIcon} />&nbsp;&nbsp;Join our team</BlackButton>
                 </div>
                 <div className="column is-half banner-image has-text-right">
@@ -103,43 +112,37 @@ const Hero = (props) => {
     )
 }
 
-const TeamBlock = ({item}) => {
-  const slug = item.node.fields.slug
-  const member = item.node.frontmatter;
+const TeamBlock = ({ photo, name, designation }) => {
   return (
-    <>
-      {member?.isceo && <div className="team-block has-text-centered">
-      <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
-        <Image fluid={member.photo?.childImageSharp?.fluid} />
-        <div className="team-desc">
-          <h3 className="title-small">{member.title}</h3>
-          <p className="">{member.designation}</p>
-        </div>
-        </AniLink>
-      </div>}
-    </>
+    <div className="team-block has-text-centered">
+      <Image fluid={photo?.childImageSharp?.fluid} />
+      <div className="team-desc mt-4">
+        <h3 className="title-small">{name}</h3>
+        <p className="">{designation}</p>
+      </div>
+    </div>
   )
 }
 
-export const SecondaryTeamBlock = ({item}) => {
-  const slug = item.node.fields.slug
-  const member = item.node.frontmatter;
-  return (
-    <>
-    {!member?.isceo && 
-      <div className="team-block has-text-centered">
-        <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
-          <Image fluid={member.photo?.childImageSharp?.fluid} />
-          <div className="team-desc mt-4">
-            <h3 className="title-24">{member.title}</h3>
-            <p className="">{member.designation}</p>
-          </div>
-        </AniLink>
-      </div>
-    }
-    </>
-  )
-}
+// export const SecondaryTeamBlock = ({item}) => {
+//   const slug = item.node.fields.slug
+//   const member = item.node.frontmatter;
+//   return (
+//     <>
+//     {!member?.isceo && 
+//       <div className="team-block has-text-centered">
+//         <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
+//           <Image fluid={member.photo?.childImageSharp?.fluid} />
+//           <div className="team-desc mt-4">
+//             <h3 className="title-24">{member.title}</h3>
+//             <p className="">{member.designation}</p>
+//           </div>
+//         </AniLink>
+//       </div>
+//     }
+//     </>
+//   )
+// }
 
 export const ourTeamQuery = graphql`
 query {
@@ -185,6 +188,19 @@ query {
               }
             }
           }
+          section2 {
+            heading
+            subheading
+            name1
+            designation1
+            photo1 {
+             childImageSharp {
+               fluid(maxWidth: 800, quality: 100) {
+                 ...GatsbyImageSharpFluid
+               }
+             }
+            }
+          }
         }
       }
     }
@@ -202,7 +218,7 @@ const HeroContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     .team-block {
-      width: 35%;
+      width: 50%;
       margin: auto;
       transition-duration: .3s;
       transition-property: transform;
@@ -254,8 +270,7 @@ const HeroContainer = styled.div`
         width: 100%;
       }
     }
-    .our-leadership {
-      margin-top: 3rem;
+
       .teams-blocks {
         flex-wrap: wrap;
         .team-block {
@@ -267,7 +282,7 @@ const HeroContainer = styled.div`
           }
         }
       }
-    }
+
     .team-members {
      margin-top: 5rem;
      .flex-container {
