@@ -345,10 +345,22 @@ collections:
       - {label: Title, name: title, widget: string, default: "Homepage - Our Team"}
       - {label: Section 1, name: section1, widget: object, 
         fields: [
-        {label: "Heading", name: "heading", widget: string, required: true}, 
-        {label: Image, name: "image", widget: image, required: true}, 
-        {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
-        {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+          {label: "Heading", name: "heading", widget: string, required: true}, 
+          {label: Image, name: "image", widget: image, required: true}, 
+          {label: Sub Heading 1, name: "subheading1", widget: string, required: true}, 
+          {label: Sub Heading 2, name: "subheading2", widget: string, required: true}, 
+        ]
+      }
+      - {label: Section 2, name: section2, widget: object, 
+        fields: [
+          {label: "Heading", name: "heading", widget: string, required: true}, 
+          {label: "Sub Heading", name: "subheading", widget: string, required: true},
+          {label: "Name 1", name: "name1", widget: "string", required: true},
+          {label: "Designation 1", name: "designation1", widget: "string", required: true},
+          {label: Photo 1, name: "photo1", widget: image, required: true}, 
+          {label: "Name 2", name: "name2", widget: "string", required: true},
+          {label: "Designation 2", name: "designation2", widget: "string", required: true},
+          {label: Photo 2, name: "photo2", widget: image, required: true}, 
         ]
       }
 
