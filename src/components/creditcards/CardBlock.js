@@ -36,7 +36,7 @@ const CardBlock = ({ cardData }) => {
     <CardBlockContainer>
       <hr />
       <h2 className="title-2">{title}</h2>
-      {/* <p>This offer not available for resident of quebec</p> */}
+      {/* <p>{JSON.stringify(cardData)}</p> */}
       <div className="card-details">
         <div className="image">
           {/* <img src="/img/true-line-gold-mastercardcard.png" /> */}
