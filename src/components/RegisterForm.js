@@ -9,7 +9,7 @@ import {
   Checkbox,
   BlackButton
 } from '../components/common/common'
-import { createPipelineContent } from '../service/Pipelinecrm'
+import { createPipelineContent, submitData } from '../service/Pipelinecrm'
 import { validate, createDataForCRM } from '../components/common/utils'
 
 const RegisterForm = (props) => {

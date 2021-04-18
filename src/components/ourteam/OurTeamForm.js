@@ -62,9 +62,6 @@ const OurTeamForm = ({ open, setOpen }) => {
         setTimeout(() => {
           setOpen(false)
         }, 3000)
-        // navigate(redirect, {
-        //   state: { selections },
-        // });
       })
       .catch(error => {
         console.log('Error while submitting data')
@@ -81,7 +78,31 @@ const OurTeamForm = ({ open, setOpen }) => {
     },
     validate,
     onSubmit: (values, actions) => {
+      const data = {
+        person: {
+          first_name: values.name,
+          last_name: values.lastname,
+          phone: values.phone,
+          website: 'https://www.lendinghub.ca',
+          email: values.email,
+          type: 'Lead',
+          lead_status_id: PIPELINE_ID.lead_status_id,
+          lead_source_id: PIPELINE_ID.lead_source_id,
+          next_entry_name: 'From LendingHub Website',
+          predefined_contacts_tag_ids: [PIPELINE_ID.join_team_tag]
+        }
+      }
 
+      console.log('Data')
+      console.log(data)
+
+      // Submit data to followup boss and redirect
+      // submitData(data)
+
+      setIsSubmitted(true)
+        setTimeout(() => {
+          setOpen(false)
+        }, 3000)
     }
   })
 

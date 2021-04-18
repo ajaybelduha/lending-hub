@@ -4,7 +4,7 @@ import Image from 'gatsby-image'
 import { BlackButton } from '../components/common/common'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import { SecondaryTeamBlock } from '../pages/our-team'
+// import { SecondaryTeamBlock } from '../pages/our-team'
 import OurTeamForm from '../components/ourteam/OurTeamForm'
 import facebook from '../img/social/facebook-icon.svg'
 import instagram from '../img/social/instagram-icon.svg'
@@ -86,11 +86,11 @@ const TeamPost = ({ data }) => {
                     <div className="more-members mt-6">
                         <div className="section-title">More Sales Representatives</div>
                         <div className="items">
-                            {members.map(item => {
+                            {/* {members.map(item => {
                                 return (
                                     <SecondaryTeamBlock item={item} />
                                 )
-                            })}
+                            })} */}
                         </div>
                     </div>
                 </div>

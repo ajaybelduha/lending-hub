@@ -264,6 +264,9 @@ const HeroContainer = styled.div`
    }
    @media screen and (max-width: 786px) {
     margin-top: 4rem;
+    .banner-image {
+      width: 100%;
+    }
     .hero {
       .join-team {
         margin-top: 3rem;

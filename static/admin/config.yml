@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: credit-card-flow-change
+  branch: pipelinecrm
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
