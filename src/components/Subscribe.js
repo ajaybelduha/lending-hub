@@ -1,50 +1,55 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
+import { PIPELINE_ID } from '../utils/constants'
 
 const Subscribe = () => {
-
-  const [ subscribe, setSubscribe ] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [subscribe, setSubscribe] = useState('')
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const submitData = (items) => {
     fetch('/.netlify/functions/hello', {
-      headers : { 
+      headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        Accept: 'application/json'
       },
       method: 'post',
       body: JSON.stringify(items)
     })
-    .then(res => res.json())
-    .then(response => {
-      console.log(response)
-    })
-    .catch(error => {
-      console.log("Error while submitting data")
-      console.log(error);
-    })
+      .then(res => res.json())
+      .then(response => {
+        setIsSubmitted(true)
+        // navigate(redirect, {
+        //   state: { selections },
+        // });
+      })
+      .catch(error => {
+        console.log('Error while submitting data')
+        console.log(error)
+      })
   }
 
-  const handleOnChange = ({target}) => {
-    const value = target.value;
+  const handleOnChange = ({ target }) => {
+    const value = target.value
     setSubscribe(value)
   }
 
   const handleSubmit = () => {
-    let data = {
-      "source": "Lending Hub Website",
-      "type": "Registration",
-      "person": {
-          "firstName": "Newsletter",
-          "lastName": "Subscriber",
-          "emails": [{"value": subscribe}],
-          "tags": ["newsletter", "subscribe", 'lending-hub'],
-      },
+    const data = {
+      person: {
+        first_name: 'Newsletter',
+        last_name: 'Subscriber',
+        website: 'https://www.lendinghub.ca',
+        email: subscribe,
+        type: 'Lead',
+        lead_status_id: PIPELINE_ID.lead_status_id,
+        lead_source_id: PIPELINE_ID.lead_source_id,
+        next_entry_name: 'From LendingHub Website',
+        predefined_contacts_tag_ids: [PIPELINE_ID.newsletter_tag]
+      }
     }
-    //submitData(data)
+    // submitData(data)
     setIsSubmitted(true)
-
   }
 
   return (
@@ -64,11 +69,11 @@ const Subscribe = () => {
             <div className="is-flex-desktop">
               <div className="field">
                 <div className="control">
-                  <input 
-                    name="subscribe" 
-                    className="input" 
-                    type="text" 
-                    placeholder="Email" 
+                  <input
+                    name="subscribe"
+                    className="input"
+                    type="text"
+                    placeholder="Email"
                     value={subscribe}
                     onChange={handleOnChange}
                   />
@@ -81,13 +86,13 @@ const Subscribe = () => {
         {isSubmitted && <Fade>
             <div className="apply-successful">
                 <div>
-                <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                <circle class="tick__circle" cx="26" cy="26" r="25" fill="none"/>
-                <path class="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                <svg className="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle className="tick__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path className="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                 </svg>
                 </div>
                 <p>Thank you for the message. We will get back to you soon!</p>
-            </div>  
+            </div>
             </Fade>}
       </div>
     </SubscribeContainer>

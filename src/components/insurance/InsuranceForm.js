@@ -1,130 +1,117 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { useFormik } from 'formik'
 import classNames from 'classnames'
 import {
-    InputField,
-    BlackButton,
-    TextArea,
-    ButtonNoStyle
+  InputField,
+  BlackButton,
+  TextArea,
+  ButtonNoStyle
 } from '../../components/common/common'
-import { PIPELINE_ID } from '../../utils/constants';
-
-
-
+import { PIPELINE_ID } from '../../utils/constants'
 
 const validate = (values) => {
-    const errors = {}
-    if (!values.name) {
-        errors.name = 'Please provide a valid first name'
-    } else if (values.name.length < 3) {
-        errors.name = 'Please provide a valid first name'
-    }
+  const errors = {}
+  if (!values.name) {
+    errors.name = 'Please provide a valid first name'
+  } else if (values.name.length < 3) {
+    errors.name = 'Please provide a valid first name'
+  }
 
-    if (!values.lastname) {
-        errors.lastname = 'Please provide a valid last name'
-    } else if (values.lastname.length < 3) {
-        errors.lastname = 'Please provide a valid last name'
-    }
+  if (!values.lastname) {
+    errors.lastname = 'Please provide a valid last name'
+  } else if (values.lastname.length < 3) {
+    errors.lastname = 'Please provide a valid last name'
+  }
 
-    if (!values.phone) {
-        errors.phone = 'Please provide a valid 10 digit number'
-    } else if (
-        !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(
-            values.phone
-        )
-    ) {
-        errors.phone = 'Please provide a valid 10 digit number'
-    }
+  if (!values.phone) {
+    errors.phone = 'Please provide a valid 10 digit number'
+  } else if (
+    !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(
+      values.phone
+    )
+  ) {
+    errors.phone = 'Please provide a valid 10 digit number'
+  }
 
-    if (!values.email) {
-        errors.email = 'Please provide a valid email'
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address'
-    }
+  if (!values.email) {
+    errors.email = 'Please provide a valid email'
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address'
+  }
 
-    return errors
+  return errors
 }
 
-
-
-
 const InsuranceForm = ({ open, setOpen, insuranceType }) => {
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
-    const [isSubmitted, setIsSubmitted] = useState(false);
+  const submitData = (items) => {
+    fetch('/.netlify/functions/hello', {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      method: 'post',
+      body: JSON.stringify(items)
+    })
+      .then(res => res.json())
+      .then(response => {
+        setIsSubmitted(true)
+        setTimeout(() => {
+          setOpen(false)
+        }, 3000)
+      })
+      .catch(error => {
+        console.log('Error while submitting data')
+        console.log(error)
+      })
+  }
 
-    const submitData = (items) => {
-        fetch('/.netlify/functions/hello', {
-          headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          method: 'post',
-          body: JSON.stringify(items)
-        })
-        .then(res => res.json())
-        .then(response => {
-            setIsSubmitted(true)
-            setTimeout(() => {
-                setOpen(false);
-            }, 3000)
-          // navigate(redirect, {
-          //   state: { selections },
-          // });
-        })
-        .catch(error => {
-          console.log("Error while submitting data")
-          console.log(error);
-        })
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      phone: '',
+      name: '',
+      lastname: ''
+    },
+    validate,
+    onSubmit: (values, actions) => {
+      let subTagId = PIPELINE_ID.home_insurance_tag
+      if (insuranceType === 'Car Insurance') {
+        subTagId = PIPELINE_ID.car_insurance_tag
       }
 
-    const formik = useFormik({
-        initialValues: {
-            email: '',
-            phone: '',
-            name: '',
-            lastname: ''
-        },
-        validate,
-        onSubmit: (values, actions) => {
+      const data = {
+        person: {
+          first_name: values.name,
+          last_name: values.lastname,
+          phone: values.phone,
+          website: 'https://www.lendinghub.ca',
+          email: values.email,
+          type: 'Lead',
+          lead_status_id: PIPELINE_ID.lead_status_id,
+          lead_source_id: PIPELINE_ID.lead_source_id,
+          next_entry_name: 'From LendingHub Website',
+          predefined_contacts_tag_ids: [PIPELINE_ID.insurance, subTagId]
+        }
+      }
 
-            let subTagId = PIPELINE_ID.home_insurance_tag
-            if (insuranceType === 'Car Insurance') {
-                subTagId = PIPELINE_ID.car_insurance_tag;
-            }
+      console.log('Data')
+      console.log(data)
 
-            let data = {
-                "person": {
-                "first_name": values.name,
-                "last_name": values.lastname,
-                "phone": values.phone,
-                "website": "https://www.lendinghub.ca",
-                "email": values.email,
-                "type": "Lead",
-                "lead_status_id": PIPELINE_ID.lead_status_id,
-                "lead_source_id": PIPELINE_ID.lead_source_id,
-                "next_entry_name": "From LendingHub Website",
-                "predefined_contacts_tag_ids": [PIPELINE_ID.insurance, subTagId], 
-                }
-              } 
-      
-            console.log("Data")
-            console.log(data)
-      
-            // Submit data to followup boss and redirect
-            // submitData(data)
-      
-            // navigate(redirect, {
-            //   state: { selections },
-            // });
-            
-          },
-    })
+      // Submit data to followup boss and redirect
+      // submitData(data)
 
+      setIsSubmitted(true)
+      setTimeout(() => {
+        setOpen(false)
+      }, 3000)
+    }
+  })
 
-
-    return (
+  return (
         <> {open &&
             <InsuranceFormContainer>
                 <div className="section-title has-text-centered pad-top">
@@ -151,16 +138,18 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
                                             type="text"
                                             placeholder="First Name"
                                             className={classNames('input', {
-                                                'is-danger': formik.errors.name,
+                                              'is-danger': formik.errors.name
                                             })}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             value={formik.values.name}
                                         />
                                     </div>
-                                    {formik.touched.name && formik.errors.name ? (
+                                    {formik.touched.name && formik.errors.name
+                                      ? (
                                         <p className="help is-danger">{formik.errors.name}</p>
-                                    ) : null}
+                                        )
+                                      : null}
                                 </div>
                             </div>
                         </div>
@@ -176,16 +165,18 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
                                             type="text"
                                             placeholder="Last Name"
                                             className={classNames('input', {
-                                                'is-danger': formik.errors.lastname,
+                                              'is-danger': formik.errors.lastname
                                             })}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             value={formik.values.lastname}
                                         />
                                     </div>
-                                    {formik.touched.lastname && formik.errors.lastname ? (
+                                    {formik.touched.lastname && formik.errors.lastname
+                                      ? (
                                         <p className="help is-danger">{formik.errors.lastname}</p>
-                                    ) : null}
+                                        )
+                                      : null}
                                 </div>
                             </div>
                         </div>
@@ -200,16 +191,18 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
                                             type="email"
                                             placeholder="Email"
                                             className={classNames('input', {
-                                                'is-danger': formik.errors.email,
+                                              'is-danger': formik.errors.email
                                             })}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             value={formik.values.email}
                                         />
                                     </div>
-                                    {formik.touched.email && formik.errors.email ? (
+                                    {formik.touched.email && formik.errors.email
+                                      ? (
                                         <p className="help is-danger">{formik.errors.email}</p>
-                                    ) : null}
+                                        )
+                                      : null}
                                 </div>
                             </div>
                             <div className="column">
@@ -222,16 +215,18 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
                                             type="text"
                                             placeholder="Phone"
                                             className={classNames('input', {
-                                                'is-danger': formik.errors.phone,
+                                              'is-danger': formik.errors.phone
                                             })}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             value={formik.values.phone}
                                         />
                                     </div>
-                                    {formik.touched.phone && formik.errors.phone ? (
+                                    {formik.touched.phone && formik.errors.phone
+                                      ? (
                                         <p className="help is-danger">{formik.errors.phone}</p>
-                                    ) : null}
+                                        )
+                                      : null}
                                 </div>
                             </div>
                         </div>
@@ -247,9 +242,9 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
                 {isSubmitted && <Fade>
                     <div className="apply-successful">
                         <div>
-                            <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                                <circle class="tick__circle" cx="26" cy="26" r="25" fill="none" />
-                                <path class="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                            <svg className="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                <circle className="tick__circle" cx="26" cy="26" r="25" fill="none" />
+                                <path className="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                             </svg>
                         </div>
                         <p>Thank you for contacting us. We will get back to you soon!</p>
@@ -259,7 +254,7 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
             </InsuranceFormContainer>
         }
         </>
-    )
+  )
 }
 
 const InsuranceFormContainer = styled.div`
@@ -310,4 +305,4 @@ const InsuranceFormContainer = styled.div`
     }
 `
 
-export default InsuranceForm;
+export default InsuranceForm
