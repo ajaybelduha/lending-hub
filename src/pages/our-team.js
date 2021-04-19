@@ -53,9 +53,14 @@ const OurTeam = ({data}) => {
           <h2 className="section-title mb-4">{hero.section2.heading}</h2>
           <p className="section-subtitle mb-4">{hero.section2.subheading}</p>
           <div className="teams-blocks mt-5">
-            <TeamBlock photo={hero.section2.photo1} name={hero.section2.name1} designation={hero.section2.designation1} />
+            <TeamBlock photo={hero.section2.photoMember} name={hero.section2.name1} designation={hero.section2.designation1} />
             {/* <TeamBlock slug={'/markdown/team/ron-sally-1/'} photo={response.section3.photo2} name={response.section3.name2} designation={response.section3.designation2} /> */}
           </div>
+          <section
+              dangerouslySetInnerHTML={{ __html: hero.section2.teamDescription }}
+              itemProp="articleBody"
+              className="body"
+            />
 
         </div>
           {/* <div className="container">
@@ -124,25 +129,25 @@ const TeamBlock = ({ photo, name, designation }) => {
   )
 }
 
-// export const SecondaryTeamBlock = ({item}) => {
-//   const slug = item.node.fields.slug
-//   const member = item.node.frontmatter;
-//   return (
-//     <>
-//     {!member?.isceo && 
-//       <div className="team-block has-text-centered">
-//         <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
-//           <Image fluid={member.photo?.childImageSharp?.fluid} />
-//           <div className="team-desc mt-4">
-//             <h3 className="title-24">{member.title}</h3>
-//             <p className="">{member.designation}</p>
-//           </div>
-//         </AniLink>
-//       </div>
-//     }
-//     </>
-//   )
-// }
+export const SecondaryTeamBlock = ({item}) => {
+  const slug = item.node.fields.slug
+  const member = item.node.frontmatter;
+  return (
+    <>
+    {!member?.isceo && 
+      <div className="team-block has-text-centered">
+        <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
+          <Image fluid={member.photo?.childImageSharp?.fluid} />
+          <div className="team-desc mt-4">
+            <h3 className="title-24">{member.title}</h3>
+            <p className="">{member.designation}</p>
+          </div>
+        </AniLink>
+      </div>
+    }
+    </>
+  )
+}
 
 export const ourTeamQuery = graphql`
 query {
@@ -191,9 +196,10 @@ query {
           section2 {
             heading
             subheading
+            body
             name1
             designation1
-            photo1 {
+            photoMember {
              childImageSharp {
                fluid(maxWidth: 800, quality: 100) {
                  ...GatsbyImageSharpFluid

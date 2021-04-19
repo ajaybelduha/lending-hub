@@ -355,10 +355,10 @@ collections:
         fields: [
           {label: "Heading", name: "heading", widget: string, required: true}, 
           {label: "Sub Heading", name: "subheading", widget: string, required: true},
-          {label: "Team Description", name: "teamDescription", widget: "markdown", required: true},
+          {label: "Team Description", name: "body", widget: "markdown", required: true},
           {label: "Name 1", name: "name1", widget: "string", required: true},
           {label: "Designation 1", name: "designation1", widget: "string", required: true},
-          {label: Photo 1, name: "photo1", widget: image, required: true}, 
+          {label: Photo 1, name: "photoMember", widget: image, required: true}, 
           {label: "Name 2", name: "name2", widget: "string", required: true},
           {label: "Designation 2", name: "designation2", widget: "string", required: true},
           {label: Photo 2, name: "photo2", widget: image, required: true}, 

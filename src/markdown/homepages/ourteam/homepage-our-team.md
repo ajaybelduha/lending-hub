@@ -18,10 +18,10 @@ section2:
     of it with the attention and experience that is necessary.
   name1: Sunil Sally and Ron Sally
   name2: ---
+  photoMember: /img/sunil-ron.png
   designation1: BROKERS/OWNERS
   designation2: ---
-  photo1: /img/sunil-ron.png
-  teamDescription: >-
+  body: >-
     ## **Why Lendinghub.ca?**
 
 
