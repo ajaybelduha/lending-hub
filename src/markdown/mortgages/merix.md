@@ -4,7 +4,7 @@ mortgage: mortgage
 title: Merix
 logo: /img/merix.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "2.79"
   "2": "2.29"
