@@ -9,39 +9,39 @@ import teamIcon from '../img/social/team.svg'
 import { BlackButton } from '../components/common/common'
 
 const items = [
-    {
-      image: '/img/icons/mortgage-copy.svg',
-      imageHover: '/img/icons/home-3_hover.svg',
-      title: 'Mortgages',
-      link: '/mortgages',
-    },
-    {
-      image: '/img/icons/surface1.svg',
-      imageHover: '/img/icons/surface1_hover.svg',
-      title: 'Credit Cards',
-      link: '/creditcards',
-    },
-    {
-      image: '/img/icons/insurance.svg',
-      imageHover: '/img/icons/insurance_hover.svg',
-      title: 'Insurance',
-      link: '/insurance',
-    },
-  ]
+  {
+    image: '/img/icons/mortgage-copy.svg',
+    imageHover: '/img/icons/home-3_hover.svg',
+    title: 'Mortgages',
+    link: '/mortgages',
+  },
+  {
+    image: '/img/icons/surface1.svg',
+    imageHover: '/img/icons/surface1_hover.svg',
+    title: 'Credit Cards',
+    link: '/creditcards',
+  },
+  {
+    image: '/img/icons/insurance.svg',
+    imageHover: '/img/icons/insurance_hover.svg',
+    title: 'Insurance',
+    link: '/insurance',
+  },
+]
 
-const OurTeam = ({data}) => {
-    const [openModal, setOpenModal] = useState(false);
-    const members = data.allMarkdownRemark.edges;
-    console.log('our team -> ',data)
-    const hero = data.homepage.edges[0].node.frontmatter;
+const OurTeam = ({ data }) => {
+  const [openModal, setOpenModal] = useState(false);
+  const members = data.allMarkdownRemark.edges;
+  console.log('our team -> ', data)
+  const hero = data.homepage.edges[0].node.frontmatter;
 
-    const setModal = () => {
-      setOpenModal(!openModal)
+  const setModal = () => {
+    setOpenModal(!openModal)
   }
-    return(
-      <Layout>
-        <HeroContainer>
-          <Hero
+  return (
+    <Layout>
+      <HeroContainer>
+        <Hero
           title={hero.section1.heading}
           subtitle={hero.section1.subheading1}
           subtitle2={hero.section1.subheading2}
@@ -50,15 +50,22 @@ const OurTeam = ({data}) => {
           setOpen={setModal}
         />
         <div className="people container my-6">
-          <h2 className="section-title mb-4">{hero.section2.heading}</h2>
-          <p className="section-subtitle mb-4">{hero.section2.subheading}</p>
+          <div className="content">
+            <h2 className="section-title mb-4">{hero.section2.heading}</h2>
+            <p className="section-subtitle mb-4">{hero.section2.subheading}</p>
+          </div>
           <div className="teams-blocks mt-5">
-            <TeamBlock photo={hero.section2.photo1} name={hero.section2.name1} designation={hero.section2.designation1} />
+            <TeamBlock photo={hero.section2.photoMember} name={hero.section2.name1} designation={hero.section2.designation1} />
             {/* <TeamBlock slug={'/markdown/team/ron-sally-1/'} photo={response.section3.photo2} name={response.section3.name2} designation={response.section3.designation2} /> */}
           </div>
+          {/* <section
+              dangerouslySetInnerHTML={{ __html: data.homepage.edges[0].node.html }}
+              itemProp="articleBody"
+              className="body"
+            /> */}
 
         </div>
-          {/* <div className="container">
+        {/* <div className="container">
             <div className="our-leadership">
               <h2 className="section-title">Our Leadership</h2>
               <div className="teams-blocks">
@@ -83,33 +90,33 @@ const OurTeam = ({data}) => {
               </div>
             </div>
           </div> */}
-          <OurTeamForm open={openModal} setOpen={setModal} />
-          </HeroContainer>
-        </Layout>
-    )
+        <OurTeamForm open={openModal} setOpen={setModal} />
+      </HeroContainer>
+    </Layout>
+  )
 }
 
 const Hero = (props) => {
-    const { title, subtitle, imageSrc, blockItems, onSelect, subtitle2 } = props
-    return (
-        <div className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <div className="columns">
-                <div className="column is-half">
-                  <h1 className="section-title">{title}</h1>
-                  <h4 className="section-subtitle mt-4">{subtitle}</h4>
-                  {/* <h4 className="section-subtitle mt-6">{subtitle2}</h4> */}
-                  <BlackButton onClick={() => props.setOpen()} className="join-team"><img src={teamIcon} />&nbsp;&nbsp;Join our team</BlackButton>
-                </div>
-                <div className="column is-half banner-image has-text-right">
-                  <Image fluid={imageSrc?.childImageSharp?.fluid} />
-                </div>
-              </div>
+  const { title, subtitle, imageSrc, blockItems, onSelect, subtitle2 } = props
+  return (
+    <div className="hero">
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-half">
+              <h1 className="section-title">{title}</h1>
+              <h4 className="section-subtitle mt-4">{subtitle}</h4>
+              {/* <h4 className="section-subtitle mt-6">{subtitle2}</h4> */}
+              <BlackButton onClick={() => props.setOpen()} className="join-team"><img src={teamIcon} />&nbsp;&nbsp;Join our team</BlackButton>
+            </div>
+            <div className="column is-half banner-image has-text-right">
+              <Image fluid={imageSrc?.childImageSharp?.fluid} />
             </div>
           </div>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 const TeamBlock = ({ photo, name, designation }) => {
@@ -124,25 +131,25 @@ const TeamBlock = ({ photo, name, designation }) => {
   )
 }
 
-// export const SecondaryTeamBlock = ({item}) => {
-//   const slug = item.node.fields.slug
-//   const member = item.node.frontmatter;
-//   return (
-//     <>
-//     {!member?.isceo && 
-//       <div className="team-block has-text-centered">
-//         <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
-//           <Image fluid={member.photo?.childImageSharp?.fluid} />
-//           <div className="team-desc mt-4">
-//             <h3 className="title-24">{member.title}</h3>
-//             <p className="">{member.designation}</p>
-//           </div>
-//         </AniLink>
-//       </div>
-//     }
-//     </>
-//   )
-// }
+export const SecondaryTeamBlock = ({ item }) => {
+  const slug = item.node.fields.slug
+  const member = item.node.frontmatter;
+  return (
+    <>
+      {!member?.isceo &&
+        <div className="team-block has-text-centered">
+          <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
+            <Image fluid={member.photo?.childImageSharp?.fluid} />
+            <div className="team-desc mt-4">
+              <h3 className="title-24">{member.title}</h3>
+              <p className="">{member.designation}</p>
+            </div>
+          </AniLink>
+        </div>
+      }
+    </>
+  )
+}
 
 export const ourTeamQuery = graphql`
 query {
@@ -174,6 +181,7 @@ query {
   ) {
     edges {
       node {
+        html
         frontmatter {
           title
           section1 {
@@ -193,7 +201,7 @@ query {
             subheading
             name1
             designation1
-            photo1 {
+            photoMember {
              childImageSharp {
                fluid(maxWidth: 800, quality: 100) {
                  ...GatsbyImageSharpFluid
@@ -214,11 +222,17 @@ const HeroContainer = styled.div`
       width: 500px;
       margin-left: auto;
     }
-   .teams-blocks {
+    .people {
+      display: flex;
+      .content {
+        width: 40%;
+      }
+      .teams-blocks {
     display: flex;
     justify-content: flex-start;
+    width: 60%;
     .team-block {
-      width: 50%;
+      width: 100%;
       margin: auto;
       transition-duration: .3s;
       transition-property: transform;
@@ -228,6 +242,8 @@ const HeroContainer = styled.div`
       }
     }
    }
+    }
+   
    .team-members {
      margin-top: 8rem;
      .flex-container {
