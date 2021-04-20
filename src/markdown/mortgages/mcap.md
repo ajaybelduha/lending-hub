@@ -4,7 +4,7 @@ mortgage: mortgage
 title: MCAP
 logo: /img/mcap-.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "1.84"
   "2": "1.54"
