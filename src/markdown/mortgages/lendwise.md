@@ -4,7 +4,7 @@ mortgage: mortgage
 title: Lendwise
 logo: /img/lendwise.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "2.79"
   "2": "2.29"
