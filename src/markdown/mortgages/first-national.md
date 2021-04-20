@@ -6,11 +6,11 @@ logo: /img/first-national-financial.png
 amortization: "25"
 isFeatured: true
 insured:
-  "1": "1.99"
-  "2": "1.99"
-  "3": "1.99"
-  "4": "1.99"
-  "5": "2.09"
+  "1": "2.09"
+  "2": "2.09"
+  "3": "1.59"
+  "4": "2.09"
+  "5": "2.04"
 uninsured:
   "1": "2.54"
   "2": "2.24"
