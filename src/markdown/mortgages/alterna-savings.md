@@ -4,7 +4,7 @@ mortgage: mortgage
 title: Alterna Savings
 logo: /img/alterna-savings-credit-union.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "-"
   "2": "-"
