@@ -289,8 +289,13 @@ const HeroContainer = styled.div`
         width: 100%;
       }
     }
-
-      .teams-blocks {
+.people {
+  display: block;
+  .content {
+        width: 100%;
+      }
+  .teams-blocks {
+    width: 100%;
         flex-wrap: wrap;
         .team-block {
           width: 100%;
@@ -301,6 +306,8 @@ const HeroContainer = styled.div`
           }
         }
       }
+}
+      
 
     .team-members {
      margin-top: 5rem;
