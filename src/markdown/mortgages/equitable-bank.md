@@ -4,7 +4,7 @@ mortgage: mortgage
 title: Bridgewater
 logo: /img/bridgewater.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "-"
   "2": "-"
