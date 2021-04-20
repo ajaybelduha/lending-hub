@@ -4,7 +4,7 @@ mortgage: mortgage
 title: TDCT Bank
 logo: /img/td_canada_trust_logo.svg.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "2.54"
   "2": "2.24"
