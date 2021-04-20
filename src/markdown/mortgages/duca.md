@@ -4,7 +4,7 @@ mortgage: mortgage
 title: Duca
 logo: /img/duca.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "2.69"
   "2": "2.59"
