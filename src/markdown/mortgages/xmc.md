@@ -4,7 +4,7 @@ mortgage: mortgage
 title: XMC
 logo: /img/xmc_logo.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "-"
   "2": "-"
