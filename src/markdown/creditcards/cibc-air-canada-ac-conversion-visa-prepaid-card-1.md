@@ -13,5 +13,5 @@ cashAdvanceInterest: 0
 balanceTranferFees: 0
 cardCategory: build-credit-score
 rewardType: NA
-href: https://www.fintelconnect.com/t/url.php/cid/24130/sid/27077
+href: https://www.cibc.com/en/personal-banking/prepaid/ac-conversion-card.html
 ---
