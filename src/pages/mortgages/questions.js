@@ -18,6 +18,15 @@ const QuestionnaireModal = (props) => {
   const [percent, setPercent] = useState(0)
   const [selections, setSelections] = useState({})
 
+  useEffect(() => {
+    const homeMortgageType = props?.location?.state?.homeMortgageType
+    if (homeMortgageType === 'first-time') {
+      console.log('coming from first time')
+      setStep(3)
+      setSelections({ homeMortgageType: homeMortgageType })
+    }
+  }, [])
+
   const setValue = async (key, value) => {
     console.log(key, value)
     if (value === 'first-time') {

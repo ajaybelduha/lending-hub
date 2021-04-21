@@ -13,30 +13,30 @@ const MortgageListings = (response) => {
   const [mortgageFiltered, setMortgageFiltered] = useState()
   const [filters, setFilters] = useState(questionFilters)
 
-  useEffect(() => {
-    const { mortgages } = response.data
-    const mortgagesData = mortgages.edges
-    if ((questionFilters.mortgageType = 'Home Buying')) {
-      const filteredData = mortgagesData.filter(
-        (item) => item?.node?.frontmatter?.templateKey === 'home-mortgages'
-      )
-      setMortgageFiltered(filteredData)
-    } else if ((questionFilters.mortgageType = 'Renewal')) {
-      const filteredData = mortgagesData.filter(
-        (item) => item?.node?.frontmatter?.templateKey === 'renewal-mortgages'
-      )
-      setMortgageFiltered(filteredData)
-    } else {
-      const filteredData = mortgagesData.filter(
-        (item) => item?.node?.frontmatter?.templateKey === 'refinance-mortgages'
-      )
-      setMortgageFiltered(filteredData)
-    }
-    setMortgageListing(mortgagesData)
-  }, [])
+  // useEffect(() => {
+  //   const { mortgages } = response.data
+  //   const mortgagesData = mortgages.edges
+  //   if ((questionFilters.mortgageType = 'Home Buying')) {
+  //     const filteredData = mortgagesData.filter(
+  //       (item) => item?.node?.frontmatter?.templateKey === 'home-mortgages'
+  //     )
+  //     setMortgageFiltered(filteredData)
+  //   } else if ((questionFilters.mortgageType = 'Renewal')) {
+  //     const filteredData = mortgagesData.filter(
+  //       (item) => item?.node?.frontmatter?.templateKey === 'renewal-mortgages'
+  //     )
+  //     setMortgageFiltered(filteredData)
+  //   } else {
+  //     const filteredData = mortgagesData.filter(
+  //       (item) => item?.node?.frontmatter?.templateKey === 'refinance-mortgages'
+  //     )
+  //     setMortgageFiltered(filteredData)
+  //   }
+  //   setMortgageListing(mortgagesData)
+  // }, [])
 
   const setFilteredData = (items) => {
-    setFilters(items)
+    // setFilters(items)
   }
 
   return (
@@ -50,15 +50,15 @@ const MortgageListings = (response) => {
             needs.
           </h4>
           <h4 className="title-24 mt-6">Your mortgage search</h4>
-          <ListingFilter
+          {/* <ListingFilter
             data={mortgageListing}
             filtersFromQuestions={questionFilters}
             setFiltered={setFilteredData}
-          />
+          /> */}
           <hr />
           <div className="mortgages-container">
-            {mortgageFiltered &&
-              mortgageFiltered.map((item) => (
+            {mortgageListing &&
+              mortgageListing.map((item) => (
                 <MortgageBlock mortgages={item} filterData={filters} />
               ))}
           </div>

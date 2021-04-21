@@ -91,7 +91,7 @@ const Subscribe = () => {
                 <path className="tick__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                 </svg>
                 </div>
-                <p>Thank you for the message. We will get back to you soon!</p>
+                <p>Thank you for Signing up to our Newsletter. You are now on our insider list to receive market updates, regular mortgage rates and latest industry news!</p>
             </div>
             </Fade>}
       </div>
@@ -160,6 +160,15 @@ const SubscribeContainer = styled.section`
       button {
         width: 100%;
         margin-left: 0;
+      }
+    }
+    .apply-successful {
+      display: block;
+      p {
+        font-size: 1rem;
+      }
+      svg {
+        margin: 2rem auto;
       }
     }
   }
