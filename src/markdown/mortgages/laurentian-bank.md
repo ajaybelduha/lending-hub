@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: mortgages
 mortgage: mortgage
 title: CMLS
 logo: /img/download.png

@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: mortgages
 mortgage: mortgage
 title: Desjardins
 logo: /img/desjardins-vector-logo.png

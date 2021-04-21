@@ -1,5 +1,5 @@
 ---
-templateKey: home-mortgages
+templateKey: mortgages
 mortgage: mortgage
 title: "B2B Bank "
 logo: /img/b2b-bank.png
