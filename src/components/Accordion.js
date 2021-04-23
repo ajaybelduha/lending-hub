@@ -144,6 +144,11 @@ const AccordionContainer = styled.div`
     font-weight: 300;
     line-height: 1.3;
   }
+  @media screen and (max-width: 786px) {
+    .accordion-item__icon {
+      height: 22px
+    }
+  }
 `
 
 export default Accordion

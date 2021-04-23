@@ -8,7 +8,7 @@ const HowItWorks = ({ stepItems, title, subtitle }) => {
   const [image, setImage] = useState(stepItems[0].image)
   return (
       <div className="container">
-        <h1 className="section-title mb-3 mt-6">{title}</h1>
+        <h1 className="section-title mb-3 mt-3">{title}</h1>
         <h4 className="section-subtitle">
                                     {subtitle}
                                 </h4>
@@ -85,7 +85,7 @@ const HowItWorksContainer = styled.div`
         flex-direction: column-reverse;
         .steps-text {
         width: 100%;
-        margin-top: 5rem;
+        margin-top: 2rem;
         }
         .step-item {
             width: 100%;
@@ -106,12 +106,13 @@ const HowItWorksContainer = styled.div`
                 line-height: 1rem;
                 margin-right: 2rem;
                 width: initial;
+                font-size: 3rem;
             }
             
         }
         .steps-image {
             width: 100%;
-            height: 300px;
+            height: initial;
         }
     }
 `

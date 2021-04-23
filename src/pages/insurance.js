@@ -64,7 +64,7 @@ const Insurance = ({ data }) => {
                     blockItems={items}
                     setOpen={setModal}
                 />
-                <div className="container my-6">
+                <div className="mb-6">
                         <div className="section-2">
                                 <HowItWorks title={'Why choose us?'} subtitle={'Get details on how we can help keep your money where it belongs, in your pockets'} stepItems={stepItems} />
                         </div>

@@ -124,7 +124,7 @@ const TeamBlock = ({ photo, name, designation }) => {
     <div className="team-block has-text-centered">
       <Image fluid={photo?.childImageSharp?.fluid} />
       <div className="team-desc mt-4">
-        <h3 className="title-small">{name}</h3>
+        <h3 className="title-2">{name}</h3>
         <p className="">{designation}</p>
       </div>
     </div>
@@ -225,14 +225,14 @@ const HeroContainer = styled.div`
     .people {
       display: flex;
       .content {
-        width: 40%;
+        width: 50%;
       }
       .teams-blocks {
     display: flex;
     justify-content: flex-start;
-    width: 60%;
+    width: 50%;
     .team-block {
-      width: 100%;
+      width: 50%;
       margin: auto;
       transition-duration: .3s;
       transition-property: transform;

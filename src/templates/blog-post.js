@@ -96,6 +96,9 @@ const BlogPostContainer = styled.div`
   @media screen and (max-width: 786px) {
     margin-top: 15%;
     padding: 0 0%;
+    ol {
+      padding-inline-start: 20px;
+    }
   }
 `
 

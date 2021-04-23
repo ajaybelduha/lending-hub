@@ -54,6 +54,7 @@ const HomePage = ({ data }) => {
         subtitle2={response.section1.subheading2}
         imageSrc={response.section1.image}
         blockItems={items}
+        type='home'
       />
       <HowItWorks title={'How it works'} subtitle={''} stepItems={stepItems} />
       <MaximizeSavings data={response.section3} />

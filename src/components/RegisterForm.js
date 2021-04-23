@@ -163,13 +163,13 @@ const RegisterForm = (props) => {
               </div>
             </div>
             <div className="checkboxes mb-4">
-              <Checkbox>
+              {/* <Checkbox>
                 <input type="checkbox" id="html" />
                 <label htmlFor="html">
                   Do you want to receive credit card news, advice and exclusive
                   offers?
                 </label>
-              </Checkbox>
+              </Checkbox> */}
               <Checkbox>
                 {/* <input type="checkbox" id="html2" /> */}
                 <input

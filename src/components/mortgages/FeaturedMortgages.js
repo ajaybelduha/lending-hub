@@ -7,7 +7,7 @@ import { BlackButtonLink, UnderlinedLink } from '../common/common'
 const featuredMortgages = graphql`
 query MortgageFeatured {
   mortgages: allMarkdownRemark(
-    filter: { frontmatter: { templateKey: { eq: "home-mortgages" } } }
+    filter: { frontmatter: { templateKey: { eq: "mortgages" }, isFeatured: { eq: true } } }
     limit: 4
   ) {
     edges {
@@ -50,6 +50,8 @@ const FeaturedMortgages = () => {
   const mortgageItems = data.mortgages.edges
   console.log(mortgageItems)
   return (
+    <>
+    {mortgageItems.length > 0 &&
     <FeaturedContainer>
       <div className="container">
         <h2 className="section-title mb-4">
@@ -83,11 +85,13 @@ const FeaturedMortgages = () => {
                 </div> */}
       </div>
     </FeaturedContainer>
+}
+    </>
   )
 }
 
 const FeaturedContainer = styled.section`
-  margin: 5rem 0;
+  margin: 2rem 0;
   .card-block {
     border: 1px solid #000000;
     padding: 1rem 1rem;
