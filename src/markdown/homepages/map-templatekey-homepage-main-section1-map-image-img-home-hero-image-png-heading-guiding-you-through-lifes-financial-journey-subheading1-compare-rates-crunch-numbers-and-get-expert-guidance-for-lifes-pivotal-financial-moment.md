@@ -3,9 +3,8 @@ templateKey: homepage-main
 title: Homepage - Main
 section1:
   image: /img/home-hero-image.png
-  heading: Guiding you through life's financial journey
-  subheading1: Compare rates, crunch numbers and get expert guidance for life's
-    pivotal financial moments.
+  heading: Compare the lowest rates across all major lenders. Save time, money and Effort 
+  subheading1: Get quotes instantly for different mortgage types, Auto & Home insurance and different types of credit cards (based on your credit score) That’s not all the quotes provided are free. Answer a few questions, get the quotes and you will be contacted with a customized solution.
   subheading2: LendingHub helps you compare rates from more providers than anyone else
 section2:
   point1: Answer a few question

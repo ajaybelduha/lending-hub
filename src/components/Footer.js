@@ -1,5 +1,6 @@
+/* eslint-disable react/display-name */
 import React from 'react'
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import logo from '../img/logo.png'
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
@@ -7,7 +8,7 @@ import twitter from '../img/social/twitter.svg'
 import vimeo from '../img/social/vimeo.svg'
 
 const Footer = class extends React.Component {
-  render() {
+  render () {
     return (
       <footer className="footer">
         <div className="content">
@@ -41,7 +42,7 @@ const Footer = class extends React.Component {
                 </section>
               </div>
               <div className="column is-3">
-                <section>
+                <section className="menu">
                   <ul className="menu-list">
                     <li className="heading-container">
                       <AniLink paintDrip hex="#000000"to="/contact-us" className="navbar-item">
@@ -68,7 +69,7 @@ const Footer = class extends React.Component {
                 </section>
               </div>
               <div className="column is-3">
-                <section>
+                <section className="menu">
                   <ul className="menu-list">
                     <li className="heading-container">
                       <AniLink paintDrip hex="#000000"to="/" className="navbar-item">

@@ -48,6 +48,7 @@ const CreditCardHome = ({data}) => {
         subtitle2={response.section1.subheading2}
         imageSrc={response.section1.image}
         blockItems={items}
+        type='cc'
       />
       <HowItWorks title={'How it works'} subtitle={''} stepItems={stepItems} />
       {/* <FeaturedCards /> */}

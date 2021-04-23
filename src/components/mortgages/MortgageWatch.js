@@ -73,7 +73,7 @@ const MortgageWatch = () => {
       //console.log(theposition)
 
     return (
-        <div className="container mt-6">
+        <div className="container mt-2">
             <MortgageWatchContainer>
                 <h1 className="section-title has-text-centered">Mortgage Rate Watch</h1>
                 <div className="watch-blocks">
@@ -140,7 +140,7 @@ const MortgageWatch = () => {
 }
 
 const MortgageWatchContainer = styled.div`
-    margin: 5rem 0;
+    margin: 2rem 0;
     .watch-blocks {
         margin-top: 3rem;
         display: flex;
@@ -150,10 +150,12 @@ const MortgageWatchContainer = styled.div`
             text-align: center;
         }
         .watch-number {
-            font-size: 5rem;
+            font-size: 3.5rem;
         }
         .watch-block {
             padding: 2rem 4rem;
+            width: 300px;
+            text-align: center;
         }
     }
     .separator {

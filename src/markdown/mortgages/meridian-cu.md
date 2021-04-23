@@ -4,7 +4,7 @@ mortgage: mortgage
 title: Meridian CU
 logo: /img/download-2-.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "3.09"
   "2": "2.19"

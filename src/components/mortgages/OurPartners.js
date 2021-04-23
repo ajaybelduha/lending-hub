@@ -30,8 +30,8 @@ const OurPartners = ({data}) => {
     const images = Object.values(data)
     console.log(images)
     return (
-        <div className="mt-6 container">
-            <h1 className="section-title">{data.heading}</h1>
+        <div className="mt-2 container">
+            <h1 className="section-title has-text-centered">{data.heading}</h1>
             {/* <img src="/img/partners.png" /> */}
             <OurPartnersContainer>
             <Carousel
@@ -81,6 +81,7 @@ const OurPartnersContainer = styled.div`
             justify-content: center;
             .item {
                 padding: 1rem;
+                margin-right: 5rem;
                 width: 180px;
             }
         }

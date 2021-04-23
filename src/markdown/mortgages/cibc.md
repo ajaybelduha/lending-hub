@@ -1,10 +1,10 @@
 ---
-templateKey: home-mortgages
+templateKey: mortgages
 mortgage: mortgage
 title: "B2B Bank "
 logo: /img/b2b-bank.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "2.49"
   "2": "2.29"

@@ -286,8 +286,11 @@ export const FeatureBox = ({ title, subtitle, image }) => {
     }
     }
     @media screen and (max-width: 786px) {
+      width: 100%;
       .item {
+        justify-content: center;
         margin-bottom: 1rem;
+        width: 100%;
       }
     }
   `

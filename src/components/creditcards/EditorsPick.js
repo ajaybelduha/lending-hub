@@ -108,7 +108,7 @@ const blogs = graphql`
   `
 
 const EditorsPickContainer = styled.section`
-  margin: 5rem 0;
+  margin: 2rem 0;
   .ep-block {
     display: flex;
     border: 1px solid;

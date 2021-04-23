@@ -98,8 +98,10 @@ const AboutUs = ({ data }) => {
           </div>
         </div>
         <div className="people container my-6">
-          <h2 className="section-title mb-6">{response.section3.heading}</h2>
-          <p className="section-subtitle mb-4">{response.section3.subheading}</p>
+          <div className="content">
+            <h2 className="section-title mb-6">{response.section3.heading}</h2>
+            <p className="section-subtitle mb-4">{response.section3.subheading}</p>
+          </div>
           <div className="teams-blocks mt-5">
             <TeamBlock photo={response.section3.photo1} name={response.section3.name1} designation={response.section3.designation1} />
             {/* <TeamBlock slug={'/markdown/team/ron-sally-1/'} photo={response.section3.photo2} name={response.section3.name2} designation={response.section3.designation2} /> */}
@@ -149,7 +151,7 @@ const TeamBlock = ({ photo, name, designation }) => {
     <div className="team-block has-text-centered">
       <Image fluid={photo?.childImageSharp?.fluid} />
       <div className="team-desc mt-4">
-        <h3 className="title-small">{name}</h3>
+        <h3 className="title-2">{name}</h3>
         <p className="">{designation}</p>
       </div>
     </div>
@@ -370,7 +372,13 @@ margin-top: 3rem;
       width: 36px;
     }
   }
-  .teams-blocks {
+  .people {
+    display: flex;
+    .content {
+      width: 50%;
+    }
+    .teams-blocks {
+      width: 50%;
     display: flex;
     justify-content: flex-start;
     .team-block {
@@ -384,6 +392,7 @@ margin-top: 3rem;
       }
     }
    }
+  }
   .videos-carousel {
     justify-content: flex-start;
   }
@@ -400,13 +409,20 @@ margin-top: 3rem;
   .banner-image {
    width: 100%;
  }
-  .teams-blocks {
+ .people {
+   display: block;
+   .content {
+     width: 100%;
+   }
+   .teams-blocks {
+     width: 100%;
         flex-wrap: wrap;
         .team-block {
           margin-right: 0;
           width: 100%;
         }
       }
+ }
     .block {
       width: 150px;
       height: 150px;

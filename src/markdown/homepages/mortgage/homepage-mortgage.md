@@ -2,11 +2,11 @@
 templateKey: homepage-mortgage
 title: Homepage - Mortgage
 section1:
-  heading: Let's help you find the best mortgage rate
+  heading: We will help you find the best mortgage interest rate
   image: /img/mortgages-hero.png
-  subheading1: We’ll find the best rate for you in under 2 minutes.
-  subheading2: Evaluate Canada’s best mortgage rates in one place. LendingHub's
+  subheading1: Evaluate Canada’s best mortgage rates in one place. LendingHub's
     Rate Matrix lets you compare pricing for all key mortgage types and terms.
+  subheading2: .
 partners:
   image16: /img/partners-16.png
   heading: Our partners

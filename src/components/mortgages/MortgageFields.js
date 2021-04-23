@@ -6,7 +6,7 @@ import classNames from 'classnames'
 import {
   InputField,
   RadioButton,
-  BlackButton,
+  BlackButton
 } from '../../components/common/common'
 import { propertyFor } from '../../utils/constants'
 import { getTotalMortgageAndCmhc } from '../../components/common/utils'
@@ -58,7 +58,7 @@ const MortgageFields = (props) => {
       closingDate: '',
       isFirstTimeBuyer: 'yes',
       rateType: 'fixed',
-      mortgageTerm: 2,
+      mortgageTerm: 2
     },
     validate,
     onSubmit: (values) => {
@@ -66,12 +66,14 @@ const MortgageFields = (props) => {
       values.totalMortgage = totalMortgageValue
       // alert(JSON.stringify(values, null, 2));
       props.setValue('formValues', values)
-    },
+    }
   })
 
   useEffect(() => {
-    if (props.selections?.subsequentBuyerType === propertyFor[0].value) {  // Own Investment Property then fix percent to 20
+    if (props.selections?.subsequentBuyerType === propertyFor[0].value) { // Own Investment Property then fix percent to 20
       formik.setFieldValue('downPaymentPercent', 20)
+    } else if (props.selections?.homeMortgageType === 'first-time') {
+      formik.setFieldValue('downPaymentPercent', 5)
     }
   }, [])
 
@@ -97,7 +99,7 @@ const MortgageFields = (props) => {
   }
 
   useEffect(() => {
-    if (props.selections?.subsequentBuyerType === propertyFor[0].value) {
+    if (props.selections?.subsequentBuyerType === propertyFor[0].value || props.selections?.homeMortgageType === 'first-time') {
       const { purchasePrice, downPaymentPercent } = formik.values
       if (purchasePrice) {
         const numericValue = (downPaymentPercent * purchasePrice) / 100
@@ -142,7 +144,7 @@ const MortgageFields = (props) => {
             <form onSubmit={formik.handleSubmit}>
               <div className="inline-input-fields">
                 <div className="field">
-                  <label class="label">Mortgage Type</label>
+                  <label className="label">Mortgage Type</label>
                   <div className="control">
                     {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
                     <InputField
@@ -152,18 +154,20 @@ const MortgageFields = (props) => {
                       disabled
                       placeholder="Mortgage Type"
                       className={classNames('input', {
-                        'is-danger': formik.errors.mortgageType,
+                        'is-danger': formik.errors.mortgageType
                       })}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.mortgageType}
                     />
                   </div>
-                  {formik.touched.mortgageType && formik.errors.mortgageType ? (
+                  {formik.touched.mortgageType && formik.errors.mortgageType
+                    ? (
                     <p className="help is-danger">
                       {formik.errors.mortgageType}
                     </p>
-                  ) : null}
+                      )
+                    : null}
                 </div>
 
                 <div className="field">
@@ -176,7 +180,7 @@ const MortgageFields = (props) => {
                       type="text"
                       placeholder="Amount"
                       className={classNames('input', {
-                        'is-danger': formik.errors.purchasePrice,
+                        'is-danger': formik.errors.purchasePrice
                       })}
                       onChange={validateAndSetNumber}
                       onBlur={formik.handleBlur}
@@ -185,17 +189,19 @@ const MortgageFields = (props) => {
                     <span className="icon is-small is-left">$</span>
                   </div>
                   {formik.touched.purchasePrice &&
-                  formik.errors.purchasePrice ? (
+                  formik.errors.purchasePrice
+                    ? (
                     <p className="help is-danger">
                       {formik.errors.purchasePrice}
                     </p>
-                  ) : null}
+                      )
+                    : null}
                 </div>
               </div>
 
               <div className="downpayment-fields">
                 <div className="field numeric">
-                  <label class="label">Downpayment</label>
+                  <label className="label">Downpayment</label>
                   <div className="control has-icons-left">
                     {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
                     <InputField
@@ -204,7 +210,7 @@ const MortgageFields = (props) => {
                       type="text"
                       placeholder="Amount"
                       className={classNames('input', {
-                        'is-danger': formik.errors.downPaymentNumeric,
+                        'is-danger': formik.errors.downPaymentNumeric
                       })}
                       onChange={validateAndSetNumber}
                       onBlur={formik.handleBlur}
@@ -213,15 +219,17 @@ const MortgageFields = (props) => {
                     <span className="icon is-small is-left">$</span>
                   </div>
                   {formik.touched.downPaymentNumeric &&
-                  formik.errors.downPaymentNumeric ? (
+                  formik.errors.downPaymentNumeric
+                    ? (
                     <p className="help is-danger">
                       {formik.errors.downPaymentNumeric}
                     </p>
-                  ) : null}
+                      )
+                    : null}
                 </div>
 
                 <div className="field percent">
-                  <label class="label">(in %)</label>
+                  <label className="label">(in %)</label>
                   <div className="control has-icons-right">
                     <span className="icon is-small is-right">%</span>
                     <InputField
@@ -230,20 +238,22 @@ const MortgageFields = (props) => {
                       type="text"
                       placeholder=""
                       className={classNames('input', {
-                        'is-danger': formik.errors.downPaymentPercent,
+                        'is-danger': formik.errors.downPaymentPercent
                       })}
                       onChange={validateAndSetNumber}
                       onBlur={formik.handleBlur}
                       value={formik.values.downPaymentPercent}
-                      disabled={props.selections.subsequentBuyerType === propertyFor[0].value}
+                      disabled={props.selections.subsequentBuyerType === propertyFor[0].value || props.selections?.homeMortgageType === 'first-time'}
                     />
                   </div>
                   {formik.touched.downPaymentPercent &&
-                  formik.errors.downPaymentPercent ? (
+                  formik.errors.downPaymentPercent
+                    ? (
                     <p className="help is-danger">
                       {formik.errors.downPaymentPercent}
                     </p>
-                  ) : null}
+                      )
+                    : null}
                 </div>
               </div>
 
@@ -277,7 +287,7 @@ const MortgageFields = (props) => {
                 <Fade bottom>
                   <div className="inline-input-fields">
                     <div className="field">
-                      <label class="label">Tentative closing date</label>
+                      <label className="label">Tentative closing date</label>
                       <div className="control">
                         {/* <input className="input is-danger" type="email" placeholder="Email input" value="hello@" /> */}
                         <InputField
@@ -286,7 +296,7 @@ const MortgageFields = (props) => {
                           type="date"
                           placeholder=""
                           className={classNames('input', {
-                            'is-danger': formik.errors.closingDate,
+                            'is-danger': formik.errors.closingDate
                           })}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
@@ -294,18 +304,20 @@ const MortgageFields = (props) => {
                         />
                       </div>
                       {formik.touched.closingDate &&
-                      formik.errors.closingDate ? (
+                      formik.errors.closingDate
+                        ? (
                         <p className="help is-danger">
                           {formik.errors.closingDate}
                         </p>
-                      ) : null}
+                          )
+                        : null}
                     </div>
 
                     <div className="field">
-                      <label class="label">
+                      <label className="label">
                         Are you a first time home buyer?
                       </label>
-                      <div class="control mt-4">
+                      <div className="control mt-4">
                         <RadioButton className="radio">
                           Yes
                           <input
@@ -313,7 +325,7 @@ const MortgageFields = (props) => {
                             id="firsttime-buyer-yes"
                             name="isFirstTimeBuyer"
                             className={classNames({
-                              'is-danger': formik.errors.isFirstTimeBuyer,
+                              'is-danger': formik.errors.isFirstTimeBuyer
                             })}
                             value="yes"
                             checked={formik.values.isFirstTimeBuyer === 'yes'}
@@ -321,7 +333,7 @@ const MortgageFields = (props) => {
                               formik.setFieldValue('isFirstTimeBuyer', 'yes')
                             }
                           />
-                          <span class="checkmark"></span>
+                          <span className="checkmark"></span>
                         </RadioButton>
                         <RadioButton className="radio">
                           No
@@ -330,7 +342,7 @@ const MortgageFields = (props) => {
                             id="firsttime-buyer-no"
                             name="isFirstTimeBuyer"
                             className={classNames({
-                              'is-danger': formik.errors.isFirstTimeBuyer,
+                              'is-danger': formik.errors.isFirstTimeBuyer
                             })}
                             value="no"
                             checked={formik.values.isFirstTimeBuyer === 'no'}
@@ -338,21 +350,23 @@ const MortgageFields = (props) => {
                               formik.setFieldValue('isFirstTimeBuyer', 'no')
                             }
                           />
-                          <span class="checkmark"></span>
+                          <span className="checkmark"></span>
                         </RadioButton>
                       </div>
                       {formik.touched.isFirstTimeBuyer &&
-                      formik.errors.isFirstTimeBuyer ? (
+                      formik.errors.isFirstTimeBuyer
+                        ? (
                         <p className="help is-danger">
                           {formik.errors.isFirstTimeBuyer}
                         </p>
-                      ) : null}
+                          )
+                        : null}
                     </div>
                   </div>
 
                   <div className="field">
-                    <label class="label">What rate type would you like?</label>
-                    <div class="control mt-4">
+                    <label className="label">What rate type would you like?</label>
+                    <div className="control mt-4">
                       <RadioButton className="radio">
                         Fixed
                         <input
@@ -360,7 +374,7 @@ const MortgageFields = (props) => {
                           id="rate-type-fixed"
                           name="rateType"
                           className={classNames({
-                            'is-danger': formik.errors.rateType,
+                            'is-danger': formik.errors.rateType
                           })}
                           value="fixed"
                           checked={formik.values.rateType === 'fixed'}
@@ -368,7 +382,7 @@ const MortgageFields = (props) => {
                             formik.setFieldValue('rateType', 'fixed')
                           }
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </RadioButton>
                       <RadioButton className="radio">
                         Variable
@@ -377,7 +391,7 @@ const MortgageFields = (props) => {
                           id="rate-type-variable"
                           name="rateType"
                           className={classNames({
-                            'is-danger': formik.errors.rateType,
+                            'is-danger': formik.errors.rateType
                           })}
                           value="variable"
                           checked={formik.values.rateType === 'variable'}
@@ -385,19 +399,21 @@ const MortgageFields = (props) => {
                             formik.setFieldValue('rateType', 'variable')
                           }
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </RadioButton>
                     </div>
-                    {formik.touched.rateType && formik.errors.rateType ? (
+                    {formik.touched.rateType && formik.errors.rateType
+                      ? (
                       <p className="help is-danger">{formik.errors.rateType}</p>
-                    ) : null}
+                        )
+                      : null}
                   </div>
 
                   <div style={{ clear: 'both' }} className="field">
-                    <label class="label">
+                    <label className="label">
                       What mortgage term are you looking for?
                     </label>
-                    <div class="control mt-4">
+                    <div className="control mt-4">
                       <RadioButton className="radio">
                         1 yr
                         <input
@@ -405,7 +421,7 @@ const MortgageFields = (props) => {
                           id="mortgage-term-1"
                           name="mortgageTerm"
                           className={classNames({
-                            'is-danger': formik.errors.mortgageTerm,
+                            'is-danger': formik.errors.mortgageTerm
                           })}
                           checked={formik.values.mortgageTerm === 1}
                           onChange={() =>
@@ -413,7 +429,7 @@ const MortgageFields = (props) => {
                           }
                           value={1}
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </RadioButton>
                       <RadioButton className="radio">
                         2 yrs
@@ -422,7 +438,7 @@ const MortgageFields = (props) => {
                           id="mortgage-term-2"
                           name="mortgageTerm"
                           className={classNames({
-                            'is-danger': formik.errors.mortgageTerm,
+                            'is-danger': formik.errors.mortgageTerm
                           })}
                           checked={formik.values.mortgageTerm === 2}
                           onChange={() =>
@@ -430,7 +446,7 @@ const MortgageFields = (props) => {
                           }
                           value={2}
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </RadioButton>
                       <RadioButton className="radio">
                         3 yrs
@@ -439,7 +455,7 @@ const MortgageFields = (props) => {
                           id="mortgage-term-3"
                           name="mortgageTerm"
                           className={classNames({
-                            'is-danger': formik.errors.mortgageTerm,
+                            'is-danger': formik.errors.mortgageTerm
                           })}
                           checked={formik.values.mortgageTerm === 3}
                           onChange={() =>
@@ -447,7 +463,7 @@ const MortgageFields = (props) => {
                           }
                           value={3}
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </RadioButton>
                       <RadioButton className="radio">
                         4 yrs
@@ -456,7 +472,7 @@ const MortgageFields = (props) => {
                           id="mortgage-term-4"
                           name="mortgageTerm"
                           className={classNames({
-                            'is-danger': formik.errors.mortgageTerm,
+                            'is-danger': formik.errors.mortgageTerm
                           })}
                           checked={formik.values.mortgageTerm === 4}
                           onChange={() =>
@@ -464,7 +480,7 @@ const MortgageFields = (props) => {
                           }
                           value={4}
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </RadioButton>
                       <RadioButton className="radio">
                         5 yrs
@@ -473,7 +489,7 @@ const MortgageFields = (props) => {
                           id="mortgage-term-5"
                           name="mortgageTerm"
                           className={classNames({
-                            'is-danger': formik.errors.mortgageTerm,
+                            'is-danger': formik.errors.mortgageTerm
                           })}
                           checked={formik.values.mortgageTerm === 5}
                           onChange={() =>
@@ -481,15 +497,17 @@ const MortgageFields = (props) => {
                           }
                           value={5}
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </RadioButton>
                     </div>
                     {formik.touched.mortgageTerm &&
-                    formik.errors.mortgageTerm ? (
+                    formik.errors.mortgageTerm
+                      ? (
                       <p className="help is-danger">
                         {formik.errors.mortgageTerm}
                       </p>
-                    ) : null}
+                        )
+                      : null}
                   </div>
                 </Fade>
               )}
@@ -497,11 +515,13 @@ const MortgageFields = (props) => {
               <BlackButton type="submit" className="mt-3">
                 Continue
               </BlackButton>
-              {!formik.isValid ? (
+              {!formik.isValid
+                ? (
                 <p className="help is-danger">
                   *Please fill all the important fields to proceed
                 </p>
-              ) : null}
+                  )
+                : null}
             </form>
           </div>
         </div>

@@ -1,10 +1,10 @@
 ---
-templateKey: home-mortgages
+templateKey: mortgages
 mortgage: mortgage
 title: CMLS
 logo: /img/download.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "2.99"
   "2": "2.24"

@@ -1,12 +1,19 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { Carousel } from 'react-responsive-carousel';
+import React from 'react'
+import { Link, navigate } from 'gatsby'
+import { Carousel } from 'react-responsive-carousel'
 import styled from 'styled-components'
-import Layout from '../../components/Layout';
-import { BlackButtonLink, ButtonNoStyle, UnderlinedLink } from '../../components/common/common'
+import Layout from '../../components/Layout'
+import { BlackButton, BlackButtonLink, ButtonNoStyle, UnderlinedLink } from '../../components/common/common'
 
 const FirstTimeHomeBuyer = () => {
-    return (
+  const response = { homeMortgageType: 'first-time', title: 'Home Buying' }
+  const handleCalculatorClick = () => {
+    navigate('/mortgages/questions', {
+      state: { ...response }
+    })
+  }
+
+  return (
         <Layout>
             <div className="container">
                 <FTHBContainer>
@@ -30,7 +37,7 @@ const FirstTimeHomeBuyer = () => {
                     <div className="image-left mt-6">
                         <div className="image">
                             {/* <img src="/img/home-buyer-1.png" alt="home buyer" /> */}
-                            <iframe id="iframe-video" width="560" height="315" src="https://www.youtube.com/embed/mLVdmunQfvo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe id="iframe-video" width="560" height="315" src="https://www.youtube.com/embed/mLVdmunQfvo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </div>
                         <div className="text">
                             <h1 className="section-title mb-4">The First-Time Home Buyer Incentive</h1>
@@ -63,6 +70,7 @@ const FirstTimeHomeBuyer = () => {
                                 </ul>
                                 <div className="button-container">
                                     <Link style={{ color: 'red', textDecoration: 'underline' }} to="https://www.placetocallhome.ca/fthbi/eligibility-savings-calculator">Eligibility and Savings Calculator</Link>
+                                    <BlackButton onClick={handleCalculatorClick} className="mortgage-calculator-button" to="/mortgages/questions">Mortgage Calculator</BlackButton>
                                 </div>
                             </div>
                             <div className="image carousel">
@@ -96,7 +104,7 @@ const FirstTimeHomeBuyer = () => {
                 </FTHBContainer>
             </div>
         </Layout>
-    )
+  )
 }
 
 const FTHBContainer = styled.div`
@@ -165,6 +173,10 @@ const FTHBContainer = styled.div`
         }
         .button-container {
             margin-top: 3rem;
+            max-width: 300px;
+            .mortgage-calculator-button {
+                margin-top: 2rem;
+            }
         }
         .carousel {
             a {
@@ -217,4 +229,4 @@ const FTHBContainer = styled.div`
     }
 `
 
-export default FirstTimeHomeBuyer;
+export default FirstTimeHomeBuyer

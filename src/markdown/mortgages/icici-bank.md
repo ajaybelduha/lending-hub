@@ -4,7 +4,7 @@ mortgage: mortgage
 title: ICICI Bank
 logo: /img/icicibank.png
 amortization: "25"
-isFeatured: true
+isFeatured: false
 insured:
   "1": "3.19"
   "2": "3.19"

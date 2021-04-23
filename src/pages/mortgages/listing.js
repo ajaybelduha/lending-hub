@@ -16,22 +16,7 @@ const MortgageListings = (response) => {
   useEffect(() => {
     const { mortgages } = response.data
     const mortgagesData = mortgages.edges
-    if ((questionFilters.mortgageType = 'Home Buying')) {
-      const filteredData = mortgagesData.filter(
-        (item) => item?.node?.frontmatter?.templateKey === 'home-mortgages'
-      )
-      setMortgageFiltered(filteredData)
-    } else if ((questionFilters.mortgageType = 'Renewal')) {
-      const filteredData = mortgagesData.filter(
-        (item) => item?.node?.frontmatter?.templateKey === 'renewal-mortgages'
-      )
-      setMortgageFiltered(filteredData)
-    } else {
-      const filteredData = mortgagesData.filter(
-        (item) => item?.node?.frontmatter?.templateKey === 'refinance-mortgages'
-      )
-      setMortgageFiltered(filteredData)
-    }
+    setMortgageFiltered(mortgagesData)
     setMortgageListing(mortgagesData)
   }, [])
 
