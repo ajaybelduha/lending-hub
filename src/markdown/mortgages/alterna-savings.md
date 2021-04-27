@@ -1,7 +1,7 @@
 ---
 templateKey: mortgages
 mortgage: mortgage
-title: Alterna Savings
+title: Alterna CU
 logo: /img/alterna-savings-credit-union.png
 amortization: "25"
 isFeatured: false
@@ -12,10 +12,10 @@ insured:
   "4": "-"
   "5": "2.34"
 uninsured:
-  "1": "2.34"
-  "2": "2.34"
-  "3": "2.34"
-  "4": "2.34"
+  "1": "-"
+  "2": "-"
+  "3": "-"
+  "4": "-"
   "5": "2.34"
 rates:
   "1": "2.34"
