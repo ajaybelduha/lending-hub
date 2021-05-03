@@ -11,8 +11,8 @@ section1:
     effort to be the best at what we do.
   image: /img/aboutus.jpg
 section2:
-  heading: Our people
-  subheading: Meet our team of digital warriors, ready to harness the force for good.
+  heading: Why us ?
+  subheading: Our people ensure that  Canadians understand better financial decisions.
   backgroundImage: /img/team.jpg
 section3:
   heading: Leading our way
