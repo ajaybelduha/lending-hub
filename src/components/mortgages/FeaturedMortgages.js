@@ -17,8 +17,8 @@ query MortgageFeatured {
           templateKey
           logo {
             childImageSharp {
-              fixed(width: 52, height: 52) {
-                ...GatsbyImageSharpFixed
+              fluid(maxHeight: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -65,15 +65,15 @@ const FeaturedMortgages = () => {
                 <div className="card-block has-text-centered">
                   {/* <img src="/img/true-line-gold-mastercardcard.png" /> */}
                   <div className="card-head">
-                    <Image fixed={card.logo.childImageSharp.fixed} />
-                    <h2 className="title-24-nb">{card.title}</h2>
+                    <Image fluid={card.logo.childImageSharp.fluid} />
+                    {/* <h2 className="title-24-nb">{card.title}</h2> */}
                   </div>
-                  <div className="large-font mt-6">{card.insured._5}%</div>
+                  <div className="large-font mt-2">{card.insured._5}%</div>
                   <p className="has-text-left title-1  mt-4">
                     Get an amazing rate of {card.insured._5}% for 5 year fixed
                     with this mortgage
                   </p>
-                  <BlackButtonLink>More Details</BlackButtonLink>
+                  {/* <BlackButtonLink>More Details</BlackButtonLink> */}
                   {/* <h4>Featured</h4> */}
                 </div>
               </div>
@@ -103,6 +103,12 @@ const FeaturedContainer = styled.section`
     .card-head {
       display: flex;
       align-items: center;
+      width: 100%;
+      height: 100px;
+      .gatsby-image-wrapper {
+        width: 100px;
+        margin: auto;
+      }
       h2 {
         margin-left: 20px;
       }

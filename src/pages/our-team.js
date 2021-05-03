@@ -49,47 +49,54 @@ const OurTeam = ({ data }) => {
           blockItems={items}
           setOpen={setModal}
         />
-        <div className="people container my-6">
-          <div className="content">
-            <h2 className="section-title mb-4">{hero.section2.heading}</h2>
-            <p className="section-subtitle mb-4">{hero.section2.subheading}</p>
-          </div>
-          <div className="teams-blocks mt-5">
+        <div className="people container mt-6">
+          <div className="teams-blocks">
             <TeamBlock photo={hero.section2.photoMember} name={hero.section2.name1} designation={hero.section2.designation1} />
             {/* <TeamBlock slug={'/markdown/team/ron-sally-1/'} photo={response.section3.photo2} name={response.section3.name2} designation={response.section3.designation2} /> */}
           </div>
-          {/* <section
-              dangerouslySetInnerHTML={{ __html: data.homepage.edges[0].node.html }}
-              itemProp="articleBody"
-              className="body"
-            /> */}
-
+          <div className="content-text">
+            <h2 className="large-font mb-4">{hero.section2.heading}</h2>
+            <p className="section-subtitle mb-4">{hero.section2.subheading}</p>
+          </div>
         </div>
-        {/* <div className="container">
-            <div className="our-leadership">
-              <h2 className="section-title">Our Leadership</h2>
-              <div className="teams-blocks">
-                {members.map(item => {
-                  return(
-                    <TeamBlock item={item} />
-                  )
-                })}
+        <div className="grey-box"></div>
+        <div className="section-3 container mt-6">
+          <div className="columns">
+            <div className="column is-half">
+              <h2 className="large-font mb-6">We’re changing the way Canadians shop for financial products.</h2>
+              <div className="black-box"></div>
+              <img className="img-cover" src="/img/team-section-3-banner.png" />
+            </div>
+            <div className="column features-container is-half">
+              <div className="features-block">
+                <div className="icon-title">
+                  <img src="/img/icons/protest.svg" />
+                  <h3 className="section-title">Real Impact</h3>
+                </div>
+                <p className="">We’re changing the way Canadians shop for financial products. With every mortgage, credit card, or insurance policy compared, we help you save money.</p>
+              </div>
+              <div className="features-block">
+                <div className="icon-title">
+                  <img src="/img/icons/support.svg" />
+                  <h3 className="section-title">Hands-on learning</h3>
+                </div>
+                <p className="">We’re growing rapidly, and with that comes exposure and the opportunity to learn new skills and contribute in meaningful ways.</p>
+              </div>
+              <div className="features-block">
+                <div className="icon-title">
+                  <img src="/img/icons/growth.svg" />
+                  <h3 className="section-title">Rapid growth</h3>
+                </div>
+                <p className="">We want to see you thrive. We reward performance with fast-tracked growth, development opportunities, and advancement.</p>
               </div>
             </div>
-            <div className="team-members">
-              <div className="flex-container">
-                <h2 className="section-title">Our Team</h2>
-                <BlackButton onClick={() => setModal()}><img src={teamIcon} />&nbsp;&nbsp;Join our team</BlackButton>
-              </div>
-              <div className="items">
-                {members.map(item => {
-                  return(
-                    <SecondaryTeamBlock item={item} />
-                  )
-                })}
-              </div>
-            </div>
-          </div> */}
+          </div>
+        </div>
+        <div className="contact container mb-6 has-text-centered">
+          <h2 className="large-font">Don't see your dream job?</h2>
+          <p>No problem. Send us your resume and we’ll reach out if we see a good fit.</p>
+          <a href="mailto:careers@lendinghub.ca"><h3 className="title-24-nb mt-4">careers@lendinghub.ca</h3></a>
+        </div>
         <OurTeamForm open={openModal} setOpen={setModal} />
       </HeroContainer>
     </Layout>
@@ -104,7 +111,7 @@ const Hero = (props) => {
         <div className="container">
           <div className="columns">
             <div className="column is-half">
-              <h1 className="section-title">{title}</h1>
+              <h1 className="large-font">{title}</h1>
               <h4 className="section-subtitle mt-4">{subtitle}</h4>
               {/* <h4 className="section-subtitle mt-6">{subtitle2}</h4> */}
               <BlackButton onClick={() => props.setOpen()} className="join-team"><img src={teamIcon} />&nbsp;&nbsp;Join our team</BlackButton>
@@ -123,31 +130,7 @@ const TeamBlock = ({ photo, name, designation }) => {
   return (
     <div className="team-block has-text-centered">
       <Image fluid={photo?.childImageSharp?.fluid} />
-      <div className="team-desc mt-4">
-        <h3 className="title-2">{name}</h3>
-        <p className="">{designation}</p>
-      </div>
     </div>
-  )
-}
-
-export const SecondaryTeamBlock = ({ item }) => {
-  const slug = item.node.fields.slug
-  const member = item.node.frontmatter;
-  return (
-    <>
-      {!member?.isceo &&
-        <div className="team-block has-text-centered">
-          <AniLink paintDrip hex="#000000" to={slug} itemProp="url">
-            <Image fluid={member.photo?.childImageSharp?.fluid} />
-            <div className="team-desc mt-4">
-              <h3 className="title-24">{member.title}</h3>
-              <p className="">{member.designation}</p>
-            </div>
-          </AniLink>
-        </div>
-      }
-    </>
   )
 }
 
@@ -224,16 +207,27 @@ const HeroContainer = styled.div`
     }
     .people {
       display: flex;
-      .content {
-        width: 50%;
+      .content-text {
+        width: 200%;
+        height: 517px;
+        background-color: #1c1c1e;
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 3rem 0 18rem;
+        h2 {
+          color: #FFFFFF;
+        }
       }
       .teams-blocks {
-    display: flex;
-    justify-content: flex-start;
-    width: 50%;
+        position: relative;
+    width: 100%;
     .team-block {
-      width: 50%;
-      margin: auto;
+      width: 509px;
+      position: absolute;
+      top: -3rem;
+      margin-right: auto;
       transition-duration: .3s;
       transition-property: transform;
       transition-timing-function: ease-out;
@@ -242,6 +236,45 @@ const HeroContainer = styled.div`
       }
     }
    }
+    }
+    .grey-box {
+      background-color: #D2D2D2;
+      width: 163px;
+    height: 60px;
+    margin: -1rem auto 0 auto;
+    position: relative;
+    right: 7rem;
+    }
+
+    .section-3 {
+      .black-box {
+        background-color: #1c1c1e;
+        width: 219px;
+        height: 219px;
+      }
+      .img-cover {
+        position: relative;
+        bottom: 7rem;
+        left: 2rem;
+      }
+      .features-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+        bottom: 7rem;
+        .features-block {
+          padding: 0 0 0 3rem;
+        }
+        .icon-title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+          img {
+            margin-right: 2rem;
+          }
+        }
+      }
     }
    
    .team-members {
@@ -290,15 +323,19 @@ const HeroContainer = styled.div`
       }
     }
 .people {
-  display: block;
-  .content {
+  display: flex;
+    flex-direction: column-reverse;
+  .content-text {
         width: 100%;
+        height: initial;
+        padding: 1.5rem;
       }
   .teams-blocks {
     width: 100%;
         flex-wrap: wrap;
         .team-block {
           width: 100%;
+          position: static;
           margin-right: 0;
           img {
             width: 100%;
@@ -308,7 +345,33 @@ const HeroContainer = styled.div`
       }
 }
       
-
+.grey-box {
+      display: none;
+    }
+    .section-3 {
+      .black-box {
+        display: none;
+      }
+      .img-cover {
+        position: static;
+      }
+      .features-container {
+        position: static;
+        .features-block {
+          padding: 0;
+          margin-bottom: 2rem;
+          .icon-title {
+            img {
+              width: 3rem;
+              margin-right: 1rem;
+            }
+            h3 {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
     .team-members {
      margin-top: 5rem;
      .flex-container {

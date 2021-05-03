@@ -2,23 +2,21 @@
 templateKey: ourteam
 title: Homepage - Our Team
 section1:
-  heading: Find news and advice on homeowners, renters, auto, health and life insurance.
+  heading: Opportunities are infinite.
   image: /img/outteam-banner.png
-  subheading1: Find news and advice on homeowners, renters, auto, health and life insurance.
+  subheading1: We are always on the lookout for talented individuals to join our
+    growing team. Please see our open vacancies below
   subheading2: Find news and advice on homeowners, renters, auto, health and life insurance.
 section2:
   photo2: /img/alterna-savings-credit-union.png
-  heading: Our Leadership
-  subheading: We understand that for both clients as well as agents buying or
-    selling a home is more than just a transaction, it requires a level of trust
-    and understanding, which comes down to the morals and values that our
-    friendly, reliable and determined staff uphold. Working with RE/MAX
-    Millennium means less work, fret and risk. Your real estate transaction is
-    one of the largest and most important events in your life. Let us take care
-    of it with the attention and experience that is necessary.
+  body: We provide Canadians with information to help them make more informed
+    decisions. For everyone at lendinghub.ca, this is a huge passion.
+  heading: We're a company that thrives on helping people
+  subheading: We provide Canadians with information to help them make more
+    informed decisions. For everyone at lendinghub.ca, this is a huge passion.
   name1: Sunil Sally and Ron Sally
   name2: ---
-  photoMember: /img/sunil-ron.png
+  photoMember: /img/image-64-2x.png
   designation1: BROKERS/OWNERS
   designation2: ---
 ---
