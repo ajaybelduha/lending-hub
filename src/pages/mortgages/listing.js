@@ -174,8 +174,8 @@ export const mortgageQuery = graphql`
             templateKey
             logo {
               childImageSharp {
-                fixed(width: 52, height: 52) {
-                  ...GatsbyImageSharpFixed
+                fluid(quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

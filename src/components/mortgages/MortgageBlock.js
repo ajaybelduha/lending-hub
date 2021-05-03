@@ -61,8 +61,8 @@ const MortgageBlock = ({
       <div className="mortgage-details">
         <div className="provider">
           <div className="icon-text">
-            <Image fixed={item.logo.childImageSharp.fixed} />
-            <h3 className="name title-24-nb">{item.title}</h3>
+            <Image fluid={item.logo.childImageSharp.fluid} />
+            <h3 className="name title-1">{item.title}</h3>
           </div>
         </div>
         <div className="rate">{getRate()}%</div>
@@ -102,6 +102,10 @@ const MortgageBlockContainer = styled.div`
     .icon-text {
       display: flex;
       align-items: center;
+      .gatsby-image-wrapper {
+        width: 100px;
+        margin-right: 1rem;
+      }
       .name {
         margin-left: 15px;
       }
@@ -143,6 +147,17 @@ const MortgageBlockContainer = styled.div`
       .provider {
         width: 100%;
       }
+      .icon-text {
+        justify-content: center;
+        margin-bottom: 1rem;
+      .gatsby-image-wrapper {
+        width: 100px;
+        margin-right: 0;
+      }
+      .name {
+        display: none;
+      }
+    }
       .rate {
         width: 100%;
         text-align: center;
@@ -151,6 +166,7 @@ const MortgageBlockContainer = styled.div`
       .monthly-payment {
         width: 100%;
         margin-top: 1rem;
+        margin-bottom: 1rem;
         text-align: center;
         .item {
           width: 200%;
