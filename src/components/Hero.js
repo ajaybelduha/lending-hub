@@ -148,8 +148,8 @@ margin-bottom: 2rem;
       width: 100%;
     }
     .block {
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      height: 250px;
       .image {
         margin-bottom: 5px;
         img {
