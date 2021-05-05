@@ -6,7 +6,8 @@ import classNames from 'classnames'
 import {
   InputField,
   RadioButton,
-  BlackButton
+  BlackButton,
+  ToolTip
 } from '../../components/common/common'
 import { propertyFor } from '../../utils/constants'
 import { getTotalMortgageAndCmhc } from '../../components/common/utils'
@@ -28,7 +29,7 @@ const validate = (values) => {
 
   if (purchaseAmount <= 500000 && percent < 5) {
     errors.downPaymentPercent = 'A minimum down payment of 5% is required'
-  } else if (purchaseAmount > 500000) {
+  } else if (percent && purchaseAmount > 500000) {
     const val1 = 25000
     const remainder = purchaseAmount - 500000
     const val2 = remainder / 10
@@ -49,6 +50,8 @@ const validate = (values) => {
 const MortgageFields = (props) => {
   const [cmhcValue, setCmhcValue] = useState(0)
   const [totalMortgageValue, setTotalMortgageValue] = useState(0)
+  const [showTooltip, setToolTip] = useState(false)
+  const [tooltipMessage, setTooltipMessage] = useState('')
   const formik = useFormik({
     initialValues: {
       mortgageType: props?.type,
@@ -99,9 +102,23 @@ const MortgageFields = (props) => {
   }
 
   useEffect(() => {
-    if (props.selections?.subsequentBuyerType === propertyFor[0].value || props.selections?.homeMortgageType === 'first-time') {
+    if (!!formik.errors.downPaymentPercent) {
       const { purchasePrice, downPaymentPercent } = formik.values
-      if (purchasePrice) {
+      setToolTip(true)
+      if (purchasePrice >= 1000000 && downPaymentPercent > 0) {
+        setTooltipMessage('If Purchase Price is more than or equal to 1,000,000, minimum down payment is 20%')
+      } else if ((purchasePrice > 1000 && purchasePrice < 1000000) && downPaymentPercent > 0) {
+        setTooltipMessage('If Purchase Price is less than 1,000,000, Minimum down payment is 5% ')
+      }
+    } else {
+      setToolTip(false)
+    }
+  }, [formik.errors.downPaymentPercent])
+
+  useEffect(() => {
+    const { purchasePrice, downPaymentPercent } = formik.values
+    if (props.selections?.subsequentBuyerType === propertyFor[0].value || props.selections?.homeMortgageType === 'first-time') {
+      if (purchasePrice && downPaymentPercent) {
         const numericValue = (downPaymentPercent * purchasePrice) / 100
         formik.setFieldValue('downPaymentNumeric', numericValue)
       }
@@ -243,8 +260,9 @@ const MortgageFields = (props) => {
                       onChange={validateAndSetNumber}
                       onBlur={formik.handleBlur}
                       value={formik.values.downPaymentPercent}
-                      disabled={props.selections.subsequentBuyerType === propertyFor[0].value || props.selections?.homeMortgageType === 'first-time'}
+                      // disabled={props.selections.subsequentBuyerType === propertyFor[0].value}
                     />
+                    <ToolTip show={showTooltip} title={tooltipMessage} />
                   </div>
                   {formik.touched.downPaymentPercent &&
                   formik.errors.downPaymentPercent

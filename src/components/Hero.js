@@ -33,6 +33,7 @@ const Hero = (props) => {
                 <h1 className="section-title">{title}</h1>
                 <h4 className="section-subtitle mt-4">{subtitle}</h4>
                 {/* <h4 className="section-subtitle mt-6">{subtitle2}</h4> */}
+                {props.type === 'cc' && <FeatureCards features={props?.features} />}
                 <div className="blocks mt-6" onClick={onSelect}>
                   {blockItems.map((item) => (
                     <AniLink key={item.key} paintDrip hex="#000000" to={item.link} state={{ id: item.key, title: item.title }}>
@@ -77,6 +78,19 @@ const Block = ({ data }) => {
           <img src="/img/left-arrow.svg" />
             )}
       </div>
+    </div>
+  )
+}
+
+const FeatureCards = ({ features }) => {
+  return (
+    <div className="features">
+      {features.map(item => (
+        <div key={item.title} className="feature-container">
+          <img src={item.icon} />
+          <p>{item.title}</p>
+        </div>
+      ))}
     </div>
   )
 }
@@ -140,6 +154,22 @@ margin-bottom: 2rem;
       width: 36px;
     }
   }
+  .features {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .feature-container {
+      display: flex;
+      align-items: center;
+      margin: 1rem 2rem 1rem 0;
+      padding-right: 2rem;
+      border-right: 1px solid #ddd;
+      img{
+        margin-right: 1rem;
+      }
+    }
+  }
   @media screen and (max-width: 786px) {
     .blocks {
       justify-content: flex-start;
@@ -147,9 +177,12 @@ margin-bottom: 2rem;
     .banner-image {
       width: 100%;
     }
+    .features {
+      display: none;
+    }
     .block {
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      height: 250px;
       .image {
         margin-bottom: 5px;
         img {

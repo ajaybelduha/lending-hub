@@ -309,3 +309,50 @@ export const FeatureBox = ({ title, subtitle, image }) => {
     </Style>
   )
 }
+
+export const ToolTip = ({show, title}) => {
+  const Style = styled.div`
+    .tooltip {
+      display: ${props => (props.show ? `inline` : `none`)};
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: -35px;
+      top: 12px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .tooltip:after{
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      background: #1C1C1E;
+      border-radius: 8px;
+      color: #fff;
+      content: attr(title);
+      margin: -61px 21px 0px 49px;
+      font-size: 16px;
+      padding: 13px;
+      width: 220px;
+    }
+    .tooltip:before{
+      border: solid;
+      border-color: #1C1C1E transparent;
+      border-width: 10px 6px 0px 6px;
+      content: "";
+      right: -21px;
+      bottom: 12px;
+      transform: rotate(90deg);
+      position: absolute;
+    }
+  `
+
+  return (
+    <Style show={show}>
+      <a href="#" title={title} className="tooltip"><img src="/img/tooltip.png" /></a>
+    </Style>
+  )
+}

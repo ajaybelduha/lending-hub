@@ -59,7 +59,7 @@ const TotalMortgageInputs = (props) => {
       }
 
       percentValue > 0.09
-        ? formik.setFieldValue('downPaymentPercent', percentValue.toFixed(2))
+        ? formik.setFieldValue('downPaymentPercent', Math.floor(percentValue))
         : formik.setFieldValue('downPaymentPercent', '')
     }
   }, [formik.values.downPaymentNumeric])

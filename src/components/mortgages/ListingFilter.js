@@ -10,7 +10,10 @@ const ListingFilter = (props) => {
     { id: 'item1', label: 'Fixed', value: 'fixed' },
     { id: 'item2', label: 'Variable', value: 'variable' },
   ]
+
+  const [filterObject, setFilterObject] = useState({})
   const [selectedRateType, setSelectedRateType] = useState(rateTypes[0])
+  const [isRateTypeOpen, setIsRateTypeOpen] = useState(false)
 
   const mortgageTerms = [
     { id: 'item1', label: '1', value: 1 },
@@ -40,8 +43,27 @@ const ListingFilter = (props) => {
       totalMortgage: 484640,
       mortgageTerm: initialSelectedMortgageTerm.value,
     }
+    setFilterObject(obj)
     setFiltered(obj)
   }, [])
+
+  const toggleRateType = () => {
+    setIsRateTypeOpen(!isRateTypeOpen)
+  }
+
+  const setRateTypeValue = (e, item) => {
+    e.preventDefault()
+    console.log('setRateTypeValue -> ', item)
+    setSelectedRateType(item)
+    setIsRateTypeOpen(false)
+
+    const obj = {
+      ...filterObject,
+      rateType: item.value,
+    }
+    setFilterObject(obj)
+    setFiltered(obj)
+  }
 
   const setMortgageTermValue = (e, item) => {
     e.preventDefault()
@@ -49,10 +71,10 @@ const ListingFilter = (props) => {
     setIsMortgageTermOpen(false)
 
     const obj = {
-      rateType: selectedRateType?.value,
-      totalMortgage: 484640,
+      ...filterObject,
       mortgageTerm: item.value,
     }
+    setFilterObject(obj)
     setFiltered(obj)
   }
 
@@ -62,11 +84,11 @@ const ListingFilter = (props) => {
 
   const setFilteredFromInput = (res) => {
     const obj = {
-      rateType: selectedRateType?.value,
+      ...filterObject,
       totalMortgage: res?.principal,
-      downPaymentPercent: res?.dp,
-      mortgageTerm: selectedMortgageTerm?.value,
+      downPaymentPercent: res?.dp
     }
+    setFilterObject(obj)
     setFiltered(obj)
   }
 
@@ -76,6 +98,9 @@ const ListingFilter = (props) => {
         heading="Rate Type"
         selectedValue={selectedRateType}
         items={rateTypes}
+        isOpen={isRateTypeOpen}
+        toggle={toggleRateType}
+        setValue={setRateTypeValue}
       />
       <Dropdown
         heading="Mortgage Term"
