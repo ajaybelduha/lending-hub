@@ -151,8 +151,8 @@ const TeamBlock = ({ photo, name, designation }) => {
     <div className="team-block has-text-centered">
       <Image fluid={photo?.childImageSharp?.fluid} />
       <div className="team-desc mt-4">
-        <h3 className="title-2">{name}</h3>
-        <p className="">{designation}</p>
+        <h3 className="title-2">Sunil Sally &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ron Sally</h3>
+        <p className=""><span style={{position: 'relative', right: '3rem'}}>Principal Broker</span><span style={{position: 'relative', left: '1rem'}}>CEO</span></p>
       </div>
     </div>
   )

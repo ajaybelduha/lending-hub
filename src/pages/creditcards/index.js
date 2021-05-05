@@ -18,6 +18,28 @@ const CreditCardHome = ({data}) => {
       link: '/creditcards/questions',
     }
   ]
+  const features = [
+    {
+      icon: '/img/icons/badge.svg',
+      title: 'Best Cards'
+    },
+    {
+      icon: '/img/icons/percent-circle.svg',
+      title: '0% APR'
+    },
+    {
+      icon: '/img/icons/cashback.svg',
+      title: 'Cashback'
+    },
+    {
+      icon: '/img/icons/balance-transfer.svg',
+      title: 'Balance Transfer'
+    },
+    {
+      icon: '/img/icons/gift.svg',
+      title: 'Rewards'
+    }
+  ]
   const stepItems = [
     {
       image: response.section2.point1Image,
@@ -48,6 +70,7 @@ const CreditCardHome = ({data}) => {
         subtitle2={response.section1.subheading2}
         imageSrc={response.section1.image}
         blockItems={items}
+        features={features}
         type='cc'
       />
       <HowItWorks title={'How it works'} subtitle={''} stepItems={stepItems} />

@@ -17,12 +17,13 @@ const QuestionnaireModal = (props) => {
   const [step, setStep] = useState(1)
   const [percent, setPercent] = useState(0)
   const [selections, setSelections] = useState({})
+  const homeMortgageType = props?.location?.state?.homeMortgageType
 
   useEffect(() => {
-    const homeMortgageType = props?.location?.state?.homeMortgageType
     if (homeMortgageType === 'first-time') {
       console.log('coming from first time')
       setStep(3)
+      setPercent(33 + percentStep)
       setSelections({ homeMortgageType: homeMortgageType })
     }
   }, [])
@@ -62,6 +63,10 @@ const QuestionnaireModal = (props) => {
   }
 
   const onBackButtonClick = () => {
+    console.log('step -> ', step)
+    if (homeMortgageType === 'first-time') {
+      navigate('/mortgages/first-time-home-buyer')
+    }
     if (step > 1) {
       setStep(step - 1)
       setPercent(percent - percentStep)
