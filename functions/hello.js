@@ -49,11 +49,11 @@ if (data.person.custom_fields) {
   try {
     const response = await axios.post(`https://api.pipelinecrm.com/api/v3/people.json?api_key=${process.env.PIPELINE_CRM_API_KEY}`, data, config)
     console.log("RESPONSE ID: ", response.data.id);
-    if (response.status == 200) {
+    if (response.status === 200) {
       return {
         statusCode: response.status,
         body: JSON.stringify({
-          status: response.statusCode,
+          status: response.status,
           data: response.data,
           msg: `Successfully ${response.statusText} to Pipeline CRM`,
         })

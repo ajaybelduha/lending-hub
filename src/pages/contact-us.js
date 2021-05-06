@@ -15,6 +15,7 @@ import {
   TextArea
 } from '../components/common/common'
 import { PIPELINE_ID } from '../utils/constants'
+import { submitData } from '../service/Pipelinecrm'
 
 const validate = (values) => {
   const errors = {}
@@ -57,29 +58,7 @@ const validate = (values) => {
 
 const ContactUs = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const submitData = (items) => {
-    fetch('/.netlify/functions/hello', {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      method: 'post',
-      body: JSON.stringify(items)
-    })
-      .then(res => res.json())
-      .then(response => {
-        setIsSubmitted(true)
-      })
-      .catch(error => {
-        console.log('Error while submitting data')
-        console.log(error)
-      })
-  }
-
-  useEffect(() => {
-
-  }, [])
+  const [isLoading, setIsLoading] = useState(false)
 
   const formik = useFormik({
     initialValues: {
@@ -91,6 +70,7 @@ const ContactUs = () => {
     },
     validate,
     onSubmit: (values, actions) => {
+      setIsLoading(true)
       const data = {
         person: {
           first_name: values.name,
@@ -107,14 +87,19 @@ const ContactUs = () => {
         }
       }
 
-      console.log('Data')
-      console.log(data)
-
       // Submit data to followup boss and redirect
-      // submitData(data)
+      submitData(data, (res) => {
+        setIsLoading(false)
+        if (res.status === 200) {
+          setIsSubmitted(true)
+        } else {
+          alert('Some error occured. Please try again!')
+        }
+        formik.resetForm()
+      })
 
       actions.resetForm()
-      setIsSubmitted(true)
+      // setIsSubmitted(true)
     }
   })
 
@@ -269,7 +254,10 @@ const ContactUs = () => {
                 </div>
               </div>
               {/* <BlackButtonLink to="/creditcards/listing">Let's see Cards</BlackButtonLink> */}
-              <BlackButton type="submit">Submit</BlackButton>
+              <BlackButton type="submit">
+                {!isLoading && <span>Submit</span>}
+                {isLoading && <img className="loading-icon" src='/img/icons/loading.svg' />}
+              </BlackButton>
             </form>
           </div>
         </div>

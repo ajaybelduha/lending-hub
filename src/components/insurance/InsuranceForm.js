@@ -10,6 +10,7 @@ import {
   ButtonNoStyle
 } from '../../components/common/common'
 import { PIPELINE_ID } from '../../utils/constants'
+import { submitData } from '../../service/Pipelinecrm'
 
 const validate = (values) => {
   const errors = {}
@@ -46,28 +47,7 @@ const validate = (values) => {
 
 const InsuranceForm = ({ open, setOpen, insuranceType }) => {
   const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const submitData = (items) => {
-    fetch('/.netlify/functions/hello', {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      method: 'post',
-      body: JSON.stringify(items)
-    })
-      .then(res => res.json())
-      .then(response => {
-        setIsSubmitted(true)
-        setTimeout(() => {
-          setOpen(false)
-        }, 3000)
-      })
-      .catch(error => {
-        console.log('Error while submitting data')
-        console.log(error)
-      })
-  }
+  const [isLoading, setIsLoading] = useState(false)
 
   const formik = useFormik({
     initialValues: {
@@ -78,6 +58,7 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
     },
     validate,
     onSubmit: (values, actions) => {
+      setIsLoading(true)
       let subTagId = PIPELINE_ID.home_insurance_tag
       if (insuranceType === 'Car Insurance') {
         subTagId = PIPELINE_ID.car_insurance_tag
@@ -98,16 +79,24 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
         }
       }
 
-      console.log('Data')
-      console.log(data)
-
       // Submit data to followup boss and redirect
-      // submitData(data)
+      submitData(data, (res) => {
+        setIsLoading(false)
+        if (res.status === 200) {
+          setIsSubmitted(true)
+          setTimeout(() => {
+            setOpen(false)
+          }, 3000)
+        } else {
+          alert('Some error occured. Please try again!')
+        }
+        formik.resetForm()
+      })
 
-      setIsSubmitted(true)
-      setTimeout(() => {
-        setOpen(false)
-      }, 3000)
+      // setIsSubmitted(true)
+      // setTimeout(() => {
+      //   setOpen(false)
+      // }, 3000)
     }
   })
 
@@ -232,7 +221,10 @@ const InsuranceForm = ({ open, setOpen, insuranceType }) => {
                         </div>
 
                         {/* <BlackButtonLink to="/creditcards/listing">Let's see Cards</BlackButtonLink> */}
-                        <BlackButton type="submit">Submit</BlackButton>
+                        <BlackButton type="submit">
+                          {!isLoading && <span>Submit</span>}
+                          {isLoading && <img className="loading-icon" src='/img/icons/loading.svg' />}
+                        </BlackButton>
                     </form>
                     <div className="cancel">
                         <ButtonNoStyle onClick={setOpen}>Cancel</ButtonNoStyle>

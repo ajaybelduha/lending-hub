@@ -14,6 +14,7 @@ import { validate, createDataForCRM } from '../components/common/utils'
 
 const RegisterForm = (props) => {
   const [formValues, setFormValues] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -32,14 +33,27 @@ const RegisterForm = (props) => {
     validate,
     onSubmit: (values, actions) => {
       const data = createPipelineContent(props, values, formValues)
+      setIsLoading(true)
       // pipeline crm api changes and register form code made better
-      // submitData(data, props)
-
-      const selections = props.selections
-      const redirect = props.redirectTo
-      navigate(redirect, {
-        state: { selections }
+      submitData(data, (res) => {
+        setIsLoading(false)
+        if (res.status === 200) {
+          const selections = props.selections
+          const redirect = props.redirectTo
+          navigate(redirect, {
+            state: { selections }
+          })
+        } else {
+          alert('Error occured. Please try again!')
+        }
+        formik.resetForm()
       })
+
+      // const selections = props.selections
+      // const redirect = props.redirectTo
+      // navigate(redirect, {
+      //   state: { selections }
+      // })
     }
   })
   return (
@@ -194,7 +208,10 @@ const RegisterForm = (props) => {
                 : null}
             </div>
             {/* <BlackButtonLink to="/creditcards/listing">Let's see Cards</BlackButtonLink> */}
-            <BlackButton type="submit">{props.submitText}</BlackButton>
+            <BlackButton disabled={isLoading} type="submit">
+              {!isLoading && <span>{props.submitText}</span>}
+              {isLoading && <img className="loading-icon" src='/img/icons/loading.svg' />}
+            </BlackButton>
           </form>
         </div>
       </Fade>

@@ -1,6 +1,6 @@
 import { types, PIPELINE_ID, CardCategories, MortgageTypes } from '../utils/constants'
 
-export const submitData = (items, props) => {
+export const submitData = (items, callback) => {
   fetch('/.netlify/functions/hello', {
     headers: {
       'Content-Type': 'application/json',
@@ -11,15 +11,13 @@ export const submitData = (items, props) => {
   })
     .then(res => res.json())
     .then(response => {
-      const selections = props.selections
-      const redirect = props.redirectTo
-      // navigate(redirect, {
-      //   state: { selections },
-      // });
+    console.log("🚀 ~ file: Pipelinecrm.js ~ line 14 ~ submitData ~ response", response)
+      callback(response)
     })
     .catch(error => {
       console.log('Error while submitting data')
       console.log(error)
+      callback(error)
     })
 }
 
