@@ -36,7 +36,8 @@ const MortgageBlock = ({
     const { totalMortgage, rateType, mortgageTerm } = filterData
     const rate = getRate() / 100
     const monthly = can_mortgage_payment(totalMortgage, rate, 25, 12, 1)
-    return monthly
+    if (isNaN(monthly)) return '-'
+    return `$${monthly}/mo`
   }
 
   useEffect(() => {
@@ -56,9 +57,9 @@ const MortgageBlock = ({
             <h3 className="name title-24-nb">{item.title}</h3>
           </div>
         </div>
-        <div className="rate">{getRate()}%</div>
+        <div className="rate">{getRate()}{getRate() === '-' ? '' : '%'}</div>
 
-        <div className="monthly-payment">${getMonthlyAmount()}/mo</div>
+        <div className="monthly-payment">{getMonthlyAmount()}</div>
         <div className="action">
           {!isApplied && <BlackButton onClick={applyNowClick}>
             {!applyNow && <span>Apply now</span>}

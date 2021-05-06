@@ -2,32 +2,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { PIPELINE_ID } from '../utils/constants'
+import { submitData } from '../service/Pipelinecrm'
+import { BlackButton } from './common/common'
 
 const Subscribe = () => {
   const [subscribe, setSubscribe] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const submitData = (items) => {
-    fetch('/.netlify/functions/hello', {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      method: 'post',
-      body: JSON.stringify(items)
-    })
-      .then(res => res.json())
-      .then(response => {
-        setIsSubmitted(true)
-        // navigate(redirect, {
-        //   state: { selections },
-        // });
-      })
-      .catch(error => {
-        console.log('Error while submitting data')
-        console.log(error)
-      })
-  }
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleOnChange = ({ target }) => {
     const value = target.value
@@ -35,6 +16,7 @@ const Subscribe = () => {
   }
 
   const handleSubmit = () => {
+    setIsLoading(true)
     const data = {
       person: {
         first_name: 'Newsletter',
@@ -48,8 +30,15 @@ const Subscribe = () => {
         predefined_contacts_tag_ids: [PIPELINE_ID.newsletter_tag]
       }
     }
-    // submitData(data)
-    setIsSubmitted(true)
+    submitData(data, (res) => {
+      setIsLoading(false)
+      if (res.status === 200) {
+        setIsSubmitted(true)
+      } else {
+        alert('Some error occured. Please try again!')
+      }
+    })
+    // setIsSubmitted(true)
   }
 
   return (
@@ -79,7 +68,12 @@ const Subscribe = () => {
                   />
                 </div>
               </div>
-              <button onClick={handleSubmit} className="button is-black">Subscribe</button>
+              <div className="subscribe-btn">
+                <BlackButton onClick={handleSubmit}>
+                  {!isLoading && <span>Subscribe</span>}
+                  {isLoading && <img className="loading-icon" src='/img/icons/loading.svg' />}
+                </BlackButton>
+              </div>
             </div>
           </div>
         </div>
@@ -119,12 +113,11 @@ const SubscribeContainer = styled.section`
       border-color: #707070;
       font-size: 1.1rem;
       padding: 1rem;
-      height: 46px;
+      height: 60px;
       max-width: 270px;
       width: 100%;
     }
-    button {
-      height: 46px;
+    .subscribe-btn {
       border-radius: 0;
       margin-left: 1rem;
       padding: 0 2rem;
@@ -157,9 +150,10 @@ const SubscribeContainer = styled.section`
       margin-top: 2rem;
       width: 100%;
     }
-      button {
+    .subscribe-btn {
         width: 100%;
-        margin-left: 0;
+        margin-left: 0rem;
+        padding: 0px 0rem;
       }
     }
     .apply-successful {
