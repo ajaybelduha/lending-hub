@@ -4,7 +4,7 @@ title: How do I get approved for a mortgage?
 ---
 <!--StartFragment-->
 
-# **Tips for getting approved:**
+## **Tips for getting approved:**
 
 1. Maintain a good credit score
 2. Make a larger down payment relative to mortgage payments
