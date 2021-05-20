@@ -6,17 +6,17 @@ logo: /img/bridgewater.png
 amortization: "25"
 isFeatured: false
 insured:
-  "1": "-"
-  "2": "-"
-  "3": "-"
-  "4": "-"
-  "5": "-"
+  "1": N/A
+  "2": N/A
+  "3": N/A
+  "4": N/A
+  "5": N/A
 uninsured:
-  "1": "-"
-  "2": "-"
-  "3": "-"
-  "4": "-"
-  "5": "-"
+  "1": N/A
+  "2": N/A
+  "3": N/A
+  "4": N/A
+  "5": N/A
 rates:
   "1": "2.79"
   "2": "2.79"
