@@ -6,16 +6,16 @@ logo: /img/alterna-savings-credit-union.png
 amortization: "25"
 isFeatured: false
 insured:
-  "1": "-"
-  "2": "-"
-  "3": "-"
-  "4": "-"
+  "1": N/A
+  "2": N/A
+  "3": N/A
+  "4": N/A
   "5": "2.34"
 uninsured:
-  "1": "-"
-  "2": "-"
-  "3": "-"
-  "4": "-"
+  "1": N/A
+  "2": N/A
+  "3": N/A
+  "4": N/A
   "5": "2.34"
 rates:
   "1": "2.34"
