@@ -8,17 +8,17 @@ section1:
     growing team. Please see our open vacancies below
   subheading2: Find news and advice on homeowners, renters, auto, health and life insurance.
 section2:
-  photo2: /img/alterna-savings-credit-union.png
+  photo2: /img/0640a534-9df9-485a-ba81-535c6955ace1.png
   body: We provide Canadians with information to help them make more informed
     decisions. For everyone at lendinghub.ca, this is a huge passion.
   heading: We're a company that thrives on helping people
   subheading: We provide Canadians with information to help them make more
     informed decisions. For everyone at lendinghub.ca, this is a huge passion.
   name1: Sunil Sally and Ron Sally
-  name2: ---
+  name2: xyz
   photoMember: /img/image-64-2x.png
   designation1: BROKERS/OWNERS
-  designation2: ---
+  designation2: xyz
 ---
   ## **Why Lendinghub.ca?**
 
