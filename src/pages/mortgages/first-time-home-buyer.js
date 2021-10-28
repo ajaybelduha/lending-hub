@@ -30,6 +30,10 @@ const FirstTimeHomeBuyer = () => {
                             to consider before you buy and what you can expect from the
                         buying process itself, plus tips to make life easier after you buy your first home.</p>
                         </div>
+                        <div className="button-container">
+                            <Link style={{ color: 'red', textDecoration: 'underline' }} to="https://www.placetocallhome.ca/fthbi/eligibility-savings-calculator">Eligibility and Savings Calculator</Link>
+                            <BlackButton onClick={handleCalculatorClick} className="mortgage-calculator-button" to="/mortgages/questions">Mortgage Calculator</BlackButton>
+                        </div>
                         <div className="image">
                             <img src="/img/home-buyer-1.png" alt="home buyer" />
                         </div>
@@ -68,10 +72,7 @@ const FirstTimeHomeBuyer = () => {
                                     <li><p>You are a Canadian citizen, permanent resident or non-permanent resident authorized to work in Canada</p></li>
                                     <li><p>You meet the minimum down payment requirements with traditional funds (savings, withdrawal/collapse of a Registered Retirement Savings Plan (RRSP), or a non-repayable financial gift from a relative/immediate family member)</p></li>
                                 </ul>
-                                <div className="button-container">
-                                    <Link style={{ color: 'red', textDecoration: 'underline' }} to="https://www.placetocallhome.ca/fthbi/eligibility-savings-calculator">Eligibility and Savings Calculator</Link>
-                                    <BlackButton onClick={handleCalculatorClick} className="mortgage-calculator-button" to="/mortgages/questions">Mortgage Calculator</BlackButton>
-                                </div>
+                                
                             </div>
                             <div className="image carousel">
                                 {/* <img src="/img/first-time-home-buyer.jpg" alt="first time home buyer" /> */}
