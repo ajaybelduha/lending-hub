@@ -29,11 +29,12 @@ const FirstTimeHomeBuyer = () => {
                             most out of your purchase, here is a rundown of what you need
                             to consider before you buy and what you can expect from the
                         buying process itself, plus tips to make life easier after you buy your first home.</p>
-                        </div>
                         <div className="button-container">
                             <Link style={{ color: 'red', textDecoration: 'underline' }} to="https://www.placetocallhome.ca/fthbi/eligibility-savings-calculator">Eligibility and Savings Calculator</Link>
                             <BlackButton onClick={handleCalculatorClick} className="mortgage-calculator-button" to="/mortgages/questions">Mortgage Calculator</BlackButton>
                         </div>
+                        </div>
+                        
                         <div className="image">
                             <img src="/img/home-buyer-1.png" alt="home buyer" />
                         </div>
