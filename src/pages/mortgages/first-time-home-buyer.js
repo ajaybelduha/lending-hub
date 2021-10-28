@@ -32,7 +32,7 @@ const FirstTimeHomeBuyer = () => {
                             </p>
                             <div className="button-container mt-4">
                                 <Link style={{ color: 'red', textDecoration: 'underline' }} to="https://www.placetocallhome.ca/fthbi/eligibility-savings-calculator">Eligibility and Savings Calculator</Link>
-                                <BlackButton onClick={handleCalculatorClick} className="mortgage-calculator-button" to="/mortgages/questions">Mortgage Calculator</BlackButton>
+                                <BlackButton onClick={handleCalculatorClick} className="mortgage-calculator-button" to="/mortgages/questions">I am first time home buyer</BlackButton>
                             </div>
                         </div>
                         <div className="image">
