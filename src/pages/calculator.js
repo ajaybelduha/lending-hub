@@ -54,6 +54,10 @@ const Calculator = (props) => {
     let id = ''
     if(state && state !== undefined && state !== null){
       id = state.id
+    }else{
+      if(window !== undefined){
+        window.location.href = 'https://www.lendinghub.ca/calculator-types/'
+      }
     }
     setCalculatorType(id)
   }, [])
