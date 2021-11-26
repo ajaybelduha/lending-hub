@@ -51,7 +51,13 @@ const Calculator = (props) => {
   useEffect(() => {
     const { id } = props.location.state
     appendScript()
-    setCalculatorType(id)
+    console.log("PROPS:", props)
+    if(id !== '' && id !== null && id !== undefined){
+      console.log("PROPS ID:", id)
+      setCalculatorType(id)
+    }else{
+      setCalculatorHtml('<h1>Please select a calculator type first.</h1>')
+    }
   }, [])
 
   return (
